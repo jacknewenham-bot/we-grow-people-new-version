@@ -27,6 +27,11 @@ const teams = [
     description: "Support performance, culture, and wellbeing at work.",
     gradient: "from-pink-200/50 to-lime/20",
   },
+  {
+    title: "Finance teams",
+    description: "Streamline processes and improve financial decision-making.",
+    gradient: "from-purple-200/50 to-lime/20",
+  },
 ];
 
 export function Teams() {
