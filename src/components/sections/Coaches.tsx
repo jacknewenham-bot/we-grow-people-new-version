@@ -59,36 +59,16 @@ function getInitials(name: string) {
     .slice(0, 2);
 }
 
-function getGradientClass(index: number) {
-  const gradients = [
-    "from-primary to-accent",
-    "from-accent to-primary",
-    "from-primary/80 to-accent/80",
-    "from-accent/80 to-primary/80",
-  ];
-  return gradients[index % gradients.length];
-}
-
 export function Coaches() {
   return (
-    <section id="coaches" className="py-20 md:py-28 gradient-hero">
+    <section id="coaches" className="py-20 md:py-28 bg-background">
       <div className="container">
         <div className="text-center mb-16">
-          <motion.span
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="inline-block px-4 py-2 rounded-full bg-primary-light text-primary font-medium text-sm mb-6"
-          >
-            Expert Coaches
-          </motion.span>
-
           <motion.h2
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ delay: 0.1 }}
-            className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4"
+            className="headline-display text-3xl md:text-5xl lg:text-6xl text-foreground mb-4"
           >
             Meet the coaches
           </motion.h2>
@@ -97,7 +77,7 @@ export function Coaches() {
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ delay: 0.2 }}
+            transition={{ delay: 0.1 }}
             className="text-lg text-muted-foreground max-w-2xl mx-auto"
           >
             Experienced practitioners helping teams build modern skills that stick.
@@ -112,12 +92,10 @@ export function Coaches() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.05 }}
-              className="group bg-card rounded-2xl p-6 border border-border shadow-card hover:shadow-card-hover transition-all duration-300"
+              className="group bg-card rounded-3xl p-6 border border-border shadow-card hover:shadow-card-hover transition-all duration-300"
             >
-              <div
-                className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${getGradientClass(index)} flex items-center justify-center mb-5 group-hover:scale-105 transition-transform duration-300`}
-              >
-                <span className="text-xl font-bold text-primary-foreground">
+              <div className="w-16 h-16 rounded-full bg-gradient-to-br from-gray-300 to-gray-400 flex items-center justify-center mb-5 group-hover:scale-105 transition-transform duration-300">
+                <span className="text-xl font-bold text-gray-600">
                   {getInitials(coach.name)}
                 </span>
               </div>
@@ -126,7 +104,7 @@ export function Coaches() {
                 {coach.name}
               </h3>
 
-              <p className="text-sm text-primary font-medium mb-2">
+              <p className="text-sm text-lime font-medium mb-2">
                 {coach.tagline}
               </p>
 

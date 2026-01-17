@@ -30,26 +30,18 @@ const steps = [
 
 export function HowItWorks() {
   return (
-    <section id="how-it-works" className="py-20 md:py-28 bg-muted/30">
+    <section id="how-it-works" className="py-20 md:py-28 bg-white">
       <div className="container">
         <div className="text-center mb-16">
-          <motion.span
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="inline-block px-4 py-2 rounded-full bg-primary-light text-primary font-medium text-sm mb-6"
-          >
-            The Process
-          </motion.span>
-
           <motion.h2
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ delay: 0.1 }}
-            className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4"
+            className="headline-display text-3xl md:text-5xl lg:text-6xl text-foreground mb-4"
           >
-            Simple, practical, effective
+            Simple, practical,
+            <br />
+            effective
           </motion.h2>
         </div>
 
@@ -65,15 +57,15 @@ export function HowItWorks() {
             >
               {/* Connector line */}
               {index < steps.length - 1 && (
-                <div className="hidden lg:block absolute top-10 left-[60%] w-full h-0.5 bg-gradient-to-r from-primary/30 to-transparent" />
+                <div className="hidden lg:block absolute top-10 left-[60%] w-full h-0.5 bg-gradient-to-r from-lime/50 to-transparent" />
               )}
 
-              <div className="relative bg-card rounded-2xl p-8 border border-border shadow-card h-full">
+              <div className="relative bg-card rounded-3xl p-8 border border-border shadow-card h-full">
                 <div className="flex items-center gap-4 mb-5">
-                  <div className="w-12 h-12 rounded-xl gradient-primary flex items-center justify-center">
-                    <step.icon className="w-6 h-6 text-primary-foreground" />
+                  <div className="w-12 h-12 rounded-2xl bg-lime flex items-center justify-center">
+                    <step.icon className="w-6 h-6 text-lime-foreground" />
                   </div>
-                  <span className="text-4xl font-bold text-primary/20">
+                  <span className="text-4xl font-extrabold text-primary/20">
                     {step.step}
                   </span>
                 </div>
