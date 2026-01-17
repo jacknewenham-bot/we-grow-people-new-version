@@ -23,64 +23,32 @@ const testimonials = [
 
 export function Testimonials() {
   return (
-    <section id="testimonials" className="py-20 md:py-28 bg-white">
+    <section id="testimonials" className="py-24 md:py-32 bg-white">
       <div className="container">
-        {/* Creative staggered headline like Tomorro */}
-        <div className="text-center mb-16">
-          <motion.div
+        {/* Simplified headline */}
+        <div className="text-center mb-20">
+          <motion.h2
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="flex flex-wrap items-center justify-center gap-3 mb-2"
+            className="headline-display font-heading text-4xl md:text-6xl text-foreground mb-6"
           >
-            <span className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-primary-light text-foreground font-bold text-xl md:text-2xl">
-              Our customers
-              <span className="w-8 h-8 rounded-full bg-gray-300 flex items-center justify-center text-xs font-bold">SC</span>
-            </span>
-            <span className="w-12 h-12 rounded-full bg-primary flex items-center justify-center">
-              <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"/>
-              </svg>
-            </span>
-          </motion.div>
+            What our clients say
+          </motion.h2>
 
-          <motion.div
+          <motion.p
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="flex items-center justify-center gap-3 mb-2"
+            className="text-lg md:text-xl text-muted-foreground font-sans"
           >
-            <span className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-lime text-lime-foreground font-bold text-xl md:text-2xl">
-              <span className="flex gap-0.5">
-                <span className="w-2 h-2 rounded-full bg-primary" />
-                <span className="w-2 h-2 rounded-full bg-primary" />
-                <span className="w-2 h-2 rounded-full bg-primary" />
-              </span>
-              talk about it
-            </span>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.2 }}
-            className="flex items-center justify-center gap-3"
-          >
-            <span className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-primary-light text-foreground font-bold text-xl md:text-2xl">
-              better than us
-            </span>
-            <span className="w-12 h-12 rounded-full bg-lime flex items-center justify-center">
-              <svg className="w-6 h-6 text-lime-foreground" fill="none" stroke="currentColor" strokeWidth="3" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-              </svg>
-            </span>
-          </motion.div>
+            Real results from real teams.
+          </motion.p>
         </div>
 
         {/* Testimonial Cards */}
-        <div className="grid md:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-3 gap-8">
           {testimonials.map((testimonial, index) => (
             <motion.div
               key={index}
@@ -88,33 +56,33 @@ export function Testimonials() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
-              className="bg-card rounded-3xl p-8 border border-border"
+              className="bg-white rounded-3xl p-8 border border-border/50 shadow-lg hover:shadow-2xl transition-all duration-500"
             >
-              <p className="text-lg font-semibold text-foreground mb-8 leading-relaxed">
+              {/* Rating dots at top */}
+              <div className="flex gap-1.5 mb-6">
+                {[...Array(5)].map((_, i) => (
+                  <div key={i} className="w-3 h-3 rounded-full bg-lime" />
+                ))}
+              </div>
+
+              <p className="text-lg font-medium text-foreground mb-8 leading-relaxed font-sans">
                 "{testimonial.quote}"
               </p>
 
-              <div className="flex items-center gap-3">
-                <div className="w-12 h-12 rounded-full bg-gradient-to-br from-gray-300 to-gray-400 flex items-center justify-center">
-                  <span className="text-sm font-bold text-gray-600">
+              <div className="flex items-center gap-4 pt-6 border-t border-border/50">
+                <div className="w-14 h-14 rounded-full bg-gradient-to-br from-primary/20 to-lime/20 flex items-center justify-center">
+                  <span className="text-base font-bold text-primary font-heading">
                     {testimonial.author.split(" ").map(n => n[0]).join("")}
                   </span>
                 </div>
                 <div>
-                  <p className="font-semibold text-lime text-sm">
+                  <p className="font-semibold text-foreground text-base">
                     {testimonial.author}
                   </p>
                   <p className="text-muted-foreground text-sm">
-                    {testimonial.role}, {testimonial.company}
+                    {testimonial.role}
                   </p>
                 </div>
-              </div>
-
-              {/* Rating dots */}
-              <div className="flex gap-1.5 mt-4">
-                {[...Array(5)].map((_, i) => (
-                  <div key={i} className="w-2.5 h-2.5 rounded-full bg-lime" />
-                ))}
               </div>
             </motion.div>
           ))}

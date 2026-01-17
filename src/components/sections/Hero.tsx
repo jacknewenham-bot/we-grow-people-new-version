@@ -6,46 +6,46 @@ const WHATSAPP_LINK = "https://wa.me/60123456789";
 
 // Floating avatar data with role badges
 const floatingAvatars = [
-  { 
-    id: 1, 
-    role: "Marketing", 
-    color: "bg-lime", 
+  {
+    id: 1,
+    role: "Marketing",
+    color: "bg-lime",
     textColor: "text-lime-foreground",
     position: "top-24 left-8 md:left-16",
     delay: 0,
     initials: "MK"
   },
-  { 
-    id: 2, 
-    role: "Sales", 
-    color: "bg-yellow-400", 
+  {
+    id: 2,
+    role: "Sales",
+    color: "bg-yellow-400",
     textColor: "text-yellow-900",
     position: "bottom-48 left-4 md:left-24",
     delay: 1,
     initials: "SL"
   },
-  { 
-    id: 3, 
-    role: "Leadership", 
-    color: "bg-lime", 
+  {
+    id: 3,
+    role: "Leadership",
+    color: "bg-lime",
     textColor: "text-lime-foreground",
     position: "top-32 right-8 md:right-20",
     delay: 0.5,
     initials: "LD"
   },
-  { 
-    id: 4, 
-    role: "Operations", 
-    color: "bg-blue-200", 
+  {
+    id: 4,
+    role: "Operations",
+    color: "bg-blue-200",
     textColor: "text-blue-900",
     position: "right-4 md:right-16 top-1/2",
     delay: 1.5,
     initials: "OP"
   },
-  { 
-    id: 5, 
-    role: "HR", 
-    color: "bg-pink-200", 
+  {
+    id: 5,
+    role: "HR",
+    color: "bg-pink-200",
     textColor: "text-pink-900",
     position: "bottom-32 right-8 md:right-32",
     delay: 2,
@@ -91,7 +91,7 @@ export function Hero() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="headline-display text-4xl md:text-6xl lg:text-7xl text-white mb-8"
+            className="headline-display font-heading text-4xl md:text-6xl lg:text-7xl text-white mb-8"
           >
             Future-ready training
             <br />
@@ -103,7 +103,7 @@ export function Hero() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-lg md:text-xl text-white/70 max-w-2xl mx-auto mb-10"
+            className="text-lg md:text-xl text-white/70 max-w-2xl mx-auto mb-10 font-sans"
           >
             Expert-led coaching and corporate training that builds real capability, confidence, and results. HRDC claimable programs built for Malaysia.
           </motion.p>
@@ -115,15 +115,9 @@ export function Hero() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-14"
           >
-            <Button variant="lime" size="lg" asChild>
+            <Button variant="lime" size="lg" asChild className="text-base font-semibold px-8 h-12">
               <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer">
                 Chat with us
-              </a>
-            </Button>
-            <Button variant="heroOutline" size="lg" asChild>
-              <a href="#how-it-works" className="flex items-center gap-2">
-                <Play className="w-4 h-4" />
-                See how it works
               </a>
             </Button>
           </motion.div>

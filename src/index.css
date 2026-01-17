@@ -2,18 +2,20 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter+Tight:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap');
 
 /* Tomorro-style Design System - Dark Green + Lime */
 
 @layer base {
   :root {
-    /* Core palette - Tomorro inspired */
-    --background: 80 30% 95%;
-    --foreground: 150 30% 15%;
+    /* Core palette */
+    --background: 0 0% 100%;
+    /* Pure white */
+    --foreground: 150 15% 10%;
+    /* Very dark green/grey */
 
-    --card: 80 25% 92%;
-    --card-foreground: 150 30% 15%;
+    --card: 0 0% 100%;
+    --card-foreground: 150 15% 10%;
 
     --popover: 0 0% 100%;
     --popover-foreground: 150 30% 15%;
@@ -133,11 +135,12 @@
 
   body {
     @apply bg-background text-foreground font-sans antialiased;
-    font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+    font-family: 'Inter', system-ui, sans-serif;
   }
 }
 
 @layer components {
+
   /* Hero dark section */
   .bg-hero {
     background-color: hsl(var(--hero-bg));
@@ -199,18 +202,24 @@
 }
 
 @keyframes float {
-  0%, 100% {
+
+  0%,
+  100% {
     transform: translateY(0px);
   }
+
   50% {
     transform: translateY(-12px);
   }
 }
 
 @keyframes float-delayed {
-  0%, 100% {
+
+  0%,
+  100% {
     transform: translateY(0px);
   }
+
   50% {
     transform: translateY(-8px);
   }

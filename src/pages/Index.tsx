@@ -5,7 +5,7 @@ import { Mission } from "@/components/sections/Mission";
 import { Features } from "@/components/sections/Features";
 import { Teams } from "@/components/sections/Teams";
 import { HowItWorks } from "@/components/sections/HowItWorks";
-import { Coaches } from "@/components/sections/Coaches";
+import { CoachesCarousel } from "@/components/sections/CoachesCarousel";
 import { Testimonials } from "@/components/sections/Testimonials";
 import { FinalCTA } from "@/components/sections/FinalCTA";
 import { Footer } from "@/components/layout/Footer";
@@ -21,7 +21,7 @@ const Index = () => {
         <Features />
         <Teams />
         <HowItWorks />
-        <Coaches />
+        <CoachesCarousel />
         <Testimonials />
         <FinalCTA />
       </main>

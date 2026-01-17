@@ -50,7 +50,7 @@ export function Features() {
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="headline-display text-3xl md:text-5xl lg:text-6xl text-foreground text-center mb-12"
+          className="headline-display font-heading text-4xl md:text-6xl text-foreground text-center mb-16"
         >
           Our Features
         </motion.h2>
@@ -61,18 +61,17 @@ export function Features() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.1 }}
-          className="flex justify-center mb-16"
+          className="flex justify-center mb-20"
         >
-          <div className="inline-flex items-center bg-primary rounded-full p-1.5">
+          <div className="inline-flex items-center bg-primary rounded-full p-2 shadow-lg">
             {features.map((feature) => (
               <button
                 key={feature.id}
                 onClick={() => setActiveTab(feature.id)}
-                className={`px-5 py-2.5 rounded-full font-medium text-sm transition-all duration-300 ${
-                  activeTab === feature.id
-                    ? "bg-white text-foreground shadow-md"
+                className={`px-6 py-3 rounded-full font-heading font-semibold text-sm transition-all duration-300 ${activeTab === feature.id
+                    ? "bg-white text-foreground shadow-sm"
                     : "text-white/70 hover:text-white"
-                }`}
+                  }`}
               >
                 {feature.title}
               </button>
@@ -88,36 +87,42 @@ export function Features() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.3 }}
-            className="grid lg:grid-cols-2 gap-12 items-center"
+            className="grid lg:grid-cols-2 gap-16 items-center"
           >
             {/* Text Content */}
-            <div>
-              <h3 className="text-2xl md:text-3xl font-bold text-foreground mb-4">
+            <div className="max-w-lg">
+              <h3 className="font-heading text-3xl md:text-5xl font-bold text-foreground mb-6 leading-tight">
                 {activeFeature.headline}
               </h3>
 
-              <p className="text-lg text-muted-foreground mb-8">
+              <p className="text-lg md:text-xl text-muted-foreground mb-10 leading-relaxed font-sans">
                 {activeFeature.body}
               </p>
 
-              <ul className="space-y-4 mb-8">
+              <ul className="space-y-5 mb-10">
                 {activeFeature.bullets.map((bullet) => (
-                  <li key={bullet} className="flex items-center gap-3">
-                    <div className="w-2.5 h-2.5 rounded-full bg-lime flex-shrink-0" />
-                    <span className="text-foreground">{bullet}</span>
+                  <li key={bullet} className="flex items-center gap-4">
+                    <div className="w-3 h-3 rounded-full bg-lime flex-shrink-0" />
+                    <span className="text-foreground font-medium text-lg">{bullet}</span>
                   </li>
                 ))}
               </ul>
 
-              <Button variant="dark" size="lg">
+              <Button variant="dark" size="lg" className="rounded-full px-8">
                 Learn more about {activeFeature.title.toLowerCase()}
               </Button>
             </div>
 
-            {/* Visual Placeholder - styled card */}
-            <div className="bg-card rounded-3xl p-8 shadow-card border border-border">
-              <div className="aspect-[4/3] rounded-2xl bg-gradient-to-br from-primary/10 to-lime/10 flex items-center justify-center">
-                <activeFeature.icon className="w-20 h-20 text-primary/40" />
+            {/* Visual Placeholder - styled UI card */}
+            <div className="bg-white rounded-3xl p-6 shadow-2xl border border-border/50 relative overflow-hidden aspect-[4/3] flex items-center justify-center">
+              {/* Decorative UI elements */}
+              <div className="absolute top-0 left-0 right-0 h-12 bg-gray-50 border-b flex items-center px-4 gap-2">
+                <div className="w-3 h-3 rounded-full bg-red-400"></div>
+                <div className="w-3 h-3 rounded-full bg-yellow-400"></div>
+                <div className="w-3 h-3 rounded-full bg-green-400"></div>
+              </div>
+              <div className="mt-12 w-full h-full bg-gradient-to-br from-gray-50 to-white flex items-center justify-center">
+                <activeFeature.icon className="w-24 h-24 text-primary/20" />
               </div>
             </div>
           </motion.div>
