@@ -4,13 +4,13 @@ import { Button } from "@/components/ui/button";
 import { Menu, X, MessageCircle } from "lucide-react";
 
 const navLinks = [
-  { href: "#programs", label: "Programs" },
-  { href: "#how-it-works", label: "How it works" },
-  { href: "#coaches", label: "Coaches" },
-  { href: "#testimonials", label: "Testimonials" },
+  { href: "#programs", label: "Programs", isAnchor: true },
+  { href: "#how-it-works", label: "How it works", isAnchor: true },
+  { href: "/coaches", label: "Coaches", isAnchor: false },
+  { href: "#testimonials", label: "Testimonials", isAnchor: true },
 ];
 
-const WHATSAPP_LINK = "https://wa.me/60123456789";
+const WHATSAPP_LINK = "https://wa.me/60173552382?text=Hi%20there%2C%20I'm%20interested%20in%20finding%20out%20more%20about%20your%20training";
 
 export function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -26,11 +26,10 @@ export function Header() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled
           ? "bg-white/95 backdrop-blur-md shadow-md py-3"
           : "bg-hero py-5"
-      }`}
+        }`}
     >
       <div className="container flex items-center justify-between">
         {/* Logo */}
@@ -46,11 +45,10 @@ export function Header() {
             <a
               key={link.href}
               href={link.href}
-              className={`transition-colors font-medium text-sm ${
-                isScrolled 
-                  ? "text-muted-foreground hover:text-foreground" 
+              className={`transition-colors font-medium text-sm ${isScrolled
+                  ? "text-muted-foreground hover:text-foreground"
                   : "text-white/80 hover:text-white"
-              }`}
+                }`}
             >
               {link.label}
             </a>

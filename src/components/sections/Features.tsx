@@ -52,7 +52,7 @@ export function Features() {
           viewport={{ once: true }}
           className="headline-display font-heading text-4xl md:text-6xl text-foreground text-center mb-16"
         >
-          Our Features
+          Our Training
         </motion.h2>
 
         {/* Tab Pills - Dark pill style */}
@@ -69,8 +69,8 @@ export function Features() {
                 key={feature.id}
                 onClick={() => setActiveTab(feature.id)}
                 className={`px-6 py-3 rounded-full font-heading font-semibold text-sm transition-all duration-300 ${activeTab === feature.id
-                    ? "bg-white text-foreground shadow-sm"
-                    : "text-white/70 hover:text-white"
+                  ? "bg-white text-foreground shadow-sm"
+                  : "text-white/70 hover:text-white"
                   }`}
               >
                 {feature.title}

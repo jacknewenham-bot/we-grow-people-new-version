@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { MessageCircle, Play } from "lucide-react";
 
-const WHATSAPP_LINK = "https://wa.me/60173552382";
+const WHATSAPP_LINK = "https://wa.me/60173552382?text=Hi%20there%2C%20I'm%20interested%20in%20finding%20out%20more%20about%20your%20training";
 
 // Floating avatar data with role badges
 const floatingAvatars = [
