@@ -2,6 +2,8 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
 import { X } from "lucide-react";
+import { Header } from "@/components/layout/Header";
+import { Footer } from "@/components/layout/Footer";
 
 const WHATSAPP_LINK = "https://wa.me/60173552382?text=Hi%20there%2C%20I'm%20interested%20in%20finding%20out%20more%20about%20your%20training";
 
@@ -92,330 +94,334 @@ export default function CoachesPage() {
     const [selectedCoach, setSelectedCoach] = useState<typeof coaches[0] | null>(null);
 
     return (
-        <div className="min-h-screen bg-background">
-            {/* Hero Section */}
-            <section className="py-24 md:py-32 bg-primary">
-                <div className="container">
-                    <div className="max-w-4xl mx-auto text-center">
-                        <motion.h1
-                            initial={{ opacity: 0, y: 30 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            className="headline-display font-heading text-5xl md:text-7xl text-white mb-8 leading-tight"
-                        >
-                            Meet the coaches behind WeGrowPeople.
-                        </motion.h1>
+        <>
+            <Header />
+            <div className="min-h-screen bg-background pt-20">
+                {/* Hero Section */}
+                <section className="py-24 md:py-32 bg-primary">
+                    <div className="container">
+                        <div className="max-w-4xl mx-auto text-center">
+                            <motion.h1
+                                initial={{ opacity: 0, y: 30 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                className="headline-display font-heading text-5xl md:text-7xl text-white mb-8 leading-tight"
+                            >
+                                Meet the coaches behind WeGrowPeople.
+                            </motion.h1>
 
-                        <motion.p
-                            initial={{ opacity: 0, y: 30 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ delay: 0.1 }}
-                            className="text-xl md:text-2xl text-white/90 mb-6 font-sans"
-                        >
-                            Experienced practitioners helping teams build modern skills that actually stick.
-                        </motion.p>
+                            <motion.p
+                                initial={{ opacity: 0, y: 30 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                transition={{ delay: 0.1 }}
+                                className="text-xl md:text-2xl text-white/90 mb-6 font-sans"
+                            >
+                                Experienced practitioners helping teams build modern skills that actually stick.
+                            </motion.p>
 
-                        <motion.p
-                            initial={{ opacity: 0, y: 30 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ delay: 0.2 }}
-                            className="text-lg text-white/70 mb-12 font-sans"
-                        >
-                            All programs are led by coaches with 10+ years of real-world experience. HRDC claimable programs available.
-                        </motion.p>
+                            <motion.p
+                                initial={{ opacity: 0, y: 30 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                transition={{ delay: 0.2 }}
+                                className="text-lg text-white/70 mb-12 font-sans"
+                            >
+                                All programs are led by coaches with 10+ years of real-world experience. HRDC claimable programs available.
+                            </motion.p>
 
-                        <motion.div
-                            initial={{ opacity: 0, y: 30 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ delay: 0.3 }}
-                        >
-                            <Button variant="lime" size="xl" asChild className="text-lg px-12 h-16 rounded-full font-semibold">
-                                <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer" className="flex items-center gap-3">
-                                    <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                                        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
-                                    </svg>
-                                    Chat with us
-                                </a>
-                            </Button>
-                        </motion.div>
-                    </div>
-                </div>
-            </section>
-
-            {/* Intro Context Section */}
-            <section className="py-24 md:py-32 bg-white">
-                <div className="container">
-                    <div className="max-w-3xl mx-auto">
-                        <motion.h2
-                            initial={{ opacity: 0, y: 30 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            className="headline-display font-heading text-4xl md:text-5xl text-foreground mb-12 text-center"
-                        >
-                            Real experience. Real outcomes.
-                        </motion.h2>
-
-                        <motion.div
-                            initial={{ opacity: 0, y: 30 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ delay: 0.1 }}
-                            className="space-y-6 text-lg md:text-xl text-foreground/80 font-sans leading-relaxed"
-                        >
-                            <p>
-                                At WeGrowPeople, training is not delivered by career trainers or generic facilitators.
-                            </p>
-                            <p>
-                                Our coaches are practitioners. Builders. Operators. Leaders.
-                            </p>
-                            <p>
-                                They have led teams, scaled businesses, delivered complex projects, launched products, and navigated real pressure. That experience shapes how they train.
-                            </p>
-                        </motion.div>
-                    </div>
-                </div>
-            </section>
-
-            {/* Coaches Grid */}
-            <section className="py-24 md:py-32 bg-background">
-                <div className="container">
-                    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                        {coaches.map((coach, index) => (
                             <motion.div
-                                key={coach.id}
+                                initial={{ opacity: 0, y: 30 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                transition={{ delay: 0.3 }}
+                            >
+                                <Button variant="lime" size="xl" asChild className="text-lg px-12 h-16 rounded-full font-semibold">
+                                    <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer" className="flex items-center gap-3">
+                                        <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                                            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
+                                        </svg>
+                                        Chat with us
+                                    </a>
+                                </Button>
+                            </motion.div>
+                        </div>
+                    </div>
+                </section>
+
+                {/* Intro Context Section */}
+                <section className="py-24 md:py-32 bg-white">
+                    <div className="container">
+                        <div className="max-w-3xl mx-auto">
+                            <motion.h2
                                 initial={{ opacity: 0, y: 30 }}
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
-                                transition={{ delay: index * 0.1 }}
-                                onClick={() => setSelectedCoach(coach)}
-                                className="group bg-white rounded-3xl p-8 border border-border/50 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 cursor-pointer"
+                                className="headline-display font-heading text-4xl md:text-5xl text-foreground mb-12 text-center"
                             >
-                                {/* Avatar */}
-                                <div className="w-24 h-24 rounded-full bg-gradient-to-br from-primary/20 to-lime/20 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                                    <span className="text-3xl font-bold text-primary font-heading">
-                                        {getInitials(coach.name)}
-                                    </span>
-                                </div>
+                                Real experience. Real outcomes.
+                            </motion.h2>
 
-                                {/* Name & Title */}
-                                <h3 className="font-heading text-2xl font-bold text-foreground mb-2">
-                                    {coach.name}
-                                </h3>
-                                <p className="text-base text-foreground/70 mb-3 font-sans">
-                                    {coach.title}
+                            <motion.div
+                                initial={{ opacity: 0, y: 30 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ delay: 0.1 }}
+                                className="space-y-6 text-lg md:text-xl text-foreground/80 font-sans leading-relaxed"
+                            >
+                                <p>
+                                    At WeGrowPeople, training is not delivered by career trainers or generic facilitators.
                                 </p>
-
-                                {/* Badge */}
-                                {coach.badge && (
-                                    <span className="inline-block px-3 py-1 rounded-full bg-lime/10 text-lime text-xs font-semibold mb-4">
-                                        {coach.badge}
-                                    </span>
-                                )}
-
-                                {/* Focus Areas */}
-                                <div className="mt-6 pt-6 border-t border-border/50">
-                                    <p className="text-sm font-semibold text-foreground mb-3">Focus areas</p>
-                                    <div className="flex flex-wrap gap-2">
-                                        {coach.focusAreas.map((area) => (
-                                            <span key={area} className="text-xs px-3 py-1 rounded-full bg-primary/5 text-primary font-medium">
-                                                {area}
-                                            </span>
-                                        ))}
-                                    </div>
-                                </div>
-
-                                {/* View More */}
-                                <div className="mt-6 text-sm text-lime font-semibold group-hover:underline">
-                                    View full profile →
-                                </div>
+                                <p>
+                                    Our coaches are practitioners. Builders. Operators. Leaders.
+                                </p>
+                                <p>
+                                    They have led teams, scaled businesses, delivered complex projects, launched products, and navigated real pressure. That experience shapes how they train.
+                                </p>
                             </motion.div>
-                        ))}
+                        </div>
                     </div>
-                </div>
-            </section>
+                </section>
 
-            {/* How Coaches Are Matched */}
-            <section className="py-24 md:py-32 bg-[#e8f5e0]">
-                <div className="container">
-                    <div className="max-w-3xl mx-auto text-center">
-                        <motion.h2
-                            initial={{ opacity: 0, y: 30 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            className="headline-display font-heading text-4xl md:text-5xl text-foreground mb-8"
-                        >
-                            Matched to your needs, not randomly assigned.
-                        </motion.h2>
+                {/* Coaches Grid */}
+                <section className="py-24 md:py-32 bg-background">
+                    <div className="container">
+                        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                            {coaches.map((coach, index) => (
+                                <motion.div
+                                    key={coach.id}
+                                    initial={{ opacity: 0, y: 30 }}
+                                    whileInView={{ opacity: 1, y: 0 }}
+                                    viewport={{ once: true }}
+                                    transition={{ delay: index * 0.1 }}
+                                    onClick={() => setSelectedCoach(coach)}
+                                    className="group bg-white rounded-3xl p-8 border border-border/50 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 cursor-pointer"
+                                >
+                                    {/* Avatar */}
+                                    <div className="w-24 h-24 rounded-full bg-gradient-to-br from-primary/20 to-lime/20 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                                        <span className="text-3xl font-bold text-primary font-heading">
+                                            {getInitials(coach.name)}
+                                        </span>
+                                    </div>
 
+                                    {/* Name & Title */}
+                                    <h3 className="font-heading text-2xl font-bold text-foreground mb-2">
+                                        {coach.name}
+                                    </h3>
+                                    <p className="text-base text-foreground/70 mb-3 font-sans">
+                                        {coach.title}
+                                    </p>
+
+                                    {/* Badge */}
+                                    {coach.badge && (
+                                        <span className="inline-block px-3 py-1 rounded-full bg-lime/10 text-lime text-xs font-semibold mb-4">
+                                            {coach.badge}
+                                        </span>
+                                    )}
+
+                                    {/* Focus Areas */}
+                                    <div className="mt-6 pt-6 border-t border-border/50">
+                                        <p className="text-sm font-semibold text-foreground mb-3">Focus areas</p>
+                                        <div className="flex flex-wrap gap-2">
+                                            {coach.focusAreas.map((area) => (
+                                                <span key={area} className="text-xs px-3 py-1 rounded-full bg-primary/5 text-primary font-medium">
+                                                    {area}
+                                                </span>
+                                            ))}
+                                        </div>
+                                    </div>
+
+                                    {/* View More */}
+                                    <div className="mt-6 text-sm text-lime font-semibold group-hover:underline">
+                                        View full profile →
+                                    </div>
+                                </motion.div>
+                            ))}
+                        </div>
+                    </div>
+                </section>
+
+                {/* How Coaches Are Matched */}
+                <section className="py-24 md:py-32 bg-[#e8f5e0]">
+                    <div className="container">
+                        <div className="max-w-3xl mx-auto text-center">
+                            <motion.h2
+                                initial={{ opacity: 0, y: 30 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                className="headline-display font-heading text-4xl md:text-5xl text-foreground mb-8"
+                            >
+                                Matched to your needs, not randomly assigned.
+                            </motion.h2>
+
+                            <motion.div
+                                initial={{ opacity: 0, y: 30 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ delay: 0.1 }}
+                                className="space-y-6 text-lg md:text-xl text-foreground/80 font-sans leading-relaxed"
+                            >
+                                <p>Every team is different.</p>
+                                <p>
+                                    We take the time to understand your goals, challenges, and context before recommending the right coach or combination of coaches.
+                                </p>
+                                <p>
+                                    This ensures training is relevant, practical, and effective from day one.
+                                </p>
+                            </motion.div>
+                        </div>
+                    </div>
+                </section>
+
+                {/* HRDC Block */}
+                <section className="py-24 md:py-32 bg-white">
+                    <div className="container">
+                        <div className="max-w-3xl mx-auto text-center">
+                            <motion.h2
+                                initial={{ opacity: 0, y: 30 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                className="headline-display font-heading text-4xl md:text-5xl text-foreground mb-8"
+                            >
+                                HRDC claimable training, done right.
+                            </motion.h2>
+
+                            <motion.p
+                                initial={{ opacity: 0, y: 30 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ delay: 0.1 }}
+                                className="text-lg md:text-xl text-foreground/80 font-sans leading-relaxed"
+                            >
+                                Many of our programs are structured to meet HRDC requirements while maintaining practical, outcome-driven delivery.
+                                <br /><br />
+                                We handle the structure so your team can focus on learning and applying skills.
+                            </motion.p>
+                        </div>
+                    </div>
+                </section>
+
+                {/* Final CTA */}
+                <section className="py-32 md:py-40 bg-primary">
+                    <div className="container">
+                        <div className="max-w-4xl mx-auto text-center">
+                            <motion.h2
+                                initial={{ opacity: 0, y: 30 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                className="headline-display font-heading text-5xl md:text-7xl text-white mb-8 leading-tight"
+                            >
+                                Not sure which coach is right for your team?
+                            </motion.h2>
+
+                            <motion.p
+                                initial={{ opacity: 0, y: 30 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ delay: 0.1 }}
+                                className="text-xl md:text-2xl text-white/80 mb-12 font-sans"
+                            >
+                                Tell us what you are trying to improve. We will recommend the right coach and approach.
+                            </motion.p>
+
+                            <motion.div
+                                initial={{ opacity: 0, y: 30 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ delay: 0.2 }}
+                            >
+                                <Button variant="lime" size="xl" asChild className="text-lg px-12 h-16 rounded-full font-semibold">
+                                    <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer" className="flex items-center gap-3">
+                                        <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                                            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
+                                        </svg>
+                                        Chat with us
+                                    </a>
+                                </Button>
+                            </motion.div>
+                        </div>
+                    </div>
+                </section>
+
+                {/* Coach Detail Modal */}
+                {selectedCoach && (
+                    <div className="fixed inset-0 bg-black/60 z-50 flex items-center justify-center p-4 backdrop-blur-sm" onClick={() => setSelectedCoach(null)}>
                         <motion.div
-                            initial={{ opacity: 0, y: 30 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ delay: 0.1 }}
-                            className="space-y-6 text-lg md:text-xl text-foreground/80 font-sans leading-relaxed"
+                            initial={{ opacity: 0, scale: 0.95 }}
+                            animate={{ opacity: 1, scale: 1 }}
+                            className="bg-white rounded-3xl max-w-3xl w-full max-h-[90vh] overflow-y-auto p-8 md:p-12 relative"
+                            onClick={(e) => e.stopPropagation()}
                         >
-                            <p>Every team is different.</p>
-                            <p>
-                                We take the time to understand your goals, challenges, and context before recommending the right coach or combination of coaches.
+                            <button
+                                onClick={() => setSelectedCoach(null)}
+                                className="absolute top-6 right-6 w-10 h-10 rounded-full bg-gray-100 hover:bg-gray-200 flex items-center justify-center transition-colors"
+                            >
+                                <X className="w-5 h-5" />
+                            </button>
+
+                            {/* Avatar */}
+                            <div className="w-32 h-32 rounded-full bg-gradient-to-br from-primary/20 to-lime/20 flex items-center justify-center mb-6">
+                                <span className="text-5xl font-bold text-primary font-heading">
+                                    {getInitials(selectedCoach.name)}
+                                </span>
+                            </div>
+
+                            {/* Name & Title */}
+                            <h2 className="font-heading text-4xl font-bold text-foreground mb-3">
+                                {selectedCoach.name}
+                            </h2>
+                            <p className="text-xl text-foreground/70 mb-4 font-sans">
+                                {selectedCoach.title}
                             </p>
-                            <p>
-                                This ensures training is relevant, practical, and effective from day one.
-                            </p>
-                        </motion.div>
-                    </div>
-                </div>
-            </section>
 
-            {/* HRDC Block */}
-            <section className="py-24 md:py-32 bg-white">
-                <div className="container">
-                    <div className="max-w-3xl mx-auto text-center">
-                        <motion.h2
-                            initial={{ opacity: 0, y: 30 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            className="headline-display font-heading text-4xl md:text-5xl text-foreground mb-8"
-                        >
-                            HRDC claimable training, done right.
-                        </motion.h2>
+                            {/* Badge */}
+                            {selectedCoach.badge && (
+                                <span className="inline-block px-4 py-2 rounded-full bg-lime/10 text-lime text-sm font-semibold mb-8">
+                                    {selectedCoach.badge}
+                                </span>
+                            )}
 
-                        <motion.p
-                            initial={{ opacity: 0, y: 30 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ delay: 0.1 }}
-                            className="text-lg md:text-xl text-foreground/80 font-sans leading-relaxed"
-                        >
-                            Many of our programs are structured to meet HRDC requirements while maintaining practical, outcome-driven delivery.
-                            <br /><br />
-                            We handle the structure so your team can focus on learning and applying skills.
-                        </motion.p>
-                    </div>
-                </div>
-            </section>
+                            {/* Focus Areas */}
+                            <div className="mb-8">
+                                <h3 className="font-heading text-lg font-bold text-foreground mb-4">Focus areas</h3>
+                                <ul className="space-y-3">
+                                    {selectedCoach.focusAreas.map((area) => (
+                                        <li key={area} className="flex items-center gap-3">
+                                            <div className="w-2 h-2 rounded-full bg-lime flex-shrink-0" />
+                                            <span className="text-foreground font-sans">{area}</span>
+                                        </li>
+                                    ))}
+                                </ul>
+                            </div>
 
-            {/* Final CTA */}
-            <section className="py-32 md:py-40 bg-primary">
-                <div className="container">
-                    <div className="max-w-4xl mx-auto text-center">
-                        <motion.h2
-                            initial={{ opacity: 0, y: 30 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            className="headline-display font-heading text-5xl md:text-7xl text-white mb-8 leading-tight"
-                        >
-                            Not sure which coach is right for your team?
-                        </motion.h2>
+                            {/* Bio */}
+                            <div className="mb-8">
+                                <h3 className="font-heading text-lg font-bold text-foreground mb-4">Bio</h3>
+                                <div className="text-foreground/80 font-sans leading-relaxed whitespace-pre-line">
+                                    {selectedCoach.bio}
+                                </div>
+                            </div>
 
-                        <motion.p
-                            initial={{ opacity: 0, y: 30 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ delay: 0.1 }}
-                            className="text-xl md:text-2xl text-white/80 mb-12 font-sans"
-                        >
-                            Tell us what you are trying to improve. We will recommend the right coach and approach.
-                        </motion.p>
+                            {/* Best For */}
+                            <div className="mb-8">
+                                <h3 className="font-heading text-lg font-bold text-foreground mb-4">Best for</h3>
+                                <ul className="space-y-3">
+                                    {selectedCoach.bestFor.map((item) => (
+                                        <li key={item} className="flex items-center gap-3">
+                                            <div className="w-2 h-2 rounded-full bg-lime flex-shrink-0" />
+                                            <span className="text-foreground font-sans">{item}</span>
+                                        </li>
+                                    ))}
+                                </ul>
+                            </div>
 
-                        <motion.div
-                            initial={{ opacity: 0, y: 30 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ delay: 0.2 }}
-                        >
-                            <Button variant="lime" size="xl" asChild className="text-lg px-12 h-16 rounded-full font-semibold">
-                                <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer" className="flex items-center gap-3">
-                                    <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                                        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
-                                    </svg>
-                                    Chat with us
+                            {/* CTA */}
+                            <Button variant="dark" size="lg" asChild className="w-full rounded-full">
+                                <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer">
+                                    Chat with us about {selectedCoach.name.split(" ")[0]}
                                 </a>
                             </Button>
                         </motion.div>
                     </div>
-                </div>
-            </section>
-
-            {/* Coach Detail Modal */}
-            {selectedCoach && (
-                <div className="fixed inset-0 bg-black/60 z-50 flex items-center justify-center p-4 backdrop-blur-sm" onClick={() => setSelectedCoach(null)}>
-                    <motion.div
-                        initial={{ opacity: 0, scale: 0.95 }}
-                        animate={{ opacity: 1, scale: 1 }}
-                        className="bg-white rounded-3xl max-w-3xl w-full max-h-[90vh] overflow-y-auto p-8 md:p-12 relative"
-                        onClick={(e) => e.stopPropagation()}
-                    >
-                        <button
-                            onClick={() => setSelectedCoach(null)}
-                            className="absolute top-6 right-6 w-10 h-10 rounded-full bg-gray-100 hover:bg-gray-200 flex items-center justify-center transition-colors"
-                        >
-                            <X className="w-5 h-5" />
-                        </button>
-
-                        {/* Avatar */}
-                        <div className="w-32 h-32 rounded-full bg-gradient-to-br from-primary/20 to-lime/20 flex items-center justify-center mb-6">
-                            <span className="text-5xl font-bold text-primary font-heading">
-                                {getInitials(selectedCoach.name)}
-                            </span>
-                        </div>
-
-                        {/* Name & Title */}
-                        <h2 className="font-heading text-4xl font-bold text-foreground mb-3">
-                            {selectedCoach.name}
-                        </h2>
-                        <p className="text-xl text-foreground/70 mb-4 font-sans">
-                            {selectedCoach.title}
-                        </p>
-
-                        {/* Badge */}
-                        {selectedCoach.badge && (
-                            <span className="inline-block px-4 py-2 rounded-full bg-lime/10 text-lime text-sm font-semibold mb-8">
-                                {selectedCoach.badge}
-                            </span>
-                        )}
-
-                        {/* Focus Areas */}
-                        <div className="mb-8">
-                            <h3 className="font-heading text-lg font-bold text-foreground mb-4">Focus areas</h3>
-                            <ul className="space-y-3">
-                                {selectedCoach.focusAreas.map((area) => (
-                                    <li key={area} className="flex items-center gap-3">
-                                        <div className="w-2 h-2 rounded-full bg-lime flex-shrink-0" />
-                                        <span className="text-foreground font-sans">{area}</span>
-                                    </li>
-                                ))}
-                            </ul>
-                        </div>
-
-                        {/* Bio */}
-                        <div className="mb-8">
-                            <h3 className="font-heading text-lg font-bold text-foreground mb-4">Bio</h3>
-                            <div className="text-foreground/80 font-sans leading-relaxed whitespace-pre-line">
-                                {selectedCoach.bio}
-                            </div>
-                        </div>
-
-                        {/* Best For */}
-                        <div className="mb-8">
-                            <h3 className="font-heading text-lg font-bold text-foreground mb-4">Best for</h3>
-                            <ul className="space-y-3">
-                                {selectedCoach.bestFor.map((item) => (
-                                    <li key={item} className="flex items-center gap-3">
-                                        <div className="w-2 h-2 rounded-full bg-lime flex-shrink-0" />
-                                        <span className="text-foreground font-sans">{item}</span>
-                                    </li>
-                                ))}
-                            </ul>
-                        </div>
-
-                        {/* CTA */}
-                        <Button variant="dark" size="lg" asChild className="w-full rounded-full">
-                            <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer">
-                                Chat with us about {selectedCoach.name.split(" ")[0]}
-                            </a>
-                        </Button>
-                    </motion.div>
-                </div>
-            )}
-        </div>
+                )}
+            </div>
+            <Footer />
+        </>
     );
 }

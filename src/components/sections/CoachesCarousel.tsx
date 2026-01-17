@@ -162,8 +162,8 @@ export function CoachesCarousel() {
                                     key={index}
                                     onClick={() => setCurrentIndex(index)}
                                     className={`w-3 h-3 rounded-full transition-all duration-300 ${index === currentIndex
-                                            ? "bg-primary w-8"
-                                            : "bg-border hover:bg-primary/50"
+                                        ? "bg-primary w-8"
+                                        : "bg-border hover:bg-primary/50"
                                         }`}
                                 />
                             ))}
@@ -176,6 +176,15 @@ export function CoachesCarousel() {
                             className="rounded-full w-12 h-12 border-2 hover:bg-primary hover:text-white hover:border-primary transition-all"
                         >
                             <ChevronRight className="w-5 h-5" />
+                        </Button>
+                    </div>
+
+                    {/* Find out more CTA */}
+                    <div className="flex justify-center mt-12">
+                        <Button variant="dark" size="lg" asChild className="rounded-full">
+                            <a href="/coaches">
+                                Find out more about our coaches
+                            </a>
                         </Button>
                     </div>
                 </div>
