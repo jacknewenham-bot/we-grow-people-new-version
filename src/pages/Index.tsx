@@ -1,12 +1,31 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import { Header } from "@/components/layout/Header";
+import { Hero } from "@/components/sections/Hero";
+import { SocialProof } from "@/components/sections/SocialProof";
+import { Mission } from "@/components/sections/Mission";
+import { Features } from "@/components/sections/Features";
+import { Teams } from "@/components/sections/Teams";
+import { HowItWorks } from "@/components/sections/HowItWorks";
+import { Coaches } from "@/components/sections/Coaches";
+import { Testimonials } from "@/components/sections/Testimonials";
+import { FinalCTA } from "@/components/sections/FinalCTA";
+import { Footer } from "@/components/layout/Footer";
 
 const Index = () => {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="mb-4 text-4xl font-bold">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
-      </div>
+    <div className="min-h-screen bg-background">
+      <Header />
+      <main>
+        <Hero />
+        <SocialProof />
+        <Mission />
+        <Features />
+        <Teams />
+        <HowItWorks />
+        <Coaches />
+        <Testimonials />
+        <FinalCTA />
+      </main>
+      <Footer />
     </div>
   );
 };
