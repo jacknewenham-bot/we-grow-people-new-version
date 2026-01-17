@@ -1,64 +1,56 @@
 import { motion } from "framer-motion";
-import { TrendingUp, BarChart3, Users, Settings, Heart } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 const teams = [
   {
-    icon: TrendingUp,
     title: "Marketing teams",
     description: "Build growth systems that convert and scale.",
+    gradient: "from-lime/20 to-primary/20",
   },
   {
-    icon: BarChart3,
     title: "Sales teams",
     description: "Sell more confidently with modern workflows and better conversations.",
+    gradient: "from-yellow-200/50 to-lime/20",
   },
   {
-    icon: Users,
     title: "Leadership teams",
     description: "Lead with clarity, make better decisions, and build strong teams.",
+    gradient: "from-blue-200/50 to-primary/20",
   },
   {
-    icon: Settings,
     title: "Operations teams",
     description: "Improve execution, productivity, and internal processes.",
+    gradient: "from-primary/20 to-lime/20",
   },
   {
-    icon: Heart,
     title: "HR and people teams",
     description: "Support performance, culture, and wellbeing at work.",
+    gradient: "from-pink-200/50 to-lime/20",
   },
 ];
 
 export function Teams() {
   return (
-    <section className="py-20 md:py-28 bg-background">
+    <section className="py-20 md:py-28 bg-card">
       <div className="container">
         <div className="text-center mb-16">
-          <motion.span
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="inline-block px-4 py-2 rounded-full bg-accent-light text-accent font-medium text-sm mb-6"
-          >
-            For Every Team
-          </motion.span>
-
           <motion.h2
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ delay: 0.1 }}
-            className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4"
+            className="headline-display text-3xl md:text-5xl lg:text-6xl text-foreground mb-4"
           >
-            Designed for the entire company
+            Designed for the
+            <br />
+            entire company
           </motion.h2>
 
           <motion.p
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ delay: 0.2 }}
-            className="text-lg text-muted-foreground max-w-2xl mx-auto"
+            transition={{ delay: 0.1 }}
+            className="text-lg text-muted-foreground"
           >
             Different teams need different skills. We tailor programs to role, level, and goals.
           </motion.p>
@@ -72,22 +64,25 @@ export function Teams() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
-              className="group relative bg-card rounded-2xl p-8 border border-border shadow-card hover:shadow-card-hover transition-all duration-300"
+              className={`group relative rounded-3xl overflow-hidden bg-gradient-to-br ${team.gradient} p-1`}
             >
-              <div className="w-12 h-12 rounded-xl gradient-primary flex items-center justify-center mb-5 group-hover:scale-110 transition-transform duration-300">
-                <team.icon className="w-6 h-6 text-primary-foreground" />
+              <div className="bg-gradient-to-br from-gray-800/90 to-gray-900/90 rounded-[22px] p-8 h-full flex flex-col">
+                <h3 className="text-2xl font-bold text-white mb-3">
+                  {team.title}
+                </h3>
+
+                <p className="text-white/70 mb-6 flex-grow">
+                  {team.description}
+                </p>
+
+                <Button 
+                  variant="lime" 
+                  size="sm"
+                  className="w-fit"
+                >
+                  See use case
+                </Button>
               </div>
-
-              <h3 className="text-xl font-bold text-foreground mb-3">
-                {team.title}
-              </h3>
-
-              <p className="text-muted-foreground">
-                {team.description}
-              </p>
-
-              {/* Hover gradient effect */}
-              <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
             </motion.div>
           ))}
         </div>

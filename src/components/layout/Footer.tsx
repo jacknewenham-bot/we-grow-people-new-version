@@ -3,44 +3,70 @@ import { Button } from "@/components/ui/button";
 
 const WHATSAPP_LINK = "https://wa.me/60123456789";
 
-const footerLinks = [
-  { href: "#programs", label: "Programs" },
-  { href: "#how-it-works", label: "How it works" },
-  { href: "#coaches", label: "Coaches" },
-  { href: "#testimonials", label: "Testimonials" },
-];
+const footerLinks = {
+  teams: [
+    { href: "#", label: "Marketing teams" },
+    { href: "#", label: "Sales teams" },
+    { href: "#", label: "Leadership teams" },
+    { href: "#", label: "Operations teams" },
+    { href: "#", label: "HR teams" },
+  ],
+  programs: [
+    { href: "#programs", label: "Practical skills" },
+    { href: "#programs", label: "Expert-led coaching" },
+    { href: "#programs", label: "AI-powered learning" },
+    { href: "#programs", label: "HRDC claimable" },
+  ],
+  resources: [
+    { href: "#how-it-works", label: "How it works" },
+    { href: "#coaches", label: "Meet the coaches" },
+    { href: "#testimonials", label: "Testimonials" },
+  ],
+  contact: [
+    { href: WHATSAPP_LINK, label: "Chat with us" },
+  ],
+};
 
 export function Footer() {
   return (
-    <footer className="py-16 bg-foreground text-primary-foreground">
-      <div className="container">
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+    <footer className="bg-hero text-white">
+      {/* Mission banner */}
+      <div className="border-b border-white/10">
+        <div className="container py-6 flex flex-col md:flex-row items-center justify-between gap-4">
+          <div className="flex items-center gap-3">
+            <div className="w-8 h-8 rounded-full bg-lime flex items-center justify-center">
+              <Award className="w-4 h-4 text-lime-foreground" />
+            </div>
+            <span className="text-white/80">
+              HRDC claimable training built for Malaysian teams.
+            </span>
+          </div>
+          <Button variant="lime" size="sm" asChild>
+            <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer">
+              Learn more
+            </a>
+          </Button>
+        </div>
+      </div>
+
+      <div className="container py-16">
+        <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-12 mb-12">
           {/* Brand */}
-          <div className="lg:col-span-2">
-            <div className="flex items-center gap-2 mb-4">
-              <div className="w-10 h-10 rounded-xl bg-primary-foreground/10 flex items-center justify-center">
-                <span className="font-bold text-lg">W</span>
-              </div>
-              <span className="font-bold text-xl">WeGrowPeople</span>
-            </div>
-            <p className="text-primary-foreground/70 mb-6 max-w-md">
-              WeGrowPeople helps teams build the human skills that matter and adopt modern tools, including AI.
-            </p>
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary-foreground/10 text-sm">
-              <Award className="w-4 h-4" />
-              <span>HRDC claimable</span>
-            </div>
+          <div className="lg:col-span-1">
+            <span className="font-extrabold text-xl tracking-tight text-white mb-4 block">
+              WeGrowPeople
+            </span>
           </div>
 
-          {/* Links */}
+          {/* Teams */}
           <div>
-            <h4 className="font-semibold mb-4">Navigation</h4>
+            <h4 className="font-semibold text-lime mb-4">Teams</h4>
             <ul className="space-y-3">
-              {footerLinks.map((link) => (
-                <li key={link.href}>
+              {footerLinks.teams.map((link) => (
+                <li key={link.label}>
                   <a
                     href={link.href}
-                    className="text-primary-foreground/70 hover:text-primary-foreground transition-colors"
+                    className="text-white/70 hover:text-white transition-colors text-sm"
                   >
                     {link.label}
                   </a>
@@ -49,27 +75,62 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* CTA */}
+          {/* Programs */}
           <div>
-            <h4 className="font-semibold mb-4">Get Started</h4>
-            <p className="text-primary-foreground/70 mb-4 text-sm">
-              Ready to grow your team? Chat with us to get started.
-            </p>
-            <Button
-              variant="outline"
-              className="border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10 hover:text-primary-foreground"
-              asChild
-            >
-              <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer">
-                <MessageCircle className="w-4 h-4" />
-                Chat with us
-              </a>
-            </Button>
+            <h4 className="font-semibold text-lime mb-4">Programs</h4>
+            <ul className="space-y-3">
+              {footerLinks.programs.map((link) => (
+                <li key={link.label}>
+                  <a
+                    href={link.href}
+                    className="text-white/70 hover:text-white transition-colors text-sm"
+                  >
+                    {link.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Resources */}
+          <div>
+            <h4 className="font-semibold text-lime mb-4">Resources</h4>
+            <ul className="space-y-3">
+              {footerLinks.resources.map((link) => (
+                <li key={link.label}>
+                  <a
+                    href={link.href}
+                    className="text-white/70 hover:text-white transition-colors text-sm"
+                  >
+                    {link.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Contact */}
+          <div>
+            <h4 className="font-semibold text-lime mb-4">Contact</h4>
+            <ul className="space-y-3">
+              {footerLinks.contact.map((link) => (
+                <li key={link.label}>
+                  <a
+                    href={link.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-white/70 hover:text-white transition-colors text-sm"
+                  >
+                    {link.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
 
-        <div className="pt-8 border-t border-primary-foreground/10 text-center">
-          <p className="text-primary-foreground/50 text-sm">
+        <div className="pt-8 border-t border-white/10 text-center">
+          <p className="text-white/50 text-sm">
             © {new Date().getFullYear()} WeGrowPeople. All rights reserved.
           </p>
         </div>

@@ -5,26 +5,30 @@ import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "@/lib/utils";
 
 const buttonVariants = cva(
-  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-full text-sm font-semibold ring-offset-background transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0",
+  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-full text-sm font-semibold ring-offset-background transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0",
   {
     variants: {
       variant: {
-        default: "bg-primary text-primary-foreground hover:bg-primary/90 shadow-md hover:shadow-lg",
+        default: "bg-primary text-primary-foreground hover:bg-primary/90",
         destructive: "bg-destructive text-destructive-foreground hover:bg-destructive/90",
-        outline: "border-2 border-primary bg-transparent text-primary hover:bg-primary hover:text-primary-foreground",
+        outline: "border border-input bg-background hover:bg-accent hover:text-accent-foreground",
         secondary: "bg-secondary text-secondary-foreground hover:bg-secondary/80",
-        ghost: "hover:bg-accent/10 hover:text-accent",
+        ghost: "hover:bg-accent hover:text-accent-foreground",
         link: "text-primary underline-offset-4 hover:underline",
-        hero: "gradient-primary text-primary-foreground shadow-lg hover:shadow-xl hover:scale-[1.02] active:scale-[0.98]",
-        heroOutline: "border-2 border-primary/30 bg-card/80 backdrop-blur-sm text-foreground hover:border-primary hover:bg-primary-light",
-        pill: "bg-primary-light text-primary hover:bg-primary-muted",
-        cta: "gradient-primary text-primary-foreground shadow-lg hover:shadow-xl hover:scale-[1.02] active:scale-[0.98] font-bold",
+        // Tomorro-style lime CTA
+        lime: "bg-lime text-lime-foreground hover:brightness-105 active:brightness-95 shadow-md hover:shadow-lg",
+        // Dark pill button
+        dark: "bg-primary text-primary-foreground hover:bg-primary-muted",
+        // Outline on dark hero
+        heroOutline: "border-2 border-white/30 text-white bg-transparent hover:bg-white/10 hover:border-white/50",
+        // Light outline with white bg
+        lightOutline: "border-2 border-foreground/20 text-foreground bg-white hover:bg-foreground/5",
       },
       size: {
-        default: "h-11 px-6 py-2",
-        sm: "h-9 px-4 text-xs",
-        lg: "h-14 px-8 text-base",
-        xl: "h-16 px-10 text-lg",
+        default: "h-10 px-5 py-2",
+        sm: "h-9 px-4",
+        lg: "h-12 px-6 text-base",
+        xl: "h-14 px-8 text-base",
         icon: "h-10 w-10",
       },
     },

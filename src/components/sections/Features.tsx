@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Lightbulb, Users, Cpu, Award, CheckCircle } from "lucide-react";
+import { Lightbulb, Users, Cpu, Award } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 const features = [
   {
@@ -14,7 +15,7 @@ const features = [
   {
     id: "expert",
     icon: Users,
-    title: "Expert-led coaching",
+    title: "Expert-led",
     headline: "Learn from people who have done the work.",
     body: "We work with experienced practitioners across growth, sales, leadership, project management, AI, content, and wellbeing.",
     bullets: ["Industry experience", "Modern playbooks", "Malaysia-relevant use cases"],
@@ -22,7 +23,7 @@ const features = [
   {
     id: "ai",
     icon: Cpu,
-    title: "AI-powered learning",
+    title: "AI-powered",
     headline: "Use modern tools to move faster.",
     body: "We help teams adopt AI in a practical way, from workflows to automation, so they can perform better with less effort.",
     bullets: ["AI workflows", "Vibe coding for business", "Agent-based productivity"],
@@ -42,53 +43,44 @@ export function Features() {
   const activeFeature = features.find((f) => f.id === activeTab)!;
 
   return (
-    <section id="programs" className="py-20 md:py-28 gradient-hero">
+    <section id="programs" className="py-20 md:py-28 bg-background">
       <div className="container">
-        <div className="text-center mb-12">
-          <motion.span
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="inline-block px-4 py-2 rounded-full bg-primary-light text-primary font-medium text-sm mb-6"
-          >
-            What We Offer
-          </motion.span>
+        {/* Section Title */}
+        <motion.h2
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="headline-display text-3xl md:text-5xl lg:text-6xl text-foreground text-center mb-12"
+        >
+          Our Features
+        </motion.h2>
 
-          <motion.h2
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.1 }}
-            className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4"
-          >
-            Where human skills meet{" "}
-            <span className="text-gradient">smart technology</span>
-          </motion.h2>
-        </div>
-
+        {/* Tab Pills - Dark pill style */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ delay: 0.2 }}
-          className="flex flex-wrap justify-center gap-3 mb-12"
+          transition={{ delay: 0.1 }}
+          className="flex justify-center mb-16"
         >
-          {features.map((feature) => (
-            <button
-              key={feature.id}
-              onClick={() => setActiveTab(feature.id)}
-              className={`flex items-center gap-2 px-5 py-3 rounded-full font-medium text-sm transition-all duration-300 ${
-                activeTab === feature.id
-                  ? "gradient-primary text-primary-foreground shadow-md"
-                  : "bg-card text-muted-foreground hover:text-foreground border border-border hover:border-primary/30"
-              }`}
-            >
-              <feature.icon className="w-4 h-4" />
-              {feature.title}
-            </button>
-          ))}
+          <div className="inline-flex items-center bg-primary rounded-full p-1.5">
+            {features.map((feature) => (
+              <button
+                key={feature.id}
+                onClick={() => setActiveTab(feature.id)}
+                className={`px-5 py-2.5 rounded-full font-medium text-sm transition-all duration-300 ${
+                  activeTab === feature.id
+                    ? "bg-white text-foreground shadow-md"
+                    : "text-white/70 hover:text-white"
+                }`}
+              >
+                {feature.title}
+              </button>
+            ))}
+          </div>
         </motion.div>
 
+        {/* Feature Content */}
         <AnimatePresence mode="wait">
           <motion.div
             key={activeTab}
@@ -96,32 +88,36 @@ export function Features() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.3 }}
-            className="max-w-3xl mx-auto"
+            className="grid lg:grid-cols-2 gap-12 items-center"
           >
-            <div className="bg-card rounded-3xl p-8 md:p-12 shadow-card border border-border">
-              <div className="flex items-center gap-4 mb-6">
-                <div className="w-14 h-14 rounded-2xl gradient-primary flex items-center justify-center">
-                  <activeFeature.icon className="w-7 h-7 text-primary-foreground" />
-                </div>
-                <h3 className="text-2xl md:text-3xl font-bold text-foreground">
-                  {activeFeature.headline}
-                </h3>
-              </div>
+            {/* Text Content */}
+            <div>
+              <h3 className="text-2xl md:text-3xl font-bold text-foreground mb-4">
+                {activeFeature.headline}
+              </h3>
 
               <p className="text-lg text-muted-foreground mb-8">
                 {activeFeature.body}
               </p>
 
-              <div className="grid sm:grid-cols-3 gap-4">
+              <ul className="space-y-4 mb-8">
                 {activeFeature.bullets.map((bullet) => (
-                  <div
-                    key={bullet}
-                    className="flex items-center gap-3 p-4 rounded-xl bg-primary-light/50"
-                  >
-                    <CheckCircle className="w-5 h-5 text-primary flex-shrink-0" />
-                    <span className="text-foreground font-medium">{bullet}</span>
-                  </div>
+                  <li key={bullet} className="flex items-center gap-3">
+                    <div className="w-2.5 h-2.5 rounded-full bg-lime flex-shrink-0" />
+                    <span className="text-foreground">{bullet}</span>
+                  </li>
                 ))}
+              </ul>
+
+              <Button variant="dark" size="lg">
+                Learn more about {activeFeature.title.toLowerCase()}
+              </Button>
+            </div>
+
+            {/* Visual Placeholder - styled card */}
+            <div className="bg-card rounded-3xl p-8 shadow-card border border-border">
+              <div className="aspect-[4/3] rounded-2xl bg-gradient-to-br from-primary/10 to-lime/10 flex items-center justify-center">
+                <activeFeature.icon className="w-20 h-20 text-primary/40" />
               </div>
             </div>
           </motion.div>
