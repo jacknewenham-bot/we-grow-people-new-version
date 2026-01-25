@@ -18,9 +18,10 @@ const footerLinks = {
     { href: "#programs", label: "HRDC claimable" },
   ],
   resources: [
-    { href: "#how-it-works", label: "How it works" },
-    { href: "#coaches", label: "Meet the coaches" },
-    { href: "#testimonials", label: "Testimonials" },
+    { href: "/about", label: "About Us" },
+    { href: "/#how-it-works", label: "How it works" },
+    { href: "/coaches", label: "Meet the coaches" },
+    { href: "/#testimonials", label: "Testimonials" },
   ],
   contact: [
     { href: WHATSAPP_LINK, label: "Chat with us" },

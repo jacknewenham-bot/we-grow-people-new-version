@@ -4,10 +4,10 @@ import { Button } from "@/components/ui/button";
 import { Menu, X, MessageCircle } from "lucide-react";
 
 const navLinks = [
-  { href: "#programs", label: "Programs", isAnchor: true },
-  { href: "#how-it-works", label: "How it works", isAnchor: true },
+  { href: "/", label: "Home", isAnchor: false },
+  { href: "/about", label: "About", isAnchor: false },
   { href: "/coaches", label: "Coaches", isAnchor: false },
-  { href: "#testimonials", label: "Testimonials", isAnchor: true },
+  { href: "/#programs", label: "Programs", isAnchor: true },
 ];
 
 const WHATSAPP_LINK = "https://wa.me/60173552382?text=Hi%20there%2C%20I'm%20interested%20in%20finding%20out%20more%20about%20your%20training";
@@ -27,8 +27,8 @@ export function Header() {
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled
-          ? "bg-white/95 backdrop-blur-md shadow-md py-3"
-          : "bg-hero py-5"
+        ? "bg-white/95 backdrop-blur-md shadow-md py-3"
+        : "bg-hero py-5"
         }`}
     >
       <div className="container flex items-center justify-between">
@@ -46,8 +46,8 @@ export function Header() {
               key={link.href}
               href={link.href}
               className={`transition-colors font-medium text-sm ${isScrolled
-                  ? "text-muted-foreground hover:text-foreground"
-                  : "text-white/80 hover:text-white"
+                ? "text-muted-foreground hover:text-foreground"
+                : "text-white/80 hover:text-white"
                 }`}
             >
               {link.label}
