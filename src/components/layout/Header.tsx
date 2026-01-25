@@ -7,6 +7,7 @@ const navLinks = [
   { href: "/", label: "Home", isAnchor: false },
   { href: "/about", label: "About", isAnchor: false },
   { href: "/coaches", label: "Coaches", isAnchor: false },
+  { href: "/contact", label: "Contact", isAnchor: false },
   { href: "/#programs", label: "Programs", isAnchor: true },
 ];
 
