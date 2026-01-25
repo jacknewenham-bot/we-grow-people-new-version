@@ -23,6 +23,8 @@ const buttonVariants = cva(
         heroOutline: "border-2 border-white/30 text-white bg-transparent hover:bg-white/10 hover:border-white/50",
         // Light outline with white bg
         lightOutline: "border-2 border-foreground/20 text-foreground bg-white hover:bg-foreground/5",
+        // Solid white with dark text
+        white: "bg-white text-primary hover:bg-white/90 shadow-md",
       },
       size: {
         default: "h-10 px-5 py-2",
@@ -41,7 +43,7 @@ const buttonVariants = cva(
 
 export interface ButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement>,
-    VariantProps<typeof buttonVariants> {
+  VariantProps<typeof buttonVariants> {
   asChild?: boolean;
 }
 

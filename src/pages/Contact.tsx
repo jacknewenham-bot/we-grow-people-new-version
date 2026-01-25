@@ -100,10 +100,10 @@ const Contact = () => {
                                 </a>
                             </Button>
                             <Button
-                                variant="outline"
+                                variant="white"
                                 size="xl"
                                 onClick={scrollToForm}
-                                className="rounded-full px-10 py-7 text-lg border-white/20 text-white hover:bg-white/10"
+                                className="rounded-full px-10 py-7 text-lg"
                             >
                                 <Send className="mr-2 h-5 w-5" /> Send us a message
                             </Button>

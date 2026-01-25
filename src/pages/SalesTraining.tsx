@@ -64,10 +64,10 @@ const SalesTraining = () => {
                                 </a>
                             </Button>
                             <Button
-                                variant="outline"
+                                variant="white"
                                 size="xl"
                                 onClick={scrollToPrograms}
-                                className="rounded-full px-10 py-7 text-lg border-white/20 text-white hover:bg-white/10"
+                                className="rounded-full px-10 py-7 text-lg font-bold"
                             >
                                 Explore programs
                             </Button>

@@ -416,7 +416,7 @@ const About = () => {
                                     Talk to us
                                 </a>
                             </Button>
-                            <Button variant="outline" size="xl" asChild className="text-lg px-12 py-8 rounded-full">
+                            <Button variant="white" size="xl" asChild className="text-lg px-12 py-8 rounded-full">
                                 <a href="/#programs">
                                     Explore training
                                 </a>

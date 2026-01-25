@@ -43,7 +43,7 @@ const CourseDetail = () => {
                                     <Button variant="primary" size="xl" className="rounded-full px-10">
                                         Get course outline
                                     </Button>
-                                    <Button variant="outline" size="xl" className="rounded-full px-10">
+                                    <Button variant="white" size="xl" className="rounded-full px-10">
                                         Book for your team
                                     </Button>
                                 </div>
