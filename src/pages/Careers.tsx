@@ -272,7 +272,7 @@ const Careers = () => {
                                     If you have deep real-world experience and enjoy helping others grow, we would love to hear from you.
                                 </p>
                                 <Button variant="lime" size="xl" asChild className="rounded-full">
-                                    <a href="/contact?type=coach">Apply as a coach</a>
+                                    <a href="/apply-practitioner">Apply as a coach</a>
                                 </Button>
                             </div>
                             <div className="flex-1 grid grid-cols-2 gap-4">

@@ -39,7 +39,8 @@ import {
     ClipboardCheck,
     Handshake,
     Sparkles,
-    Globe
+    Globe,
+    BrainCircuit
 } from "lucide-react";
 
 const formSchema = z.object({
@@ -321,8 +322,8 @@ const PractitionerApply = () => {
                                         <p className="text-xl text-muted-foreground mb-8 max-w-md mx-auto">
                                             Thanks for applying. Our team will review your profile and get back to you if there is a fit.
                                         </p>
-                                        <Button variant="outline" onClick={() => setIsSubmitted(false)} className="rounded-full">
-                                            Back to page
+                                        <Button variant="lime" size="xl" asChild className="rounded-full">
+                                            <a href="/apply-practitioner">Apply as a coach</a>
                                         </Button>
                                     </motion.div>
                                 ) : (

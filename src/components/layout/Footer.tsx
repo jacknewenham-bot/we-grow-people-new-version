@@ -12,6 +12,7 @@ const footerLinks = {
     { href: "#", label: "HR teams" },
   ],
   programs: [
+    { href: "/sales-training", label: "Sales Training" },
     { href: "#programs", label: "Practical skills" },
     { href: "#programs", label: "Expert-led coaching" },
     { href: "#programs", label: "AI-powered learning" },
