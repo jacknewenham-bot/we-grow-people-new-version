@@ -374,7 +374,7 @@ const SalesTraining = () => {
                         <h2 className="headline-display text-4xl mb-16 text-center">What teams say about <br /> working with us</h2>
                         <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-8">
                             {[
-                                "Finally, sales training that isn't just theory. Our team was able to use the frameworks in deal calls the same afternoon. High energy and deeply practical.",
+                                "Jack was incredibly helpful in advising on our lead generation approach. He provided practical advice on increasing volume and was exceptionally generous with his knowledge.",
                                 "WeGrowPeople delivered a program that actually reflected our APAC sales reality. The mapping of the frameworks to our real-world deals made all the difference."
                             ].map((quote, i) => (
                                 <div key={i} className="p-10 rounded-[2.5rem] bg-white border border-border shadow-sm italic text-lg text-muted-foreground relative">

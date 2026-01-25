@@ -8,7 +8,7 @@ const navLinks = [
   { href: "/about", label: "About", isAnchor: false },
   { href: "/coaches", label: "Coaches", isAnchor: false },
   { href: "/contact", label: "Contact", isAnchor: false },
-  { href: "/careers", label: "Careers", isAnchor: false },
+  { href: "/careers", label: "Join our team", isAnchor: false },
 ];
 
 const trainingCategories = [

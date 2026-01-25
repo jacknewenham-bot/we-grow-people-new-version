@@ -2,22 +2,22 @@ import { motion } from "framer-motion";
 
 const testimonials = [
   {
-    quote: "The training was practical and immediately applicable. Our team communicated better within weeks. Its intuitive approach and robust framework match the requirements of our industry.",
-    author: "Sarah Chen",
-    role: "Marketing Director",
-    company: "Tech Startup",
+    quote: "Jack's guidance has been incredible. His support was invaluable, offering insightful advice that truly made a difference. His expertise extends beyond technical knowledge; he is exceptionally well-versed in marketing strategies.",
+    author: "Aurielle",
+    role: "Product Manager",
+    company: "Delman.io",
   },
   {
-    quote: "Our managers finally had frameworks they could use immediately. This felt modern, relevant, and designed for real work.",
-    author: "Ahmad Rahman",
-    role: "HR Lead",
-    company: "E-commerce Company",
+    quote: "I had an outstanding session with Jack! He provided clear direction and introduced me to powerful new tools to enhance my performance. I genuinely appreciated the insights and actionable advice he shared.",
+    author: "Lauren Ellis",
+    role: "Growth Marketing Manager",
+    company: "Produce8",
   },
   {
-    quote: "The support and responsiveness of the WeGrowPeople team made all the difference. Highly recommend for any growing company.",
-    author: "Mei Ling Tan",
-    role: "Operations Manager",
-    company: "Consulting Firm",
+    quote: "Jack was very helpful in pinpointing my current issues and giving actionable advice. He is honest, professional, and super generous with his knowledge. I definitely recommend him for any team seeking growth.",
+    author: "Amber Yang",
+    role: "Social Media Strategist",
+    company: "Edge Labs",
   },
 ];
 

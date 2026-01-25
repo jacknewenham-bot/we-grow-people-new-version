@@ -24,6 +24,10 @@ const Careers = () => {
         document.getElementById("open-roles")?.scrollIntoView({ behavior: "smooth" });
     };
 
+    const scrollToCoaches = () => {
+        document.getElementById("coaches-section")?.scrollIntoView({ behavior: "smooth" });
+    };
+
     return (
         <div className="min-h-screen bg-background">
             <Header />
@@ -60,12 +64,10 @@ const Careers = () => {
                             <Button
                                 variant="outline"
                                 size="xl"
-                                asChild
+                                onClick={scrollToCoaches}
                                 className="rounded-full px-10 py-7 text-lg border-white/20 text-white hover:bg-white/10"
                             >
-                                <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer">
-                                    <MessageCircle className="mr-2 h-5 w-5" /> Chat with us
-                                </a>
+                                Become a coach
                             </Button>
                         </motion.div>
                     </div>
@@ -259,7 +261,7 @@ const Careers = () => {
                 </section>
 
                 {/* 7. Coaching and Trainer Opportunities */}
-                <section className="py-24 bg-primary text-white relative overflow-hidden">
+                <section id="coaches-section" className="py-24 bg-primary text-white relative overflow-hidden">
                     <div className="absolute top-0 right-0 w-1/2 h-full bg-lime/5 blur-[120px] pointer-events-none" />
                     <div className="container relative z-10">
                         <div className="max-w-4xl mx-auto flex flex-col md:flex-row items-center gap-16">
