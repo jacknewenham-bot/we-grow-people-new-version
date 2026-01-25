@@ -16,7 +16,7 @@ const trainingCategories = [
     id: "sales",
     label: "Sales Training",
     description: "All Sales Programs",
-    href: "/training/sales",
+    href: "/sales-training",
     courses: [
       { label: "Sales Fundamentals", href: "/training/sales/sales-fundamentals" },
       { label: "Prospecting", href: "/training/sales/prospecting" },

@@ -21,7 +21,7 @@ const footerLinks = {
   resources: [
     { href: "/about", label: "About Us" },
     { href: "/contact", label: "Contact Us" },
-    { href: "/careers", label: "Careers" },
+    { href: "/careers", label: "Join our team" },
     { href: "/#how-it-works", label: "How it works" },
     { href: "/coaches", label: "Meet the coaches" },
     { href: "/#testimonials", label: "Testimonials" },
