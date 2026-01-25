@@ -81,75 +81,181 @@ const About = () => {
                 </section>
 
                 {/* 2. The Problem We Exist to Solve */}
-                <section className="py-24 bg-white">
+                <section className="py-24 bg-white overflow-hidden">
                     <div className="container">
-                        <div className="max-w-4xl mx-auto">
-                            <motion.h2
-                                initial={{ opacity: 0, x: -20 }}
+                        <div className="grid lg:grid-cols-2 gap-16 items-center mb-24">
+                            <motion.div
+                                initial={{ opacity: 0, x: -30 }}
                                 whileInView={{ opacity: 1, x: 0 }}
                                 viewport={{ once: true }}
-                                className="headline-display text-3xl md:text-5xl mb-12"
                             >
-                                The problem with <br />
-                                traditional training
-                            </motion.h2>
-
-                            <div className="grid md:grid-cols-2 gap-8 mb-16">
-                                {[
-                                    "Too theoretical",
-                                    "Too generic",
-                                    "Too disconnected from real work",
-                                    "Outdated the moment it is delivered"
-                                ].map((point, i) => (
-                                    <motion.div
-                                        key={point}
-                                        initial={{ opacity: 0, y: 10 }}
-                                        whileInView={{ opacity: 1, y: 0 }}
-                                        viewport={{ once: true }}
-                                        transition={{ delay: i * 0.1 }}
-                                        className="flex items-start gap-4 p-6 rounded-2xl bg-muted/30"
-                                    >
-                                        <XCircle className="w-6 h-6 text-destructive shrink-0 mt-1" />
-                                        <span className="text-xl font-medium">{point}</span>
-                                    </motion.div>
-                                ))}
-                            </div>
-
+                                <h2 className="headline-display text-3xl md:text-5xl mb-8">
+                                    The problem with <br />
+                                    traditional training
+                                </h2>
+                                <div className="space-y-4">
+                                    {[
+                                        "Too theoretical and academic",
+                                        "Generic, one-size-fits-all content",
+                                        "Disconnected from daily work realities",
+                                        "Outdated before the ink is dry"
+                                    ].map((point, i) => (
+                                        <div key={point} className="flex items-center gap-3 text-lg font-medium text-muted-foreground">
+                                            <XCircle className="w-5 h-5 text-destructive" />
+                                            {point}
+                                        </div>
+                                    ))}
+                                </div>
+                            </motion.div>
                             <motion.div
-                                initial={{ opacity: 0, scale: 0.95 }}
+                                initial={{ opacity: 0, scale: 0.9 }}
                                 whileInView={{ opacity: 1, scale: 1 }}
                                 viewport={{ once: true }}
-                                className="p-8 md:p-12 rounded-3xl bg-primary text-white text-center"
+                                className="relative"
                             >
-                                <p className="text-2xl md:text-3xl font-bold leading-tight">
-                                    Learning should not feel like a checkbox. <br />
-                                    <span className="text-lime">It should change how people show up at work immediately.</span>
-                                </p>
+                                <div className="aspect-square rounded-3xl overflow-hidden shadow-2xl skew-y-1">
+                                    <img
+                                        src="/images/about/team_collaboration_tech_1769341635874.png"
+                                        alt="Traditional training vs Modern collaboration"
+                                        className="w-full h-full object-cover"
+                                    />
+                                </div>
+                                <div className="absolute -bottom-6 -right-6 bg-lime text-primary p-6 rounded-2xl shadow-xl font-bold max-w-[200px] -rotate-3">
+                                    "Learning shouldn't be a checkbox."
+                                </div>
+                            </motion.div>
+                        </div>
+
+                        <motion.div
+                            initial={{ opacity: 0, y: 30 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            className="p-8 md:p-16 rounded-[3rem] bg-primary text-white text-center relative overflow-hidden"
+                        >
+                            <div className="absolute inset-0 opacity-10 pointer-events-none">
+                                <div className="absolute top-0 left-0 w-64 h-64 bg-lime rounded-full blur-[100px]" />
+                                <div className="absolute bottom-0 right-0 w-64 h-64 bg-lime rounded-full blur-[100px]" />
+                            </div>
+                            <p className="text-2xl md:text-4xl font-bold leading-tight relative z-10">
+                                Real training should change how people <br />
+                                <span className="text-lime">show up at work immediately.</span>
+                            </p>
+                        </motion.div>
+                    </div>
+                </section>
+
+                {/* 3. Impact in Action (New Gallery Section) */}
+                <section className="py-24 bg-muted/20">
+                    <div className="container">
+                        <div className="text-center mb-16">
+                            <h2 className="headline-display text-4xl md:text-5xl mb-6">Impact in Action</h2>
+                            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+                                We believe in high-energy, high-impact sessions where learning meets execution.
+                            </p>
+                        </div>
+
+                        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                            <motion.div
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                className="space-y-8"
+                            >
+                                <div className="aspect-[4/3] rounded-3xl overflow-hidden shadow-lg group">
+                                    <img
+                                        src="/images/about/modern_corporate_workshop_1769341602532.png"
+                                        alt="Workshop Session"
+                                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                                    />
+                                </div>
+                                <div className="p-8 rounded-3xl bg-white border border-border shadow-sm">
+                                    <h3 className="text-xl font-bold mb-3">Interactive Workshops</h3>
+                                    <p className="text-muted-foreground">No slide-deck fatigue. Our sessions are built around doing, not just watching.</p>
+                                </div>
+                            </motion.div>
+
+                            <motion.div
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ delay: 0.1 }}
+                                className="space-y-8"
+                            >
+                                <div className="p-8 rounded-3xl bg-primary text-white">
+                                    <Zap className="w-10 h-10 text-lime mb-6" />
+                                    <h3 className="text-2xl font-bold mb-4">Fast-Paced Growth</h3>
+                                    <p className="text-white/80 leading-relaxed">
+                                        We design our curriculums to be rapid-response. When the market moves, our training moves with it.
+                                    </p>
+                                </div>
+                                <div className="aspect-[4/5] rounded-3xl overflow-hidden shadow-lg group">
+                                    <img
+                                        src="/images/about/trainer_in_action_1769341618326.png"
+                                        alt="Trainer leading a group"
+                                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                                    />
+                                </div>
+                            </motion.div>
+
+                            <motion.div
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ delay: 0.2 }}
+                                className="space-y-8"
+                            >
+                                <div className="aspect-square rounded-3xl overflow-hidden shadow-lg group">
+                                    <img
+                                        src="https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=2070&auto=format&fit=crop"
+                                        alt="Collaboration"
+                                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                                    />
+                                </div>
+                                <div className="p-8 rounded-3xl bg-lime text-primary">
+                                    <h3 className="text-xl font-bold mb-3">Real Capability</h3>
+                                    <p className="font-medium">Building the skills that actually matter in a tech-enabled world.</p>
+                                </div>
                             </motion.div>
                         </div>
                     </div>
                 </section>
 
-                {/* 3. Our Mission */}
-                <section className="py-24 bg-muted/20">
+                {/* 4. Our Mission */}
+                <section className="py-24 bg-white">
                     <div className="container">
-                        <div className="max-w-4xl mx-auto text-center">
-                            <motion.h2
-                                initial={{ opacity: 0, y: 20 }}
-                                whileInView={{ opacity: 1, y: 0 }}
+                        <div className="grid lg:grid-cols-2 gap-16 items-center">
+                            <motion.div
+                                initial={{ opacity: 0, x: -30 }}
+                                whileInView={{ opacity: 1, x: 0 }}
                                 viewport={{ once: true }}
-                                className="headline-display text-4xl md:text-5xl mb-8"
+                                className="order-2 lg:order-1"
                             >
-                                Our mission
-                            </motion.h2>
-                            <div className="space-y-6 text-xl text-muted-foreground leading-relaxed">
-                                <p>
-                                    We empower individuals and teams with up-to-date, practical training in sales, communication, performance, and AI so they stay ahead of the curve instead of chasing it.
-                                </p>
-                                <p>
-                                    Through expert-led coaching, proven frameworks, and AI-powered learning, we deliver no-fluff, high-impact training that builds confidence, capability, and real results.
-                                </p>
-                            </div>
+                                <h2 className="headline-display text-4xl md:text-5xl mb-8">
+                                    Our mission
+                                </h2>
+                                <div className="space-y-6 text-xl text-muted-foreground leading-relaxed">
+                                    <p>
+                                        We empower individuals and teams with up-to-date, practical training in sales, communication, performance, and AI so they stay ahead of the curve instead of chasing it.
+                                    </p>
+                                    <p>
+                                        Through expert-led coaching, proven frameworks, and AI-powered learning, we deliver no-fluff, high-impact training that builds confidence, capability, and real results.
+                                    </p>
+                                </div>
+                            </motion.div>
+                            <motion.div
+                                initial={{ opacity: 0, x: 30 }}
+                                whileInView={{ opacity: 1, x: 0 }}
+                                viewport={{ once: true }}
+                                className="order-1 lg:order-2"
+                            >
+                                <div className="aspect-video rounded-[2rem] overflow-hidden shadow-xl border-8 border-muted">
+                                    <img
+                                        src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?q=80&w=2070&auto=format&fit=crop"
+                                        alt="Team Growth"
+                                        className="w-full h-full object-cover"
+                                    />
+                                </div>
+                            </motion.div>
                         </div>
                     </div>
                 </section>
