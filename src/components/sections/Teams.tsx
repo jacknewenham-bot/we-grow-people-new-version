@@ -6,36 +6,42 @@ const teams = [
     title: "Marketing teams",
     description: "Build growth systems that convert and scale.",
     gradient: "from-lime/20 to-primary/20",
+    image: "/teams/1.png",
     href: "/training/marketing",
   },
   {
     title: "Sales teams",
     description: "Sell more confidently with modern workflows and better conversations.",
     gradient: "from-yellow-200/50 to-lime/20",
+    image: "/teams/2.png",
     href: "/sales-training",
   },
   {
     title: "Leadership teams",
     description: "Lead with clarity, make better decisions, and build strong teams.",
     gradient: "from-blue-200/50 to-primary/20",
+    image: "/teams/3.png",
     href: "/training/management",
   },
   {
     title: "Operations teams",
     description: "Improve execution, productivity, and internal processes.",
     gradient: "from-primary/20 to-lime/20",
+    image: "/teams/4.png",
     href: "/training/operations",
   },
   {
     title: "HR and people teams",
     description: "Support performance, culture, and wellbeing at work.",
     gradient: "from-pink-200/50 to-lime/20",
+    image: "/teams/5.png",
     href: "/training/management",
   },
   {
     title: "Finance teams",
     description: "Streamline processes and improve financial decision-making.",
     gradient: "from-purple-200/50 to-lime/20",
+    image: "/teams/6.png",
     href: "/training/operations",
   },
 ];
@@ -79,15 +85,19 @@ export function Teams() {
             >
               {/* Image placeholder */}
               <div className={`h-64 bg-gradient-to-br ${team.gradient} relative`}>
-                <div className="absolute inset-0 bg-black/20"></div>
+                <img
+                  src={team.image}
+                  alt={team.title}
+                  className="absolute inset-0 h-full w-full object-cover"
+                />
+                <div className="absolute inset-0 bg-black/30"></div>
+                <h3 className="font-heading text-2xl md:text-3xl font-bold text-white absolute bottom-6 left-6 z-10">
+                  {team.title}
+                </h3>
               </div>
 
               {/* Content */}
               <div className="p-8">
-                <h3 className="font-heading text-2xl md:text-3xl font-bold text-white mb-4 absolute top-48 left-8 z-10">
-                  {team.title}
-                </h3>
-
                 <p className="text-foreground/70 mb-6 leading-relaxed">
                   {team.description}
                 </p>
