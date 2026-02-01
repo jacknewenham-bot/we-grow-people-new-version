@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { ArrowDown, ArrowLeft, ArrowRight } from "lucide-react";
 
 const testimonials = [
@@ -95,6 +95,7 @@ const testimonials = [
 
 export function Testimonials() {
   const [expanded, setExpanded] = useState<Set<number>>(new Set());
+  const trackRef = useRef<HTMLDivElement | null>(null);
 
   const toggleExpanded = (index: number) => {
     setExpanded((prev) => {
@@ -106,6 +107,16 @@ export function Testimonials() {
       }
       return next;
     });
+  };
+
+  const scrollByAmount = (direction: "prev" | "next") => {
+    const track = trackRef.current;
+    if (!track) return;
+    const card = track.querySelector<HTMLElement>("[data-testimonial-card]");
+    const cardWidth = card?.offsetWidth ?? 360;
+    const gap = 32;
+    const delta = direction === "next" ? cardWidth + gap : -(cardWidth + gap);
+    track.scrollBy({ left: delta, behavior: "smooth" });
   };
 
   return (
@@ -149,19 +160,23 @@ export function Testimonials() {
 
         {/* Testimonial Carousel */}
         <div className="relative">
-          <div className="flex gap-8 overflow-x-auto pb-6 -mx-6 px-6 snap-x snap-mandatory scrollbar-none">
+          <div
+            ref={trackRef}
+            className="flex gap-8 overflow-x-auto pb-6 -mx-6 px-6 snap-x snap-mandatory scrollbar-none"
+          >
             {testimonials.map((testimonial, index) => {
               const isExpanded = expanded.has(index);
               const isLong = testimonial.quote.length > 280;
               return (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-                className="min-w-[280px] sm:min-w-[320px] lg:min-w-[360px] xl:min-w-[380px] snap-start bg-[#F1F1E6] rounded-[2.25rem] p-10 border border-foreground/5 shadow-[0_12px_30px_rgba(20,40,20,0.08)] hover:shadow-[0_18px_40px_rgba(20,40,20,0.12)] transition-all duration-500 flex flex-col"
-              >
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.1 }}
+                  data-testimonial-card
+                  className="min-w-[280px] sm:min-w-[320px] lg:min-w-[360px] xl:min-w-[380px] snap-start bg-[#F1F1E6] rounded-[2.25rem] p-10 border border-foreground/5 shadow-[0_12px_30px_rgba(20,40,20,0.08)] hover:shadow-[0_18px_40px_rgba(20,40,20,0.12)] transition-all duration-500 flex flex-col"
+                >
                 <p
                   className="text-foreground text-lg md:text-xl leading-relaxed font-sans"
                   style={
@@ -213,6 +228,7 @@ export function Testimonials() {
             <button
               type="button"
               aria-label="Previous testimonials"
+              onClick={() => scrollByAmount("prev")}
               className="h-12 w-12 rounded-full bg-foreground text-white flex items-center justify-center shadow-md"
             >
               <ArrowLeft className="h-5 w-5" />
@@ -220,6 +236,7 @@ export function Testimonials() {
             <button
               type="button"
               aria-label="Next testimonials"
+              onClick={() => scrollByAmount("next")}
               className="h-12 w-12 rounded-full bg-foreground text-white flex items-center justify-center shadow-md"
             >
               <ArrowRight className="h-5 w-5" />
