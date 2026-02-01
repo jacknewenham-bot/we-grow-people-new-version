@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Button } from "@/components/ui/button";
+import { ArrowRight } from "lucide-react";
 
 const teams = [
   {
@@ -73,46 +73,42 @@ export function Teams() {
           </motion.p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {teams.map((team, index) => (
-            <motion.div
-              key={team.title}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.1 }}
-              className="group relative rounded-3xl overflow-hidden bg-white shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2"
-            >
-              {/* Image placeholder */}
-              <div className={`h-64 bg-gradient-to-br ${team.gradient} relative`}>
-                <img
-                  src={team.image}
-                  alt={team.title}
-                  className="absolute inset-0 h-full w-full object-cover"
-                />
-                <div className="absolute inset-0 bg-black/30"></div>
-                <h3 className="font-heading text-2xl md:text-3xl font-bold text-white absolute bottom-6 left-6 z-10">
-                  {team.title}
-                </h3>
-              </div>
-
-              {/* Content */}
-              <div className="p-8">
-                <p className="text-foreground/70 mb-6 leading-relaxed">
-                  {team.description}
-                </p>
-
-                <Button
-                  variant="lime"
-                  size="sm"
-                  className="rounded-full"
-                  asChild
-                >
-                  <a href={team.href}>See use case</a>
-                </Button>
-              </div>
-            </motion.div>
-          ))}
+        <div className="relative">
+          <div className="flex gap-8 overflow-x-auto pb-4 -mx-6 px-6 snap-x snap-mandatory scrollbar-none">
+            {teams.map((team, index) => (
+              <motion.a
+                key={team.title}
+                href={team.href}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 }}
+                className="group relative min-w-[280px] sm:min-w-[320px] lg:min-w-[360px] xl:min-w-[380px] snap-start rounded-[2rem] overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2"
+              >
+                <div className={`h-72 bg-gradient-to-br ${team.gradient} relative`}>
+                  <img
+                    src={team.image}
+                    alt={team.title}
+                    className="absolute inset-0 h-full w-full object-cover"
+                  />
+                  <div className="absolute inset-0 bg-black/20"></div>
+                  <div className="absolute inset-x-4 bottom-4 rounded-2xl bg-white/15 backdrop-blur-xl border border-white/20 p-5 flex items-end justify-between gap-4">
+                    <div>
+                      <h3 className="font-heading text-xl md:text-2xl font-bold text-white mb-2">
+                        {team.title}
+                      </h3>
+                      <p className="text-white/80 text-sm leading-relaxed">
+                        {team.description}
+                      </p>
+                    </div>
+                    <span className="shrink-0 inline-flex h-10 w-10 items-center justify-center rounded-full bg-white/15 border border-white/20 text-white">
+                      <ArrowRight className="h-5 w-5" />
+                    </span>
+                  </div>
+                </div>
+              </motion.a>
+            ))}
+          </div>
         </div>
       </div>
     </section>
