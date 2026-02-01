@@ -13,7 +13,7 @@ const floatingAvatars = [
     textColor: "text-lime-foreground",
     position: "top-24 left-8 md:left-16",
     delay: 0,
-    initials: "MK"
+    image: "/avatars/1.png"
   },
   {
     id: 2,
@@ -22,7 +22,7 @@ const floatingAvatars = [
     textColor: "text-yellow-900",
     position: "bottom-48 left-4 md:left-24",
     delay: 1,
-    initials: "SL"
+    image: "/avatars/2.png"
   },
   {
     id: 3,
@@ -31,7 +31,7 @@ const floatingAvatars = [
     textColor: "text-lime-foreground",
     position: "top-32 right-8 md:right-20",
     delay: 0.5,
-    initials: "LD"
+    image: "/avatars/3.png"
   },
   {
     id: 4,
@@ -40,7 +40,7 @@ const floatingAvatars = [
     textColor: "text-blue-900",
     position: "right-4 md:right-16 top-1/2",
     delay: 1.5,
-    initials: "OP"
+    image: "/avatars/4.png"
   },
   {
     id: 5,
@@ -49,7 +49,16 @@ const floatingAvatars = [
     textColor: "text-pink-900",
     position: "bottom-32 right-8 md:right-32",
     delay: 2,
-    initials: "HR"
+    image: "/avatars/5.png"
+  },
+  {
+    id: 6,
+    role: "Growth",
+    color: "bg-emerald-200",
+    textColor: "text-emerald-900",
+    position: "bottom-28 left-1/2 -translate-x-1/2",
+    delay: 2.4,
+    image: "/avatars/6.png"
   },
 ];
 
@@ -72,8 +81,12 @@ export function Hero() {
               className="flex items-center gap-2"
             >
               {/* Avatar circle */}
-              <div className="w-14 h-14 md:w-16 md:h-16 rounded-full bg-gradient-to-br from-gray-300 to-gray-400 flex items-center justify-center text-lg font-bold text-gray-600 border-2 border-white/20">
-                {avatar.initials}
+              <div className="w-14 h-14 md:w-16 md:h-16 rounded-full overflow-hidden border-2 border-white/20 bg-white/10 shadow-lg">
+                <img
+                  src={avatar.image}
+                  alt={avatar.role}
+                  className="h-full w-full object-cover"
+                />
               </div>
               {/* Role badge */}
               <span className={`pill-badge ${avatar.color} ${avatar.textColor} shadow-lg`}>
