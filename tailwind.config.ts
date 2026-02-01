@@ -14,8 +14,8 @@ export default {
     },
     extend: {
       fontFamily: {
-        sans: ["Fredoka", "system-ui", "sans-serif"],
-        heading: ["Fredoka", "system-ui", "sans-serif"],
+        sans: ["Baloo 2", "system-ui", "sans-serif"],
+        heading: ["Baloo 2", "system-ui", "sans-serif"],
       },
       colors: {
         border: "hsl(var(--border))",
