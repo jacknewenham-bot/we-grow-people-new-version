@@ -43,7 +43,7 @@ export function Features() {
   const activeFeature = features.find((f) => f.id === activeTab)!;
 
   return (
-    <section id="programs" className="py-20 md:py-28 bg-background">
+    <section id="programs" className="py-20 md:py-28 bg-[#F1F1E6]">
       <div className="container">
         {/* Section Title */}
         <motion.h2

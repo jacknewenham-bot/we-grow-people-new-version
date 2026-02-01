@@ -10,7 +10,7 @@ const logos = [
   "Carrots&Cake",
   "GrubCycle",
   "The Social",
-  "Expect Nothing",
+  "Expect Nothing Clo",
   "Huff N Puff",
   "The Visual Folks",
 ];
