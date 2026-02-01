@@ -5,6 +5,7 @@ import { Features } from "@/components/sections/Features";
 import { Teams } from "@/components/sections/Teams";
 import { HowItWorks } from "@/components/sections/HowItWorks";
 import { CoachesCarousel } from "@/components/sections/CoachesCarousel";
+import { OpenLetter } from "@/components/sections/OpenLetter";
 import { Testimonials } from "@/components/sections/Testimonials";
 import { FinalCTA } from "@/components/sections/FinalCTA";
 import { Footer } from "@/components/layout/Footer";
@@ -20,6 +21,7 @@ const Index = () => {
         <Teams />
         <HowItWorks />
         <CoachesCarousel />
+        <OpenLetter />
         <Testimonials />
         <FinalCTA />
       </main>
