@@ -9,7 +9,6 @@ const testimonials = [
     author: "Adenike Anthonia Abati",
     role: "Volunteer Content Marketer",
     company: "Smarketer's Hub",
-    tag: "Mentee",
   },
   {
     date: "June 11, 2024",
@@ -18,7 +17,6 @@ const testimonials = [
     author: "Aurielle",
     role: "Product Manager",
     company: "Delman.io",
-    tag: "Mentee",
   },
   {
     date: "June 01, 2024",
@@ -27,7 +25,6 @@ const testimonials = [
     author: "Safaa Zaki",
     role: "Content Creator",
     company: "Instagram",
-    tag: "Mentee",
   },
   {
     date: "July 09, 2024",
@@ -36,16 +33,6 @@ const testimonials = [
     author: "Lauren Ellis",
     role: "Growth Marketing Manager",
     company: "Produce8",
-    tag: "Mentee",
-  },
-  {
-    date: "July 13, 2024",
-    quote:
-      "Jack provided me with lots of advice about job seeking and marketing field questions.",
-    author: "James Ko",
-    role: "Marketing Intern",
-    company: "CloudMile",
-    tag: "Mentee",
   },
   {
     date: "July 22, 2024",
@@ -54,7 +41,6 @@ const testimonials = [
     author: "Amber Yang",
     role: "Content Creator | Social Media Strategist",
     company: "Edge Labs",
-    tag: "Mentee",
   },
   {
     date: "July 25, 2024",
@@ -63,7 +49,6 @@ const testimonials = [
     author: "Mark Lester Catungal",
     role: "IT Educator",
     company: "Saint Columban College",
-    tag: "Mentee",
   },
   {
     date: "August 01, 2024",
@@ -72,7 +57,6 @@ const testimonials = [
     author: "Berke Zavaro",
     role: "PPC Campaign Manager",
     company: "Marketily",
-    tag: "Mentee",
   },
   {
     date: "August 05, 2024",
@@ -81,7 +65,6 @@ const testimonials = [
     author: "Sathyaraj Thever",
     role: "Digital Project Manager",
     company: "Orfeostory",
-    tag: "Mentee",
   },
   {
     date: "August 07, 2024",
@@ -90,7 +73,6 @@ const testimonials = [
     author: "Gary",
     role: "Growth Marketing Intern",
     company: "Operandio",
-    tag: "Mentee",
   },
   {
     date: "August 17, 2024",
@@ -99,7 +81,6 @@ const testimonials = [
     author: "Mohammad Habib",
     role: "Fresh Graduate",
     company: "EAC",
-    tag: "Mentee",
   },
   {
     date: "August 24, 2024",
@@ -108,7 +89,6 @@ const testimonials = [
     author: "David Freeman",
     role: "Senior Marketing Executive",
     company: "Box Records",
-    tag: "Mentee",
   },
 ];
 
@@ -162,19 +142,19 @@ export function Testimonials() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-              className="min-w-[280px] sm:min-w-[320px] lg:min-w-[360px] xl:min-w-[380px] snap-start bg-[#F1F1E6] rounded-[2.25rem] p-10 border border-foreground/5 shadow-[0_12px_30px_rgba(20,40,20,0.08)] hover:shadow-[0_18px_40px_rgba(20,40,20,0.12)] transition-all duration-500"
+              className="min-w-[280px] sm:min-w-[320px] lg:min-w-[360px] xl:min-w-[380px] snap-start bg-[#F1F1E6] rounded-[2.25rem] p-10 border border-foreground/5 shadow-[0_12px_30px_rgba(20,40,20,0.08)] hover:shadow-[0_18px_40px_rgba(20,40,20,0.12)] transition-all duration-500 flex flex-col"
             >
               <p className="text-foreground text-lg md:text-xl leading-relaxed font-sans mb-10">
                 “{testimonial.quote}”
               </p>
 
-              <div className="flex items-center gap-4 pt-6 border-t border-foreground/10">
-                <div className="w-12 h-12 rounded-full bg-foreground/10 flex items-center justify-center">
+              <div className="mt-auto flex items-center gap-4 pt-6 border-t border-foreground/10">
+                <div className="w-12 h-12 rounded-full bg-foreground/10 flex items-center justify-center shrink-0">
                   <span className="text-sm font-bold text-foreground font-heading">
                     {testimonial.author.split(" ").map((n) => n[0]).join("")}
                   </span>
                 </div>
-                <div>
+                <div className="leading-tight">
                   <p className="font-semibold text-foreground text-base">
                     {testimonial.author}
                   </p>
@@ -182,7 +162,7 @@ export function Testimonials() {
                     {testimonial.role} • {testimonial.company}
                   </p>
                   <p className="text-muted-foreground/70 text-xs uppercase tracking-widest mt-1">
-                    {testimonial.date} · {testimonial.tag}
+                    {testimonial.date}
                   </p>
                 </div>
               </div>
