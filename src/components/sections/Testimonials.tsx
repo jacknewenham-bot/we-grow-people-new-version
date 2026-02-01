@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { MessageCircle, ArrowDown } from "lucide-react";
 
 const testimonials = [
   {
@@ -33,14 +34,32 @@ export function Testimonials() {
             viewport={{ once: true }}
             className="inline-flex flex-col items-center gap-4"
           >
-            <div className="inline-flex items-center gap-3 rounded-full bg-lime/30 px-8 py-3 shadow-sm">
-              <span className="headline-display font-heading text-2xl md:text-4xl text-foreground">
+            <div className="inline-flex items-center gap-4 rounded-full bg-lime/30 px-8 py-3 shadow-sm">
+              <span className="headline-display font-heading text-2xl md:text-4xl text-foreground uppercase tracking-wide">
                 Don't just take
               </span>
+              <span className="inline-flex h-11 w-11 items-center justify-center rounded-full bg-white/90 shadow-sm">
+                <span className="h-8 w-8 rounded-full bg-gradient-to-br from-primary/40 to-lime/40" />
+              </span>
             </div>
-            <div className="inline-flex items-center gap-3 rounded-full bg-lime px-10 py-4 shadow-sm">
-              <span className="headline-display font-heading text-2xl md:text-4xl text-foreground">
+            <div className="inline-flex items-center gap-4 rounded-full bg-lime px-10 py-4 shadow-sm">
+              <span className="inline-flex h-11 w-16 items-center justify-center rounded-full bg-white/95">
+                <span className="flex gap-1">
+                  <span className="h-2 w-2 rounded-full bg-foreground/80" />
+                  <span className="h-2 w-2 rounded-full bg-foreground/80" />
+                  <span className="h-2 w-2 rounded-full bg-foreground/80" />
+                </span>
+              </span>
+              <span className="headline-display font-heading text-2xl md:text-4xl text-foreground uppercase tracking-wide">
                 our word for it
+              </span>
+            </div>
+            <div className="inline-flex items-center gap-3 rounded-full bg-lime/30 px-8 py-3 shadow-sm">
+              <span className="headline-display font-heading text-2xl md:text-4xl text-foreground uppercase tracking-wide">
+                for it
+              </span>
+              <span className="inline-flex h-11 w-11 items-center justify-center rounded-full bg-lime text-foreground shadow-sm">
+                <ArrowDown className="h-5 w-5" />
               </span>
             </div>
           </motion.div>
