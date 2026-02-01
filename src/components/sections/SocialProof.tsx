@@ -1,14 +1,14 @@
 import { motion } from "framer-motion";
 
 const logos = [
-  "Marketing",
-  "Sales", 
-  "Operations",
-  "Leadership",
-  "Tech",
-  "HR",
-  "Growth",
-  "Wellbeing",
+  "StoreHub",
+  "SPEEDHOME",
+  "Gartner",
+  "Employment Hero",
+  "BI WORLDWIDE",
+  "Frost & Sullivan",
+  "Carrots&Cake",
+  "GrubCycle",
 ];
 
 export function SocialProof() {
@@ -22,7 +22,7 @@ export function SocialProof() {
           transition={{ duration: 0.5 }}
           className="text-center text-muted-foreground mb-8"
         >
-          Trusted by growing teams across marketing, sales, operations, leadership, and wellbeing.
+          Experience working with teams at
         </motion.p>
 
         <motion.div

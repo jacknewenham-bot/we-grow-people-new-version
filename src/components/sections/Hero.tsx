@@ -138,7 +138,7 @@ export function Hero() {
                   <div key={i} className="rating-dot" />
                 ))}
               </div>
-              <span className="text-white/60 text-sm">HRDC Claimable</span>
+              <span className="text-white/60 text-sm">4.9 Client Rating</span>
             </div>
             <div className="flex flex-col items-center gap-2">
               <div className="flex gap-1.5">
@@ -146,7 +146,7 @@ export function Hero() {
                   <div key={i} className="rating-dot" />
                 ))}
               </div>
-              <span className="text-white/60 text-sm">Expert-led Programs</span>
+              <span className="text-white/60 text-sm">HRDC Claimable</span>
             </div>
           </motion.div>
         </div>
