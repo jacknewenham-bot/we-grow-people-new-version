@@ -3,22 +3,112 @@ import { MessageCircle, ArrowDown } from "lucide-react";
 
 const testimonials = [
   {
-    quote: "Jack's guidance has been incredible. His support was invaluable, offering insightful advice that truly made a difference. His expertise extends beyond technical knowledge; he is exceptionally well-versed in marketing strategies.",
+    date: "May 27, 2024",
+    quote:
+      "I find Jack to be an outstanding mentor with a keen understanding of his industry. His approach to mentoring is insightful, proactive, and constructive. He's a great guy, and it was really nice to learn from him! A huge thanks to Jack and to ADPList!",
+    author: "Adenike Anthonia Abati",
+    role: "Volunteer Content Marketer",
+    company: "Smarketer's Hub",
+    tag: "Mentee",
+  },
+  {
+    date: "June 11, 2024",
+    quote:
+      "I had the pleasure of being mentored by Jack, and his guidance has been incredible. His support during my interview preparation was invaluable, offering insightful advice that truly made a difference. Additionally, Jack's constructive feedback on my technical test was detailed and immensely helpful. His expertise extends beyond technical knowledge; he is exceptionally well-versed in marketing strategies. I highly recommend Jack as a mentor for anyone seeking comprehensive and thoughtful guidance.",
     author: "Aurielle",
     role: "Product Manager",
     company: "Delman.io",
+    tag: "Mentee",
   },
   {
-    quote: "I had an outstanding session with Jack! He provided clear direction and introduced me to powerful new tools to enhance my performance. I genuinely appreciated the insights and actionable advice he shared.",
+    date: "June 01, 2024",
+    quote:
+      "I had a great session with Jack! He provided actionable tips on managing and monetizing my personal brand and is going out of his way to share more resources after the call. A big thanks to him!",
+    author: "Safaa Zaki",
+    role: "Content Creator",
+    company: "Instagram",
+    tag: "Mentee",
+  },
+  {
+    date: "July 09, 2024",
+    quote:
+      "I had an outstanding session with Jack! As a Growth Marketing Manager at a startup, I often lack access to specialists in demand generation and conversion rate optimization beyond LinkedIn posts. Jack’s expertise was invaluable; he provided clear direction and introduced me to powerful new tools to enhance my performance. I genuinely appreciated the insights and actionable advice he shared during our time together.",
     author: "Lauren Ellis",
     role: "Growth Marketing Manager",
     company: "Produce8",
+    tag: "Mentee",
   },
   {
-    quote: "Jack was very helpful in pinpointing my current issues and giving actionable advice. He is honest, professional, and super generous with his knowledge. I definitely recommend him for any team seeking growth.",
+    date: "July 13, 2024",
+    quote:
+      "Jack provided me with lots of advice about job seeking and marketing field questions.",
+    author: "James Ko",
+    role: "Marketing Intern",
+    company: "CloudMile",
+    tag: "Mentee",
+  },
+  {
+    date: "July 22, 2024",
+    quote:
+      "Jack was very helpful in pinpointing my current issues and giving actionable advice. He is honest, professional, and super generous with his knowledge. I definitely recommend him!",
     author: "Amber Yang",
-    role: "Social Media Strategist",
+    role: "Content Creator | Social Media Strategist",
     company: "Edge Labs",
+    tag: "Mentee",
+  },
+  {
+    date: "July 25, 2024",
+    quote:
+      "Jack has been encouraging and attentive. I appreciate that he acknowledges my pace and aligns his insights in the best way possible to provide relevant answers to my queries.",
+    author: "Mark Lester Catungal",
+    role: "IT Educator",
+    company: "Saint Columban College",
+    tag: "Mentee",
+  },
+  {
+    date: "August 01, 2024",
+    quote:
+      "He was cheerful and very helpful. The information he gave helped me determine a direction.",
+    author: "Berke Zavaro",
+    role: "PPC Campaign Manager",
+    company: "Marketily",
+    tag: "Mentee",
+  },
+  {
+    date: "August 05, 2024",
+    quote:
+      "It was a fruitful experience with Jack as he reviewed some of my ideas and work. The feedback he gave helped me understand what was good and what was lacking. Jack also shared some of his methodologies on how to be a more professional digital marketer. I am thankful for this, as it is normal for people to gatekeep what works for them. I am thankful and hopeful as I now have something to work towards. Definitely recommend speaking to Jack for insights on digital marketing.",
+    author: "Sathyaraj Thever",
+    role: "Digital Project Manager",
+    company: "Orfeostory",
+    tag: "Mentee",
+  },
+  {
+    date: "August 07, 2024",
+    quote:
+      "It is clear Jack did his research before the meeting. You can expect 10/10 mentoring from Jack. Personalized and useful feedback and recommendations.",
+    author: "Gary",
+    role: "Growth Marketing Intern",
+    company: "Operandio",
+    tag: "Mentee",
+  },
+  {
+    date: "August 17, 2024",
+    quote:
+      "He's a great listener and great communicator. Speaks clearly and deliberately, making sure everything is understood. Great helper, offers a lot of advice and would have kept helping if not for the time limit. Overall an amazing experience and I can't wait for a follow-up meeting after putting his suggestions into practice!",
+    author: "Mohammad Habib",
+    role: "Fresh Graduate",
+    company: "EAC",
+    tag: "Mentee",
+  },
+  {
+    date: "August 24, 2024",
+    quote:
+      "Jack was very helpful in advising me on my Facebook ads and how to increase my lead generation. He took a lot of time to research before our call and spoke for 30 minutes beyond our allocated time. He is very motivational and friendly. I'm looking forward to our next meeting.",
+    author: "David Freeman",
+    role: "Senior Marketing Executive",
+    company: "Box Records",
+    tag: "Mentee",
   },
 ];
 
@@ -62,8 +152,9 @@ export function Testimonials() {
           </motion.div>
         </div>
 
-        {/* Testimonial Cards */}
-        <div className="grid md:grid-cols-3 gap-8">
+        {/* Testimonial Carousel */}
+        <div className="relative">
+          <div className="flex gap-6 overflow-x-auto pb-4 -mx-6 px-6 snap-x snap-mandatory scrollbar-none">
           {testimonials.map((testimonial, index) => (
             <motion.div
               key={index}
@@ -71,23 +162,16 @@ export function Testimonials() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
-              className="bg-white rounded-3xl p-8 border border-border/50 shadow-lg hover:shadow-2xl transition-all duration-500"
+              className="min-w-[280px] sm:min-w-[320px] lg:min-w-[360px] xl:min-w-[380px] snap-start bg-[#F1F1E6] rounded-3xl p-8 border border-border/50 shadow-lg hover:shadow-2xl transition-all duration-500"
             >
-              {/* Rating dots at top */}
-              <div className="flex gap-1.5 mb-6">
-                {[...Array(5)].map((_, i) => (
-                  <div key={i} className="w-3 h-3 rounded-full bg-lime" />
-                ))}
-              </div>
-
-              <p className="text-lg font-medium text-foreground mb-8 leading-relaxed font-sans">
-                "{testimonial.quote}"
+              <p className="text-foreground text-lg leading-relaxed font-sans mb-8">
+                “{testimonial.quote}”
               </p>
 
-              <div className="flex items-center gap-4 pt-6 border-t border-border/50">
-                <div className="w-14 h-14 rounded-full bg-gradient-to-br from-primary/20 to-lime/20 flex items-center justify-center">
-                  <span className="text-base font-bold text-primary font-heading">
-                    {testimonial.author.split(" ").map(n => n[0]).join("")}
+              <div className="flex items-center gap-4 pt-6 border-t border-border/40">
+                <div className="w-12 h-12 rounded-full bg-gradient-to-br from-primary/20 to-lime/20 flex items-center justify-center">
+                  <span className="text-sm font-bold text-primary font-heading">
+                    {testimonial.author.split(" ").map((n) => n[0]).join("")}
                   </span>
                 </div>
                 <div>
@@ -95,12 +179,16 @@ export function Testimonials() {
                     {testimonial.author}
                   </p>
                   <p className="text-muted-foreground text-sm">
-                    {testimonial.role}
+                    {testimonial.role} • {testimonial.company}
+                  </p>
+                  <p className="text-muted-foreground/70 text-xs uppercase tracking-wide mt-1">
+                    {testimonial.date} · {testimonial.tag}
                   </p>
                 </div>
               </div>
             </motion.div>
           ))}
+          </div>
         </div>
       </div>
     </section>
