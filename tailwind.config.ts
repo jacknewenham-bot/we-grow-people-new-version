@@ -14,8 +14,8 @@ export default {
     },
     extend: {
       fontFamily: {
-        sans: ["Plus Jakarta Sans", "system-ui", "sans-serif"],
-        heading: ["Plus Jakarta Sans", "system-ui", "sans-serif"],
+        sans: ["Barlow Condensed", "system-ui", "sans-serif"],
+        heading: ["Barlow Condensed", "system-ui", "sans-serif"],
       },
       colors: {
         border: "hsl(var(--border))",
