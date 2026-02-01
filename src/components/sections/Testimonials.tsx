@@ -91,6 +91,38 @@ const testimonials = [
     role: "Senior Marketing Executive",
     company: "Box Records",
   },
+  {
+    date: "October 9, 2023",
+    quote:
+      "Jack is the definition of a proactive and motivated digital marketer. He always comes up with brilliant ideas, coupled with initiatives to continuously experiment and refine strategies that help the product succeed. I had a great time working with him and 100% would recommend him.",
+    author: "Nezo Benardi",
+    role: "Worked with Jack on the same team",
+    company: "",
+  },
+  {
+    date: "",
+    quote:
+      "Jack is a wizard at growth initiatives. Jack excels from the ideation stage, all the way to execution & impact monitoring. He never fails to crowdsource feedback, never afraid to ask questions that gets the team thinking. Jack has a wide array of marketing experience, and on top of that, he’s teammate I could always count on.",
+    author: "Ernest Kou",
+    role: "Writing organic social content for crypto brands. Decentralized science (DeSci).",
+    company: "",
+  },
+  {
+    date: "",
+    quote:
+      "Not only reliable, Jack was being flexible on work that allow us to have certain level of empowerment and let our creative juices flow. He made sure that we approach our work strategically and anticipate the actions we can take that will add value to the overall marketing performance. Plus, he has always made diligent efforts to improve his skills and knowledge, making it one of the reasons that we look up to him! The best of him? Jack was never stingy to share what he had learnt with us.",
+    author: "Ming Min Wong",
+    role: "Regional Supply Network Professional",
+    company: "",
+  },
+  {
+    date: "",
+    quote:
+      "Jack is one of the most dedicated focussed people I have worked with. I was impressed by his strong critical thinking, creativity and approach to problem solving. He has strong leadership skills and is enjoyable to work with.",
+    author: "Hamza Abu Tarbush",
+    role: "",
+    company: "",
+  },
 ];
 
 export function Testimonials() {
