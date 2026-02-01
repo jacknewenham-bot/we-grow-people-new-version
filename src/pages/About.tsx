@@ -16,7 +16,7 @@ const WHATSAPP_LINK = "https://wa.me/60173552382?text=Hi%20there%2C%20I'm%20inte
 const coaches = [
     {
         name: "Hamza Akaouch",
-        expertise: "Sales performance & leadership communication",
+        expertise: "Consultative selling & decision psychology",
         image: "HA"
     },
     {

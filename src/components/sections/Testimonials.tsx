@@ -72,7 +72,7 @@ const testimonials = [
     quote:
       "It is clear Jack did his research before the meeting. You can expect 10/10 mentoring from Jack. Personalized and useful feedback and recommendations.",
     author: "Gary",
-    role: "Growth Marketing Intern",
+    role: "Growth Marketing",
     company: "Operandio",
   },
   {
@@ -80,7 +80,7 @@ const testimonials = [
     quote:
       "He's a great listener and great communicator. Speaks clearly and deliberately, making sure everything is understood. Great helper, offers a lot of advice and would have kept helping if not for the time limit. Overall an amazing experience and I can't wait for a follow-up meeting after putting his suggestions into practice!",
     author: "Mohammad Habib",
-    role: "Fresh Graduate",
+    role: "Product Designer",
     company: "EAC",
   },
   {

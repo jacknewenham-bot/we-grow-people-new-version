@@ -9,9 +9,9 @@ const logos = [
   "Frost & Sullivan",
   "Carrots&Cake",
   "GrubCycle",
-  "The Social",
+  "The Social Group",
   "Expect Nothing Clo",
-  "Huff N Puff",
+  "HuffNPuff Technology",
   "The Visual Folks",
 ];
 

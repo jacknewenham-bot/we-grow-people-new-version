@@ -3,9 +3,9 @@ import { motion } from "framer-motion";
 const coaches = [
   {
     name: "Hamza Akaouch",
-    tagline: "Helping people sell smarter, serve better, and lead stronger",
-    title: "HRDC Accredited Sales Coach",
-    focus: "Sales performance, customer conversations, leadership communication",
+    tagline: "Consultative selling grounded in buyer psychology",
+    title: "HRDC Accredited Sales Trainer",
+    focus: "Decision psychology, deep discovery, objection handling",
   },
   {
     name: "Jack Newenham",

@@ -11,11 +11,11 @@ const coaches = [
     {
         id: "hamza",
         name: "Hamza Akaouch",
-        title: "Sales Coach and Leadership Trainer",
+        title: "Sales Trainer | Consultative & Challenger Selling",
         badge: "HRDC Accredited",
-        focusAreas: ["Sales performance", "Customer conversations", "Leadership communication"],
-        bio: "Hamza helps teams sell with confidence, clarity, and structure.\n\nWith deep experience in sales enablement and leadership training, Hamza works with teams to improve how they communicate, handle objections, and build trust with customers. His sessions are practical, interactive, and grounded in real conversations that sales teams face every day.",
-        bestFor: ["Sales teams", "Customer-facing roles", "Managers leading revenue teams"],
+        focusAreas: ["Decision psychology", "Consultative selling", "Negotiation and price conversations"],
+        bio: "Hamza helps sales teams understand how buyers decide and lead conversations that reduce uncertainty.\n\nHis training focuses on deep discovery, framing the cost of inaction, value messaging, and ethical closing. Sessions are practical, interactive, and grounded in real deals so teams improve conversion rates, protect margins, and build trust.",
+        bestFor: ["B2B sales teams", "Relationship managers and consultants", "Sales leaders upgrading capability"],
     },
     {
         id: "jack",

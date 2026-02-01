@@ -6,9 +6,9 @@ import { Button } from "@/components/ui/button";
 const coaches = [
     {
         name: "Hamza Akaouch",
-        tagline: "HRDC Accredited Sales Coach",
-        expertise: "Sales performance & leadership communication",
-        credibility: "Helping people sell smarter and lead stronger",
+        tagline: "HRDC Accredited Sales Trainer",
+        expertise: "Consultative selling & decision psychology",
+        credibility: "Improves discovery, value framing, and buyer confidence",
     },
     {
         name: "Jack Newenham",
