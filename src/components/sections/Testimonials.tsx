@@ -25,25 +25,34 @@ export function Testimonials() {
   return (
     <section id="testimonials" className="py-24 md:py-32 bg-white">
       <div className="container">
-        {/* Simplified headline */}
+        {/* Bubble headline */}
         <div className="text-center mb-20">
-          <motion.h2
+          <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="headline-display font-heading text-4xl md:text-6xl text-foreground mb-6"
+            className="inline-flex flex-col items-center gap-4"
           >
-            What our clients say
-          </motion.h2>
+            <div className="inline-flex items-center gap-3 rounded-full bg-lime/30 px-8 py-3 shadow-sm">
+              <span className="headline-display font-heading text-2xl md:text-4xl text-foreground">
+                Don't just take
+              </span>
+            </div>
+            <div className="inline-flex items-center gap-3 rounded-full bg-lime px-10 py-4 shadow-sm">
+              <span className="headline-display font-heading text-2xl md:text-4xl text-foreground">
+                our word for it
+              </span>
+            </div>
+          </motion.div>
 
           <motion.p
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="text-lg md:text-xl text-muted-foreground font-sans"
+            className="text-lg md:text-xl text-muted-foreground font-sans mt-6"
           >
-            Real results from real teams.
+            Hear directly from our clients
           </motion.p>
         </div>
 
