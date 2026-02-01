@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { MessageCircle, ArrowDown } from "lucide-react";
+import { ArrowDown, ArrowLeft, ArrowRight } from "lucide-react";
 
 const testimonials = [
   {
@@ -154,23 +154,23 @@ export function Testimonials() {
 
         {/* Testimonial Carousel */}
         <div className="relative">
-          <div className="flex gap-6 overflow-x-auto pb-4 -mx-6 px-6 snap-x snap-mandatory scrollbar-none">
-          {testimonials.map((testimonial, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.1 }}
-              className="min-w-[280px] sm:min-w-[320px] lg:min-w-[360px] xl:min-w-[380px] snap-start bg-[#F1F1E6] rounded-3xl p-8 border border-border/50 shadow-lg hover:shadow-2xl transition-all duration-500"
+          <div className="flex gap-8 overflow-x-auto pb-6 -mx-6 px-6 snap-x snap-mandatory scrollbar-none">
+            {testimonials.map((testimonial, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 }}
+              className="min-w-[280px] sm:min-w-[320px] lg:min-w-[360px] xl:min-w-[380px] snap-start bg-[#F1F1E6] rounded-[2.25rem] p-10 border border-foreground/5 shadow-[0_12px_30px_rgba(20,40,20,0.08)] hover:shadow-[0_18px_40px_rgba(20,40,20,0.12)] transition-all duration-500"
             >
-              <p className="text-foreground text-lg leading-relaxed font-sans mb-8">
+              <p className="text-foreground text-lg md:text-xl leading-relaxed font-sans mb-10">
                 “{testimonial.quote}”
               </p>
 
-              <div className="flex items-center gap-4 pt-6 border-t border-border/40">
-                <div className="w-12 h-12 rounded-full bg-gradient-to-br from-primary/20 to-lime/20 flex items-center justify-center">
-                  <span className="text-sm font-bold text-primary font-heading">
+              <div className="flex items-center gap-4 pt-6 border-t border-foreground/10">
+                <div className="w-12 h-12 rounded-full bg-foreground/10 flex items-center justify-center">
+                  <span className="text-sm font-bold text-foreground font-heading">
                     {testimonial.author.split(" ").map((n) => n[0]).join("")}
                   </span>
                 </div>
@@ -181,13 +181,29 @@ export function Testimonials() {
                   <p className="text-muted-foreground text-sm">
                     {testimonial.role} • {testimonial.company}
                   </p>
-                  <p className="text-muted-foreground/70 text-xs uppercase tracking-wide mt-1">
+                  <p className="text-muted-foreground/70 text-xs uppercase tracking-widest mt-1">
                     {testimonial.date} · {testimonial.tag}
                   </p>
                 </div>
               </div>
             </motion.div>
           ))}
+          </div>
+          <div className="mt-10 flex items-center justify-center gap-4">
+            <button
+              type="button"
+              aria-label="Previous testimonials"
+              className="h-12 w-12 rounded-full bg-foreground text-white flex items-center justify-center shadow-md"
+            >
+              <ArrowLeft className="h-5 w-5" />
+            </button>
+            <button
+              type="button"
+              aria-label="Next testimonials"
+              className="h-12 w-12 rounded-full bg-foreground text-white flex items-center justify-center shadow-md"
+            >
+              <ArrowRight className="h-5 w-5" />
+            </button>
           </div>
         </div>
       </div>
