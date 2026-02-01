@@ -38,9 +38,6 @@ export function Testimonials() {
               <span className="headline-display font-heading text-2xl md:text-4xl text-foreground uppercase tracking-wide">
                 Don't just take
               </span>
-              <span className="inline-flex h-11 w-11 items-center justify-center rounded-full bg-white/90 shadow-sm">
-                <span className="h-8 w-8 rounded-full bg-gradient-to-br from-primary/40 to-lime/40" />
-              </span>
             </div>
             <div className="inline-flex items-center gap-4 rounded-full bg-lime px-10 py-4 shadow-sm">
               <span className="inline-flex h-11 w-16 items-center justify-center rounded-full bg-white/95">
@@ -54,25 +51,15 @@ export function Testimonials() {
                 our word for it
               </span>
             </div>
-            <div className="inline-flex items-center gap-3 rounded-full bg-lime/30 px-8 py-3 shadow-sm">
+            <div className="inline-flex items-center gap-4 rounded-full bg-lime/30 px-8 py-3 shadow-sm">
               <span className="headline-display font-heading text-2xl md:text-4xl text-foreground uppercase tracking-wide">
-                for it
+                Hear directly from our clients
               </span>
               <span className="inline-flex h-11 w-11 items-center justify-center rounded-full bg-lime text-foreground shadow-sm">
                 <ArrowDown className="h-5 w-5" />
               </span>
             </div>
           </motion.div>
-
-          <motion.p
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.1 }}
-            className="text-lg md:text-xl text-muted-foreground font-sans mt-6"
-          >
-            Hear directly from our clients
-          </motion.p>
         </div>
 
         {/* Testimonial Cards */}
