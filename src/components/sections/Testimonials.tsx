@@ -8,7 +8,7 @@ const testimonials = [
     quote:
       "I find Jack to be an outstanding mentor with a keen understanding of his industry. His approach to mentoring is insightful, proactive, and constructive. He's a great guy, and it was really nice to learn from him! A huge thanks to Jack and to ADPList!",
     author: "Adenike Anthonia Abati",
-    role: "Volunteer Content Marketer",
+    role: "Senior Content Marketer",
     company: "Smarketer's Hub",
   },
   {
@@ -20,12 +20,29 @@ const testimonials = [
     company: "Delman.io",
   },
   {
+    date: "",
+    quote:
+      "Hamza was genuine fun to work with. His work disposition spells real effort, and strong outcomes, all the while doing it with a smile. I would certainly jump at the opportunity to work with him in the same team again, and am looking forward to keep track of his bright professional career ahead of him.",
+    author: "Barry Lim",
+    role:
+      "APAC Strategy & Economic Policy Advisor | Ex-VP Frost & Sullivan | Proven Leader in Government, Market Growth & Transformation | Trusted by Ministries, Boards & Global Firms",
+    company: "",
+  },
+  {
     date: "June 01, 2024",
     quote:
       "I had a great session with Jack! He provided actionable tips on managing and monetizing my personal brand and is going out of his way to share more resources after the call. A big thanks to him!",
     author: "Safaa Zaki",
     role: "Content Creator",
     company: "Instagram",
+  },
+  {
+    date: "",
+    quote:
+      "Jack was great to work with. No task was too much. He picked up everything he was given and more! Jack led marketing experiments and stepped into product related areas when there was a gap to be filled just doing it without being asked. A true A player. Can't recommend highly enough.",
+    author: "Hamel Shah",
+    role: "Co-Founder at Carrots&Cake and Partner at Azimuth Global Partners",
+    company: "",
   },
   {
     date: "July 09, 2024",
