@@ -9,6 +9,10 @@ const logos = [
   "Frost & Sullivan",
   "Carrots&Cake",
   "GrubCycle",
+  "The Social",
+  "Expect Nothing",
+  "Huff N Puff",
+  "The Visual Folks",
 ];
 
 export function SocialProof() {
@@ -30,20 +34,18 @@ export function SocialProof() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.2 }}
-          className="flex flex-wrap items-center justify-center gap-8 md:gap-12"
+          className="overflow-hidden"
         >
-          {logos.map((logo, index) => (
-            <motion.span
-              key={logo}
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.3, delay: index * 0.05 }}
-              className="text-muted-foreground/60 font-bold text-lg tracking-wide uppercase"
-            >
-              {logo}
-            </motion.span>
-          ))}
+          <div className="logo-marquee">
+            {[...logos, ...logos].map((logo, index) => (
+              <span
+                key={`${logo}-${index}`}
+                className="logo-marquee-item"
+              >
+                {logo}
+              </span>
+            ))}
+          </div>
         </motion.div>
       </div>
     </section>
