@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { useState } from "react";
 import { ArrowDown, ArrowLeft, ArrowRight } from "lucide-react";
 
 const testimonials = [
@@ -93,6 +94,20 @@ const testimonials = [
 ];
 
 export function Testimonials() {
+  const [expanded, setExpanded] = useState<Set<number>>(new Set());
+
+  const toggleExpanded = (index: number) => {
+    setExpanded((prev) => {
+      const next = new Set(prev);
+      if (next.has(index)) {
+        next.delete(index);
+      } else {
+        next.add(index);
+      }
+      return next;
+    });
+  };
+
   return (
     <section id="testimonials" className="py-24 md:py-32 bg-white">
       <div className="container">
@@ -135,23 +150,47 @@ export function Testimonials() {
         {/* Testimonial Carousel */}
         <div className="relative">
           <div className="flex gap-8 overflow-x-auto pb-6 -mx-6 px-6 snap-x snap-mandatory scrollbar-none">
-            {testimonials.map((testimonial, index) => (
+            {testimonials.map((testimonial, index) => {
+              const isExpanded = expanded.has(index);
+              const isLong = testimonial.quote.length > 280;
+              return (
               <motion.div
                 key={index}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-              className="min-w-[280px] sm:min-w-[320px] lg:min-w-[360px] xl:min-w-[380px] snap-start bg-[#F1F1E6] rounded-[2.25rem] p-10 border border-foreground/5 shadow-[0_12px_30px_rgba(20,40,20,0.08)] hover:shadow-[0_18px_40px_rgba(20,40,20,0.12)] transition-all duration-500 flex flex-col"
-            >
-              <p className="text-foreground text-lg md:text-xl leading-relaxed font-sans mb-10">
-                “{testimonial.quote}”
-              </p>
+                className="min-w-[280px] sm:min-w-[320px] lg:min-w-[360px] xl:min-w-[380px] snap-start bg-[#F1F1E6] rounded-[2.25rem] p-10 border border-foreground/5 shadow-[0_12px_30px_rgba(20,40,20,0.08)] hover:shadow-[0_18px_40px_rgba(20,40,20,0.12)] transition-all duration-500 flex flex-col"
+              >
+                <p
+                  className="text-foreground text-lg md:text-xl leading-relaxed font-sans"
+                  style={
+                    !isExpanded && isLong
+                      ? {
+                        display: "-webkit-box",
+                        WebkitLineClamp: 6,
+                        WebkitBoxOrient: "vertical",
+                        overflow: "hidden",
+                      }
+                      : undefined
+                  }
+                >
+                  “{testimonial.quote}”
+                </p>
+                {isLong && (
+                  <button
+                    type="button"
+                    onClick={() => toggleExpanded(index)}
+                    className="mt-4 text-sm font-semibold text-foreground/70 hover:text-foreground transition-colors self-start"
+                  >
+                    {isExpanded ? "Read less" : "Read more"}
+                  </button>
+                )}
 
-              <div className="mt-auto flex items-center gap-4 pt-6 border-t border-foreground/10">
-                <div className="w-12 h-12 rounded-full bg-foreground/10 flex items-center justify-center shrink-0">
-                  <span className="text-sm font-bold text-foreground font-heading">
-                    {testimonial.author.split(" ").map((n) => n[0]).join("")}
+                <div className="mt-auto flex items-center gap-4 pt-6 border-t border-foreground/10">
+                  <div className="w-12 h-12 rounded-full bg-foreground/10 flex items-center justify-center shrink-0">
+                    <span className="text-sm font-bold text-foreground font-heading">
+                      {testimonial.author.split(" ").map((n) => n[0]).join("")}
                   </span>
                 </div>
                 <div className="leading-tight">
@@ -165,9 +204,10 @@ export function Testimonials() {
                     {testimonial.date}
                   </p>
                 </div>
-              </div>
-            </motion.div>
-          ))}
+                </div>
+              </motion.div>
+            );
+            })}
           </div>
           <div className="mt-10 flex items-center justify-center gap-4">
             <button
