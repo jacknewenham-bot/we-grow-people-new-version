@@ -6,31 +6,37 @@ const teams = [
     title: "Marketing teams",
     description: "Build growth systems that convert and scale.",
     gradient: "from-lime/20 to-primary/20",
+    href: "/training/marketing",
   },
   {
     title: "Sales teams",
     description: "Sell more confidently with modern workflows and better conversations.",
     gradient: "from-yellow-200/50 to-lime/20",
+    href: "/sales-training",
   },
   {
     title: "Leadership teams",
     description: "Lead with clarity, make better decisions, and build strong teams.",
     gradient: "from-blue-200/50 to-primary/20",
+    href: "/training/management",
   },
   {
     title: "Operations teams",
     description: "Improve execution, productivity, and internal processes.",
     gradient: "from-primary/20 to-lime/20",
+    href: "/training/operations",
   },
   {
     title: "HR and people teams",
     description: "Support performance, culture, and wellbeing at work.",
     gradient: "from-pink-200/50 to-lime/20",
+    href: "/training/management",
   },
   {
     title: "Finance teams",
     description: "Streamline processes and improve financial decision-making.",
     gradient: "from-purple-200/50 to-lime/20",
+    href: "/training/operations",
   },
 ];
 
@@ -90,8 +96,9 @@ export function Teams() {
                   variant="lime"
                   size="sm"
                   className="rounded-full"
+                  asChild
                 >
-                  See use case
+                  <a href={team.href}>See use case</a>
                 </Button>
               </div>
             </motion.div>

@@ -5,14 +5,15 @@ const WHATSAPP_LINK = "https://wa.me/60123456789";
 
 const footerLinks = {
   teams: [
-    { href: "#", label: "Marketing teams" },
-    { href: "#", label: "Sales teams" },
-    { href: "#", label: "Leadership teams" },
-    { href: "#", label: "Operations teams" },
-    { href: "#", label: "HR teams" },
+    { href: "/training/marketing", label: "Marketing teams" },
+    { href: "/sales-training", label: "Sales teams" },
+    { href: "/training/management", label: "Leadership teams" },
+    { href: "/training/operations", label: "Operations teams" },
+    { href: "/training/ai", label: "AI teams" },
   ],
   programs: [
     { href: "/sales-training", label: "Sales Training" },
+    { href: "/training/marketing", label: "Marketing Training" },
     { href: "#programs", label: "Practical skills" },
     { href: "#programs", label: "Expert-led coaching" },
     { href: "#programs", label: "AI-powered learning" },
