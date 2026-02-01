@@ -4,6 +4,33 @@
 @tailwind components;
 @tailwind utilities;
 
+@keyframes logo-marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@layer utilities {
+  .logo-marquee {
+    display: flex;
+    gap: 3rem;
+    width: max-content;
+    animation: logo-marquee 24s linear infinite;
+  }
+
+  .logo-marquee-item {
+    color: hsl(var(--muted-foreground) / 0.6);
+    font-weight: 700;
+    font-size: 1.125rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+}
+
 /* Tomorro-style Design System - Dark Green + Lime */
 
 @layer base {
