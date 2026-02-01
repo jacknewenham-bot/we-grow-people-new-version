@@ -1,49 +1,47 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 
-const baseUrl = import.meta.env.BASE_URL || "/";
-
 const teams = [
   {
     title: "Marketing teams",
     description: "Build growth systems that convert and scale.",
     gradient: "from-lime/20 to-primary/20",
-    image: `${baseUrl}teams/1.png`,
+    image: "/Teams/Marketing.png",
     href: "/training/marketing",
   },
   {
     title: "Sales teams",
     description: "Sell more confidently with modern workflows and better conversations.",
     gradient: "from-yellow-200/50 to-lime/20",
-    image: `${baseUrl}teams/2.png`,
+    image: "/Teams/Sales.png",
     href: "/sales-training",
   },
   {
     title: "Leadership teams",
     description: "Lead with clarity, make better decisions, and build strong teams.",
     gradient: "from-blue-200/50 to-primary/20",
-    image: `${baseUrl}teams/3.png`,
+    image: "/Teams/Leadership.png",
     href: "/training/management",
   },
   {
     title: "Operations teams",
     description: "Improve execution, productivity, and internal processes.",
     gradient: "from-primary/20 to-lime/20",
-    image: `${baseUrl}teams/4.png`,
+    image: "/Teams/Operations.png",
     href: "/training/operations",
   },
   {
     title: "HR and people teams",
     description: "Support performance, culture, and wellbeing at work.",
     gradient: "from-pink-200/50 to-lime/20",
-    image: `${baseUrl}teams/5.png`,
+    image: "/Teams/HR.png",
     href: "/training/management",
   },
   {
     title: "Finance teams",
     description: "Streamline processes and improve financial decision-making.",
     gradient: "from-purple-200/50 to-lime/20",
-    image: `${baseUrl}teams/6.png`,
+    image: "/Teams/Finance.png",
     href: "/training/operations",
   },
 ];
