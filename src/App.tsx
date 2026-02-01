@@ -17,6 +17,7 @@ import ManagementTraining from "./pages/ManagementTraining";
 import TrainingCategory from "./pages/TrainingCategory";
 import CourseDetail from "./pages/CourseDetail";
 import NotFound from "./pages/NotFound";
+import { WhatsAppFloating } from "@/components/ui/WhatsAppFloating";
 
 const queryClient = new QueryClient();
 
@@ -43,6 +44,7 @@ const App = () => (
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
+        <WhatsAppFloating />
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>
