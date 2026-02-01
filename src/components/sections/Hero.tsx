@@ -56,7 +56,7 @@ const floatingAvatars = [
     role: "Growth",
     color: "bg-emerald-200",
     textColor: "text-emerald-900",
-    position: "bottom-28 left-1/2 -translate-x-1/2",
+    position: "top-1/2 left-4 md:left-20 -translate-y-1/2",
     delay: 2.4,
     image: "/avatars/6.png"
   },
