@@ -37,7 +37,7 @@ const features = [
     headline: "Use modern tools to move faster.",
     body: "We help teams adopt AI in a practical way, from workflows to automation, so they can perform better with less effort.",
     bullets: ["AI workflows", "Vibe coding for business", "Agent-based productivity"],
-    image: "/our training/AI-powered.jpg",
+    image: "/our training/ai-powered.jpg",
     popout: {
       title: "Modern Tooling",
       bullets: ["Live AI demonstrations", "Custom workflow setups", "Hands-on prompting guides"],
