@@ -67,6 +67,7 @@ const coaches = [
         expertise: "Workplace wellbeing & mental health",
         credibility: "Helping adults overcome stress and burnout",
         image: "/about-us-coaches-page/ivan.png",
+        imageClassName: "object-center object-[50%_30%]",
     },
 ];
 
