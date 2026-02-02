@@ -1,32 +1,90 @@
 import { motion } from "framer-motion";
+import { useEffect, useRef, useState } from "react";
 
 const messages = [
   {
     id: 1,
     role: "user",
-    text: "Thanks again for the training! I joined for the cert, but learned way more than expected."
+    text: "Thanks again for the training!"
   },
   {
     id: 2,
+    role: "user",
+    text: "I joined for the cert, but learned way more than expected."
+  },
+  {
+    id: 3,
     role: "assistant",
     text: "Glad to hear that 🙂"
   },
   {
-    id: 3,
+    id: 4,
     role: "user",
-    text: "Already using it at work, my manager noticed too."
+    text: "Already using it at work"
   },
   {
-    id: 4,
+    id: 5,
+    role: "user",
+    text: "my manager noticed too."
+  },
+  {
+    id: 6,
     role: "assistant",
-    text: "That’s what matters. Real skills, real impact.\nLet us know if we can help further."
+    text: "Glad to hear that 🙂"
+  },
+  {
+    id: 7,
+    role: "assistant",
+    text: "That’s what matters.\nReal skills, real impact.\nLet us know if we can help further."
   }
 ];
 
 export function OpenLetter() {
-  const cycleSeconds = 12;
-  const messageDuration = 4;
-  const messageStagger = 2;
+  const [visibleCount, setVisibleCount] = useState(0);
+  const loopTimeouts = useRef<ReturnType<typeof setTimeout>[]>([]);
+  const loopTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  useEffect(() => {
+    const scheduleSequence = () => {
+      loopTimeouts.current.forEach(clearTimeout);
+      loopTimeouts.current = [];
+      if (loopTimer.current) {
+        clearTimeout(loopTimer.current);
+        loopTimer.current = null;
+      }
+
+      setVisibleCount(0);
+      messages.forEach((_, index) => {
+        const timeout = setTimeout(() => {
+          setVisibleCount(index + 1);
+        }, 700 * index);
+        loopTimeouts.current.push(timeout);
+      });
+
+      const totalDuration = messages.length * 700 + 2600;
+      loopTimer.current = setTimeout(() => {
+        scheduleSequence();
+      }, totalDuration);
+    };
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries.some((entry) => entry.isIntersecting)) {
+          scheduleSequence();
+        }
+      },
+      { threshold: 0.35 }
+    );
+
+    const element = document.getElementById("chat-trigger");
+    if (element) observer.observe(element);
+
+    return () => {
+      observer.disconnect();
+      loopTimeouts.current.forEach(clearTimeout);
+      if (loopTimer.current) clearTimeout(loopTimer.current);
+    };
+  }, []);
 
   return (
     <section className="py-24 md:py-32 bg-hero relative overflow-hidden">
@@ -61,7 +119,10 @@ export function OpenLetter() {
             </div>
 
             {/* Right Visual - Phone with Chat */}
-            <div className="relative h-[600px] w-full flex items-center justify-center">
+            <div
+              className="relative h-[600px] w-full flex items-center justify-center"
+              id="chat-trigger"
+            >
               {/* Phone Mockup */}
               <div className="relative w-[300px] h-[560px] rounded-[3rem] border-[10px] border-zinc-800 shadow-[0_25px_80px_rgba(0,0,0,0.6)] overflow-hidden bg-black">
                 <img
@@ -73,26 +134,13 @@ export function OpenLetter() {
 
                 {/* Messages */}
                 <div className="absolute inset-0 p-5 flex flex-col justify-start gap-3">
-                  {messages.map((msg, index) => (
+                  {messages.slice(0, visibleCount).map((msg) => (
                     <motion.div
                       key={msg.id}
                       className={`flex ${msg.role === "assistant" ? "justify-end" : "justify-start"}`}
                       initial={{ opacity: 0, y: 12, scale: 0.96 }}
-                      animate={{
-                        opacity: [0, 1, 1, 0],
-                        y: [12, 0, 0, -6],
-                        scale: [0.96, 1, 1, 0.98]
-                      }}
-                      transition={{
-                        duration: messageDuration,
-                        times: [0, 0.2, 0.85, 1],
-                        delay: index * messageStagger,
-                        repeat: Infinity,
-                        repeatDelay: Math.max(
-                          0,
-                          cycleSeconds - messageDuration - index * messageStagger
-                        )
-                      }}
+                      animate={{ opacity: 1, y: 0, scale: 1 }}
+                      transition={{ type: "spring", stiffness: 160, damping: 18 }}
                     >
                       <div
                         className={`max-w-[85%] px-4 py-3 rounded-2xl text-sm leading-relaxed shadow-lg ${
