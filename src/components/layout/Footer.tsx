@@ -1,4 +1,4 @@
-import { MessageCircle, Award } from "lucide-react";
+import { MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const WHATSAPP_LINK = "https://wa.me/60123456789";
@@ -39,12 +39,11 @@ export function Footer() {
       <div className="border-b border-white/10">
         <div className="container py-6 flex flex-col md:flex-row items-center justify-between gap-4">
           <div className="flex items-center gap-3">
-            <div className="w-8 h-8 rounded-full bg-lime flex items-center justify-center">
-              <Award className="w-4 h-4 text-lime-foreground" />
-            </div>
-            <span className="text-white/80">
-              HRDC claimable training built for Malaysian teams.
-            </span>
+            <img
+              src="/HRDC logo/HRDC logo.png"
+              alt="HRDC logo"
+              className="h-10 w-auto"
+            />
           </div>
           <Button variant="lime" size="sm" asChild>
             <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer">
