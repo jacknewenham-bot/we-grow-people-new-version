@@ -20,7 +20,7 @@ const messages = [
   {
     id: 4,
     role: "user",
-    text: "Already using it at work"
+    text: "Already using it at work. My numbers are improving already!"
   },
   {
     id: 5,

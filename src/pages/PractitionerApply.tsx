@@ -99,7 +99,8 @@ const PractitionerApply = () => {
                             animate={{ opacity: 1, y: 0 }}
                             className="headline-display text-5xl md:text-7xl mb-8"
                         >
-                            Become a WeGrowPeople <br />
+                            <span className="text-white/90">Become a WeGrowPeople</span>
+                            <br />
                             <span className="text-lime">practitioner</span>
                         </motion.h1>
                         <motion.p
