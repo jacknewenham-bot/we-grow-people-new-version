@@ -17,32 +17,32 @@ const coaches = [
     {
         name: "Hamza Akaouch",
         expertise: "Consultative selling & decision psychology",
-        image: "HA"
+        image: "/about-us-coaches-page/Hamza.png"
     },
     {
         name: "Jack Newenham",
         expertise: "Growth strategy & performance marketing",
-        image: "JN"
+        image: "/about-us-coaches-page/Jack.png"
     },
     {
         name: "Marc Sagayam",
         expertise: "Project governance & stakeholder management",
-        image: "MS"
+        image: "/about-us-coaches-page/Marc.png"
     },
     {
         name: "Adele O'Brien",
         expertise: "Growth strategy & go-to-market",
-        image: "AO"
+        image: "/about-us-coaches-page/Adele.png"
     },
     {
         name: "Ashvin Praveen",
         expertise: "AI workflows & business automation",
-        image: "AP"
+        image: "/about-us-coaches-page/Ashvin.png"
     },
     {
         name: "Kain Masters",
         expertise: "Leadership development & team dynamics",
-        image: "KM"
+        image: "/about-us-coaches-page/kain.png"
     }
 ];
 
@@ -329,8 +329,12 @@ const About = () => {
                                         <CarouselItem key={index} className="pl-4 basis-[85%] md:basis-[60%] lg:basis-[40%]">
                                             <div className="p-1">
                                                 <div className="bg-white rounded-3xl border border-border overflow-hidden h-full shadow-sm hover:shadow-md transition-shadow">
-                                                    <div className="aspect-[4/5] bg-muted/50 flex items-center justify-center text-4xl font-bold text-primary/20">
-                                                        {coach.image}
+                                                    <div className="aspect-[4/5] bg-muted/50 flex items-center justify-center overflow-hidden">
+                                                        <img
+                                                            src={coach.image}
+                                                            alt={coach.name}
+                                                            className="w-full h-full object-cover"
+                                                        />
                                                     </div>
                                                     <div className="p-8 text-center">
                                                         <h3 className="text-xl font-bold mb-2">{coach.name}</h3>
