@@ -49,7 +49,8 @@ const MarketingTraining = () => {
                             animate={{ opacity: 1, y: 0 }}
                             className="headline-display text-5xl md:text-7xl mb-8"
                         >
-                            Marketing training built for <br />
+                            <span className="text-white/90">Marketing training built for</span>
+                            <br />
                             <span className="text-lime">modern growth teams</span>
                         </motion.h1>
                         <motion.p

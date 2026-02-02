@@ -42,7 +42,8 @@ const AITraining = () => {
                             animate={{ opacity: 1, y: 0 }}
                             className="headline-display text-5xl md:text-7xl mb-8"
                         >
-                            AI training built for <br />
+                            <span className="text-white/90">AI training built for</span>
+                            <br />
                             <span className="text-lime">modern teams</span>
                         </motion.h1>
                         <motion.p

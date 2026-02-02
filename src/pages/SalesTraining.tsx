@@ -41,7 +41,8 @@ const SalesTraining = () => {
                             animate={{ opacity: 1, y: 0 }}
                             className="headline-display text-5xl md:text-7xl mb-8"
                         >
-                            Sales training built for <br />
+                            <span className="text-white/90">Sales training built for</span>
+                            <br />
                             <span className="text-lime">modern revenue teams</span>
                         </motion.h1>
                         <motion.p
