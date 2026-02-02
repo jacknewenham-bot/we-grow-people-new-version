@@ -24,6 +24,7 @@ const coaches = [
         expertise: "Project governance & stakeholder management",
         credibility: "7+ years leading complex operations",
         image: "/about-us-coaches-page/Marc.png",
+        imageClassName: "object-top",
     },
     {
         name: "Adele O'Brien",
@@ -143,7 +144,7 @@ export function CoachesCarousel() {
                                             <img
                                                 src={(coach as any).image}
                                                 alt={coach.name}
-                                                className="w-full h-full object-cover"
+                                                className={`w-full h-full object-cover ${(coach as any).imageClassName || "object-top"}`}
                                             />
                                         ) : (
                                             <span className="text-2xl font-bold text-primary font-heading">
