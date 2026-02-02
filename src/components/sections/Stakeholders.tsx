@@ -100,7 +100,7 @@ export function Stakeholders() {
               viewport={{ once: true }}
               className="headline-display font-heading text-4xl md:text-5xl"
             >
-              WeGrowPeople is for you
+              Training that fits your role
             </motion.h2>
             <motion.p
               initial={{ opacity: 0, y: 16 }}
