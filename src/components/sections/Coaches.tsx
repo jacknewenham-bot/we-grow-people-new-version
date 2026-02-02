@@ -6,48 +6,56 @@ const coaches = [
     tagline: "Consultative selling grounded in buyer psychology",
     title: "HRDC Accredited Sales Trainer",
     focus: "Decision psychology, deep discovery, objection handling",
+    image: "/Coaches/Hamza.png",
   },
   {
     name: "Jack Newenham",
     tagline: "Growth and Performance Marketing Manager",
     title: "Marketing and Growth Mentor",
     focus: "Growth strategy, performance marketing, execution",
+    image: "/Coaches/Jack.png",
   },
   {
     name: "Marc Sagayam",
     tagline: "Project Manager",
     title: "7+ years leading complex operations and high-stakes projects",
     focus: "Project governance, delivery timelines, stakeholder management",
+    image: "/Coaches/Marc.png",
   },
   {
     name: "Adele O'Brien",
     tagline: "Partnerships and Growth Strategy Leader",
     title: "9+ years scaling brands across Asia, the USA, and Europe",
     focus: "Growth strategy, partnerships, go-to-market, performance",
+    image: "/Coaches/Adele.png",
   },
   {
     name: "Ashvin Praveen",
     tagline: "Co-founder and CEO of Cleve.ai",
     title: "Trainer for vibe coding for business and practical AI adoption",
     focus: "AI workflows, building with AI tools, content productivity",
+    image: "/Coaches/Ashvin.png",
   },
   {
     name: "Alfred Ng",
     tagline: "Videographer, storyteller, affiliate marketer",
     title: "Experienced across industries and countries",
     focus: "Storytelling, video creation, affiliate marketing",
+    image: "/Coaches/Alfred.png",
   },
   {
     name: "Ebrahim Al Hamdi",
     tagline: "Marketing, agents, and vibe coding specialist",
     title: "25 years based in the US, now in Malaysia",
     focus: "AI agents, automation, marketing systems, vibe coding",
+    image: "/Coaches/Ebrahim.png",
   },
   {
     name: "Ivan Eng",
     tagline: "Chief of Marketing at Bambi",
     title: "Helping working adults overcome stress, burnout, and work anxiety",
     focus: "Workplace wellbeing, mental health support, HRDC claimable training",
+    image: "/Coaches/Ivan.png",
   },
 ];
 
@@ -94,10 +102,18 @@ export function Coaches() {
               transition={{ delay: index * 0.05 }}
               className="group bg-card rounded-3xl p-6 border border-border shadow-card hover:shadow-card-hover transition-all duration-300"
             >
-              <div className="w-16 h-16 rounded-full bg-gradient-to-br from-gray-300 to-gray-400 flex items-center justify-center mb-5 group-hover:scale-105 transition-transform duration-300">
-                <span className="text-xl font-bold text-gray-600">
-                  {getInitials(coach.name)}
-                </span>
+              <div className="w-16 h-16 rounded-full bg-gradient-to-br from-gray-300 to-gray-400 flex items-center justify-center mb-5 group-hover:scale-105 transition-transform duration-300 overflow-hidden">
+                {(coach as any).image ? (
+                  <img
+                    src={(coach as any).image}
+                    alt={coach.name}
+                    className="w-full h-full object-cover"
+                  />
+                ) : (
+                  <span className="text-xl font-bold text-gray-600">
+                    {getInitials(coach.name)}
+                  </span>
+                )}
               </div>
 
               <h3 className="text-lg font-bold text-foreground mb-1">

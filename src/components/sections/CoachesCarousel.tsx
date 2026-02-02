@@ -9,48 +9,56 @@ const coaches = [
         tagline: "HRDC Accredited Sales Trainer",
         expertise: "Consultative selling & decision psychology",
         credibility: "Improves discovery, value framing, and buyer confidence",
+        image: "/Coaches/Hamza.png",
     },
     {
         name: "Jack Newenham",
         tagline: "Marketing and Growth Mentor",
         expertise: "Growth strategy & performance marketing",
         credibility: "Growth and Performance Marketing Manager",
+        image: "/Coaches/Jack.png",
     },
     {
         name: "Marc Sagayam",
         tagline: "Project Manager",
         expertise: "Project governance & stakeholder management",
         credibility: "7+ years leading complex operations",
+        image: "/Coaches/Marc.png",
     },
     {
         name: "Adele O'Brien",
         tagline: "Partnerships and Growth Strategy Leader",
         expertise: "Growth strategy & go-to-market",
         credibility: "9+ years scaling brands across Asia, USA, and Europe",
+        image: "/Coaches/Adele.png",
     },
     {
         name: "Ashvin Praveen",
         tagline: "Co-founder and CEO of Cleve.ai",
         expertise: "AI workflows & vibe coding for business",
         credibility: "Trainer for practical AI adoption",
+        image: "/Coaches/Ashvin.png",
     },
     {
         name: "Alfred Ng",
         tagline: "Videographer & Storyteller",
         expertise: "Storytelling & video creation",
         credibility: "Experienced across industries and countries",
+        image: "/Coaches/Alfred.png",
     },
     {
         name: "Ebrahim Al Hamdi",
         tagline: "Marketing & AI Specialist",
         expertise: "AI agents & automation",
         credibility: "25 years based in the US, now in Malaysia",
+        image: "/Coaches/Ebrahim.png",
     },
     {
         name: "Ivan Eng",
         tagline: "Chief of Marketing at Bambi",
         expertise: "Workplace wellbeing & mental health",
         credibility: "Helping adults overcome stress and burnout",
+        image: "/Coaches/Ivan.png",
     },
 ];
 
@@ -123,10 +131,18 @@ export function CoachesCarousel() {
                                     transition={{ delay: index * 0.1 }}
                                     className="group bg-white rounded-3xl p-8 border border-border/50 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 cursor-pointer"
                                 >
-                                    <div className="w-20 h-20 rounded-full bg-gradient-to-br from-primary/20 to-lime/20 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                                        <span className="text-2xl font-bold text-primary font-heading">
-                                            {getInitials(coach.name)}
-                                        </span>
+                                    <div className="w-20 h-20 rounded-full bg-gradient-to-br from-primary/20 to-lime/20 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 overflow-hidden">
+                                        {(coach as any).image ? (
+                                            <img
+                                                src={(coach as any).image}
+                                                alt={coach.name}
+                                                className="w-full h-full object-cover"
+                                            />
+                                        ) : (
+                                            <span className="text-2xl font-bold text-primary font-heading">
+                                                {getInitials(coach.name)}
+                                            </span>
+                                        )}
                                     </div>
 
                                     <h3 className="font-heading text-xl font-bold text-foreground mb-2">
