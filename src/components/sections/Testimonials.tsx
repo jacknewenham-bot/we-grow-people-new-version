@@ -248,7 +248,7 @@ export function Testimonials() {
                 const isExpanded = expanded.has(index);
                 const isLong = testimonial.quote.length > 280;
                 return (
-                  <div key={index} className="flex-[0_0_auto] pl-4 min-w-[280px] sm:min-w-[320px] lg:min-w-[360px] xl:min-w-[380px]">
+                  <div key={index} className="flex-[0_0_100%] min-w-0 md:flex-[0_0_50%] lg:flex-[0_0_33.333%] pl-4">
                     <motion.div
                       initial={{ opacity: 0, y: 30 }}
                       whileInView={{ opacity: 1, y: 0 }}
