@@ -353,11 +353,16 @@ const Contact = () => {
                                 </p>
                             </div>
                             <div className="flex-1 order-1 md:order-2 grid grid-cols-2 gap-4">
-                                {[1, 2, 3, 4].map((i) => (
-                                    <div key={i} className="aspect-square bg-muted rounded-2xl overflow-hidden grayscale hover:grayscale-0 transition-all duration-500">
+                                {[
+                                    { name: "Jack", image: "/about-us-coaches-page/Jack.png" },
+                                    { name: "Hamza", image: "/about-us-coaches-page/Hamza.png" },
+                                    { name: "Adele", image: "/about-us-coaches-page/Adele.png" },
+                                    { name: "Marc", image: "/about-us-coaches-page/Marc.png" },
+                                ].map((member) => (
+                                    <div key={member.name} className="aspect-square bg-muted rounded-2xl overflow-hidden grayscale hover:grayscale-0 transition-all duration-500">
                                         <img
-                                            src={`https://i.pravatar.cc/300?img=${i + 10}`}
-                                            alt="Team member"
+                                            src={member.image}
+                                            alt={member.name}
                                             className="w-full h-full object-cover"
                                         />
                                     </div>
@@ -377,7 +382,7 @@ const Contact = () => {
                                 We work with teams across Malaysia and the region, delivering both in-person and remote training.
                             </p>
                             <div className="flex justify-center gap-12 flex-wrap">
-                                {["Kuala Lumpur", "Singapore", "Jakarta", "Remote"].map(loc => (
+                                {["Malaysia", "Singapore", "United Kingdom", "Remote"].map(loc => (
                                     <div key={loc} className="flex items-center gap-2 font-bold text-lg">
                                         <div className="w-2 h-2 rounded-full bg-lime" />
                                         {loc}
