@@ -1,18 +1,16 @@
 import { motion } from "framer-motion";
 
 const logos = [
-  "StoreHub",
-  "SPEEDHOME",
-  "Gartner",
-  "Employment Hero",
-  "BI WORLDWIDE",
-  "Frost & Sullivan",
-  "Carrots&Cake",
-  "GrubCycle",
-  "The Social Group",
-  "Expect Nothing Clo",
-  "HuffNPuff Technology",
-  "The Visual Folks",
+  { name: "StoreHub", image: "/Logos/StoreHub.avif" },
+  { name: "SPEEDHOME", image: "/Logos/SPEEDHOME.png" },
+  { name: "Gartner", image: "/Logos/Gartner.png" },
+  { name: "Employment Hero", image: "/Logos/EMPLOYMENT HERO LOGO.jpg" },
+  { name: "BI WORLDWIDE", image: "/Logos/BI WORLDWIDE.png" },
+  { name: "Frost & Sullivan", image: "/Logos/Frost & Sullivan.png" },
+  { name: "Carrots&Cake", image: "/Logos/Carrots&Cake logo.png" },
+  { name: "GrubCycle", image: "/Logos/grub cycle logo.png" },
+  { name: "The Social Group", image: "/Logos/the social.svg" },
+  { name: "HuffNPuff Technology", image: "/Logos/huff n puff logo.png" },
 ];
 
 export function SocialProof() {
@@ -38,12 +36,16 @@ export function SocialProof() {
         >
           <div className="logo-marquee">
             {[...logos, ...logos].map((logo, index) => (
-              <span
-                key={`${logo}-${index}`}
-                className="logo-marquee-item"
+              <div
+                key={`${logo.name}-${index}`}
+                className="logo-marquee-item mx-8 flex items-center justify-center h-16 w-32 grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
               >
-                {logo}
-              </span>
+                <img
+                  src={logo.image}
+                  alt={logo.name}
+                  className="max-w-full max-h-full object-contain"
+                />
+              </div>
             ))}
           </div>
         </motion.div>

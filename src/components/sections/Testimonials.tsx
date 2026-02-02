@@ -91,6 +91,8 @@ const testimonials = [
     author: "Mark Lester Catungal",
     role: "IT Educator",
     company: "Saint Columban College",
+    linkedin: "https://www.linkedin.com/in/mark-lester-catungal-942201144/",
+    image: "/Testimonials/Mark Lester Catungal.jpeg",
   },
   {
     date: "August 01, 2024",
