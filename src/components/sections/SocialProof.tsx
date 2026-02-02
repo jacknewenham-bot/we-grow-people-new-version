@@ -4,7 +4,7 @@ const logos = [
   { name: "StoreHub", image: "/Logos/StoreHub.avif" },
   { name: "SPEEDHOME", image: "/Logos/SPEEDHOME.png" },
   { name: "Gartner", image: "/Logos/Gartner.png" },
-  { name: "Employment Hero", image: "/Logos/EMPLOYMENT HERO LOGO.jpg" },
+  { name: "Employment Hero", image: "/Logos/EMPLOYMENT HERO web logo.png" },
   { name: "BI WORLDWIDE", image: "/Logos/BI WORLDWIDE.png" },
   { name: "Frost & Sullivan", image: "/Logos/Frost & Sullivan.png" },
   { name: "Carrots&Cake", image: "/Logos/Carrots&Cake logo.png" },
@@ -38,12 +38,12 @@ export function SocialProof() {
             {[...logos, ...logos].map((logo, index) => (
               <div
                 key={`${logo.name}-${index}`}
-                className="logo-marquee-item mx-8 flex items-center justify-center h-16 w-32 grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
+                className="logo-marquee-item mx-8 flex items-center justify-center h-20 w-40 grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
               >
                 <img
                   src={logo.image}
                   alt={logo.name}
-                  className="max-w-full max-h-full object-contain"
+                  className="max-w-[140px] max-h-[60px] object-contain w-auto h-auto"
                 />
               </div>
             ))}
