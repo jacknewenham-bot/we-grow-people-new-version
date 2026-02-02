@@ -82,7 +82,7 @@ const CourseDetail = () => {
                             This course can be delivered in-person or virtually. Talk to us to schedule a session for your team.
                         </p>
                         <Button variant="lime" size="xl" asChild className="rounded-full px-12 py-8 text-xl font-bold">
-                            <a href="https://wa.me/60173552382" target="_blank" rel="noopener noreferrer">
+                            <a href="https://wa.me/60173552382?text=Hi%2C%20I%27m%20interested%20in%20upskilling%20my%20team%20and%20would%20love%20to%20learn%20more%20about%20your%20training%20and%20consultancy%20options." target="_blank" rel="noopener noreferrer">
                                 <MessageCircle className="mr-3 h-6 w-6" /> Talk to our team
                             </a>
                         </Button>

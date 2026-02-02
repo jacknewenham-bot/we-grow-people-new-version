@@ -4,7 +4,7 @@ import { Footer } from "@/components/layout/Footer";
 import { Button } from "@/components/ui/button";
 import { MessageCircle, Zap, Target, Users, CheckCircle2, TrendingUp, BarChart3, Workflow } from "lucide-react";
 
-const WHATSAPP_LINK = "https://wa.me/60173552382?text=Hi%20there%2C%20I'm%20interested%20in%20your%20consultancy%20services";
+const WHATSAPP_LINK = "https://wa.me/60173552382?text=Hi%2C%20I%27m%20interested%20in%20upskilling%20my%20team%20and%20would%20love%20to%20learn%20more%20about%20your%20training%20and%20consultancy%20options.'m%20interested%20in%20your%20consultancy%20services";
 
 const Consultancy = () => {
     const scrollToContact = () => {
@@ -24,7 +24,8 @@ const Consultancy = () => {
                             animate={{ opacity: 1, y: 0 }}
                             className="headline-display text-5xl md:text-7xl mb-8"
                         >
-                            Consulting that helps you <br />
+                            <span className="text-white/90">Consulting that helps you</span>
+                            <br />
                             <span className="text-lime">move, not just plan.</span>
                         </motion.h1>
                         <motion.p

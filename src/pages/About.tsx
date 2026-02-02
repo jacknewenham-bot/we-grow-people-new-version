@@ -11,7 +11,7 @@ import {
 } from "@/components/ui/carousel";
 import { CheckCircle2, XCircle, ArrowRight, Zap, Target, Users, Shield } from "lucide-react";
 
-const WHATSAPP_LINK = "https://wa.me/60173552382?text=Hi%20there%2C%20I'm%20interested%20in%20finding%20out%20more%20about%20your%20training";
+const WHATSAPP_LINK = "https://wa.me/60173552382?text=Hi%2C%20I%27m%20interested%20in%20upskilling%20my%20team%20and%20would%20love%20to%20learn%20more%20about%20your%20training%20and%20consultancy%20options.'m%20interested%20in%20finding%20out%20more%20about%20your%20training";
 
 const coaches = [
     {
@@ -77,8 +77,9 @@ const About = () => {
                             className="text-center"
                         >
                             <h1 className="headline-display text-5xl md:text-7xl mb-8">
-                                Where Human Skills <br />
-                                <span className="text-lime">Meet Smart Technology</span>
+                                <span className="text-white/90">Built to help teams grow</span>
+                                <br />
+                                <span className="text-lime">in a changing world</span>
                             </h1>
                             <p className="text-xl md:text-2xl text-hero-muted mb-10 max-w-3xl mx-auto font-medium">
                                 WeGrowPeople exists to help individuals and teams perform, adapt, and stay ahead in a fast-moving world of work without outdated frameworks or generic training.

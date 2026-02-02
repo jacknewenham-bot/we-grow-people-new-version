@@ -26,7 +26,7 @@ import {
 import { toast } from "sonner";
 import { MessageCircle, Send, CheckCircle2, MapPin, Phone, Mail, Users, Zap, Search } from "lucide-react";
 
-const WHATSAPP_LINK = "https://wa.me/60173552382?text=Hi%20there%2C%20I'm%20interested%20in%20finding%20out%20more%20about%20your%20training";
+const WHATSAPP_LINK = "https://wa.me/60173552382?text=Hi%2C%20I%27m%20interested%20in%20upskilling%20my%20team%20and%20would%20love%20to%20learn%20more%20about%20your%20training%20and%20consultancy%20options.'m%20interested%20in%20finding%20out%20more%20about%20your%20training";
 
 const formSchema = z.object({
     companyName: z.string().min(2, "Company name is required"),
@@ -77,7 +77,8 @@ const Contact = () => {
                             animate={{ opacity: 1, y: 0 }}
                             className="headline-display text-5xl md:text-7xl mb-8"
                         >
-                            Let’s talk about <br />
+                            <span className="text-white/90">Let’s talk about</span>
+                            <br />
                             <span className="text-lime">your team</span>
                         </motion.h1>
                         <motion.p

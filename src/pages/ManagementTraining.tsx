@@ -19,7 +19,7 @@ import {
     UserCheck
 } from "lucide-react";
 
-const WHATSAPP_LINK = "https://wa.me/60173552382?text=Hi%20there%2C%20I'm%20interested%20in%20your%20Management%20Training%20programs";
+const WHATSAPP_LINK = "https://wa.me/60173552382?text=Hi%2C%20I%27m%20interested%20in%20upskilling%20my%20team%20and%20would%20love%20to%20learn%20more%20about%20your%20training%20and%20consultancy%20options.'m%20interested%20in%20your%20Management%20Training%20programs";
 
 const ManagementTraining = () => {
     const scrollToPrograms = () => {
