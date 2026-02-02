@@ -159,7 +159,7 @@ export function Hero() {
                   <div key={i} className="rating-dot" />
                 ))}
               </div>
-              <span className="text-white/60 text-sm">HRDC Claimable</span>
+              <span className="text-white/60 text-sm">100% HRDC Claimable</span>
             </div>
           </motion.div>
         </div>

@@ -12,6 +12,7 @@ const features = [
     body: "No outdated frameworks. No generic training. Just real tools and workflows your team can apply right away.",
     bullets: ["Hands-on exercises", "Real company scenarios", "Actionable frameworks"],
     image: "/training-images/practical-skills.png",
+    link: "/sales-training",
     popout: {
       title: "Live Workshop Format",
       bullets: ["Interactive sprints", "Guided role-play scenarios", "Immediate facilitator feedback"],
@@ -25,6 +26,7 @@ const features = [
     body: "We work with experienced practitioners across growth, sales, leadership, project management, AI, content, and wellbeing.",
     bullets: ["Industry experience", "Modern playbooks", "Malaysia-relevant use cases"],
     image: "/training-images/expert-led.png",
+    link: "/coaches",
     popout: {
       title: "Practitioner Led",
       bullets: ["Decades of real experience", "Proven industry playbooks", "No generic theory"],
@@ -38,6 +40,7 @@ const features = [
     body: "We help teams adopt AI in a practical way, from workflows to automation, so they can perform better with less effort.",
     bullets: ["AI workflows", "Vibe coding for business", "Agent-based productivity"],
     image: "/training-images/ai-powered.jpg",
+    link: "/training/ai",
     popout: {
       title: "Modern Tooling",
       bullets: ["Live AI demonstrations", "Custom workflow setups", "Hands-on prompting guides"],
@@ -51,6 +54,7 @@ const features = [
     body: "Programs are structured to meet HRDC requirements while keeping delivery practical and outcome-driven.",
     bullets: ["Fully compliant", "Easy claims process", "Outcome-focused"],
     image: "/training-images/hrdc-claimable.jpg",
+    link: "/about",
     popout: {
       title: "Claim Ready",
       bullets: ["Full documentation provided", "SBL-Khas compliant", "Structured for approval"],
@@ -128,8 +132,10 @@ export function Features() {
                 ))}
               </ul>
 
-              <Button variant="dark" size="lg" className="rounded-full px-8">
-                Learn more about {activeFeature.title.toLowerCase()}
+              <Button variant="dark" size="lg" className="rounded-full px-8" asChild>
+                <a href={(activeFeature as any).link}>
+                  Learn more about {activeFeature.title.toLowerCase()}
+                </a>
               </Button>
             </div>
 

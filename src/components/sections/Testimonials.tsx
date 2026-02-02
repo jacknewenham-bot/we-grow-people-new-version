@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
-import { useRef, useState } from "react";
+import { useRef, useState, useCallback } from "react";
 import { ArrowDown, ArrowLeft, ArrowRight } from "lucide-react";
+import useEmblaCarousel from "embla-carousel-react";
 
 const testimonials = [
   {
@@ -178,7 +179,15 @@ const testimonials = [
 
 export function Testimonials() {
   const [expanded, setExpanded] = useState<Set<number>>(new Set());
-  const trackRef = useRef<HTMLDivElement | null>(null);
+  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true, align: "start" });
+
+  const scrollPrev = useCallback(() => {
+    if (emblaApi) emblaApi.scrollPrev();
+  }, [emblaApi]);
+
+  const scrollNext = useCallback(() => {
+    if (emblaApi) emblaApi.scrollNext();
+  }, [emblaApi]);
 
   const toggleExpanded = (index: number) => {
     setExpanded((prev) => {
@@ -190,16 +199,6 @@ export function Testimonials() {
       }
       return next;
     });
-  };
-
-  const scrollByAmount = (direction: "prev" | "next") => {
-    const track = trackRef.current;
-    if (!track) return;
-    const card = track.querySelector<HTMLElement>("[data-testimonial-card]");
-    const cardWidth = card?.offsetWidth ?? 360;
-    const gap = 32;
-    const delta = direction === "next" ? cardWidth + gap : -(cardWidth + gap);
-    track.scrollBy({ left: delta, behavior: "smooth" });
   };
 
   return (
@@ -243,106 +242,105 @@ export function Testimonials() {
 
         {/* Testimonial Carousel */}
         <div className="relative">
-          <div
-            ref={trackRef}
-            className="flex gap-8 overflow-x-auto pb-6 -mx-6 px-6 snap-x snap-mandatory scrollbar-none"
-          >
-            {testimonials.map((testimonial, index) => {
-              const isExpanded = expanded.has(index);
-              const isLong = testimonial.quote.length > 280;
-              return (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: index * 0.1 }}
-                  data-testimonial-card
-                  className="min-w-[280px] sm:min-w-[320px] lg:min-w-[360px] xl:min-w-[380px] snap-start bg-[#F1F1E6] rounded-[2.25rem] p-10 border border-foreground/5 shadow-[0_12px_30px_rgba(20,40,20,0.08)] hover:shadow-[0_18px_40px_rgba(20,40,20,0.12)] transition-all duration-500 flex flex-col"
-                >
-                  <p
-                    className="text-foreground text-lg md:text-xl leading-relaxed font-sans"
-                    style={
-                      !isExpanded && isLong
-                        ? {
-                          display: "-webkit-box",
-                          WebkitLineClamp: 6,
-                          WebkitBoxOrient: "vertical",
-                          overflow: "hidden",
-                        }
-                        : undefined
-                    }
-                  >
-                    “{testimonial.quote}”
-                  </p>
-                  {isLong && (
-                    <button
-                      type="button"
-                      onClick={() => toggleExpanded(index)}
-                      className="mt-4 text-sm font-semibold text-foreground/70 hover:text-foreground transition-colors self-start"
+          <div className="overflow-hidden" ref={emblaRef}>
+            <div className="flex gap-8 -ml-4">
+              {testimonials.map((testimonial, index) => {
+                const isExpanded = expanded.has(index);
+                const isLong = testimonial.quote.length > 280;
+                return (
+                  <div key={index} className="flex-[0_0_auto] pl-4 min-w-[280px] sm:min-w-[320px] lg:min-w-[360px] xl:min-w-[380px]">
+                    <motion.div
+                      initial={{ opacity: 0, y: 30 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ delay: 0.1 }}
+                      className="bg-[#F1F1E6] rounded-[2.25rem] p-10 border border-foreground/5 shadow-[0_12px_30px_rgba(20,40,20,0.08)] hover:shadow-[0_18px_40px_rgba(20,40,20,0.12)] transition-all duration-500 flex flex-col h-full"
                     >
-                      {isExpanded ? "Read less" : "Read more"}
-                    </button>
-                  )}
-
-                  <div className="mt-auto flex items-center gap-4 pt-6 border-t border-foreground/10">
-                    <div className="w-12 h-12 rounded-full bg-foreground/10 flex items-center justify-center shrink-0 overflow-hidden">
-                      {(testimonial as any).image ? (
-                        <img
-                          src={(testimonial as any).image}
-                          alt={testimonial.author}
-                          className="w-full h-full object-cover"
-                        />
-                      ) : (
-                        <span className="text-sm font-bold text-foreground font-heading">
-                          {testimonial.author.split(" ").map((n) => n[0]).join("")}
-                        </span>
+                      <p
+                        className="text-foreground text-lg md:text-xl leading-relaxed font-sans"
+                        style={
+                          !isExpanded && isLong
+                            ? {
+                              display: "-webkit-box",
+                              WebkitLineClamp: 6,
+                              WebkitBoxOrient: "vertical",
+                              overflow: "hidden",
+                            }
+                            : undefined
+                        }
+                      >
+                        “{testimonial.quote}”
+                      </p>
+                      {isLong && (
+                        <button
+                          type="button"
+                          onClick={() => toggleExpanded(index)}
+                          className="mt-4 text-sm font-semibold text-foreground/70 hover:text-foreground transition-colors self-start"
+                        >
+                          {isExpanded ? "Read less" : "Read more"}
+                        </button>
                       )}
-                    </div>
-                    <div className="leading-tight">
-                      <p className="font-semibold text-foreground text-base flex items-center gap-2">
-                        {(testimonial as any).linkedin ? (
-                          <a
-                            href={(testimonial as any).linkedin}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="hover:text-lime transition-colors inline-flex items-center gap-2"
-                          >
-                            {(testimonial as any).author}
-                            <svg className="w-4 h-4 text-[#0077b5]" fill="currentColor" viewBox="0 0 24 24">
-                              <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
-                            </svg>
-                          </a>
-                        ) : (
-                          (testimonial as any).author
-                        )}
-                      </p>
-                      <p className="text-muted-foreground text-sm">
-                        {testimonial.role} • {testimonial.company}
-                      </p>
-                      <p className="text-muted-foreground/70 text-xs uppercase tracking-widest mt-1">
-                        {testimonial.date}
-                      </p>
-                    </div>
+
+                      <div className="mt-auto flex items-center gap-4 pt-6 border-t border-foreground/10">
+                        <div className="w-12 h-12 rounded-full bg-foreground/10 flex items-center justify-center shrink-0 overflow-hidden">
+                          {(testimonial as any).image ? (
+                            <img
+                              src={(testimonial as any).image}
+                              alt={testimonial.author}
+                              className="w-full h-full object-cover"
+                            />
+                          ) : (
+                            <span className="text-sm font-bold text-foreground font-heading">
+                              {testimonial.author.split(" ").map((n: string) => n[0]).join("")}
+                            </span>
+                          )}
+                        </div>
+                        <div className="leading-tight">
+                          <p className="font-semibold text-foreground text-base flex items-center gap-2">
+                            {(testimonial as any).linkedin ? (
+                              <a
+                                href={(testimonial as any).linkedin}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="hover:text-lime transition-colors inline-flex items-center gap-2"
+                              >
+                                {(testimonial as any).author}
+                                <svg className="w-4 h-4 text-[#0077b5]" fill="currentColor" viewBox="0 0 24 24">
+                                  <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                                </svg>
+                              </a>
+                            ) : (
+                              (testimonial as any).author
+                            )}
+                          </p>
+                          <p className="text-muted-foreground text-sm">
+                            {testimonial.role} • {testimonial.company}
+                          </p>
+                          <p className="text-muted-foreground/70 text-xs uppercase tracking-widest mt-1">
+                            {testimonial.date}
+                          </p>
+                        </div>
+                      </div>
+                    </motion.div>
                   </div>
-                </motion.div>
-              );
-            })}
+                );
+              })}
+            </div>
           </div>
           <div className="mt-10 flex items-center justify-center gap-4">
             <button
               type="button"
               aria-label="Previous testimonials"
-              onClick={() => scrollByAmount("prev")}
-              className="h-12 w-12 rounded-full bg-foreground text-white flex items-center justify-center shadow-md"
+              onClick={scrollPrev}
+              className="h-12 w-12 rounded-full bg-foreground text-white flex items-center justify-center shadow-md hover:bg-foreground/90 transition-colors"
             >
               <ArrowLeft className="h-5 w-5" />
             </button>
             <button
               type="button"
               aria-label="Next testimonials"
-              onClick={() => scrollByAmount("next")}
-              className="h-12 w-12 rounded-full bg-foreground text-white flex items-center justify-center shadow-md"
+              onClick={scrollNext}
+              className="h-12 w-12 rounded-full bg-foreground text-white flex items-center justify-center shadow-md hover:bg-foreground/90 transition-colors"
             >
               <ArrowRight className="h-5 w-5" />
             </button>
