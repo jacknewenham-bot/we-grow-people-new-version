@@ -11,7 +11,7 @@ const features = [
     headline: "Learn skills you can use immediately.",
     body: "No outdated frameworks. No generic training. Just real tools and workflows your team can apply right away.",
     bullets: ["Hands-on exercises", "Real company scenarios", "Actionable frameworks"],
-    image: "/our training/Practical skills.png",
+    image: "/training-images/practical-skills.png",
     popout: {
       title: "Live Workshop Format",
       bullets: ["Interactive sprints", "Guided role-play scenarios", "Immediate facilitator feedback"],
@@ -24,7 +24,7 @@ const features = [
     headline: "Learn from people who have done the work.",
     body: "We work with experienced practitioners across growth, sales, leadership, project management, AI, content, and wellbeing.",
     bullets: ["Industry experience", "Modern playbooks", "Malaysia-relevant use cases"],
-    image: "/our training/Expert-led.png",
+    image: "/training-images/expert-led.png",
     popout: {
       title: "Practitioner Led",
       bullets: ["Decades of real experience", "Proven industry playbooks", "No generic theory"],
@@ -37,7 +37,7 @@ const features = [
     headline: "Use modern tools to move faster.",
     body: "We help teams adopt AI in a practical way, from workflows to automation, so they can perform better with less effort.",
     bullets: ["AI workflows", "Vibe coding for business", "Agent-based productivity"],
-    image: "/our training/ai-powered.jpg",
+    image: "/training-images/ai-powered.jpg",
     popout: {
       title: "Modern Tooling",
       bullets: ["Live AI demonstrations", "Custom workflow setups", "Hands-on prompting guides"],
@@ -50,7 +50,7 @@ const features = [
     headline: "HRDC claimable training, without the hassle.",
     body: "Programs are structured to meet HRDC requirements while keeping delivery practical and outcome-driven.",
     bullets: ["Fully compliant", "Easy claims process", "Outcome-focused"],
-    image: "/our training/HRDC claimable.jpg",
+    image: "/training-images/hrdc-claimable.jpg",
     popout: {
       title: "Claim Ready",
       bullets: ["Full documentation provided", "SBL-Khas compliant", "Structured for approval"],
