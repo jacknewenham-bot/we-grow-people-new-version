@@ -7,6 +7,7 @@ import { HowItWorks } from "@/components/sections/HowItWorks";
 import { CoachesCarousel } from "@/components/sections/CoachesCarousel";
 import { OpenLetter } from "@/components/sections/OpenLetter";
 import { Testimonials } from "@/components/sections/Testimonials";
+import { Stakeholders } from "@/components/sections/Stakeholders";
 import { FinalCTA } from "@/components/sections/FinalCTA";
 import { Footer } from "@/components/layout/Footer";
 
@@ -23,6 +24,7 @@ const Index = () => {
         <CoachesCarousel />
         <OpenLetter />
         <Testimonials />
+        <Stakeholders />
         <FinalCTA />
       </main>
       <Footer />
