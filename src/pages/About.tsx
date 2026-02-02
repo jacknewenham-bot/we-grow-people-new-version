@@ -43,6 +43,21 @@ const coaches = [
         name: "Kain Masters",
         expertise: "Leadership development & team dynamics",
         image: "/about-us-coaches-page/kain.png"
+    },
+    {
+        name: "Alfred Ng",
+        expertise: "Storytelling & video creation",
+        image: "/about-us-coaches-page/Alfred.png"
+    },
+    {
+        name: "Ebrahim Al Hamdi",
+        expertise: "AI agents & automation",
+        image: "/about-us-coaches-page/Ebrahim.png"
+    },
+    {
+        name: "Ivan Eng",
+        expertise: "Workplace wellbeing & mental health",
+        image: "/about-us-coaches-page/ivan.png"
     }
 ];
 

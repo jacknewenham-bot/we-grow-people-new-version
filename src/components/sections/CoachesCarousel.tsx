@@ -40,6 +40,13 @@ const coaches = [
         image: "/about-us-coaches-page/Ashvin.png",
     },
     {
+        name: "Kain Masters",
+        tagline: "Communications Coach",
+        expertise: "Mastering Communication",
+        credibility: "Coaching young professionals to unlock their full potential",
+        image: "/about-us-coaches-page/kain.png",
+    },
+    {
         name: "Alfred Ng",
         tagline: "Videographer & Storyteller",
         expertise: "Storytelling & video creation",
