@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -80,7 +80,22 @@ function getInitials(name: string) {
 
 export function CoachesCarousel() {
     const [currentIndex, setCurrentIndex] = useState(0);
-    const itemsPerPage = 4;
+    const [itemsPerPage, setItemsPerPage] = useState(4);
+
+    useEffect(() => {
+        const handleResize = () => {
+            if (window.innerWidth < 768) {
+                setItemsPerPage(1);
+            } else {
+                setItemsPerPage(4);
+            }
+        };
+
+        handleResize(); // Set initial
+        window.addEventListener("resize", handleResize);
+        return () => window.removeEventListener("resize", handleResize);
+    }, []);
+
     const totalPages = Math.ceil(coaches.length / itemsPerPage);
 
     const nextSlide = () => {
@@ -97,7 +112,7 @@ export function CoachesCarousel() {
     );
 
     return (
-        <section id="coaches" className="py-24 md:py-32 bg-background">
+        <section id="coaches" className="py-12 md:py-32 bg-background">
             <div className="container">
                 <div className="text-center mb-20">
                     <motion.h2

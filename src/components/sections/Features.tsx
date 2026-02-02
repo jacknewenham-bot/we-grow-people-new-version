@@ -63,14 +63,14 @@ export function Features() {
   const activeFeature = features.find((f) => f.id === activeTab)!;
 
   return (
-    <section id="programs" className="py-20 md:py-28 bg-[#F1F1E6]">
+    <section id="programs" className="py-12 md:py-28 bg-[#F1F1E6]">
       <div className="container">
         {/* Section Title */}
         <motion.h2
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="headline-display font-heading text-4xl md:text-6xl text-foreground text-center mb-16"
+          className="headline-display font-heading text-4xl md:text-6xl text-foreground text-center mb-10 md:mb-16"
         >
           Our Training
         </motion.h2>
@@ -81,14 +81,14 @@ export function Features() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.1 }}
-          className="flex justify-center mb-20"
+          className="flex justify-center mb-12 md:mb-20"
         >
-          <div className="inline-flex items-center bg-primary rounded-full p-2 shadow-lg">
+          <div className="flex flex-wrap justify-center gap-2 bg-primary rounded-3xl md:rounded-full p-2 shadow-lg max-w-full">
             {features.map((feature) => (
               <button
                 key={feature.id}
                 onClick={() => setActiveTab(feature.id)}
-                className={`px-6 py-3 rounded-full font-heading font-semibold text-sm transition-all duration-300 ${activeTab === feature.id
+                className={`px-4 py-2 md:px-6 md:py-3 rounded-full font-heading font-semibold text-xs md:text-sm transition-all duration-300 ${activeTab === feature.id
                   ? "bg-white text-foreground shadow-sm"
                   : "text-white/70 hover:text-white"
                   }`}

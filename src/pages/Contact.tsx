@@ -70,7 +70,7 @@ const Contact = () => {
 
             <main className="pt-20">
                 {/* 1. Hero Section */}
-                <section className="py-20 md:py-32 bg-hero text-hero">
+                <section className="py-16 md:py-32 bg-hero text-hero">
                     <div className="container max-w-5xl text-center">
                         <motion.h1
                             initial={{ opacity: 0, y: 20 }}
@@ -112,7 +112,7 @@ const Contact = () => {
                 </section>
 
                 {/* 2. What Happens When You Reach Out */}
-                <section className="py-24 bg-white">
+                <section className="py-12 md:py-24 bg-white">
                     <div className="container">
                         <div className="max-w-4xl mx-auto">
                             <h2 className="headline-display text-3xl md:text-5xl mb-16 text-center">
@@ -157,7 +157,7 @@ const Contact = () => {
                 </section>
 
                 {/* 3. Contact Form Section */}
-                <section id="contact-form" className="py-24 bg-muted/20">
+                <section id="contact-form" className="py-12 md:py-24 bg-muted/20">
                     <div className="container">
                         <div className="max-w-5xl mx-auto grid lg:grid-cols-2 gap-16 items-start">
                             <div>
@@ -343,7 +343,7 @@ const Contact = () => {
                 </section>
 
                 {/* 4. Who You Will Hear From */}
-                <section className="py-24 bg-white">
+                <section className="py-12 md:py-24 bg-white">
                     <div className="container">
                         <div className="max-w-4xl mx-auto flex flex-col md:flex-row items-center gap-16">
                             <div className="flex-1 order-2 md:order-1">
@@ -373,7 +373,7 @@ const Contact = () => {
                 </section>
 
                 {/* 5. Location and Reach */}
-                <section className="py-24 bg-primary text-white overflow-hidden relative">
+                <section className="py-12 md:py-24 bg-primary text-white overflow-hidden relative">
                     <div className="absolute top-0 right-0 w-1/3 h-full bg-lime/10 blur-[100px] pointer-events-none" />
                     <div className="container relative z-10">
                         <div className="max-w-3xl mx-auto text-center">
@@ -394,7 +394,7 @@ const Contact = () => {
                 </section>
 
                 {/* 6. Final CTA Section */}
-                <section className="py-24 bg-white">
+                <section className="py-12 md:py-24 bg-white">
                     <div className="container text-center">
                         <h2 className="headline-display text-4xl md:text-6xl mb-8">Not sure where to start?</h2>
                         <p className="text-xl text-muted-foreground mb-12 max-w-2xl mx-auto">

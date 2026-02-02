@@ -17,7 +17,7 @@ const Consultancy = () => {
 
             <main className="pt-20">
                 {/* 1. Hero Section */}
-                <section className="py-20 md:py-32 bg-hero text-hero">
+                <section className="py-16 md:py-32 bg-hero text-hero">
                     <div className="container max-w-5xl text-center">
                         <motion.h1
                             initial={{ opacity: 0, y: 20 }}
@@ -59,7 +59,7 @@ const Consultancy = () => {
                 </section>
 
                 {/* 2. What We Focus On */}
-                <section className="py-24 bg-white">
+                <section className="py-12 md:py-24 bg-white">
                     <div className="container">
                         <div className="text-center mb-20">
                             <h2 className="headline-display text-4xl md:text-5xl mb-6">Where we focus</h2>
@@ -156,7 +156,7 @@ const Consultancy = () => {
                 </section>
 
                 {/* 3. How We Work */}
-                <section className="py-24 bg-primary text-white">
+                <section className="py-12 md:py-24 bg-primary text-white">
                     <div className="container">
                         <div className="text-center mb-16">
                             <h2 className="headline-display text-4xl md:text-5xl mb-6">How our consultancy works</h2>
@@ -201,7 +201,7 @@ const Consultancy = () => {
                 </section>
 
                 {/* 4. Why Teams Work With Us */}
-                <section className="py-24 bg-white">
+                <section className="py-12 md:py-24 bg-white">
                     <div className="container">
                         <div className="max-w-4xl mx-auto">
                             <div className="text-center mb-16">
@@ -238,7 +238,7 @@ const Consultancy = () => {
                 </section>
 
                 {/* 5. Who This Is For */}
-                <section className="py-24 bg-muted/20">
+                <section className="py-12 md:py-24 bg-muted/20">
                     <div className="container">
                         <div className="max-w-3xl mx-auto bg-white p-10 md:p-16 rounded-[3rem] shadow-xl border border-border/50">
                             <div className="text-center mb-12">
@@ -273,7 +273,7 @@ const Consultancy = () => {
                 </section>
 
                 {/* 6. Final CTA */}
-                <section id="contact-section" className="py-24 bg-white">
+                <section id="contact-section" className="py-12 md:py-24 bg-white">
                     <div className="container text-center">
                         <h2 className="headline-display text-4xl md:text-6xl mb-8">
                             Let’s solve the right problems.
