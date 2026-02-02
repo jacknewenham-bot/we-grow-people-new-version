@@ -11,6 +11,7 @@ const stakeholders = [
       "You are balancing growth, people, and performance at the same time. We help leaders build teams that think clearly, execute better, and adapt faster without relying on theory or guesswork.",
     ctaLabel: "Learn more",
     href: "/training/management",
+    image: "/Teams/Leadership.png",
     accent: "#F6C26C",
     secondary: "#9BE6D8",
   },
@@ -22,6 +23,7 @@ const stakeholders = [
       "Better conversations win deals. We help sales teams sharpen how they communicate, qualify, and close using practical techniques they can apply on their very next call.",
     ctaLabel: "See sales training",
     href: "/sales-training",
+    image: "/Teams/Sales.png",
     accent: "#F49B6A",
     secondary: "#F6D365",
   },
@@ -33,6 +35,7 @@ const stakeholders = [
       "Modern marketing moves fast. We help teams think more clearly, test smarter ideas, and use AI as a real advantage, not just another tool to manage.",
     ctaLabel: "Explore marketing training",
     href: "/training/marketing",
+    image: "/Teams/Marketing.png",
     accent: "#B7B5FF",
     secondary: "#8EF0C3",
   },
@@ -44,6 +47,7 @@ const stakeholders = [
       "Great operations make everything else work. We help teams improve processes, decision making, and execution so work flows better across the business.",
     ctaLabel: "See operations programs",
     href: "/training/operations",
+    image: "/Teams/Operations.png",
     accent: "#89CFF0",
     secondary: "#A7F0BA",
   },
@@ -55,6 +59,7 @@ const stakeholders = [
       "You are shaping how teams grow every day. Our programs help HR teams enable real capability building with training that is practical, relevant, and HRDC claimable.",
     ctaLabel: "View HR programs",
     href: "/training/management",
+    image: "/Teams/HR.png",
     accent: "#FF9BC5",
     secondary: "#FFD38A",
   },
@@ -66,42 +71,11 @@ const stakeholders = [
       "If you want to do better work, this is for you. Our training helps individuals build confidence, clarity, and skills they can apply immediately, not someday.",
     ctaLabel: "Browse programs",
     href: "/training/management",
+    image: "/Teams/Finance.png",
     accent: "#C7E86B",
     secondary: "#9BD1FF",
   },
 ];
-
-function AbstractIllustration({ accent, secondary }: { accent: string; secondary: string }) {
-  return (
-    <div className="relative aspect-[4/3] w-full max-w-[420px] rounded-[2rem] bg-white/5 p-6 shadow-[0_30px_80px_rgba(0,0,0,0.35)]">
-      <div
-        className="absolute inset-0 rounded-[2rem] opacity-60 blur-2xl"
-        style={{
-          background: `radial-gradient(circle at 20% 20%, ${accent} 0%, transparent 55%), radial-gradient(circle at 80% 30%, ${secondary} 0%, transparent 50%)`,
-        }}
-      />
-      <svg
-        viewBox="0 0 320 240"
-        className="relative z-10 h-full w-full"
-        aria-hidden="true"
-      >
-        <rect x="24" y="28" width="272" height="148" rx="28" fill="white" opacity="0.08" />
-        <path
-          d="M60 150 C90 120, 140 120, 170 150 C195 175, 240 185, 270 160"
-          stroke={accent}
-          strokeWidth="8"
-          strokeLinecap="round"
-          fill="none"
-        />
-        <circle cx="92" cy="92" r="18" fill={secondary} />
-        <circle cx="236" cy="92" r="12" fill={accent} />
-        <rect x="76" y="170" width="168" height="26" rx="13" fill={secondary} opacity="0.35" />
-        <rect x="104" y="44" width="112" height="10" rx="5" fill="white" opacity="0.35" />
-        <rect x="104" y="64" width="84" height="8" rx="4" fill="white" opacity="0.2" />
-      </svg>
-    </div>
-  );
-}
 
 export function Stakeholders() {
   const [activeId, setActiveId] = useState(stakeholders[0].id);
@@ -187,10 +161,20 @@ export function Stakeholders() {
                     </a>
                   </div>
                   <div className="flex justify-center lg:justify-end">
-                    <AbstractIllustration
-                      accent={activeStakeholder.accent}
-                      secondary={activeStakeholder.secondary}
-                    />
+                    <div className="relative w-full max-w-[420px] overflow-hidden rounded-[2rem] border border-white/10 bg-white/5 shadow-[0_30px_80px_rgba(0,0,0,0.35)]">
+                      <div
+                        className="absolute inset-0 opacity-70"
+                        style={{
+                          background: `radial-gradient(circle at 20% 20%, ${activeStakeholder.accent} 0%, transparent 55%), radial-gradient(circle at 80% 30%, ${activeStakeholder.secondary} 0%, transparent 55%)`,
+                        }}
+                      />
+                      <img
+                        src={activeStakeholder.image}
+                        alt={activeStakeholder.title}
+                        className="relative z-10 h-full w-full object-cover"
+                        loading="lazy"
+                      />
+                    </div>
                   </div>
                 </div>
               </motion.div>
