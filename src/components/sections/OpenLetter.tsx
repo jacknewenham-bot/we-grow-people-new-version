@@ -30,11 +30,6 @@ const messages = [
   {
     id: 6,
     role: "assistant",
-    text: "Glad to hear that 🙂"
-  },
-  {
-    id: 7,
-    role: "assistant",
     text: "That’s what matters.\nReal skills, real impact.\nLet us know if we can help further."
   }
 ];
@@ -43,6 +38,8 @@ export function OpenLetter() {
   const [visibleCount, setVisibleCount] = useState(0);
   const loopTimeouts = useRef<ReturnType<typeof setTimeout>[]>([]);
   const loopTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const messageIntervalMs = 910;
+  const cyclePauseMs = 3400;
 
   useEffect(() => {
     const scheduleSequence = () => {
@@ -57,11 +54,11 @@ export function OpenLetter() {
       messages.forEach((_, index) => {
         const timeout = setTimeout(() => {
           setVisibleCount(index + 1);
-        }, 700 * index);
+        }, messageIntervalMs * index);
         loopTimeouts.current.push(timeout);
       });
 
-      const totalDuration = messages.length * 700 + 2600;
+      const totalDuration = messages.length * messageIntervalMs + cyclePauseMs;
       loopTimer.current = setTimeout(() => {
         scheduleSequence();
       }, totalDuration);
