@@ -358,7 +358,7 @@ const Contact = () => {
                                     { name: "Jack", image: "/about-us-coaches-page/Jack.png" },
                                     { name: "Hamza", image: "/about-us-coaches-page/Hamza.png" },
                                     { name: "Adele", image: "/about-us-coaches-page/Adele.png" },
-                                    { name: "Marc", image: "/about-us-coaches-page/Marc.png" },
+                                    { name: "Marc", image: "/Marc/Marc.jpeg" },
                                 ].map((member) => (
                                     <div key={member.name} className="aspect-square bg-muted rounded-2xl overflow-hidden grayscale hover:grayscale-0 transition-all duration-500">
                                         <img

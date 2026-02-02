@@ -36,7 +36,7 @@ const coaches = [
         focusAreas: ["Project governance", "Delivery timelines", "Stakeholder management"],
         bio: "Marc is a senior leader with over seven years of experience managing complex, high-stakes projects across defense technology, operations, and facilities management.\n\nHe has overseen multi-million-dollar projects, led cross-functional teams, and delivered results in highly regulated environments. Marc's training helps teams plan better, communicate clearly, and deliver projects on time and within budget.",
         bestFor: ["Project teams", "Operations teams", "Managers responsible for delivery"],
-        image: "/Coaches/Marc.png",
+        image: "/Marc/Marc.jpeg",
     },
     {
         id: "adele",

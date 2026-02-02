@@ -27,7 +27,7 @@ const coaches = [
     {
         name: "Marc Sagayam",
         expertise: "Project governance & stakeholder management",
-        image: "/about-us-coaches-page/Marc.png"
+        image: "/Marc/Marc.jpeg"
     },
     {
         name: "Adele O'Brien",

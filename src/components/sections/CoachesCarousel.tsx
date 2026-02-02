@@ -23,7 +23,7 @@ const coaches = [
         tagline: "Project Manager",
         expertise: "Project governance & stakeholder management",
         credibility: "7+ years leading complex operations",
-        image: "/about-us-coaches-page/Marc.png",
+        image: "/Marc/Marc.jpeg",
         imageClassName: "object-top",
     },
     {
@@ -106,10 +106,11 @@ export function CoachesCarousel() {
         setCurrentIndex((prev) => (prev - 1 + totalPages) % totalPages);
     };
 
-    const visibleCoaches = coaches.slice(
-        currentIndex * itemsPerPage,
-        (currentIndex + 1) * itemsPerPage
-    );
+    const startIndex = currentIndex * itemsPerPage;
+    const visibleCoaches = Array.from({ length: itemsPerPage }, (_, offset) => {
+        const coachIndex = (startIndex + offset) % coaches.length;
+        return coaches[coachIndex];
+    });
 
     return (
         <section id="coaches" className="py-12 md:py-32 bg-background">
