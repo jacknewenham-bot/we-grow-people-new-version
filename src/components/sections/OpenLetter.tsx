@@ -4,30 +4,30 @@ const messages = [
   {
     id: 1,
     role: "user",
-    text: "Thanks again for the training! I joined for the cert, but learned way more than expected.",
-    delay: 0.3
+    text: "Thanks again for the training! I joined for the cert, but learned way more than expected."
   },
   {
     id: 2,
     role: "assistant",
-    text: "Glad to hear that 🙂",
-    delay: 2.1
+    text: "Glad to hear that 🙂"
   },
   {
     id: 3,
     role: "user",
-    text: "Already using it at work, my manager noticed too.",
-    delay: 3.8
+    text: "Already using it at work, my manager noticed too."
   },
   {
     id: 4,
     role: "assistant",
-    text: "That’s what matters. Real skills, real impact.\nLet us know if we can help further.",
-    delay: 5.6
+    text: "That’s what matters. Real skills, real impact.\nLet us know if we can help further."
   }
 ];
 
 export function OpenLetter() {
+  const cycleSeconds = 12;
+  const messageDuration = 4;
+  const messageStagger = 2;
+
   return (
     <section className="py-24 md:py-32 bg-hero relative overflow-hidden">
       <div className="container relative z-10">
@@ -72,19 +72,26 @@ export function OpenLetter() {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/30" />
 
                 {/* Messages */}
-                <div className="absolute inset-0 p-5 flex flex-col justify-end gap-3">
-                  {messages.map((msg) => (
+                <div className="absolute inset-0 p-5 flex flex-col justify-start gap-3">
+                  {messages.map((msg, index) => (
                     <motion.div
                       key={msg.id}
                       className={`flex ${msg.role === "assistant" ? "justify-end" : "justify-start"}`}
                       initial={{ opacity: 0, y: 12, scale: 0.96 }}
-                      animate={{ opacity: [0, 1, 1, 0], y: [12, 0, 0, -6], scale: [0.96, 1, 1, 0.98] }}
+                      animate={{
+                        opacity: [0, 1, 1, 0],
+                        y: [12, 0, 0, -6],
+                        scale: [0.96, 1, 1, 0.98]
+                      }}
                       transition={{
-                        duration: 6,
-                        times: [0, 0.15, 0.75, 1],
-                        delay: msg.delay,
+                        duration: messageDuration,
+                        times: [0, 0.2, 0.85, 1],
+                        delay: index * messageStagger,
                         repeat: Infinity,
-                        repeatDelay: 6
+                        repeatDelay: Math.max(
+                          0,
+                          cycleSeconds - messageDuration - index * messageStagger
+                        )
                       }}
                     >
                       <div
