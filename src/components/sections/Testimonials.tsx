@@ -10,6 +10,8 @@ const testimonials = [
     author: "Ibrahim shahid",
     role: "Senior Valuation Lead - APAC",
     company: "Valutico",
+    linkedin: "https://www.linkedin.com/in/ibrahim-shahid1/",
+    image: "/Testimonials/Ibrahim shahid.jpeg",
   },
   {
     date: "May 27, 2024",
@@ -18,14 +20,18 @@ const testimonials = [
     author: "Adenike Anthonia Abati",
     role: "Senior Content Marketer",
     company: "Smarketer's Hub",
+    linkedin: "https://www.linkedin.com/in/adenike-abati/",
+    image: "/Testimonials/Anthonia Abati.jpeg",
   },
   {
     date: "June 11, 2024",
     quote:
       "I had the pleasure of being mentored by Jack, and his guidance has been incredible. His support during my interview preparation was invaluable, offering insightful advice that truly made a difference. Additionally, Jack's constructive feedback on my technical test was detailed and immensely helpful. His expertise extends beyond technical knowledge; he is exceptionally well-versed in marketing strategies. I highly recommend Jack as a mentor for anyone seeking comprehensive and thoughtful guidance.",
-    author: "Aurielle",
+    author: "Alexandra Aurielle",
     role: "Product Manager",
     company: "Delman.io",
+    linkedin: "https://www.linkedin.com/in/alexandra-aurielle/",
+    image: "/Testimonials/Alexandra Aurielle.jpeg",
   },
   {
     date: "",
@@ -35,6 +41,8 @@ const testimonials = [
     role:
       "APAC Strategy & Economic Policy Advisor | Ex-VP Frost & Sullivan | Proven Leader in Government, Market Growth & Transformation | Trusted by Ministries, Boards & Global Firms",
     company: "",
+    linkedin: "https://www.linkedin.com/in/barrylim/overlay/photo/",
+    image: "/Testimonials/Barry Lim.jpeg",
   },
   {
     date: "June 01, 2024",
@@ -43,6 +51,8 @@ const testimonials = [
     author: "Safaa Zaki",
     role: "Content Creator",
     company: "Instagram",
+    linkedin: "https://www.linkedin.com/in/safaazaki/",
+    image: "/Testimonials/Safaa Zaki.jpeg",
   },
   {
     date: "",
@@ -51,6 +61,8 @@ const testimonials = [
     author: "Hamel Shah",
     role: "Co-Founder at Carrots&Cake and Partner at Azimuth Global Partners",
     company: "",
+    linkedin: "https://www.linkedin.com/in/hamelshah/",
+    image: "/Testimonials/Hamel Shah.jpeg",
   },
   {
     date: "July 09, 2024",
@@ -59,6 +71,8 @@ const testimonials = [
     author: "Lauren Ellis",
     role: "Growth Marketing Manager",
     company: "Produce8",
+    linkedin: "https://www.linkedin.com/in/laurenuellis/",
+    image: "/Testimonials/Lauren Ellis.jpeg",
   },
   {
     date: "July 22, 2024",
@@ -67,6 +81,8 @@ const testimonials = [
     author: "Amber Yang",
     role: "Content Creator | Social Media Strategist",
     company: "Edge Labs",
+    linkedin: "https://www.linkedin.com/in/amberistic/",
+    image: "/Testimonials/Amber Yang.jpeg",
   },
   {
     date: "July 25, 2024",
@@ -83,6 +99,8 @@ const testimonials = [
     author: "Berke Zavaro",
     role: "PPC Campaign Manager",
     company: "Marketily",
+    linkedin: "https://www.linkedin.com/in/berkezavaro/",
+    image: "/Testimonials/Berke Zavaro.jpeg",
   },
   {
     date: "August 05, 2024",
@@ -91,14 +109,17 @@ const testimonials = [
     author: "Sathyaraj Thever",
     role: "Digital Project Manager",
     company: "Orfeostory",
+    linkedin: "",
   },
   {
     date: "August 07, 2024",
     quote:
       "It is clear Jack did his research before the meeting. You can expect 10/10 mentoring from Jack. Personalized and useful feedback and recommendations.",
-    author: "Gary",
+    author: "Gary Chan",
     role: "Growth Marketing",
     company: "Operandio",
+    linkedin: "https://www.linkedin.com/in/gary-chan-486715243/",
+    image: "/Testimonials/Gary Chan.jpeg",
   },
   {
     date: "August 17, 2024",
@@ -107,15 +128,10 @@ const testimonials = [
     author: "Mohammad Habib",
     role: "Product Designer",
     company: "EAC",
+    linkedin: "https://www.linkedin.com/in/princehabib17/",
+    image: "/Testimonials/Mohammad Habib.jpeg",
   },
-  {
-    date: "August 24, 2024",
-    quote:
-      "Jack was very helpful in advising me on my Facebook ads and how to increase my lead generation. He took a lot of time to research before our call and spoke for 30 minutes beyond our allocated time. He is very motivational and friendly. I'm looking forward to our next meeting.",
-    author: "David Freeman",
-    role: "Senior Marketing Executive",
-    company: "Box Records",
-  },
+
   {
     date: "October 9, 2023",
     quote:
@@ -123,6 +139,8 @@ const testimonials = [
     author: "Nezo Benardi",
     role: "Worked with Jack on the same team",
     company: "",
+    linkedin: "https://www.linkedin.com/in/nezobenardi/",
+    image: "/Testimonials/Nezo Benardi.jpeg",
   },
   {
     date: "",
@@ -131,6 +149,8 @@ const testimonials = [
     author: "Ernest Kou",
     role: "Writing organic social content for crypto brands. Decentralized science (DeSci).",
     company: "",
+    linkedin: "https://www.linkedin.com/in/ernestkou/",
+    image: "/Testimonials/Ernest Kou.jpg",
   },
   {
     date: "",
@@ -139,6 +159,8 @@ const testimonials = [
     author: "Ming Min Wong",
     role: "Regional Supply Network Professional",
     company: "",
+    linkedin: "https://www.linkedin.com/in/ming-min-wong/",
+    image: "/Testimonials/Ming Min Wong.jpeg",
   },
   {
     date: "",
@@ -147,6 +169,8 @@ const testimonials = [
     author: "Hamza Abu Tarbush",
     role: "",
     company: "",
+    linkedin: "https://www.linkedin.com/in/hamza-abu-tarbush-9911495b/",
+    image: "/Testimonials/Hamza Abu Tarbush.jpeg",
   },
 ];
 
@@ -260,14 +284,36 @@ export function Testimonials() {
                   )}
 
                   <div className="mt-auto flex items-center gap-4 pt-6 border-t border-foreground/10">
-                    <div className="w-12 h-12 rounded-full bg-foreground/10 flex items-center justify-center shrink-0">
-                      <span className="text-sm font-bold text-foreground font-heading">
-                        {testimonial.author.split(" ").map((n) => n[0]).join("")}
-                      </span>
+                    <div className="w-12 h-12 rounded-full bg-foreground/10 flex items-center justify-center shrink-0 overflow-hidden">
+                      {(testimonial as any).image ? (
+                        <img
+                          src={(testimonial as any).image}
+                          alt={testimonial.author}
+                          className="w-full h-full object-cover"
+                        />
+                      ) : (
+                        <span className="text-sm font-bold text-foreground font-heading">
+                          {testimonial.author.split(" ").map((n) => n[0]).join("")}
+                        </span>
+                      )}
                     </div>
                     <div className="leading-tight">
-                      <p className="font-semibold text-foreground text-base">
-                        {testimonial.author}
+                      <p className="font-semibold text-foreground text-base flex items-center gap-2">
+                        {(testimonial as any).linkedin ? (
+                          <a
+                            href={(testimonial as any).linkedin}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="hover:text-lime transition-colors inline-flex items-center gap-2"
+                          >
+                            {(testimonial as any).author}
+                            <svg className="w-4 h-4 text-[#0077b5]" fill="currentColor" viewBox="0 0 24 24">
+                              <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                            </svg>
+                          </a>
+                        ) : (
+                          (testimonial as any).author
+                        )}
                       </p>
                       <p className="text-muted-foreground text-sm">
                         {testimonial.role} • {testimonial.company}
