@@ -11,6 +11,7 @@ const features = [
     headline: "Learn skills you can use immediately.",
     body: "No outdated frameworks. No generic training. Just real tools and workflows your team can apply right away.",
     bullets: ["Hands-on exercises", "Real company scenarios", "Actionable frameworks"],
+    image: "/our training/Practical skills.png",
   },
   {
     id: "expert",
@@ -19,6 +20,7 @@ const features = [
     headline: "Learn from people who have done the work.",
     body: "We work with experienced practitioners across growth, sales, leadership, project management, AI, content, and wellbeing.",
     bullets: ["Industry experience", "Modern playbooks", "Malaysia-relevant use cases"],
+    image: "/our training/Expert-led.png",
   },
   {
     id: "ai",
@@ -27,6 +29,7 @@ const features = [
     headline: "Use modern tools to move faster.",
     body: "We help teams adopt AI in a practical way, from workflows to automation, so they can perform better with less effort.",
     bullets: ["AI workflows", "Vibe coding for business", "Agent-based productivity"],
+    image: "/our training/AI-powered.jpg",
   },
   {
     id: "hrdc",
@@ -35,6 +38,7 @@ const features = [
     headline: "HRDC claimable training, without the hassle.",
     body: "Programs are structured to meet HRDC requirements while keeping delivery practical and outcome-driven.",
     bullets: ["Fully compliant", "Easy claims process", "Outcome-focused"],
+    image: "/our training/HRDC claimable.jpg",
   },
 ];
 
@@ -121,8 +125,16 @@ export function Features() {
                 <div className="w-3 h-3 rounded-full bg-yellow-400"></div>
                 <div className="w-3 h-3 rounded-full bg-green-400"></div>
               </div>
-              <div className="mt-12 w-full h-full bg-gradient-to-br from-gray-50 to-white flex items-center justify-center">
-                <activeFeature.icon className="w-24 h-24 text-primary/20" />
+              <div className="mt-12 w-full h-full bg-gradient-to-br from-gray-50 to-white flex items-center justify-center overflow-hidden">
+                {(activeFeature as any).image ? (
+                  <img
+                    src={(activeFeature as any).image}
+                    alt={activeFeature.title}
+                    className="w-full h-full object-cover"
+                  />
+                ) : (
+                  <activeFeature.icon className="w-24 h-24 text-primary/20" />
+                )}
               </div>
             </div>
           </motion.div>

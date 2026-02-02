@@ -4,6 +4,14 @@ import { ArrowDown, ArrowLeft, ArrowRight } from "lucide-react";
 
 const testimonials = [
   {
+    date: "",
+    quote:
+      "Being in sales myself, Hamza’s session gave me clear, practical insights to sharpen my sales strategy, better understand prospects, and handle objections more effectively. He simplifies complex sales concepts into actionable frameworks that drive real improvement , whether you’re new to sales or already experienced.",
+    author: "Ibrahim shahid",
+    role: "Senior Valuation Lead - APAC",
+    company: "Valutico",
+  },
+  {
     date: "May 27, 2024",
     quote:
       "I find Jack to be an outstanding mentor with a keen understanding of his industry. His approach to mentoring is insightful, proactive, and constructive. He's a great guy, and it was really nice to learn from him! A huge thanks to Jack and to ADPList!",
@@ -226,51 +234,51 @@ export function Testimonials() {
                   data-testimonial-card
                   className="min-w-[280px] sm:min-w-[320px] lg:min-w-[360px] xl:min-w-[380px] snap-start bg-[#F1F1E6] rounded-[2.25rem] p-10 border border-foreground/5 shadow-[0_12px_30px_rgba(20,40,20,0.08)] hover:shadow-[0_18px_40px_rgba(20,40,20,0.12)] transition-all duration-500 flex flex-col"
                 >
-                <p
-                  className="text-foreground text-lg md:text-xl leading-relaxed font-sans"
-                  style={
-                    !isExpanded && isLong
-                      ? {
-                        display: "-webkit-box",
-                        WebkitLineClamp: 6,
-                        WebkitBoxOrient: "vertical",
-                        overflow: "hidden",
-                      }
-                      : undefined
-                  }
-                >
-                  “{testimonial.quote}”
-                </p>
-                {isLong && (
-                  <button
-                    type="button"
-                    onClick={() => toggleExpanded(index)}
-                    className="mt-4 text-sm font-semibold text-foreground/70 hover:text-foreground transition-colors self-start"
+                  <p
+                    className="text-foreground text-lg md:text-xl leading-relaxed font-sans"
+                    style={
+                      !isExpanded && isLong
+                        ? {
+                          display: "-webkit-box",
+                          WebkitLineClamp: 6,
+                          WebkitBoxOrient: "vertical",
+                          overflow: "hidden",
+                        }
+                        : undefined
+                    }
                   >
-                    {isExpanded ? "Read less" : "Read more"}
-                  </button>
-                )}
+                    “{testimonial.quote}”
+                  </p>
+                  {isLong && (
+                    <button
+                      type="button"
+                      onClick={() => toggleExpanded(index)}
+                      className="mt-4 text-sm font-semibold text-foreground/70 hover:text-foreground transition-colors self-start"
+                    >
+                      {isExpanded ? "Read less" : "Read more"}
+                    </button>
+                  )}
 
-                <div className="mt-auto flex items-center gap-4 pt-6 border-t border-foreground/10">
-                  <div className="w-12 h-12 rounded-full bg-foreground/10 flex items-center justify-center shrink-0">
-                    <span className="text-sm font-bold text-foreground font-heading">
-                      {testimonial.author.split(" ").map((n) => n[0]).join("")}
-                  </span>
-                </div>
-                <div className="leading-tight">
-                  <p className="font-semibold text-foreground text-base">
-                    {testimonial.author}
-                  </p>
-                  <p className="text-muted-foreground text-sm">
-                    {testimonial.role} • {testimonial.company}
-                  </p>
-                  <p className="text-muted-foreground/70 text-xs uppercase tracking-widest mt-1">
-                    {testimonial.date}
-                  </p>
-                </div>
-                </div>
-              </motion.div>
-            );
+                  <div className="mt-auto flex items-center gap-4 pt-6 border-t border-foreground/10">
+                    <div className="w-12 h-12 rounded-full bg-foreground/10 flex items-center justify-center shrink-0">
+                      <span className="text-sm font-bold text-foreground font-heading">
+                        {testimonial.author.split(" ").map((n) => n[0]).join("")}
+                      </span>
+                    </div>
+                    <div className="leading-tight">
+                      <p className="font-semibold text-foreground text-base">
+                        {testimonial.author}
+                      </p>
+                      <p className="text-muted-foreground text-sm">
+                        {testimonial.role} • {testimonial.company}
+                      </p>
+                      <p className="text-muted-foreground/70 text-xs uppercase tracking-widest mt-1">
+                        {testimonial.date}
+                      </p>
+                    </div>
+                  </div>
+                </motion.div>
+              );
             })}
           </div>
           <div className="mt-10 flex items-center justify-center gap-4">
