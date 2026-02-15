@@ -20,11 +20,11 @@ const Index = () => {
         <SocialProof />
         <Features />
         <Teams />
+        <Stakeholders />
         <HowItWorks />
         <CoachesImageCarousel sectionClassName="py-12 md:py-32 bg-background" showSubtitle={true} showCta={true} />
         <OpenLetter />
         <Testimonials />
-        <Stakeholders />
         <FinalCTA />
       </main>
       <Footer />

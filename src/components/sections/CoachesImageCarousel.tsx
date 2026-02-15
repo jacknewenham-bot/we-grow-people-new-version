@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { ArrowRight } from "lucide-react";
 import {
   Carousel,
   CarouselContent,
@@ -11,38 +12,56 @@ import { Button } from "@/components/ui/button";
 const coaches = [
   {
     name: "Hamza Akaouch",
+    expertise: "Consultative selling & decision psychology",
+    intro: "Improves discovery, value framing, and buyer confidence.",
     image: "/about-us-coaches-page/Hamza.png",
   },
   {
     name: "Jack Newenham",
+    expertise: "Growth strategy & performance marketing",
+    intro: "Helps teams turn strategy into practical, measurable execution.",
     image: "/about-us-coaches-page/Jack.png",
   },
   {
     name: "Marc Sagayam",
+    expertise: "Project governance & stakeholder management",
+    intro: "7+ years leading complex operations and delivery programs.",
     image: "/Marc/Marc.jpeg",
   },
   {
     name: "Adele O'Brien",
+    expertise: "Growth strategy & go-to-market",
+    intro: "9+ years scaling brands across Asia, USA, and Europe.",
     image: "/about-us-coaches-page/Adele.png",
   },
   {
     name: "Ashvin Praveen",
+    expertise: "AI workflows & business automation",
+    intro: "Guides teams in practical AI adoption and daily execution.",
     image: "/about-us-coaches-page/Ashvin.png",
   },
   {
     name: "Kain Masters",
+    expertise: "Leadership development & team dynamics",
+    intro: "Builds communication confidence and stronger team collaboration.",
     image: "/about-us-coaches-page/kain.png",
   },
   {
     name: "Alfred Ng",
+    expertise: "Storytelling & video creation",
+    intro: "Teaches teams to communicate clearly through modern content.",
     image: "/about-us-coaches-page/Alfred.png",
   },
   {
     name: "Ebrahim Al Hamdi",
+    expertise: "AI agents & automation",
+    intro: "Supports teams with practical systems for faster execution.",
     image: "/about-us-coaches-page/Ebrahim.png",
   },
   {
     name: "Ivan Eng",
+    expertise: "Workplace wellbeing & mental health",
+    intro: "Helps teams build healthier habits and sustainable performance.",
     image: "/about-us-coaches-page/ivan.png",
   },
 ];
@@ -87,13 +106,24 @@ export function CoachesImageCarousel({
                     viewport={{ once: true }}
                     className="p-1"
                   >
-                    <div className="bg-white rounded-3xl border border-border overflow-hidden h-full shadow-sm hover:shadow-md transition-shadow">
+                    <div className="group bg-white rounded-3xl border border-border overflow-hidden h-full shadow-sm hover:shadow-md transition-all duration-300">
                       <div className="aspect-[4/5] bg-muted/50 overflow-hidden">
                         <img
                           src={coach.image}
                           alt={coach.name}
-                          className="w-full h-full object-cover object-top"
+                          className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-[1.02]"
                         />
+                      </div>
+                      <div className="p-6 md:p-7">
+                        <h3 className="font-heading font-black text-2xl text-foreground mb-2 tracking-tight">{coach.name}</h3>
+                        <p className="text-lime font-semibold text-base mb-3">{coach.expertise}</p>
+                        <p className="text-muted-foreground text-base leading-relaxed mb-5">{coach.intro}</p>
+                        <a
+                          href="/coaches"
+                          className="inline-flex items-center gap-2 text-primary font-bold text-sm hover:gap-3 transition-all"
+                        >
+                          View full profile <ArrowRight className="h-4 w-4" />
+                        </a>
                       </div>
                     </div>
                   </motion.div>
