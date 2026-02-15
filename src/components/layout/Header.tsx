@@ -4,10 +4,9 @@ import { Button } from "@/components/ui/button";
 import { Menu, X, MessageCircle, ChevronRight, ChevronDown } from "lucide-react";
 
 const navLinks = [
-  { href: "/", label: "Home", isAnchor: false },
-  { href: "/about", label: "About", isAnchor: false },
-  { href: "/coaches", label: "Coaches", isAnchor: false },
   { href: "/consultancy", label: "Consultancy", isAnchor: false },
+  { href: "/coaches", label: "Coaches", isAnchor: false },
+  { href: "/about", label: "About", isAnchor: false },
   { href: "/contact", label: "Contact", isAnchor: false },
   { href: "/careers", label: "Join our team", isAnchor: false },
 ];
@@ -117,21 +116,8 @@ export function Header() {
           </span>
         </a>
 
-        {/* Desktop Nav */}
+// Desktop Nav
         <nav className="hidden md:flex items-center gap-8">
-          {navLinks.map((link) => (
-            <a
-              key={link.href}
-              href={link.href}
-              className={`transition-colors font-medium text-sm ${isScrolled
-                ? "text-muted-foreground hover:text-foreground"
-                : "text-white/80 hover:text-white"
-                }`}
-            >
-              {link.label}
-            </a>
-          ))}
-
           {/* Training Dropdown Trigger */}
           <div
             className="relative"
@@ -155,7 +141,7 @@ export function Header() {
                   animate={{ opacity: 1, y: 0, scale: 1 }}
                   exit={{ opacity: 0, y: 10, scale: 0.98 }}
                   transition={{ duration: 0.2 }}
-                  className="absolute top-full left-1/2 -translate-x-1/2 w-[600px] bg-white rounded-2xl shadow-2xl border border-border overflow-hidden flex"
+                  className="absolute top-full left-0 w-[600px] bg-white rounded-2xl shadow-2xl border border-border overflow-hidden flex"
                 >
                   {/* Left Column: Categories */}
                   <div className="w-1/2 border-r border-border p-4 bg-muted/10">
@@ -195,15 +181,18 @@ export function Header() {
             </AnimatePresence>
           </div>
 
-          <a
-            href="/#programs"
-            className={`transition-colors font-medium text-sm ${isScrolled
-              ? "text-muted-foreground hover:text-foreground"
-              : "text-white/80 hover:text-white"
-              }`}
-          >
-            All Programs
-          </a>
+          {navLinks.map((link) => (
+            <a
+              key={link.href}
+              href={link.href}
+              className={`transition-colors font-medium text-sm ${isScrolled
+                ? "text-muted-foreground hover:text-foreground"
+                : "text-white/80 hover:text-white"
+                }`}
+            >
+              {link.label}
+            </a>
+          ))}
         </nav>
 
         {/* CTA */}
@@ -235,17 +224,6 @@ export function Header() {
             className="md:hidden bg-white border-t border-border overflow-hidden"
           >
             <nav className="container py-4 flex flex-col gap-2">
-              {navLinks.map((link) => (
-                <a
-                  key={link.href}
-                  href={link.href}
-                  className="text-muted-foreground hover:text-foreground transition-colors font-bold py-3 border-b border-muted last:border-0"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  {link.label}
-                </a>
-              ))}
-
               {/* Mobile Training Accordion */}
               <div className="py-2">
                 <button
@@ -292,13 +270,16 @@ export function Header() {
                 </AnimatePresence>
               </div>
 
-              <a
-                href="/#programs"
-                className="text-muted-foreground hover:text-foreground transition-colors font-bold py-3"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                All Programs
-              </a>
+              {navLinks.map((link) => (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  className="text-muted-foreground hover:text-foreground transition-colors font-bold py-3 border-b border-muted last:border-0"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  {link.label}
+                </a>
+              ))}
 
               <Button variant="lime" size="default" className="mt-6 py-7 rounded-2xl text-lg font-bold" asChild>
                 <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer">
