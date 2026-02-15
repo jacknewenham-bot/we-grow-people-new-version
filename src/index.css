@@ -217,6 +217,15 @@
     font-size: 16px;
     line-height: 1.5;
   }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    text-transform: uppercase;
+  }
 }
 
 @layer components {
@@ -256,7 +265,7 @@
     font-size: clamp(2.5rem, 5vw, 4.875rem);
     line-height: 1.1;
     letter-spacing: -0.02em;
-    text-transform: none;
+    text-transform: uppercase;
   }
 
   /* Graphik Section Headline */
@@ -267,6 +276,7 @@
     font-size: clamp(2.5rem, 4vw, 3rem);
     line-height: 1.2;
     letter-spacing: -0.01em;
+    text-transform: uppercase;
   }
 
   /* Card shadows */
