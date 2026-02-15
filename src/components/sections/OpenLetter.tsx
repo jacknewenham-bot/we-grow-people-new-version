@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 
 const messages = [
@@ -40,6 +40,7 @@ export function OpenLetter() {
   const loopTimeouts = useRef<ReturnType<typeof setTimeout>[]>([]);
   const loopTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const messagesViewportRef = useRef<HTMLDivElement | null>(null);
+  const scrollFrameRef = useRef<number | null>(null);
   const baseMessageIntervalMs = 540;
   const cyclePauseMs = 3400;
 
@@ -109,15 +110,38 @@ export function OpenLetter() {
       observer.disconnect();
       loopTimeouts.current.forEach(clearTimeout);
       if (loopTimer.current) clearTimeout(loopTimer.current);
+      if (scrollFrameRef.current) cancelAnimationFrame(scrollFrameRef.current);
     };
   }, []);
 
   useEffect(() => {
     const viewport = messagesViewportRef.current;
     if (!viewport) return;
-    requestAnimationFrame(() => {
-      viewport.scrollTo({ top: viewport.scrollHeight, behavior: "smooth" });
-    });
+
+    if (scrollFrameRef.current) {
+      cancelAnimationFrame(scrollFrameRef.current);
+      scrollFrameRef.current = null;
+    }
+
+    const startTop = viewport.scrollTop;
+    const targetTop = Math.max(0, viewport.scrollHeight - viewport.clientHeight);
+    if (Math.abs(targetTop - startTop) < 1) return;
+
+    const duration = 420;
+    const start = performance.now();
+    const easeOutCubic = (t: number) => 1 - Math.pow(1 - t, 3);
+
+    const tick = (now: number) => {
+      const elapsed = Math.min(1, (now - start) / duration);
+      viewport.scrollTop = startTop + (targetTop - startTop) * easeOutCubic(elapsed);
+      if (elapsed < 1) {
+        scrollFrameRef.current = requestAnimationFrame(tick);
+      } else {
+        scrollFrameRef.current = null;
+      }
+    };
+
+    scrollFrameRef.current = requestAnimationFrame(tick);
   }, [visibleCount, typingRole]);
 
   return (
@@ -169,10 +193,16 @@ export function OpenLetter() {
                   {messages.slice(0, visibleCount).map((msg) => (
                     <motion.div
                       key={msg.id}
+                      layout
                       className={`flex ${msg.role === "assistant" ? "justify-end" : "justify-start"}`}
                       initial={{ opacity: 0, y: 10, scale: 0.985 }}
                       animate={{ opacity: 1, y: 0, scale: 1 }}
-                      transition={{ duration: 0.32, ease: [0.2, 0.8, 0.2, 1] }}
+                      transition={{
+                        duration: 0.32,
+                        ease: [0.2, 0.8, 0.2, 1],
+                        layout: { duration: 0.36, ease: [0.22, 1, 0.36, 1] },
+                      }}
+                      style={{ willChange: "transform, opacity" }}
                     >
                       <div
                         className={`max-w-[85%] px-4 py-3 rounded-2xl type-caption leading-relaxed shadow-lg ${msg.role === "assistant"
@@ -188,33 +218,37 @@ export function OpenLetter() {
                       </div>
                     </motion.div>
                   ))}
-                  {typingRole === "assistant" && (
-                    <motion.div
-                      className="flex justify-end"
-                      initial={{ opacity: 0, y: 8 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      exit={{ opacity: 0 }}
-                      transition={{ duration: 0.2 }}
-                    >
-                      <div className="px-3 py-2 rounded-2xl rounded-br-none bg-lime/85">
-                        <div className="flex items-center gap-1">
-                          {[0, 1, 2].map((dot) => (
-                            <motion.span
-                              key={dot}
-                              className="w-1.5 h-1.5 rounded-full bg-primary/70"
-                              animate={{ opacity: [0.35, 1, 0.35] }}
-                              transition={{
-                                duration: 0.9,
-                                repeat: Infinity,
-                                delay: dot * 0.12,
-                                ease: "easeInOut",
-                              }}
-                            />
-                          ))}
+                  <AnimatePresence mode="popLayout">
+                    {typingRole === "assistant" && (
+                      <motion.div
+                        key="typing-indicator"
+                        layout
+                        className="flex justify-end"
+                        initial={{ opacity: 0, y: 6, scale: 0.98 }}
+                        animate={{ opacity: 1, y: 0, scale: 1 }}
+                        exit={{ opacity: 0, y: -2, scale: 0.98 }}
+                        transition={{ duration: 0.22, ease: [0.2, 0.8, 0.2, 1] }}
+                      >
+                        <div className="px-3 py-2 rounded-2xl rounded-br-none bg-lime/85">
+                          <div className="flex items-center gap-1">
+                            {[0, 1, 2].map((dot) => (
+                              <motion.span
+                                key={dot}
+                                className="w-1.5 h-1.5 rounded-full bg-primary/70"
+                                animate={{ opacity: [0.35, 1, 0.35] }}
+                                transition={{
+                                  duration: 0.9,
+                                  repeat: Infinity,
+                                  delay: dot * 0.12,
+                                  ease: "easeInOut",
+                                }}
+                              />
+                            ))}
+                          </div>
                         </div>
-                      </div>
-                    </motion.div>
-                  )}
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
                 </div>
               </div>
             </div>
