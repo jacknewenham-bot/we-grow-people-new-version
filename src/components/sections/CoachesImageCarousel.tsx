@@ -83,7 +83,7 @@ export function CoachesImageCarousel({
         <div className="text-center mb-16">
           <h2 className="headline-display text-4xl md:text-5xl mb-6">Meet the coaches</h2>
           {showSubtitle && (
-            <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto">
+            <p className="type-body text-muted-foreground max-w-2xl mx-auto">
               Experienced practitioners helping teams build modern skills.
             </p>
           )}
@@ -118,12 +118,12 @@ export function CoachesImageCarousel({
                         />
                       </div>
                       <div className="p-6 md:p-7">
-                        <h3 className="font-heading font-black text-2xl text-foreground mb-2 tracking-tight">{coach.name}</h3>
-                        <p className="text-lime font-semibold text-base mb-3">{coach.expertise}</p>
-                        <p className="text-muted-foreground text-base leading-relaxed mb-5">{coach.intro}</p>
+                        <h3 className="type-h3 text-foreground mb-2 tracking-tight">{coach.name}</h3>
+                        <p className="text-lime font-semibold text-[1.0625rem] mb-3">{coach.expertise}</p>
+                        <p className="type-body-secondary text-muted-foreground mb-5">{coach.intro}</p>
                         <a
                           href="/coaches"
-                          className="inline-flex items-center gap-2 text-primary font-bold text-sm hover:gap-3 transition-all"
+                          className="inline-flex items-center gap-2 text-primary type-nav hover:gap-3 transition-all"
                         >
                           View full profile <ArrowRight className="h-4 w-4" />
                         </a>

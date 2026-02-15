@@ -95,7 +95,7 @@ export function Stakeholders() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.05 }}
-              className="mt-6 text-base md:text-lg text-white/70 font-sans"
+              className="mt-6 type-body-secondary text-white/70 font-sans"
             >
               We work with teams across a wide range of industries, adapting our training to real-world challenges,
               regulations, and ways of working, not one-size-fits-all theory.
@@ -109,7 +109,7 @@ export function Stakeholders() {
                     type="button"
                     aria-pressed={isActive}
                     onClick={() => setActiveId(item.id)}
-                    className={`rounded-full border px-4 py-2 text-sm font-sans transition-all ${isActive
+                    className={`rounded-full border px-4 py-2 type-nav font-sans transition-all ${isActive
                         ? "border-transparent text-[#111111] shadow-lg"
                         : "border-white/30 text-white/80 hover:border-white/60 hover:text-white"
                       }`}
@@ -134,11 +134,11 @@ export function Stakeholders() {
               >
                 <div className="grid gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,0.9fr)] items-center">
                   <div>
-                    <h3 className="font-sans text-2xl md:text-3xl font-semibold">{activeIndustry.title}</h3>
-                    <p className="mt-4 text-base md:text-lg text-white/70 font-sans">{activeIndustry.body}</p>
+                    <h3 className="type-h3">{activeIndustry.title}</h3>
+                    <p className="mt-4 type-body-secondary text-white/70 font-sans">{activeIndustry.body}</p>
                     <a
                       href={activeIndustry.href}
-                      className="mt-6 inline-flex items-center gap-2 rounded-full border border-white/20 px-5 py-2 text-sm font-sans text-white/90 transition hover:border-white/60 hover:text-white"
+                      className="mt-6 inline-flex items-center gap-2 rounded-full border border-white/20 px-5 py-2 type-nav font-sans text-white/90 transition hover:border-white/60 hover:text-white"
                     >
                       Learn more
                       <ArrowRight className="h-4 w-4" />

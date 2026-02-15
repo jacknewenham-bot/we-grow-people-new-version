@@ -124,8 +124,8 @@ export function Header() {
             onMouseEnter={() => setIsTrainingMenuOpen(true)}
             onMouseLeave={() => setIsTrainingMenuOpen(false)}
           >
-            <button
-              className={`flex items-center gap-1 transition-colors font-medium text-sm py-4 ${isScrolled
+              <button
+              className={`flex items-center gap-1 transition-colors type-nav py-4 ${isScrolled
                 ? "text-muted-foreground hover:text-foreground"
                 : "text-white/80 hover:text-white"
                 }`}
@@ -162,13 +162,13 @@ export function Header() {
                   {/* Right Column: Courses */}
                   <div className="w-1/2 p-4 bg-white">
                     <div className="p-4">
-                      <h4 className="text-xs font-black uppercase tracking-widest text-muted-foreground/60 mb-6">{activeCategory.description}</h4>
+                      <h4 className="type-caption font-black uppercase tracking-widest text-muted-foreground/60 mb-6">{activeCategory.description}</h4>
                       <div className="space-y-2">
                         {activeCategory.courses.map((course) => (
                           <a
                             key={course.href}
                             href={course.href}
-                            className="block py-2 text-sm font-medium text-muted-foreground hover:text-primary transition-colors"
+                            className="block py-2 type-caption font-medium text-muted-foreground hover:text-primary transition-colors"
                           >
                             {course.label}
                           </a>
@@ -185,7 +185,7 @@ export function Header() {
             <a
               key={link.href}
               href={link.href}
-              className={`transition-colors font-medium text-sm ${isScrolled
+              className={`transition-colors type-nav ${isScrolled
                 ? "text-muted-foreground hover:text-foreground"
                 : "text-white/80 hover:text-white"
                 }`}
@@ -231,7 +231,7 @@ export function Header() {
               <div className="py-2">
                 <button
                   onClick={() => setMobileExpandedCategory(mobileExpandedCategory === 'training' ? null : 'training')}
-                  className="w-full flex items-center justify-between text-muted-foreground font-bold py-3 border-b border-muted"
+                  className="w-full flex items-center justify-between text-muted-foreground type-nav py-3 border-b border-muted"
                 >
                   Training <ChevronDown size={18} className={`transition-transform ${mobileExpandedCategory === 'training' ? 'rotate-180' : ''}`} />
                 </button>
@@ -248,7 +248,7 @@ export function Header() {
                         <div key={cat.id}>
                           <button
                             onClick={() => setMobileExpandedCategory(mobileExpandedCategory === `cat-${cat.id}` ? 'training' : `cat-${cat.id}`)}
-                            className="w-full flex items-center justify-between text-muted-foreground/80 font-semibold py-2"
+                            className="w-full flex items-center justify-between text-muted-foreground/80 type-nav py-2"
                           >
                             {cat.label} <ChevronDown size={14} className={mobileExpandedCategory === `cat-${cat.id}` ? 'rotate-180' : ''} />
                           </button>
@@ -258,7 +258,7 @@ export function Header() {
                                 <a
                                   key={course.href}
                                   href={course.href}
-                                  className="block text-sm text-muted-foreground/60"
+                                  className="block type-caption text-muted-foreground/60"
                                   onClick={() => setIsMobileMenuOpen(false)}
                                 >
                                   {course.label}
@@ -277,7 +277,7 @@ export function Header() {
                 <a
                   key={link.href}
                   href={link.href}
-                  className="text-muted-foreground hover:text-foreground transition-colors font-bold py-3 border-b border-muted last:border-0"
+                  className="text-muted-foreground hover:text-foreground transition-colors type-nav py-3 border-b border-muted last:border-0"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   {link.label}

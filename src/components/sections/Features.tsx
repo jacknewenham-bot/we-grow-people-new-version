@@ -92,7 +92,7 @@ export function Features() {
               <button
                 key={feature.id}
                 onClick={() => setActiveTab(feature.id)}
-                className={`px-4 py-2 md:px-6 md:py-3 rounded-full font-heading font-semibold text-xs md:text-sm transition-all duration-300 ${activeTab === feature.id
+                className={`px-4 py-2 md:px-6 md:py-3 rounded-full font-heading type-button transition-all duration-300 ${activeTab === feature.id
                   ? "bg-white text-foreground shadow-sm"
                   : "text-white/70 hover:text-white"
                   }`}
@@ -114,11 +114,11 @@ export function Features() {
             className="grid lg:grid-cols-2 gap-16 items-center"
           >
             <div className="max-w-lg">
-              <h3 className="font-heading text-3xl md:text-5xl font-black text-foreground mb-6 leading-tight">
+              <h3 className="section-headline text-foreground mb-6 leading-tight">
                 {activeFeature.headline}
               </h3>
 
-              <p className="text-lg md:text-xl text-muted-foreground mb-10 leading-relaxed font-sans">
+              <p className="type-body text-muted-foreground mb-10 font-sans">
                 {activeFeature.body}
               </p>
 
@@ -126,7 +126,7 @@ export function Features() {
                 {activeFeature.bullets.map((bullet) => (
                   <li key={bullet} className="flex items-center gap-4">
                     <div className="w-3 h-3 rounded-full bg-lime flex-shrink-0" />
-                    <span className="text-foreground font-medium text-lg">{bullet}</span>
+                    <span className="type-body-secondary text-foreground font-medium">{bullet}</span>
                   </li>
                 ))}
               </ul>
@@ -164,14 +164,14 @@ export function Features() {
                 transition={{ delay: 0.2, type: "spring", stiffness: 100 }}
                 className="absolute bottom-6 left-6 md:bottom-8 md:left-8 bg-white/95 backdrop-blur-md p-5 rounded-2xl shadow-[0_8px_30px_rgba(0,0,0,0.12)] border border-white/20 max-w-[260px]"
               >
-                <h4 className="font-heading font-bold text-foreground text-lg mb-3">
+                <h4 className="type-h4 text-foreground mb-3">
                   {(activeFeature as any).popout.title}
                 </h4>
                 <div className="space-y-2">
                   {(activeFeature as any).popout.bullets.map((item: string) => (
                     <div key={item} className="flex items-start gap-2.5">
                       <div className="w-1.5 h-1.5 rounded-full bg-lime mt-2 shrink-0" />
-                      <span className="text-sm font-medium text-muted-foreground leading-tight">
+                      <span className="type-caption font-medium text-muted-foreground leading-tight">
                         {item}
                       </span>
                     </div>

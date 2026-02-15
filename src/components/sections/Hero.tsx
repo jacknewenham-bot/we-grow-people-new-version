@@ -116,7 +116,7 @@ export function Hero() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-lg md:text-xl text-white/70 max-w-2xl mx-auto mb-10 font-sans"
+            className="type-body text-white/70 max-w-2xl mx-auto mb-10 font-sans"
           >
             Expert-led coaching and corporate training that builds real capability, confidence, and results. HRDC claimable programs built for Malaysia.
           </motion.p>
@@ -151,7 +151,7 @@ export function Hero() {
                   <div key={i} className="rating-dot" />
                 ))}
               </div>
-              <span className="text-white/60 text-sm">4.9 Client Rating</span>
+              <span className="text-white/60 type-caption">4.9 Client Rating</span>
             </div>
             <div className="flex flex-col items-center gap-2">
               <div className="flex gap-1.5">
@@ -159,7 +159,7 @@ export function Hero() {
                   <div key={i} className="rating-dot" />
                 ))}
               </div>
-              <span className="text-white/60 text-sm">100% HRDC Claimable</span>
+              <span className="text-white/60 type-caption">100% HRDC Claimable</span>
             </div>
           </motion.div>
         </div>

@@ -70,11 +70,11 @@ export function HowItWorks() {
                   </span>
                 </div>
 
-                <h3 className="font-sans text-xl font-semibold text-foreground mb-3">
+                <h3 className="type-h4 text-foreground mb-3">
                   {step.title}
                 </h3>
 
-                <p className="text-muted-foreground">
+                <p className="type-body-secondary text-muted-foreground">
                   {step.description}
                 </p>
               </div>

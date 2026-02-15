@@ -95,13 +95,13 @@ export function OpenLetter() {
           <div className="grid lg:grid-cols-[1fr,1fr] gap-10 lg:gap-20 items-center">
             {/* Left Content */}
             <div className="max-w-xl">
-              <div className="inline-flex items-center rounded-full bg-white/10 px-4 py-2 text-sm font-semibold mb-6">
+              <div className="inline-flex items-center rounded-full bg-white/10 px-4 py-2 type-caption font-semibold mb-6">
                 Open letter
               </div>
               <h2 className="section-headline mb-6">
                 An open letter to modern teams
               </h2>
-              <div className="space-y-6 text-lg text-white/80 leading-relaxed">
+              <div className="space-y-6 type-body text-white/80">
                 <p>
                   The workplace is changing faster than ever. New tools, shifting roles, and rising expectations make growth feel harder than it should be.
                 </p>
@@ -111,7 +111,7 @@ export function OpenLetter() {
                 <p>
                   We deliver practical training in sales, communication, performance, and AI so teams build real capability, not just short-term momentum.
                 </p>
-                <p className="text-lime font-bold text-xl">Let’s make growth simpler.</p>
+                  <p className="text-lime font-bold text-[1.1875rem]">Let’s make growth simpler.</p>
               </div>
             </div>
 
@@ -140,7 +140,7 @@ export function OpenLetter() {
                       transition={{ type: "spring", stiffness: 160, damping: 18 }}
                     >
                       <div
-                        className={`max-w-[85%] px-4 py-3 rounded-2xl text-sm leading-relaxed shadow-lg ${msg.role === "assistant"
+                        className={`max-w-[85%] px-4 py-3 rounded-2xl type-caption leading-relaxed shadow-lg ${msg.role === "assistant"
                             ? "bg-lime text-primary font-medium rounded-br-none"
                             : "bg-zinc-900/80 text-white rounded-bl-none border border-white/10"
                           }`}

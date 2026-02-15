@@ -299,7 +299,7 @@ export function Testimonials() {
                         <button
                           type="button"
                           onClick={() => toggleExpanded(index)}
-                          className="mt-4 text-sm font-semibold text-foreground/70 hover:text-foreground transition-colors self-start"
+                          className="mt-4 type-nav text-foreground/70 hover:text-foreground transition-colors self-start"
                         >
                           {isExpanded ? "Read less" : "Read more"}
                         </button>
@@ -320,7 +320,7 @@ export function Testimonials() {
                           )}
                         </div>
                         <div className="leading-tight">
-                          <p className="font-semibold text-foreground text-base flex items-center gap-2">
+                          <p className="type-nav text-foreground flex items-center gap-2">
                             {(testimonial as any).linkedin ? (
                               <a
                                 href={(testimonial as any).linkedin}
@@ -337,10 +337,10 @@ export function Testimonials() {
                               (testimonial as any).author
                             )}
                           </p>
-                          <p className="text-muted-foreground text-sm">
+                          <p className="type-caption text-muted-foreground">
                             {testimonial.role} • {testimonial.company}
                           </p>
-                          <p className="text-muted-foreground/70 text-xs uppercase tracking-widest mt-1">
+                          <p className="text-muted-foreground/70 type-caption uppercase tracking-widest mt-1">
                             {testimonial.date}
                           </p>
                         </div>

@@ -67,7 +67,7 @@ export function Teams() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="text-lg md:text-xl text-muted-foreground font-sans"
+            className="type-body text-muted-foreground font-sans"
           >
             Different teams need different skills.
           </motion.p>
@@ -94,7 +94,7 @@ export function Teams() {
                   <div className="absolute inset-0 bg-black/20"></div>
                   <div className="absolute inset-0 p-4 flex items-end">
                     <div className="w-full rounded-2xl bg-white/15 backdrop-blur-xl border border-white/20 p-5 pr-20 relative">
-                      <p className="text-white text-base md:text-lg leading-tight font-medium overflow-hidden [display:-webkit-box] [-webkit-box-orient:vertical] [-webkit-line-clamp:3]">
+                      <p className="text-white text-[1.0625rem] md:text-[1.125rem] leading-[1.5] font-medium overflow-hidden [display:-webkit-box] [-webkit-box-orient:vertical] [-webkit-line-clamp:3]">
                         {team.text}
                       </p>
                       <span className="absolute right-5 top-1/2 -translate-y-1/2 inline-flex h-10 w-10 items-center justify-center rounded-full bg-white/15 border border-white/20 text-white">

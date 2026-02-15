@@ -64,13 +64,13 @@ export function Footer() {
 
           {/* Teams */}
           <div>
-            <h4 className="font-semibold text-lime mb-4">Teams</h4>
+            <h4 className="type-h4 text-lime mb-4">Teams</h4>
             <ul className="space-y-3">
               {footerLinks.teams.map((link) => (
                 <li key={link.label}>
                   <a
                     href={link.href}
-                    className="text-white/70 hover:text-white transition-colors text-sm"
+                    className="text-white/70 hover:text-white transition-colors type-nav"
                   >
                     {link.label}
                   </a>
@@ -81,13 +81,13 @@ export function Footer() {
 
           {/* Programs */}
           <div>
-            <h4 className="font-semibold text-lime mb-4">Programs</h4>
+            <h4 className="type-h4 text-lime mb-4">Programs</h4>
             <ul className="space-y-3">
               {footerLinks.programs.map((link) => (
                 <li key={link.label}>
                   <a
                     href={link.href}
-                    className="text-white/70 hover:text-white transition-colors text-sm"
+                    className="text-white/70 hover:text-white transition-colors type-nav"
                   >
                     {link.label}
                   </a>
@@ -98,13 +98,13 @@ export function Footer() {
 
           {/* Resources */}
           <div>
-            <h4 className="font-semibold text-lime mb-4">Resources</h4>
+            <h4 className="type-h4 text-lime mb-4">Resources</h4>
             <ul className="space-y-3">
               {footerLinks.resources.map((link) => (
                 <li key={link.label}>
                   <a
                     href={link.href}
-                    className="text-white/70 hover:text-white transition-colors text-sm"
+                    className="text-white/70 hover:text-white transition-colors type-nav"
                   >
                     {link.label}
                   </a>
@@ -115,7 +115,7 @@ export function Footer() {
 
           {/* Contact */}
           <div>
-            <h4 className="font-semibold text-lime mb-4">Contact</h4>
+            <h4 className="type-h4 text-lime mb-4">Contact</h4>
             <ul className="space-y-3">
               {footerLinks.contact.map((link) => (
                 <li key={link.label}>
@@ -123,7 +123,7 @@ export function Footer() {
                     href={link.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-white/70 hover:text-white transition-colors text-sm"
+                    className="text-white/70 hover:text-white transition-colors type-nav"
                   >
                     {link.label}
                   </a>
@@ -134,7 +134,7 @@ export function Footer() {
         </div>
 
         <div className="pt-8 border-t border-white/10 text-center">
-          <p className="text-white/50 text-sm">
+          <p className="text-white/50 type-caption">
             © {new Date().getFullYear()} WeGrowPeople. All rights reserved.
           </p>
         </div>
