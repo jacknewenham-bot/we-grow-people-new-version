@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300;400;500;600;700;800;900&family=Work+Sans:wght@700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300;400;500;600;700;800;900&family=Work+Sans:wght@700;800;900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 
 @font-face {
   font-family: 'Affairs';
@@ -212,7 +212,7 @@
   /* Display headline style - uppercase condensed */
   .headline-display {
     font-weight: 800;
-    text-transform: uppercase;
+    /* text-transform: uppercase; */
     letter-spacing: -0.02em;
     line-height: 0.95;
   }

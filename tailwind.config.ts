@@ -14,7 +14,7 @@ export default {
     },
     extend: {
       fontFamily: {
-        sans: ["Affairs", "system-ui", "sans-serif"],
+        sans: ["Inter", "system-ui", "sans-serif"],
         heading: ["Affairs", "system-ui", "sans-serif"],
         condensed: ["Affairs", "system-ui", "sans-serif"],
       },
