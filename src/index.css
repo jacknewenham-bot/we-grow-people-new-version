@@ -48,6 +48,38 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: 'Suisse Intl';
+  src: url('/fonts/suisse/SuisseIntlTrial-Regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Suisse Intl';
+  src: url('/fonts/suisse/SuisseIntlTrial-Medium.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Suisse Intl';
+  src: url('/fonts/suisse/SuisseIntlTrial-Semibold.otf') format('opentype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Suisse Intl';
+  src: url('/fonts/suisse/SuisseIntlTrial-Bold.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -228,6 +260,7 @@
   h4,
   h5,
   h6 {
+    font-family: 'Suisse Intl', 'Graphik', sans-serif;
     text-transform: uppercase;
   }
 }
@@ -261,9 +294,9 @@
   }
 
   /* Display headline style - uppercase condensed */
-  /* Graphik Headline - Primary Hero */
+  /* Suisse Headline - Primary Hero */
   .headline-display {
-    font-family: 'Graphik', sans-serif;
+    font-family: 'Suisse Intl', 'Graphik', sans-serif;
     font-weight: 700;
     font-size: clamp(3.25rem, 5vw, 4.25rem);
     line-height: 1.15;
@@ -271,9 +304,9 @@
     text-transform: uppercase;
   }
 
-  /* Graphik Section Headline */
+  /* Suisse Section Headline */
   .section-headline {
-    font-family: 'Graphik', sans-serif;
+    font-family: 'Suisse Intl', 'Graphik', sans-serif;
     font-weight: 600;
     font-size: clamp(2.25rem, 3.2vw, 3rem);
     line-height: 1.2;
@@ -282,7 +315,7 @@
   }
 
   .type-h3 {
-    font-family: 'Graphik', sans-serif;
+    font-family: 'Suisse Intl', 'Graphik', sans-serif;
     font-weight: 600;
     font-size: clamp(1.75rem, 2.3vw, 2rem);
     line-height: 1.3;
@@ -290,7 +323,7 @@
   }
 
   .type-h4 {
-    font-family: 'Graphik', sans-serif;
+    font-family: 'Suisse Intl', 'Graphik', sans-serif;
     font-weight: 600;
     font-size: clamp(1.375rem, 1.8vw, 1.5rem);
     line-height: 1.4;
