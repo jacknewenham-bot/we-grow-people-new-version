@@ -89,7 +89,7 @@ export function Teams() {
                   <img
                     src={team.image}
                     alt={team.title}
-                    className="absolute inset-0 h-full w-full object-cover"
+                    className="absolute inset-0 h-full w-full object-cover object-top"
                   />
                   <div className="absolute inset-0 bg-black/20"></div>
                   <div className="absolute inset-0 p-4 flex items-end">

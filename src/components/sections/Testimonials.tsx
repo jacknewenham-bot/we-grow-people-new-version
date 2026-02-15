@@ -180,6 +180,7 @@ const testimonials = [
 export function Testimonials() {
   const [expanded, setExpanded] = useState<Set<number>>(new Set());
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true, align: "start" });
+  const lastWheelAtRef = useRef(0);
 
   const scrollPrev = useCallback(() => {
     if (emblaApi) emblaApi.scrollPrev();
@@ -200,6 +201,25 @@ export function Testimonials() {
       return next;
     });
   };
+
+  const handleWheelScroll = useCallback(
+    (event: React.WheelEvent<HTMLDivElement>) => {
+      if (!emblaApi) return;
+
+      const now = Date.now();
+      if (now - lastWheelAtRef.current < 220) return;
+
+      const delta = Math.abs(event.deltaY) > Math.abs(event.deltaX) ? event.deltaY : event.deltaX;
+      if (Math.abs(delta) < 8) return;
+
+      event.preventDefault();
+      lastWheelAtRef.current = now;
+
+      if (delta > 0) emblaApi.scrollNext();
+      else emblaApi.scrollPrev();
+    },
+    [emblaApi]
+  );
 
   return (
     <section id="testimonials" className="py-24 md:py-32 bg-white">
@@ -242,7 +262,11 @@ export function Testimonials() {
 
         {/* Testimonial Carousel */}
         <div className="relative">
-          <div className="overflow-hidden" ref={emblaRef}>
+          <div
+            className="overflow-hidden select-none cursor-grab active:cursor-grabbing"
+            ref={emblaRef}
+            onWheel={handleWheelScroll}
+          >
             <div className="flex gap-8 -ml-4">
               {testimonials.map((testimonial, index) => {
                 const isExpanded = expanded.has(index);
