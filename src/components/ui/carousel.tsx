@@ -15,6 +15,7 @@ type CarouselProps = {
   plugins?: CarouselPlugin;
   orientation?: "horizontal" | "vertical";
   setApi?: (api: CarouselApi) => void;
+  wheelGesture?: boolean;
 };
 
 type CarouselContextProps = {
@@ -39,7 +40,7 @@ function useCarousel() {
 }
 
 const Carousel = React.forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDivElement> & CarouselProps>(
-  ({ orientation = "horizontal", opts, setApi, plugins, className, children, ...props }, ref) => {
+  ({ orientation = "horizontal", opts, setApi, plugins, className, children, wheelGesture = false, ...props }, ref) => {
     const [carouselRef, api] = useEmblaCarousel(
       {
         ...opts,
@@ -66,6 +67,35 @@ const Carousel = React.forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDivEl
     const scrollNext = React.useCallback(() => {
       api?.scrollNext();
     }, [api]);
+
+    const lastWheelAtRef = React.useRef(0);
+    const handleWheel = React.useCallback(
+      (event: React.WheelEvent<HTMLDivElement>) => {
+        if (!wheelGesture || orientation !== "horizontal") {
+          return;
+        }
+
+        const now = Date.now();
+        if (now - lastWheelAtRef.current < 220) {
+          return;
+        }
+
+        const delta = Math.abs(event.deltaY) > Math.abs(event.deltaX) ? event.deltaY : event.deltaX;
+        if (Math.abs(delta) < 8) {
+          return;
+        }
+
+        event.preventDefault();
+        lastWheelAtRef.current = now;
+
+        if (delta > 0) {
+          scrollNext();
+        } else {
+          scrollPrev();
+        }
+      },
+      [orientation, scrollNext, scrollPrev, wheelGesture],
+    );
 
     const handleKeyDown = React.useCallback(
       (event: React.KeyboardEvent<HTMLDivElement>) => {
@@ -118,6 +148,7 @@ const Carousel = React.forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDivEl
         <div
           ref={ref}
           onKeyDownCapture={handleKeyDown}
+          onWheel={handleWheel}
           className={cn("relative", className)}
           role="region"
           aria-roledescription="carousel"

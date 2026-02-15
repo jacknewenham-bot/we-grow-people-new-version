@@ -97,6 +97,7 @@ export function CoachesImageCarousel({
               dragFree: true,
               containScroll: "trimSnaps",
             }}
+            wheelGesture={true}
             className="w-full select-none cursor-grab active:cursor-grabbing"
           >
             <CarouselContent className="-ml-4">
