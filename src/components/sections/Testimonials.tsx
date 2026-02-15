@@ -203,17 +203,40 @@ export function Testimonials() {
       </style>
 
       <div className="container">
-        <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="text-center mb-10 md:mb-14"
-        >
-          <h2 className="section-headline text-foreground mb-3">Wall of love</h2>
-          <p className="type-body-secondary text-muted-foreground max-w-3xl mx-auto">
-            Real feedback from people and teams who trained with us.
-          </p>
-        </motion.div>
+        <div className="text-center mb-12 md:mb-16">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="inline-flex flex-col items-center gap-4"
+          >
+            <div className="inline-flex items-center gap-4 rounded-full bg-lime/30 px-8 py-3 shadow-sm">
+              <span className="section-headline text-2xl md:text-4xl text-foreground">
+                Don't just take
+              </span>
+            </div>
+            <div className="inline-flex items-center gap-4 rounded-full bg-lime px-10 py-4 shadow-sm">
+              <span className="inline-flex h-11 w-16 items-center justify-center rounded-full bg-white/95">
+                <span className="flex gap-1">
+                  <span className="h-2 w-2 rounded-full bg-foreground/80" />
+                  <span className="h-2 w-2 rounded-full bg-foreground/80" />
+                  <span className="h-2 w-2 rounded-full bg-foreground/80" />
+                </span>
+              </span>
+              <span className="section-headline text-2xl md:text-4xl text-foreground">
+                our word for it
+              </span>
+            </div>
+            <div className="inline-flex items-center gap-4 rounded-full bg-lime/30 px-8 py-3 shadow-sm">
+              <span className="section-headline text-2xl md:text-4xl text-foreground">
+                Hear directly from our clients
+              </span>
+              <span className="inline-flex h-11 w-11 items-center justify-center rounded-full bg-lime text-foreground shadow-sm">
+                <span className="text-xl leading-none">↓</span>
+              </span>
+            </div>
+          </motion.div>
+        </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5 md:gap-6 wall-pause">
           {columns.map((columnItems, columnIndex) => {
