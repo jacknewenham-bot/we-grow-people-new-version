@@ -15,8 +15,8 @@ export default {
     extend: {
       fontFamily: {
         sans: ["Inter", "system-ui", "sans-serif"],
-        heading: ["Affairs", "system-ui", "sans-serif"],
-        condensed: ["Affairs", "system-ui", "sans-serif"],
+        heading: ["Graphik", "system-ui", "sans-serif"],
+        condensed: ["Graphik", "system-ui", "sans-serif"],
       },
       colors: {
         border: "hsl(var(--border))",
