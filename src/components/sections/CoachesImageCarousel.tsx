@@ -89,17 +89,19 @@ export function CoachesImageCarousel({
           )}
         </div>
 
-        <div className="max-w-6xl mx-auto px-12 relative">
+        <div className="max-w-7xl mx-auto relative">
           <Carousel
             opts={{
               align: "start",
               loop: true,
+              dragFree: true,
+              containScroll: "trimSnaps",
             }}
-            className="w-full"
+            className="w-full select-none cursor-grab active:cursor-grabbing"
           >
             <CarouselContent className="-ml-4">
               {coaches.map((coach, index) => (
-                <CarouselItem key={index} className="pl-4 basis-[85%] md:basis-[60%] lg:basis-[40%]">
+                <CarouselItem key={index} className="pl-4 basis-[90%] md:basis-1/2 lg:basis-1/3">
                   <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
@@ -131,8 +133,8 @@ export function CoachesImageCarousel({
               ))}
             </CarouselContent>
             <div className="hidden md:block">
-              <CarouselPrevious className="-left-12 h-12 w-12" />
-              <CarouselNext className="-right-12 h-12 w-12" />
+              <CarouselPrevious className="-left-6 lg:-left-10 h-12 w-12" />
+              <CarouselNext className="-right-6 lg:-right-10 h-12 w-12" />
             </div>
           </Carousel>
         </div>
