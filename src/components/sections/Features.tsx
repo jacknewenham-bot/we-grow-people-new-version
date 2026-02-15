@@ -11,7 +11,8 @@ const features = [
     headline: "Learn skills you can use immediately.",
     body: "No outdated frameworks. No generic training. Just real tools and workflows your team can apply right away.",
     bullets: ["Hands-on exercises", "Real company scenarios", "Actionable frameworks"],
-    image: "/training-images/practical-skills.png",
+    image: "/training-images/optimized/practical-skills-1600.jpg",
+    imageSmall: "/training-images/optimized/practical-skills-800.jpg",
     link: "/sales-training",
     popout: {
       title: "Live Workshop Format",
@@ -25,7 +26,8 @@ const features = [
     headline: "Learn from people who have done the work.",
     body: "We work with experienced practitioners across growth, sales, leadership, project management, AI, content, and wellbeing.",
     bullets: ["Industry experience", "Modern playbooks", "Malaysia-relevant use cases"],
-    image: "/training-images/expert-led.png",
+    image: "/training-images/optimized/expert-led-1600.jpg",
+    imageSmall: "/training-images/optimized/expert-led-800.jpg",
     link: "/coaches",
     popout: {
       title: "Practitioner Led",
@@ -39,7 +41,8 @@ const features = [
     headline: "Use modern tools to move faster.",
     body: "We help teams adopt AI in a practical way, from workflows to automation, so they can perform better with less effort.",
     bullets: ["AI workflows", "Vibe coding for business", "Agent-based productivity"],
-    image: "/training-images/ai-powered.jpg",
+    image: "/training-images/optimized/ai-powered-1600.jpg",
+    imageSmall: "/training-images/optimized/ai-powered-800.jpg",
     link: "/training/ai",
     popout: {
       title: "Modern Tooling",
@@ -53,7 +56,8 @@ const features = [
     headline: "HRDC claimable training, without the hassle.",
     body: "Programs are structured to meet HRDC requirements while keeping delivery practical and outcome-driven.",
     bullets: ["Fully compliant", "Easy claims process", "Outcome-focused"],
-    image: "/training-images/hrdc-claimable.jpg",
+    image: "/training-images/optimized/hrdc-claimable-1600.jpg",
+    imageSmall: "/training-images/optimized/hrdc-claimable-800.jpg",
     link: "/about",
     popout: {
       title: "Claim Ready",
@@ -145,7 +149,12 @@ export function Features() {
                 {(activeFeature as any).image ? (
                   <img
                     src={(activeFeature as any).image}
+                    srcSet={`${(activeFeature as any).imageSmall} 800w, ${(activeFeature as any).image} 1600w`}
+                    sizes="(max-width: 768px) 92vw, (max-width: 1280px) 50vw, 640px"
                     alt={activeFeature.title}
+                    loading="eager"
+                    decoding="async"
+                    fetchPriority="high"
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                   />
                 ) : (
