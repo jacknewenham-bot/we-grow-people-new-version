@@ -36,10 +36,11 @@ const messages = [
 
 export function OpenLetter() {
   const [visibleCount, setVisibleCount] = useState(0);
+  const [typingRole, setTypingRole] = useState<"assistant" | null>(null);
   const loopTimeouts = useRef<ReturnType<typeof setTimeout>[]>([]);
   const loopTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const messagesViewportRef = useRef<HTMLDivElement | null>(null);
-  const messageIntervalMs = 910;
+  const baseMessageIntervalMs = 540;
   const cyclePauseMs = 3400;
 
   useEffect(() => {
@@ -52,14 +53,41 @@ export function OpenLetter() {
       }
 
       setVisibleCount(0);
-      messages.forEach((_, index) => {
+      setTypingRole(null);
+
+      let elapsed = 0;
+      messages.forEach((message, index) => {
+        const previous = index > 0 ? messages[index - 1] : null;
+        const senderSwitched = previous && previous.role !== message.role;
+        const typingDurationMs = Math.min(
+          1500,
+          Math.max(520, message.text.replace(/\n/g, " ").length * 16)
+        );
+
+        if (senderSwitched) {
+          elapsed += 260;
+        }
+
+        if (message.role === "assistant") {
+          const typingStart = setTimeout(() => {
+            setTypingRole("assistant");
+          }, elapsed);
+          loopTimeouts.current.push(typingStart);
+          elapsed += typingDurationMs;
+        } else {
+          elapsed += 220;
+        }
+
         const timeout = setTimeout(() => {
+          setTypingRole(null);
           setVisibleCount(index + 1);
-        }, messageIntervalMs * index);
+        }, elapsed);
         loopTimeouts.current.push(timeout);
+
+        elapsed += baseMessageIntervalMs;
       });
 
-      const totalDuration = messages.length * messageIntervalMs + cyclePauseMs;
+      const totalDuration = elapsed + cyclePauseMs;
       loopTimer.current = setTimeout(() => {
         scheduleSequence();
       }, totalDuration);
@@ -87,8 +115,10 @@ export function OpenLetter() {
   useEffect(() => {
     const viewport = messagesViewportRef.current;
     if (!viewport) return;
-    viewport.scrollTo({ top: viewport.scrollHeight, behavior: "smooth" });
-  }, [visibleCount]);
+    requestAnimationFrame(() => {
+      viewport.scrollTo({ top: viewport.scrollHeight, behavior: "smooth" });
+    });
+  }, [visibleCount, typingRole]);
 
   return (
     <section className="py-24 md:py-32 bg-hero relative overflow-hidden">
@@ -140,9 +170,9 @@ export function OpenLetter() {
                     <motion.div
                       key={msg.id}
                       className={`flex ${msg.role === "assistant" ? "justify-end" : "justify-start"}`}
-                      initial={{ opacity: 0, y: 12, scale: 0.96 }}
+                      initial={{ opacity: 0, y: 10, scale: 0.985 }}
                       animate={{ opacity: 1, y: 0, scale: 1 }}
-                      transition={{ type: "spring", stiffness: 160, damping: 18 }}
+                      transition={{ duration: 0.32, ease: [0.2, 0.8, 0.2, 1] }}
                     >
                       <div
                         className={`max-w-[85%] px-4 py-3 rounded-2xl type-caption leading-relaxed shadow-lg ${msg.role === "assistant"
@@ -158,6 +188,33 @@ export function OpenLetter() {
                       </div>
                     </motion.div>
                   ))}
+                  {typingRole === "assistant" && (
+                    <motion.div
+                      className="flex justify-end"
+                      initial={{ opacity: 0, y: 8 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0 }}
+                      transition={{ duration: 0.2 }}
+                    >
+                      <div className="px-3 py-2 rounded-2xl rounded-br-none bg-lime/85">
+                        <div className="flex items-center gap-1">
+                          {[0, 1, 2].map((dot) => (
+                            <motion.span
+                              key={dot}
+                              className="w-1.5 h-1.5 rounded-full bg-primary/70"
+                              animate={{ opacity: [0.35, 1, 0.35] }}
+                              transition={{
+                                duration: 0.9,
+                                repeat: Infinity,
+                                delay: dot * 0.12,
+                                ease: "easeInOut",
+                              }}
+                            />
+                          ))}
+                        </div>
+                      </div>
+                    </motion.div>
+                  )}
                 </div>
               </div>
             </div>
