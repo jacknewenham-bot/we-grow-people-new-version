@@ -38,6 +38,7 @@ export function OpenLetter() {
   const [visibleCount, setVisibleCount] = useState(0);
   const loopTimeouts = useRef<ReturnType<typeof setTimeout>[]>([]);
   const loopTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const messagesViewportRef = useRef<HTMLDivElement | null>(null);
   const messageIntervalMs = 910;
   const cyclePauseMs = 3400;
 
@@ -83,6 +84,12 @@ export function OpenLetter() {
     };
   }, []);
 
+  useEffect(() => {
+    const viewport = messagesViewportRef.current;
+    if (!viewport) return;
+    viewport.scrollTo({ top: viewport.scrollHeight, behavior: "smooth" });
+  }, [visibleCount]);
+
   return (
     <section className="py-24 md:py-32 bg-hero relative overflow-hidden">
       <div className="container relative z-10">
@@ -121,10 +128,13 @@ export function OpenLetter() {
               id="chat-trigger"
             >
               {/* Phone Mockup */}
-              <div className="relative w-[300px] h-[560px] rounded-[3rem] border-[10px] border-zinc-800 shadow-[0_25px_80px_rgba(0,0,0,0.6)] overflow-hidden bg-[#ece5dd]">
+              <div className="relative w-[300px] h-[560px] rounded-[3rem] border-[10px] border-zinc-800 shadow-[0_25px_80px_rgba(0,0,0,0.6)] overflow-hidden bg-[#111b21]">
 
                 {/* Messages */}
-                <div className="absolute inset-0 p-5 flex flex-col justify-start gap-3">
+                <div
+                  ref={messagesViewportRef}
+                  className="absolute inset-0 p-4 md:p-5 flex flex-col justify-end gap-2 overflow-y-auto"
+                >
                   {messages.slice(0, visibleCount).map((msg) => (
                     <motion.div
                       key={msg.id}
@@ -136,7 +146,7 @@ export function OpenLetter() {
                       <div
                         className={`max-w-[85%] px-4 py-3 rounded-2xl type-caption leading-relaxed shadow-lg ${msg.role === "assistant"
                             ? "bg-lime text-primary font-medium rounded-br-none"
-                            : "bg-zinc-900/80 text-white rounded-bl-none border border-white/10"
+                            : "bg-[#202c33] text-white rounded-bl-none border border-white/5"
                           }`}
                       >
                         {msg.text.split("\n").map((line, i) => (
