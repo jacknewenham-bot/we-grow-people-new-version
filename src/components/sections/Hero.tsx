@@ -106,9 +106,8 @@ export function Hero() {
             transition={{ duration: 0.6 }}
             className="headline-display font-heading text-white mb-8"
           >
-            Future-ready training
-            <br />
-            <span className="text-white/90">for modern teams</span>
+            <span className="block md:whitespace-nowrap">Future-ready training</span>
+            <span className="block text-white/90 md:whitespace-nowrap">for modern teams</span>
           </motion.h1>
 
           {/* Subheadline */}
