@@ -38,12 +38,12 @@ export function SocialProof() {
             {[...logos, ...logos].map((logo, index) => (
               <div
                 key={`${logo.name}-${index}`}
-                className="logo-marquee-item mx-8 flex items-center justify-center h-12 w-32 grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
+                className="logo-marquee-item mx-8 flex items-center justify-center h-14 w-36 grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
               >
                 <img
                   src={logo.image}
                   alt={logo.name}
-                  className="max-w-[120px] max-h-[30px] object-contain w-auto h-auto"
+                  className="max-w-[130px] max-h-[35px] object-contain w-auto h-auto"
                 />
               </div>
             ))}
