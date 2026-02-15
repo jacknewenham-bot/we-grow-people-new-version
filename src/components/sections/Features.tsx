@@ -114,7 +114,7 @@ export function Features() {
             className="grid lg:grid-cols-2 gap-16 items-center"
           >
             <div className="max-w-lg">
-              <h3 className="font-heading text-3xl md:text-5xl font-normal text-foreground mb-6 leading-tight">
+              <h3 className="font-heading text-3xl md:text-5xl font-black text-foreground mb-6 leading-tight">
                 {activeFeature.headline}
               </h3>
 
