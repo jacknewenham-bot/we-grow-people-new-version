@@ -116,7 +116,7 @@ export function Header() {
           </span>
         </a>
 
-// Desktop Nav
+        {/* Desktop Nav */}
         <nav className="hidden md:flex items-center gap-8">
           {/* Training Dropdown Trigger */}
           <div
