@@ -128,7 +128,8 @@ export function OpenLetter() {
               id="chat-trigger"
             >
               {/* Phone Mockup */}
-              <div className="relative w-[300px] h-[560px] rounded-[3rem] border-[10px] border-zinc-800 shadow-[0_25px_80px_rgba(0,0,0,0.6)] overflow-hidden bg-[#111b21]">
+              <div className="relative w-[300px] h-[560px] rounded-[3rem] border-[10px] border-zinc-600 shadow-[0_30px_90px_rgba(0,0,0,0.8)] ring-1 ring-white/20 overflow-hidden bg-[#111b21]">
+                <div className="pointer-events-none absolute -inset-2 -z-10 rounded-[3.2rem] bg-white/10 blur-md" />
 
                 {/* Messages */}
                 <div
