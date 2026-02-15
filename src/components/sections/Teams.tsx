@@ -55,7 +55,7 @@ export function Teams() {
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="headline-display font-heading text-4xl md:text-6xl text-foreground mb-6"
+            className="section-headline text-foreground mb-6"
           >
             Designed for the
             <br />
@@ -94,7 +94,7 @@ export function Teams() {
                   <div className="absolute inset-0 bg-black/20"></div>
                   <div className="absolute inset-x-4 bottom-4 rounded-2xl bg-white/15 backdrop-blur-xl border border-white/20 p-5 flex items-end justify-between gap-4">
                     <div>
-                      <h3 className="font-heading text-xl md:text-2xl font-bold text-white mb-2">
+                      <h3 className="font-sans text-xl md:text-2xl font-semibold text-white mb-2">
                         {team.title}
                       </h3>
                       <p className="text-white/80 text-sm leading-relaxed">

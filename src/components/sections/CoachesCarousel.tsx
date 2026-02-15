@@ -121,7 +121,7 @@ export function CoachesCarousel() {
                         initial={{ opacity: 0, y: 30 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        className="headline-display font-heading text-4xl md:text-6xl text-foreground mb-6"
+                        className="section-headline text-foreground mb-6"
                     >
                         Meet the coaches
                     </motion.h2>
@@ -164,13 +164,13 @@ export function CoachesCarousel() {
                                                 className={`w-full h-full object-cover ${(coach as any).imageClassName || "object-top"}`}
                                             />
                                         ) : (
-                                            <span className="text-2xl font-bold text-primary font-heading">
+                                            <span className="text-2xl font-bold text-primary font-sans">
                                                 {getInitials(coach.name)}
                                             </span>
                                         )}
                                     </div>
 
-                                    <h3 className="font-heading text-xl font-bold text-foreground mb-2">
+                                    <h3 className="font-sans text-xl font-semibold text-foreground mb-2">
                                         {coach.name}
                                     </h3>
 

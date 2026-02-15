@@ -98,7 +98,7 @@ export function Stakeholders() {
               initial={{ opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="headline-display font-heading text-4xl md:text-5xl"
+              className="section-headline text-white"
             >
               Training that fits your role
             </motion.h2>
@@ -120,11 +120,10 @@ export function Stakeholders() {
                     type="button"
                     aria-pressed={isActive}
                     onClick={() => setActiveId(item.id)}
-                    className={`rounded-full border px-4 py-2 text-sm font-sans transition-all ${
-                      isActive
+                    className={`rounded-full border px-4 py-2 text-sm font-sans transition-all ${isActive
                         ? "border-transparent text-[#111111] shadow-lg"
                         : "border-white/30 text-white/80 hover:border-white/60 hover:text-white"
-                    }`}
+                      }`}
                     style={isActive ? { backgroundColor: item.accent } : undefined}
                   >
                     {item.label}
@@ -146,7 +145,7 @@ export function Stakeholders() {
               >
                 <div className="grid gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,0.9fr)] items-center">
                   <div>
-                    <h3 className="font-heading text-2xl md:text-3xl">
+                    <h3 className="font-sans text-2xl md:text-3xl font-semibold">
                       {activeStakeholder.title}
                     </h3>
                     <p className="mt-4 text-base md:text-lg text-white/70 font-sans">

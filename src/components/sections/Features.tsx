@@ -74,7 +74,7 @@ export function Features() {
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="headline-display font-heading text-4xl md:text-6xl text-foreground text-center mb-10 md:mb-16"
+          className="section-headline font-heading text-foreground text-center mb-10 md:mb-16"
         >
           Our Training
         </motion.h2>
@@ -113,9 +113,8 @@ export function Features() {
             transition={{ duration: 0.3 }}
             className="grid lg:grid-cols-2 gap-16 items-center"
           >
-            {/* Text Content */}
             <div className="max-w-lg">
-              <h3 className="font-heading text-3xl md:text-5xl font-bold text-foreground mb-6 leading-tight">
+              <h3 className="font-heading text-3xl md:text-5xl font-normal text-foreground mb-6 leading-tight">
                 {activeFeature.headline}
               </h3>
 

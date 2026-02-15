@@ -98,7 +98,7 @@ export function OpenLetter() {
               <div className="inline-flex items-center rounded-full bg-white/10 px-4 py-2 text-sm font-semibold mb-6">
                 Open letter
               </div>
-              <h2 className="headline-display text-3xl md:text-5xl mb-6">
+              <h2 className="section-headline mb-6">
                 An open letter to modern teams
               </h2>
               <div className="space-y-6 text-lg text-white/80 leading-relaxed">
@@ -140,11 +140,10 @@ export function OpenLetter() {
                       transition={{ type: "spring", stiffness: 160, damping: 18 }}
                     >
                       <div
-                        className={`max-w-[85%] px-4 py-3 rounded-2xl text-sm leading-relaxed shadow-lg ${
-                          msg.role === "assistant"
+                        className={`max-w-[85%] px-4 py-3 rounded-2xl text-sm leading-relaxed shadow-lg ${msg.role === "assistant"
                             ? "bg-lime text-primary font-medium rounded-br-none"
                             : "bg-zinc-900/80 text-white rounded-bl-none border border-white/10"
-                        }`}
+                          }`}
                       >
                         {msg.text.split("\n").map((line, i) => (
                           <span key={i} className="block">

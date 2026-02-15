@@ -20,7 +20,7 @@ export function FinalCTA() {
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="headline-display font-heading text-5xl md:text-7xl lg:text-8xl text-white mb-12 leading-[0.9]"
+            className="headline-display font-heading text-white mb-12 leading-[0.9]"
           >
             Ready to grow
             <br />

@@ -37,7 +37,7 @@ export function HowItWorks() {
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="headline-display text-3xl md:text-5xl lg:text-6xl text-foreground mb-4"
+            className="section-headline text-foreground mb-4"
           >
             Simple, practical,
             <br />
@@ -70,7 +70,7 @@ export function HowItWorks() {
                   </span>
                 </div>
 
-                <h3 className="text-xl font-bold text-foreground mb-3">
+                <h3 className="font-sans text-xl font-semibold text-foreground mb-3">
                   {step.title}
                 </h3>
 

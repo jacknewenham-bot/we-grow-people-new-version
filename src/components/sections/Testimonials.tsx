@@ -213,7 +213,7 @@ export function Testimonials() {
             className="inline-flex flex-col items-center gap-4"
           >
             <div className="inline-flex items-center gap-4 rounded-full bg-lime/30 px-8 py-3 shadow-sm">
-              <span className="headline-display font-heading text-2xl md:text-4xl text-foreground uppercase tracking-wide">
+              <span className="section-headline text-2xl md:text-4xl text-foreground">
                 Don't just take
               </span>
             </div>
@@ -225,12 +225,12 @@ export function Testimonials() {
                   <span className="h-2 w-2 rounded-full bg-foreground/80" />
                 </span>
               </span>
-              <span className="headline-display font-heading text-2xl md:text-4xl text-foreground uppercase tracking-wide">
+              <span className="section-headline text-2xl md:text-4xl text-foreground">
                 our word for it
               </span>
             </div>
             <div className="inline-flex items-center gap-4 rounded-full bg-lime/30 px-8 py-3 shadow-sm">
-              <span className="headline-display font-heading text-2xl md:text-4xl text-foreground uppercase tracking-wide">
+              <span className="section-headline text-2xl md:text-4xl text-foreground">
                 Hear directly from our clients
               </span>
               <span className="inline-flex h-11 w-11 items-center justify-center rounded-full bg-lime text-foreground shadow-sm">

@@ -10,7 +10,7 @@ export function Mission() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="headline-display text-3xl md:text-4xl lg:text-5xl text-foreground mb-8"
+            className="section-headline text-foreground mb-8"
           >
             Cut through the noise.
           </motion.h2>

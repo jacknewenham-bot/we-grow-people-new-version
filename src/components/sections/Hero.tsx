@@ -104,7 +104,7 @@ export function Hero() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="headline-display font-heading text-4xl md:text-6xl lg:text-7xl text-white mb-8"
+            className="headline-display font-heading text-white mb-8"
           >
             Future-ready training
             <br />
