@@ -14,9 +14,9 @@ export default {
     },
     extend: {
       fontFamily: {
-        sans: ["Mynor", "system-ui", "sans-serif"],
-        heading: ["Mynor", "system-ui", "sans-serif"],
-        condensed: ["Mynor Condensed", "system-ui", "sans-serif"],
+        sans: ["Affairs", "system-ui", "sans-serif"],
+        heading: ["Affairs", "system-ui", "sans-serif"],
+        condensed: ["Affairs", "system-ui", "sans-serif"],
       },
       colors: {
         border: "hsl(var(--border))",

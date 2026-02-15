@@ -1,54 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300;400;500;600;700;800;900&family=Work+Sans:wght@700;800;900&display=swap');
 
 @font-face {
-  font-family: 'Mynor';
-  src: url('/fonts/Mynor/Mynor-Light-BF6476b5d3bcc79.otf') format('opentype');
-  font-weight: 300;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'Mynor';
-  src: url('/fonts/Mynor/Mynor-Regular-BF6476b5d35a6b1.otf') format('opentype');
+  font-family: 'Affairs';
+  src: url('/fonts/Affairs/affairstest-regular.otf') format('opentype');
   font-weight: 400;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'Mynor';
-  src: url('/fonts/Mynor/Mynor-Medium-BF6476b5d36df7c.otf') format('opentype');
-  font-weight: 500;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'Mynor';
-  src: url('/fonts/Mynor/Mynor-Bold-BF6476b5d4dfe8f.otf') format('opentype');
-  font-weight: 700;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'Mynor';
-  src: url('/fonts/Mynor/Mynor-ExtraBold-BF6476b5d42c3bc.otf') format('opentype');
-  font-weight: 800;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'Mynor';
-  src: url('/fonts/Mynor/Mynor-Black-BF6476b5d4da086.otf') format('opentype');
-  font-weight: 900;
   font-style: normal;
 }
 
-/* Condensed variants */
 @font-face {
-  font-family: 'Mynor Condensed';
-  src: url('/fonts/Mynor/Mynor-RegularCondensed-BF6476b5d30f138.otf') format('opentype');
+  font-family: 'Affairs';
+  src: url('/fonts/Affairs/affairstest-italic.otf') format('opentype');
   font-weight: 400;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'Mynor Condensed';
-  src: url('/fonts/Mynor/Mynor-BoldCondensed-BF6476b5d4e2e00.otf') format('opentype');
-  font-weight: 700;
-  font-style: normal;
+  font-style: italic;
 }
 
 @tailwind base;
@@ -59,6 +22,7 @@
   0% {
     transform: translateX(0);
   }
+
   100% {
     transform: translateX(-50%);
   }
