@@ -15,14 +15,14 @@ const logos = [
 
 export function SocialProof() {
   return (
-    <section className="py-6 bg-white border-b border-border">
+    <section className="py-2 bg-white border-b border-border">
       <div className="container">
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="text-center text-muted-foreground mb-4"
+          className="text-center text-muted-foreground mb-2"
         >
           Experience working with teams at
         </motion.p>
@@ -38,12 +38,12 @@ export function SocialProof() {
             {[...logos, ...logos].map((logo, index) => (
               <div
                 key={`${logo.name}-${index}`}
-                className="logo-marquee-item mx-8 flex items-center justify-center h-20 w-40 grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
+                className="logo-marquee-item mx-8 flex items-center justify-center h-12 w-32 grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
               >
                 <img
                   src={logo.image}
                   alt={logo.name}
-                  className="max-w-[140px] max-h-[60px] object-contain w-auto h-auto"
+                  className="max-w-[120px] max-h-[30px] object-contain w-auto h-auto"
                 />
               </div>
             ))}
