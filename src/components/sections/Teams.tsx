@@ -4,42 +4,42 @@ import { ArrowRight } from "lucide-react";
 const teams = [
   {
     title: "Marketing teams",
-    description: "Build growth systems that convert and scale.",
+    text: "Marketing teams: Build scalable growth systems that convert, not just campaigns.",
     gradient: "from-lime/20 to-primary/20",
     image: "/Teams/Marketing.png",
     href: "/training/marketing",
   },
   {
     title: "Sales teams",
-    description: "Sell more confidently with modern workflows and better conversations.",
+    text: "Sales teams: Sell with confidence using modern workflows and better conversations.",
     gradient: "from-yellow-200/50 to-lime/20",
     image: "/Teams/Sales.png",
     href: "/sales-training",
   },
   {
     title: "Leadership teams",
-    description: "Lead with clarity, make better decisions, and build strong teams.",
+    text: "Leadership teams: Lead with clarity, make stronger decisions, and build aligned teams.",
     gradient: "from-blue-200/50 to-primary/20",
     image: "/Teams/Leadership.png",
     href: "/training/management",
   },
   {
     title: "Operations teams",
-    description: "Improve execution, productivity, and internal processes.",
+    text: "Operations teams: Improve execution, productivity, and how work actually gets done.",
     gradient: "from-primary/20 to-lime/20",
     image: "/Teams/Operations.png",
     href: "/training/operations",
   },
   {
     title: "HR and people teams",
-    description: "Support performance, culture, and wellbeing at work.",
+    text: "HR and people teams: Support performance, culture, and wellbeing across the organisation.",
     gradient: "from-pink-200/50 to-lime/20",
     image: "/Teams/HR.png",
     href: "/training/management",
   },
   {
     title: "Finance teams",
-    description: "Streamline processes and improve financial decision-making.",
+    text: "Finance teams: Streamline processes and make better financial decisions, faster.",
     gradient: "from-purple-200/50 to-lime/20",
     image: "/Teams/Finance.png",
     href: "/training/operations",
@@ -94,11 +94,8 @@ export function Teams() {
                   <div className="absolute inset-0 bg-black/20"></div>
                   <div className="absolute inset-x-4 bottom-4 rounded-2xl bg-white/15 backdrop-blur-xl border border-white/20 p-5 flex items-end justify-between gap-4">
                     <div>
-                      <h3 className="font-sans text-xl md:text-2xl font-semibold text-white mb-2">
-                        {team.title}
-                      </h3>
-                      <p className="text-white/80 text-sm leading-relaxed">
-                        {team.description}
+                      <p className="text-white text-base md:text-lg leading-relaxed font-medium">
+                        {team.text}
                       </p>
                     </div>
                     <span className="shrink-0 inline-flex h-10 w-10 items-center justify-center rounded-full bg-white/15 border border-white/20 text-white">
