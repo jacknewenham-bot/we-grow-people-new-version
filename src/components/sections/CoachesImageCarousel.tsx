@@ -11,54 +11,63 @@ import { Button } from "@/components/ui/button";
 
 const coaches = [
   {
+    id: "hamza",
     name: "Hamza Akaouch",
     expertise: "Consultative selling & decision psychology",
     intro: "Improves discovery, value framing, and buyer confidence.",
     image: "/about-us-coaches-page/Hamza.png",
   },
   {
+    id: "jack",
     name: "Jack Newenham",
     expertise: "Growth strategy & performance marketing",
     intro: "Helps teams turn strategy into practical, measurable execution.",
     image: "/about-us-coaches-page/Jack.png",
   },
   {
+    id: "marc",
     name: "Marc Sagayam",
     expertise: "Project governance & stakeholder management",
     intro: "7+ years leading complex operations and delivery programs.",
     image: "/Marc/Marc.jpeg",
   },
   {
+    id: "adele",
     name: "Adele O'Brien",
     expertise: "Growth strategy & go-to-market",
     intro: "9+ years scaling brands across Asia, USA, and Europe.",
     image: "/about-us-coaches-page/Adele.png",
   },
   {
+    id: "ashvin",
     name: "Ashvin Praveen",
     expertise: "AI workflows & business automation",
     intro: "Guides teams in practical AI adoption and daily execution.",
     image: "/about-us-coaches-page/Ashvin.png",
   },
   {
+    id: "kain",
     name: "Kain Masters",
     expertise: "Leadership development & team dynamics",
     intro: "Builds communication confidence and stronger team collaboration.",
     image: "/about-us-coaches-page/kain.png",
   },
   {
+    id: "alfred",
     name: "Alfred Ng",
     expertise: "Storytelling & video creation",
     intro: "Teaches teams to communicate clearly through modern content.",
     image: "/about-us-coaches-page/Alfred.png",
   },
   {
+    id: "ebrahim",
     name: "Ebrahim Al Hamdi",
     expertise: "AI agents & automation",
     intro: "Supports teams with practical systems for faster execution.",
     image: "/about-us-coaches-page/Ebrahim.png",
   },
   {
+    id: "ivan",
     name: "Ivan Eng",
     expertise: "Workplace wellbeing & mental health",
     intro: "Helps teams build healthier habits and sustainable performance.",
@@ -122,7 +131,7 @@ export function CoachesImageCarousel({
                         <p className="text-lime font-semibold text-[1.0625rem] mb-3">{coach.expertise}</p>
                         <p className="type-body-secondary text-muted-foreground mb-5">{coach.intro}</p>
                         <a
-                          href="/coaches"
+                          href={`/coaches?coach=${coach.id}`}
                           className="inline-flex items-center gap-2 text-primary type-nav hover:gap-3 transition-all"
                         >
                           View full profile <ArrowRight className="h-4 w-4" />

@@ -1,9 +1,10 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { X } from "lucide-react";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
+import { useSearchParams } from "react-router-dom";
 
 const WHATSAPP_LINK = "https://wa.me/60173552382?text=Hi%2C%20I%27m%20interested%20in%20upskilling%20my%20team%20and%20would%20love%20to%20learn%20more%20about%20your%20training%20and%20consultancy%20options.'m%20interested%20in%20finding%20out%20more%20about%20your%20training";
 
@@ -59,6 +60,16 @@ const coaches = [
         image: "/Coaches/Ashvin.png",
     },
     {
+        id: "kain",
+        name: "Kain Masters",
+        title: "Communications Coach",
+        badge: null,
+        focusAreas: ["Communication mastery", "Presentation skills", "Career progression"],
+        bio: "Kain coaches professionals to communicate with more clarity, confidence, and influence.\n\nHis sessions focus on practical speaking frameworks, delivery confidence, and message structure so teams present ideas clearly and lead conversations effectively.",
+        bestFor: ["Young professionals", "Team leads", "Client-facing teams"],
+        image: "/about-us-coaches-page/kain.png",
+    },
+    {
         id: "alfred",
         name: "Alfred Ng",
         title: "Storytelling, Video, and Affiliate Marketing Coach",
@@ -100,6 +111,26 @@ function getInitials(name: string) {
 
 export default function CoachesPage() {
     const [selectedCoach, setSelectedCoach] = useState<typeof coaches[0] | null>(null);
+    const [searchParams, setSearchParams] = useSearchParams();
+
+    useEffect(() => {
+        const coachId = searchParams.get("coach");
+        if (!coachId) return;
+        const coach = coaches.find((item) => item.id === coachId);
+        if (coach) {
+            setSelectedCoach(coach);
+        }
+    }, [searchParams]);
+
+    const openCoachProfile = (coach: typeof coaches[0]) => {
+        setSelectedCoach(coach);
+        setSearchParams({ coach: coach.id });
+    };
+
+    const closeCoachProfile = () => {
+        setSelectedCoach(null);
+        setSearchParams({});
+    };
 
     return (
         <>
@@ -198,7 +229,7 @@ export default function CoachesPage() {
                                     whileInView={{ opacity: 1, y: 0 }}
                                     viewport={{ once: true }}
                                     transition={{ delay: index * 0.1 }}
-                                    onClick={() => setSelectedCoach(coach)}
+                                    onClick={() => openCoachProfile(coach)}
                                     className="group bg-white rounded-3xl p-8 border border-border/50 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 cursor-pointer"
                                 >
                                     {/* Avatar */}
@@ -357,7 +388,7 @@ export default function CoachesPage() {
 
                 {/* Coach Detail Modal */}
                 {selectedCoach && (
-                    <div className="fixed inset-0 bg-black/60 z-50 flex items-center justify-center p-4 backdrop-blur-sm" onClick={() => setSelectedCoach(null)}>
+                    <div className="fixed inset-0 bg-black/60 z-50 flex items-center justify-center p-4 backdrop-blur-sm" onClick={closeCoachProfile}>
                         <motion.div
                             initial={{ opacity: 0, scale: 0.95 }}
                             animate={{ opacity: 1, scale: 1 }}
@@ -365,7 +396,7 @@ export default function CoachesPage() {
                             onClick={(e) => e.stopPropagation()}
                         >
                             <button
-                                onClick={() => setSelectedCoach(null)}
+                                onClick={closeCoachProfile}
                                 className="absolute top-6 right-6 w-10 h-10 rounded-full bg-gray-100 hover:bg-gray-200 flex items-center justify-center transition-colors"
                             >
                                 <X className="w-5 h-5" />
