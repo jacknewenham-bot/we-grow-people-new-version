@@ -57,7 +57,7 @@ export function Footer() {
         <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-12 mb-12">
           {/* Brand */}
           <div className="lg:col-span-1">
-            <span className="font-extrabold text-xl tracking-tight text-white mb-4 block">
+            <span className="font-heading font-black text-xl tracking-tight text-white mb-4 block">
               WeGrowPeople
             </span>
           </div>

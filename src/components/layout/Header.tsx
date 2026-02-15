@@ -111,7 +111,7 @@ export function Header() {
       <div className="container flex items-center justify-between">
         {/* Logo */}
         <a href="/" className="flex items-center gap-2">
-          <span className={`font-heading text-2xl tracking-tight ${isScrolled ? "text-foreground" : "text-white"}`}>
+          <span className={`font-heading font-black text-2xl tracking-tight ${isScrolled ? "text-foreground" : "text-white"}`}>
             WeGrowPeople
           </span>
         </a>
