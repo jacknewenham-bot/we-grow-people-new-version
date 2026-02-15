@@ -121,13 +121,7 @@ export function OpenLetter() {
               id="chat-trigger"
             >
               {/* Phone Mockup */}
-              <div className="relative w-[300px] h-[560px] rounded-[3rem] border-[10px] border-zinc-800 shadow-[0_25px_80px_rgba(0,0,0,0.6)] overflow-hidden bg-black">
-                <img
-                  src="/images/about/modern_corporate_workshop_1769341602532.png"
-                  alt="People attending a workshop"
-                  className="absolute inset-0 h-full w-full object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/30" />
+              <div className="relative w-[300px] h-[560px] rounded-[3rem] border-[10px] border-zinc-800 shadow-[0_25px_80px_rgba(0,0,0,0.6)] overflow-hidden bg-[#ece5dd]">
 
                 {/* Messages */}
                 <div className="absolute inset-0 p-5 flex flex-col justify-start gap-3">
