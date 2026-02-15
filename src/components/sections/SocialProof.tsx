@@ -15,14 +15,14 @@ const logos = [
 
 export function SocialProof() {
   return (
-    <section className="py-12 bg-white border-b border-border">
+    <section className="py-6 bg-white border-b border-border">
       <div className="container">
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="text-center text-muted-foreground mb-8"
+          className="text-center text-muted-foreground mb-4"
         >
           Experience working with teams at
         </motion.p>
