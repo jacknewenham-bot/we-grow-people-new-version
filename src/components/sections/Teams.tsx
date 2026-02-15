@@ -92,13 +92,15 @@ export function Teams() {
                     className="absolute inset-0 h-full w-full object-cover"
                   />
                   <div className="absolute inset-0 bg-black/20"></div>
-                  <div className="absolute inset-x-4 bottom-4 rounded-2xl bg-white/15 backdrop-blur-xl border border-white/20 p-5 pr-20 relative">
-                    <p className="text-white text-base md:text-lg leading-tight font-medium overflow-hidden [display:-webkit-box] [-webkit-box-orient:vertical] [-webkit-line-clamp:3]">
-                      {team.text}
-                    </p>
-                    <span className="absolute right-5 top-1/2 -translate-y-1/2 inline-flex h-10 w-10 items-center justify-center rounded-full bg-white/15 border border-white/20 text-white">
-                      <ArrowRight className="h-5 w-5" />
-                    </span>
+                  <div className="absolute inset-0 p-4 flex items-end">
+                    <div className="w-full rounded-2xl bg-white/15 backdrop-blur-xl border border-white/20 p-5 pr-20 relative">
+                      <p className="text-white text-base md:text-lg leading-tight font-medium overflow-hidden [display:-webkit-box] [-webkit-box-orient:vertical] [-webkit-line-clamp:3]">
+                        {team.text}
+                      </p>
+                      <span className="absolute right-5 top-1/2 -translate-y-1/2 inline-flex h-10 w-10 items-center justify-center rounded-full bg-white/15 border border-white/20 text-white">
+                        <ArrowRight className="h-5 w-5" />
+                      </span>
+                    </div>
                   </div>
                 </div>
               </motion.a>

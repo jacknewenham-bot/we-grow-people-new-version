@@ -4,7 +4,7 @@ import { SocialProof } from "@/components/sections/SocialProof";
 import { Features } from "@/components/sections/Features";
 import { Teams } from "@/components/sections/Teams";
 import { HowItWorks } from "@/components/sections/HowItWorks";
-import { CoachesCarousel } from "@/components/sections/CoachesCarousel";
+import { CoachesImageCarousel } from "@/components/sections/CoachesImageCarousel";
 import { OpenLetter } from "@/components/sections/OpenLetter";
 import { Testimonials } from "@/components/sections/Testimonials";
 import { Stakeholders } from "@/components/sections/Stakeholders";
@@ -21,7 +21,7 @@ const Index = () => {
         <Features />
         <Teams />
         <HowItWorks />
-        <CoachesCarousel />
+        <CoachesImageCarousel sectionClassName="py-12 md:py-32 bg-background" showSubtitle={true} showCta={true} />
         <OpenLetter />
         <Testimonials />
         <Stakeholders />

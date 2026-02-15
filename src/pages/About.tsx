@@ -2,64 +2,10 @@ import { motion } from "framer-motion";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { Button } from "@/components/ui/button";
-import {
-    Carousel,
-    CarouselContent,
-    CarouselItem,
-    CarouselNext,
-    CarouselPrevious
-} from "@/components/ui/carousel";
-import { CheckCircle2, XCircle, ArrowRight, Zap, Target, Users, Shield } from "lucide-react";
+import { CoachesImageCarousel } from "@/components/sections/CoachesImageCarousel";
+import { XCircle, Zap, Target, Users, Shield } from "lucide-react";
 
 const WHATSAPP_LINK = "https://wa.me/60173552382?text=Hi%2C%20I%27m%20interested%20in%20upskilling%20my%20team%20and%20would%20love%20to%20learn%20more%20about%20your%20training%20and%20consultancy%20options.'m%20interested%20in%20finding%20out%20more%20about%20your%20training";
-
-const coaches = [
-    {
-        name: "Hamza Akaouch",
-        expertise: "Consultative selling & decision psychology",
-        image: "/about-us-coaches-page/Hamza.png"
-    },
-    {
-        name: "Jack Newenham",
-        expertise: "Growth strategy & performance marketing",
-        image: "/about-us-coaches-page/Jack.png"
-    },
-    {
-        name: "Marc Sagayam",
-        expertise: "Project governance & stakeholder management",
-        image: "/Marc/Marc.jpeg"
-    },
-    {
-        name: "Adele O'Brien",
-        expertise: "Growth strategy & go-to-market",
-        image: "/about-us-coaches-page/Adele.png"
-    },
-    {
-        name: "Ashvin Praveen",
-        expertise: "AI workflows & business automation",
-        image: "/about-us-coaches-page/Ashvin.png"
-    },
-    {
-        name: "Kain Masters",
-        expertise: "Leadership development & team dynamics",
-        image: "/about-us-coaches-page/kain.png"
-    },
-    {
-        name: "Alfred Ng",
-        expertise: "Storytelling & video creation",
-        image: "/about-us-coaches-page/Alfred.png"
-    },
-    {
-        name: "Ebrahim Al Hamdi",
-        expertise: "AI agents & automation",
-        image: "/about-us-coaches-page/Ebrahim.png"
-    },
-    {
-        name: "Ivan Eng",
-        expertise: "Workplace wellbeing & mental health",
-        image: "/about-us-coaches-page/ivan.png"
-    }
-];
 
 const About = () => {
     return (
@@ -326,55 +272,7 @@ const About = () => {
                 </section>
 
                 {/* 5. Meet the Coaches (Carousel) */}
-                <section className="py-24 bg-muted/10">
-                    <div className="container">
-                        <h2 className="headline-display text-4xl md:text-5xl mb-16 text-center">
-                            Meet the coaches
-                        </h2>
-
-                        <div className="max-w-6xl mx-auto px-12 relative">
-                            <Carousel
-                                opts={{
-                                    align: "start",
-                                    loop: true,
-                                }}
-                                className="w-full"
-                            >
-                                <CarouselContent className="-ml-4">
-                                    {coaches.map((coach, index) => (
-                                        <CarouselItem key={index} className="pl-4 basis-[85%] md:basis-[60%] lg:basis-[40%]">
-                                            <div className="p-1">
-                                                <div className="bg-white rounded-3xl border border-border overflow-hidden h-full shadow-sm hover:shadow-md transition-shadow">
-                                                    <div className="aspect-[4/5] bg-muted/50 flex items-center justify-center overflow-hidden">
-                                                        <img
-                                                            src={coach.image}
-                                                            alt={coach.name}
-                                                            className="w-full h-full object-cover"
-                                                        />
-                                                    </div>
-                                                    <div className="p-8 text-center">
-                                                        <h3 className="text-xl font-bold mb-2">{coach.name}</h3>
-                                                        <p className="text-sm text-lime font-semibold mb-6">{coach.expertise}</p>
-                                                        <a
-                                                            href="/coaches"
-                                                            className="inline-flex items-center gap-2 text-sm font-bold text-primary hover:gap-3 transition-all underline decoration-lime/30 underline-offset-4"
-                                                        >
-                                                            View full profile <ArrowRight size={16} />
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </CarouselItem>
-                                    ))}
-                                </CarouselContent>
-                                <div className="hidden md:block">
-                                    <CarouselPrevious className="-left-12 h-12 w-12" />
-                                    <CarouselNext className="-right-12 h-12 w-12" />
-                                </div>
-                            </Carousel>
-                        </div>
-                    </div>
-                </section>
+                <CoachesImageCarousel sectionClassName="py-24 bg-muted/10" showSubtitle={false} showCta={false} />
 
                 {/* 6. Proof Without Bragging */}
                 <section className="py-24 bg-white">
