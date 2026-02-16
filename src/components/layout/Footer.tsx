@@ -40,8 +40,8 @@ export function Footer() {
         <div className="container py-6 flex flex-col md:flex-row items-center justify-between gap-4">
           <div className="flex items-center gap-3">
             <img
-              src="/HRDC logo/HRDC logo.png"
-              alt="HRDC logo"
+              src="/HRDC claimable/HRDC corp claimable.png"
+              alt="HRDC corp claimable logo"
               className="h-10 w-auto"
             />
           </div>
@@ -53,8 +53,8 @@ export function Footer() {
         </div>
       </div>
 
-      <div className="container py-16">
-        <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-12 mb-12">
+      <div className="container pt-12 pb-8 md:pt-14 md:pb-10">
+        <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-12 mb-10">
           {/* Brand */}
           <div className="lg:col-span-1">
             <span className="font-heading font-black text-xl tracking-tight text-white mb-4 block">
@@ -133,7 +133,7 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="pt-8 border-t border-white/10 text-center">
+        <div className="pt-6 border-t border-white/10 text-center">
           <p className="text-white/50 type-caption">
             © {new Date().getFullYear()} WeGrowPeople. All rights reserved.
           </p>

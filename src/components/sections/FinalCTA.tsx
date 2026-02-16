@@ -13,7 +13,7 @@ const awards = [
 
 export function FinalCTA() {
   return (
-    <section className="py-32 md:py-40 bg-primary">
+    <section className="pt-24 pb-14 md:pt-28 md:pb-12 bg-primary">
       <div className="container">
         <div className="max-w-4xl mx-auto text-center">
           <motion.h2
