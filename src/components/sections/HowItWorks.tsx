@@ -99,18 +99,9 @@ export function HowItWorks() {
           viewport={{ once: true }}
           className="text-center mb-10 md:mb-14"
         >
-          <motion.span
-            initial={{ opacity: 0, scale: 0.96 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.35 }}
-            className="mb-4 inline-flex items-center rounded-full border border-primary/20 bg-primary/5 px-4 py-1 text-[11px] font-semibold uppercase tracking-[0.16em] text-primary"
-          >
-            Simple 4-step flow
-          </motion.span>
           <h2 className="section-headline text-foreground mb-3">How it works</h2>
           <p className="type-body-secondary text-muted-foreground max-w-xl mx-auto">
-            A simple, practical path from conversation to capability.
+            A practical approach to building real capability.
           </p>
         </motion.div>
 
