@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ArrowDown, CheckCircle2, MessageSquareText, Sparkles, UserRound } from "lucide-react";
+import { CheckCircle2, MessageSquareText, Sparkles, UserRound } from "lucide-react";
 
 const steps = [
   {
@@ -107,20 +107,49 @@ export function HowItWorks() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2, duration: 0.5 }}
-            className="mx-auto mt-6 md:mt-7 flex w-fit flex-col items-center gap-2"
+            className="mx-auto mt-4 md:mt-6 block w-fit"
           >
-            <motion.span
-              animate={{ scaleY: [1, 1.2, 1], opacity: [0.5, 1, 0.5] }}
-              transition={{ repeat: Infinity, duration: 1.8, ease: "easeInOut" }}
-              className="h-9 w-px rounded-full bg-gradient-to-b from-primary/20 via-primary/40 to-lime/70"
-            />
-            <motion.span
-              animate={{ y: [0, 7, 0], boxShadow: ["0 0 0 rgba(0,0,0,0)", "0 10px 25px hsl(var(--primary)/0.22)", "0 0 0 rgba(0,0,0,0)"] }}
-              transition={{ repeat: Infinity, duration: 1.8, ease: "easeInOut" }}
-              className="inline-flex h-12 w-12 items-center justify-center rounded-full border border-primary/20 bg-gradient-to-br from-primary/10 via-white to-lime/25 text-primary backdrop-blur-sm"
+            <motion.svg
+              viewBox="0 0 180 170"
+              role="img"
+              aria-label="Curved arrow pointing to the steps below"
+              className="h-24 w-36 md:h-28 md:w-44 overflow-visible"
+              animate={{ y: [0, 5, 0] }}
+              transition={{ repeat: Infinity, duration: 2.2, ease: "easeInOut" }}
             >
-              <ArrowDown className="h-5 w-5" />
-            </motion.span>
+              <motion.path
+                d="M18 30 C18 95,110 5,122 60 C130 96,74 102,82 58 C88 26,144 56,136 106 C132 132,132 138,132 146"
+                fill="none"
+                stroke="hsl(var(--primary))"
+                strokeWidth="5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                initial={{ pathLength: 0, opacity: 0.5 }}
+                whileInView={{ pathLength: 1, opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.25, duration: 1.1, ease: "easeOut" }}
+              />
+              <motion.path
+                d="M132 146 L120 131 M132 146 L146 130"
+                fill="none"
+                stroke="hsl(var(--lime))"
+                strokeWidth="5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: 1, duration: 0.25 }}
+              />
+              <motion.circle
+                cx="82"
+                cy="58"
+                r="5"
+                fill="hsl(var(--lime))"
+                animate={{ scale: [1, 1.25, 1], opacity: [0.8, 1, 0.8] }}
+                transition={{ repeat: Infinity, duration: 1.8, ease: "easeInOut" }}
+              />
+            </motion.svg>
           </motion.a>
         </motion.div>
 
