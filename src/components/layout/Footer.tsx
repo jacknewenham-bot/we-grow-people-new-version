@@ -42,7 +42,7 @@ export function Footer() {
             <img
               src="/HRDC claimable/HRDC corp claimable.png"
               alt="HRDC corp claimable logo"
-              className="h-10 w-auto"
+              className="h-14 md:h-16 w-auto"
             />
           </div>
           <Button variant="lime" size="sm" asChild>
