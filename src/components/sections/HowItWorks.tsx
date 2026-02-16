@@ -87,7 +87,11 @@ const steps = [
 
 export function HowItWorks() {
   return (
-    <section id="how-it-works" className="py-16 md:py-24 bg-white">
+    <section id="how-it-works" className="relative overflow-hidden py-16 md:py-24 bg-white">
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-x-0 top-0 h-40 bg-[radial-gradient(circle_at_top,hsla(150,25%,22%,0.08),transparent_62%)]"
+      />
       <div className="container">
         <motion.div
           initial={{ opacity: 0, y: 24 }}
@@ -95,70 +99,63 @@ export function HowItWorks() {
           viewport={{ once: true }}
           className="text-center mb-10 md:mb-14"
         >
+          <motion.span
+            initial={{ opacity: 0, scale: 0.96 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.35 }}
+            className="mb-4 inline-flex items-center rounded-full border border-primary/20 bg-primary/5 px-4 py-1 text-[11px] font-semibold uppercase tracking-[0.16em] text-primary"
+          >
+            Simple 4-step flow
+          </motion.span>
           <h2 className="section-headline text-foreground mb-3">How it works</h2>
           <p className="type-body-secondary text-muted-foreground max-w-xl mx-auto">
             A simple, practical path from conversation to capability.
           </p>
-
-          <motion.a
-            href="#how-it-works-steps"
-            aria-label="Jump to the four steps"
-            initial={{ opacity: 0, y: -4 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.2, duration: 0.45 }}
-            className="mx-auto mt-4 md:mt-5 block w-fit"
-          >
-            <motion.svg
-              viewBox="0 0 110 78"
-              role="img"
-              aria-hidden="true"
-              className="h-14 w-24 md:h-16 md:w-28"
-              animate={{ y: [0, 3, 0] }}
-              transition={{ repeat: Infinity, duration: 2.2, ease: "easeInOut" }}
-            >
-              <path
-                d="M12 12 C34 3,58 15,52 30 C47 41,31 40,34 27 C38 12,79 15,80 44 C80 52,78 59,74 65"
-                fill="none"
-                stroke="hsl(var(--primary))"
-                strokeWidth="4"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-              <path
-                d="M74 65 L66 56 M74 65 L82 56"
-                fill="none"
-                stroke="hsl(var(--lime))"
-                strokeWidth="4"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-            </motion.svg>
-          </motion.a>
         </motion.div>
 
-        <div id="how-it-works-steps" className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-5 md:gap-7">
-          {steps.map((step, index) => (
-            <motion.a
-              key={step.id}
-              href={step.href}
-              initial={{ opacity: 0, y: 24 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.08 }}
-              className={`group aspect-square rounded-[1.65rem] bg-gradient-to-br ${step.accent} p-5 md:p-6 border border-white/80 shadow-[0_10px_34px_rgba(18,24,42,0.12)] hover:-translate-y-1 hover:shadow-[0_16px_42px_rgba(18,24,42,0.18)] transition-all duration-300 cursor-pointer flex flex-col`}
-            >
-              <div className="mb-5 md:mb-6">{step.visual}</div>
-
-              <div className="mt-auto">
-                <div className="inline-flex items-center gap-2 mb-2 text-foreground/65">
-                  <step.icon className="w-4 h-4" />
+        <div id="how-it-works-steps" className="relative">
+          <motion.div
+            aria-hidden="true"
+            initial={{ opacity: 0, scaleX: 0.85 }}
+            whileInView={{ opacity: 1, scaleX: 1 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.15, duration: 0.6, ease: "easeOut" }}
+            className="pointer-events-none absolute left-[7%] right-[7%] top-7 hidden h-[2px] origin-left bg-gradient-to-r from-primary/35 via-lime/55 to-primary/35 xl:block"
+          />
+          <motion.div
+            aria-hidden="true"
+            animate={{ left: ["7%", "93%", "7%"] }}
+            transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+            className="pointer-events-none absolute top-[22px] hidden h-3 w-3 rounded-full bg-lime shadow-[0_0_0_6px_hsl(var(--lime)/0.15)] xl:block"
+          />
+          <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-5 md:gap-7">
+            {steps.map((step, index) => (
+              <motion.a
+                key={step.id}
+                href={step.href}
+                initial={{ opacity: 0, y: 24 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.08 }}
+                className={`group relative aspect-square rounded-[1.65rem] bg-gradient-to-br ${step.accent} p-5 md:p-6 border border-white/80 shadow-[0_10px_34px_rgba(18,24,42,0.12)] hover:-translate-y-1.5 hover:shadow-[0_18px_48px_rgba(18,24,42,0.2)] transition-all duration-300 cursor-pointer flex flex-col`}
+              >
+                <div className="absolute right-4 top-4 inline-flex h-9 w-9 items-center justify-center rounded-full border border-primary/15 bg-white/75 text-[11px] font-bold tracking-[0.06em] text-primary">
+                  {`0${index + 1}`}
                 </div>
-                <h3 className="type-h4 text-foreground mb-2">{step.title}</h3>
-                <p className="type-caption text-foreground/75 leading-snug">{step.description}</p>
-              </div>
-            </motion.a>
-          ))}
+                <div className="pointer-events-none absolute inset-0 rounded-[1.65rem] opacity-0 transition-opacity duration-300 group-hover:opacity-100 bg-[radial-gradient(circle_at_top_right,hsla(85,75%,55%,0.2),transparent_55%)]" />
+                <div className="mb-5 md:mb-6">{step.visual}</div>
+
+                <div className="mt-auto">
+                  <div className="inline-flex items-center gap-2 mb-2 text-foreground/65">
+                    <step.icon className="w-4 h-4" />
+                  </div>
+                  <h3 className="type-h4 text-foreground mb-2">{step.title}</h3>
+                  <p className="type-caption text-foreground/75 leading-snug">{step.description}</p>
+                </div>
+              </motion.a>
+            ))}
+          </div>
         </div>
       </div>
     </section>
