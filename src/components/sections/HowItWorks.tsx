@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { CheckCircle2, MessageSquareText, Sparkles, UserRound } from "lucide-react";
+import { ArrowDown, CheckCircle2, MessageSquareText, Sparkles, UserRound } from "lucide-react";
 
 const steps = [
   {
@@ -99,9 +99,32 @@ export function HowItWorks() {
           <p className="type-body-secondary text-muted-foreground max-w-xl mx-auto">
             A simple, practical path from conversation to capability.
           </p>
+
+          <motion.a
+            href="#how-it-works-steps"
+            aria-label="Jump to how it works steps"
+            initial={{ opacity: 0, y: -6 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.2, duration: 0.5 }}
+            className="mx-auto mt-6 md:mt-7 flex w-fit flex-col items-center gap-2"
+          >
+            <motion.span
+              animate={{ scaleY: [1, 1.2, 1], opacity: [0.5, 1, 0.5] }}
+              transition={{ repeat: Infinity, duration: 1.8, ease: "easeInOut" }}
+              className="h-9 w-px rounded-full bg-gradient-to-b from-primary/20 via-primary/40 to-lime/70"
+            />
+            <motion.span
+              animate={{ y: [0, 7, 0], boxShadow: ["0 0 0 rgba(0,0,0,0)", "0 10px 25px hsl(var(--primary)/0.22)", "0 0 0 rgba(0,0,0,0)"] }}
+              transition={{ repeat: Infinity, duration: 1.8, ease: "easeInOut" }}
+              className="inline-flex h-12 w-12 items-center justify-center rounded-full border border-primary/20 bg-gradient-to-br from-primary/10 via-white to-lime/25 text-primary backdrop-blur-sm"
+            >
+              <ArrowDown className="h-5 w-5" />
+            </motion.span>
+          </motion.a>
         </motion.div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-5 md:gap-7">
+        <div id="how-it-works-steps" className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-5 md:gap-7">
           {steps.map((step, index) => (
             <motion.a
               key={step.id}
