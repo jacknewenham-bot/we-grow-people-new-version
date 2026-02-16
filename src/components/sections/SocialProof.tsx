@@ -1,16 +1,15 @@
 import { motion } from "framer-motion";
 
 const logos = [
-  { name: "StoreHub", image: "/Logos/StoreHub.avif" },
-  { name: "SPEEDHOME", image: "/Logos/SPEEDHOME.png" },
-  { name: "Gartner", image: "/Logos/Gartner.png" },
-  { name: "Employment Hero", image: "/Logos/EMPLOYMENT HERO web logo.png" },
-  { name: "BI WORLDWIDE", image: "/Logos/BI WORLDWIDE.png" },
-  { name: "Frost & Sullivan", image: "/Logos/Frost & Sullivan.png" },
-  { name: "Carrots&Cake", image: "/Logos/Carrots&Cake logo.png" },
-  { name: "GrubCycle", image: "/Logos/grub cycle logo.png" },
-  { name: "The Social Group", image: "/Logos/the social.svg" },
-  { name: "HuffNPuff Technology", image: "/Logos/huff n puff logo.png" },
+  { name: "Partner 1", image: "/Updated logos/1.png" },
+  { name: "Partner 2", image: "/Updated logos/2.png" },
+  { name: "Partner 3", image: "/Updated logos/3.png" },
+  { name: "Partner 4", image: "/Updated logos/4.png" },
+  { name: "Partner 5", image: "/Updated logos/5.png" },
+  { name: "Partner 6", image: "/Updated logos/6.png" },
+  { name: "Partner 7", image: "/Updated logos/7.png" },
+  { name: "Partner 8", image: "/Updated logos/8.png" },
+  { name: "Partner 9", image: "/Updated logos/9.png" },
 ];
 
 export function SocialProof() {
@@ -38,12 +37,12 @@ export function SocialProof() {
             {[...logos, ...logos].map((logo, index) => (
               <div
                 key={`${logo.name}-${index}`}
-                className="logo-marquee-item mx-8 flex items-center justify-center h-12 w-32 grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
+                className="logo-marquee-item flex h-16 w-40 shrink-0 items-center justify-center px-4 grayscale opacity-70 transition-all duration-300 hover:grayscale-0 hover:opacity-100"
               >
                 <img
                   src={logo.image}
                   alt={logo.name}
-                  className="max-w-[120px] max-h-[24px] object-contain w-auto h-auto"
+                  className="h-full w-full object-contain"
                 />
               </div>
             ))}
