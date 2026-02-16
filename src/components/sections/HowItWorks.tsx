@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { CheckCircle2, MessageSquareText, Sparkles, UserRound } from "lucide-react";
+import { ArrowRight, CheckCircle2, MessageSquareText, Sparkles, UserRound } from "lucide-react";
 
 const steps = [
   {
@@ -99,82 +99,44 @@ export function HowItWorks() {
           <p className="type-body-secondary text-muted-foreground max-w-xl mx-auto">
             A simple, practical path from conversation to capability.
           </p>
-
-          <motion.a
-            href="#how-it-works-steps"
-            aria-label="Jump to how it works steps"
-            initial={{ opacity: 0, y: -6 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.2, duration: 0.5 }}
-            className="mx-auto mt-4 md:mt-6 block w-fit"
-          >
-            <motion.svg
-              viewBox="0 0 180 170"
-              role="img"
-              aria-label="Curved arrow pointing to the steps below"
-              className="h-24 w-36 md:h-28 md:w-44 overflow-visible"
-              animate={{ y: [0, 5, 0] }}
-              transition={{ repeat: Infinity, duration: 2.2, ease: "easeInOut" }}
-            >
-              <motion.path
-                d="M18 30 C18 95,110 5,122 60 C130 96,74 102,82 58 C88 26,144 56,136 106 C132 132,132 138,132 146"
-                fill="none"
-                stroke="hsl(var(--primary))"
-                strokeWidth="5"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                initial={{ pathLength: 0, opacity: 0.5 }}
-                whileInView={{ pathLength: 1, opacity: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.25, duration: 1.1, ease: "easeOut" }}
-              />
-              <motion.path
-                d="M132 146 L120 131 M132 146 L146 130"
-                fill="none"
-                stroke="hsl(var(--lime))"
-                strokeWidth="5"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: 1, duration: 0.25 }}
-              />
-              <motion.circle
-                cx="82"
-                cy="58"
-                r="5"
-                fill="hsl(var(--lime))"
-                animate={{ scale: [1, 1.25, 1], opacity: [0.8, 1, 0.8] }}
-                transition={{ repeat: Infinity, duration: 1.8, ease: "easeInOut" }}
-              />
-            </motion.svg>
-          </motion.a>
         </motion.div>
 
-        <div id="how-it-works-steps" className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-5 md:gap-7">
-          {steps.map((step, index) => (
-            <motion.a
-              key={step.id}
-              href={step.href}
-              initial={{ opacity: 0, y: 24 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.08 }}
-              className={`group aspect-square rounded-[1.65rem] bg-gradient-to-br ${step.accent} p-5 md:p-6 border border-white/80 shadow-[0_10px_34px_rgba(18,24,42,0.12)] hover:-translate-y-1 hover:shadow-[0_16px_42px_rgba(18,24,42,0.18)] transition-all duration-300 cursor-pointer flex flex-col`}
-            >
-              <div className="mb-5 md:mb-6">{step.visual}</div>
+        <div className="relative">
+          <motion.div
+            initial={{ opacity: 0, x: -10 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.15, duration: 0.45 }}
+            className="pointer-events-none absolute -left-2 top-1/2 hidden -translate-y-1/2 items-center gap-2 text-primary/35 xl:flex"
+            aria-hidden="true"
+          >
+            <span className="h-px w-8 bg-primary/25" />
+            <ArrowRight className="h-4 w-4" />
+          </motion.div>
 
-              <div className="mt-auto">
-                <div className="inline-flex items-center gap-2 mb-2 text-foreground/65">
-                  <step.icon className="w-4 h-4" />
+          <div id="how-it-works-steps" className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-5 md:gap-7">
+            {steps.map((step, index) => (
+              <motion.a
+                key={step.id}
+                href={step.href}
+                initial={{ opacity: 0, y: 24 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.08 }}
+                className={`group aspect-square rounded-[1.65rem] bg-gradient-to-br ${step.accent} p-5 md:p-6 border border-white/80 shadow-[0_10px_34px_rgba(18,24,42,0.12)] hover:-translate-y-1 hover:shadow-[0_16px_42px_rgba(18,24,42,0.18)] transition-all duration-300 cursor-pointer flex flex-col`}
+              >
+                <div className="mb-5 md:mb-6">{step.visual}</div>
+
+                <div className="mt-auto">
+                  <div className="inline-flex items-center gap-2 mb-2 text-foreground/65">
+                    <step.icon className="w-4 h-4" />
+                  </div>
+                  <h3 className="type-h4 text-foreground mb-2">{step.title}</h3>
+                  <p className="type-caption text-foreground/75 leading-snug">{step.description}</p>
                 </div>
-                <h3 className="type-h4 text-foreground mb-2">{step.title}</h3>
-                <p className="type-caption text-foreground/75 leading-snug">{step.description}</p>
-              </div>
-            </motion.a>
-          ))}
+              </motion.a>
+            ))}
+          </div>
         </div>
       </div>
     </section>
