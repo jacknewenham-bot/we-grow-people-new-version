@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { Button } from "@/components/ui/button";
+import { ModularTrainingBuilder } from "@/components/sections/ModularTrainingBuilder";
 import {
     CheckCircle2,
     XCircle,
@@ -332,45 +333,7 @@ const AITraining = () => {
                 {/* 8. CAPABILITIES SECTION */}
                 <section id="ai-capabilities" className="py-24 bg-muted/20">
                     <div className="container">
-                        <h2 className="headline-display text-4xl md:text-5xl mb-16 text-center">AI capabilities we cover</h2>
-                        <div className="max-w-5xl mx-auto mb-12 overflow-hidden rounded-3xl border border-border bg-white shadow-sm">
-                            <img
-                                src="/Additional website images/project-work-team-working-project-looking-involved.jpg"
-                                alt="AI-powered team workflow"
-                                className="h-56 md:h-72 w-full object-cover"
-                                loading="lazy"
-                                decoding="async"
-                            />
-                        </div>
-                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-                            {[
-                                { name: "AI fundamentals for teams", icon: Sparkles },
-                                { name: "Prompting for real work", icon: MessageCircle },
-                                { name: "AI for writing, research, and analysis", icon: BookOpen },
-                                { name: "AI for productivity and automation", icon: Clock },
-                                { name: "AI for sales and marketing use cases", icon: TrendingUp },
-                                { name: "AI for managers and leaders", icon: Users },
-                                { name: "AI risks, limitations, and responsible use", icon: Shield },
-                                { name: "Building repeatable AI workflows", icon: Layers }
-                            ].map((area, i) => (
-                                <motion.div
-                                    key={i}
-                                    initial={{ opacity: 0, scale: 0.95 }}
-                                    whileInView={{ opacity: 1, scale: 1 }}
-                                    viewport={{ once: true }}
-                                    transition={{ delay: i * 0.05 }}
-                                    className="p-6 rounded-2xl bg-white border border-border flex items-center gap-4 hover:shadow-md transition-shadow cursor-default"
-                                >
-                                    <div className="w-10 h-10 rounded-xl bg-lime/10 flex items-center justify-center shrink-0">
-                                        <area.icon className="w-5 h-5 text-primary" />
-                                    </div>
-                                    <span className="font-bold text-primary">{area.name}</span>
-                                </motion.div>
-                            ))}
-                        </div>
-                        <p className="text-center mt-12 text-muted-foreground italic">
-                            Programs are modular and tailored to your team's maturity level.
-                        </p>
+                        <ModularTrainingBuilder defaultTrack="ai" />
                     </div>
                 </section>
 

@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { Button } from "@/components/ui/button";
+import { ModularTrainingBuilder } from "@/components/sections/ModularTrainingBuilder";
 import {
     CheckCircle2,
     XCircle,
@@ -330,45 +331,7 @@ const ManagementTraining = () => {
                 {/* 8. CAPABILITIES SECTION */}
                 <section id="management-capabilities" className="py-24 bg-muted/20">
                     <div className="container">
-                        <h2 className="headline-display text-4xl md:text-5xl mb-16 text-center">Management capabilities we cover</h2>
-                        <div className="max-w-5xl mx-auto mb-12 overflow-hidden rounded-3xl border border-border bg-white shadow-sm">
-                            <img
-                                src="/Additional website images/project-team-collaborating-business-analytics.jpg"
-                                alt="Leadership and management workshop"
-                                className="h-56 md:h-72 w-full object-cover"
-                                loading="lazy"
-                                decoding="async"
-                            />
-                        </div>
-                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-                            {[
-                                { name: "Management fundamentals", icon: BookOpen },
-                                { name: "Setting expectations and goals", icon: Target },
-                                { name: "Feedback and performance conversations", icon: MessageCircle },
-                                { name: "Coaching and development", icon: UserCheck },
-                                { name: "Decision making and prioritization", icon: TrendingUp },
-                                { name: "Managing conflict", icon: Shield },
-                                { name: "Leading through change", icon: RefreshCw },
-                                { name: "Building trust and accountability", icon: Users }
-                            ].map((area, i) => (
-                                <motion.div
-                                    key={i}
-                                    initial={{ opacity: 0, scale: 0.95 }}
-                                    whileInView={{ opacity: 1, scale: 1 }}
-                                    viewport={{ once: true }}
-                                    transition={{ delay: i * 0.05 }}
-                                    className="p-6 rounded-2xl bg-white border border-border flex items-center gap-4 hover:shadow-md transition-shadow cursor-default"
-                                >
-                                    <div className="w-10 h-10 rounded-xl bg-lime/10 flex items-center justify-center shrink-0">
-                                        <area.icon className="w-5 h-5 text-primary" />
-                                    </div>
-                                    <span className="font-bold text-primary">{area.name}</span>
-                                </motion.div>
-                            ))}
-                        </div>
-                        <p className="text-center mt-12 text-muted-foreground italic">
-                            Programs are modular and tailored to management maturity levels.
-                        </p>
+                        <ModularTrainingBuilder defaultTrack="management" />
                     </div>
                 </section>
 
