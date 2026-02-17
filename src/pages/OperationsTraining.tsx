@@ -245,15 +245,15 @@ const OperationsTraining = () => {
                                     whileInView={{ opacity: 1, y: 0 }}
                                     viewport={{ once: true }}
                                     transition={{ delay: i * 0.1 }}
-                                    className="flex items-start gap-4 p-6 rounded-2xl bg-white/10 border border-white/10"
+                                    className="flex items-start gap-4 p-6 rounded-2xl bg-white/16 border border-white/25 shadow-[0_10px_30px_rgba(0,0,0,0.16)]"
                                 >
-                                    <CheckCircle2 className="w-6 h-6 text-lime shrink-0" />
-                                    <p className="text-lg font-medium">{sign}</p>
+                                    <CheckCircle2 className="w-6 h-6 text-lime shrink-0 mt-0.5" />
+                                    <p className="text-lg font-semibold text-white/95">{sign}</p>
                                 </motion.div>
                             ))}
                         </div>
                         <div className="text-center">
-                            <p className="text-xl mb-10 text-hero-muted italic">If several of these sound familiar, focused operations training can quickly restore momentum.</p>
+                            <p className="text-xl mb-10 text-white/80 italic">If several of these sound familiar, focused operations training can quickly restore momentum.</p>
                             <Button variant="lime" size="xl" asChild className="rounded-full px-12 py-8 text-lg font-bold">
                                 <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer">
                                     Chat with us
