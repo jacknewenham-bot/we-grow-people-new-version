@@ -3,7 +3,7 @@ import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { Button } from "@/components/ui/button";
 import { CoachesImageCarousel } from "@/components/sections/CoachesImageCarousel";
-import { XCircle, Zap, Target, Users, Shield } from "lucide-react";
+import { XCircle, Zap, Target, Users, Shield, Quote } from "lucide-react";
 
 const WHATSAPP_LINK = "https://wa.me/60173552382?text=Hi%2C%20I%27m%20interested%20in%20upskilling%20my%20team%20and%20would%20love%20to%20learn%20more%20about%20your%20training%20and%20consultancy%20options.'m%20interested%20in%20finding%20out%20more%20about%20your%20training";
 
@@ -341,7 +341,7 @@ const About = () => {
                                 <Shield className="w-4 h-4 text-lime" /> HRDC Claimable Training
                             </span>
                         </div>
-                        <h2 className="headline-display text-3xl md:text-5xl mb-4 text-center text-muted-foreground">
+                        <h2 className="headline-display text-3xl md:text-5xl mb-4 text-center text-foreground">
                             Trusted by teams who want real impact
                         </h2>
                         <p className="text-center text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto mb-12">
@@ -352,21 +352,19 @@ const About = () => {
                             initial={{ opacity: 0, y: 24 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
-                            className="relative max-w-6xl mx-auto rounded-[2.2rem] border border-border/70 bg-[#f4f8f6] p-6 md:p-10 overflow-hidden shadow-[0_18px_40px_rgba(17,28,24,0.08)]"
+                            className="relative max-w-6xl mx-auto rounded-[2rem] border border-border bg-white p-6 md:p-10 overflow-hidden shadow-[0_14px_32px_rgba(17,28,24,0.08)]"
                         >
-                            <div className="relative z-10">
-                                <div className="pointer-events-none absolute left-0 right-0 top-[52px] hidden md:block">
-                                    <div className="mx-auto h-[2px] max-w-5xl bg-gradient-to-r from-transparent via-primary/25 to-transparent" />
-                                </div>
-
-                                <div className="relative grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 md:gap-6 place-items-center mb-10">
+                            <div className="relative z-10 grid lg:grid-cols-[1.15fr_0.85fr] gap-8 md:gap-10 items-start">
+                                <div>
+                                    <p className="text-xs font-black uppercase tracking-[0.16em] text-primary/70 mb-4">Teams we support</p>
+                                    <div className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4">
                                     {[
-                                        { label: "Sales", bg: "#edf4df" },
-                                        { label: "Marketing", bg: "#e8eef7" },
-                                        { label: "Teams", bg: "#f6edd5" },
-                                        { label: "Operations", bg: "#ece4f7" },
-                                        { label: "HR", bg: "#f5e9ef" },
-                                        { label: "Leadership", bg: "#e1f0eb" },
+                                        { label: "Sales", accent: "bg-lime/15" },
+                                        { label: "Marketing", accent: "bg-primary/10" },
+                                        { label: "Teams", accent: "bg-amber-100/70" },
+                                        { label: "Operations", accent: "bg-violet-100/70" },
+                                        { label: "HR", accent: "bg-rose-100/70" },
+                                        { label: "Leadership", accent: "bg-cyan-100/70" },
                                     ].map((team, i) => (
                                         <motion.div
                                             key={team.label}
@@ -374,22 +372,23 @@ const About = () => {
                                             whileInView={{ opacity: 1, y: 0 }}
                                             viewport={{ once: true }}
                                             transition={{ delay: i * 0.06 }}
-                                            className="h-24 w-24 md:h-28 md:w-28 rounded-full border border-border/60 flex items-center justify-center text-center px-2 shadow-[0_8px_16px_rgba(19,24,42,0.06)]"
-                                            style={{ backgroundColor: team.bg }}
+                                            className={`rounded-2xl border border-border px-4 py-4 md:py-5 text-center shadow-sm ${team.accent}`}
                                         >
-                                            <span className="text-sm md:text-[0.95rem] font-black uppercase tracking-wide text-primary">
+                                            <span className="text-sm md:text-base font-black uppercase tracking-wide text-primary">
                                                 {team.label}
                                             </span>
                                         </motion.div>
                                     ))}
+                                    </div>
                                 </div>
 
-                                <div className="grid md:grid-cols-2 gap-4 md:gap-5">
+                                <div className="space-y-4">
                                     {[
                                         "The most practical training we've ever had. No fluff, just results.",
                                         "Finally, a training program that understands how we actually work today."
                                     ].map((quote, i) => (
-                                        <div key={i} className="p-6 rounded-2xl bg-white/90 border border-border/60 italic text-lg text-muted-foreground shadow-[0_8px_18px_rgba(19,24,42,0.06)]">
+                                        <div key={i} className="p-5 md:p-6 rounded-2xl bg-muted/20 border border-border italic text-lg text-muted-foreground">
+                                            <Quote className="w-5 h-5 text-primary/65 mb-2" />
                                             "{quote}"
                                         </div>
                                     ))}
