@@ -1,3 +1,4 @@
+import { useMemo, useState } from "react";
 import { motion } from "framer-motion";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
@@ -22,6 +23,23 @@ const SalesTraining = () => {
     const scrollToPrograms = () => {
         document.getElementById("training-areas")?.scrollIntoView({ behavior: "smooth" });
     };
+    const modules = [
+        { label: "Sales fundamentals", icon: Target },
+        { label: "Prospecting & pipeline", icon: TrendingUp },
+        { label: "Consultative selling", icon: MessageCircle },
+        { label: "Storytelling & pitching", icon: Zap },
+        { label: "Key account management", icon: Users },
+        { label: "Customer success", icon: Shield },
+        { label: "Social & digital selling", icon: Layout },
+    ];
+    const [activeModule, setActiveModule] = useState(0);
+    const arrangedModules = useMemo(
+        () => [
+            modules[activeModule],
+            ...modules.filter((_, index) => index !== activeModule),
+        ],
+        [activeModule]
+    );
 
     return (
         <div className="min-h-screen bg-background">
@@ -343,7 +361,7 @@ const SalesTraining = () => {
                             viewport={{ once: true }}
                             className="rounded-[2.4rem] border border-border bg-white p-6 md:p-10 lg:p-12 shadow-[0_18px_38px_rgba(19,24,42,0.08)]"
                         >
-                            <div className="grid lg:grid-cols-[0.9fr_1.1fr] gap-10 lg:gap-12 items-start">
+                            <div className="grid lg:grid-cols-[0.92fr_1.08fr] gap-10 lg:gap-12 items-start">
                                 <div className="lg:pr-4">
                                     <h2 className="headline-display text-4xl md:text-5xl leading-[0.95] mb-6">
                                         Modular training, built around your needs
@@ -355,14 +373,14 @@ const SalesTraining = () => {
                                     </p>
                                 </div>
 
-                                <div className="rounded-3xl border border-border/70 bg-gradient-to-br from-[#ecf2ff] via-[#f5f8ff] to-[#eef9f1] p-5 md:p-7">
-                                    <div className="grid lg:grid-cols-[1fr_auto] gap-5 md:gap-6">
+                                <div className="rounded-3xl border border-border/70 bg-gradient-to-br from-[#edf2ff] via-[#f5f8ff] to-[#eef7f2] p-5 md:p-7">
+                                    <div className="grid xl:grid-cols-[1fr_260px] gap-5 md:gap-6">
                                         <div className="rounded-[2rem] bg-primary p-5 md:p-6 text-white border border-primary/80 shadow-[0_18px_30px_rgba(12,24,18,0.22)]">
                                             <h3 className="text-center text-xl md:text-2xl font-bold mb-4">Training Programme</h3>
 
                                             <div className="mx-auto max-w-[290px] rounded-full bg-white text-primary border border-white/70 px-3 py-2 flex items-center justify-between mb-4">
                                                 <span className="font-semibold">Selected Programme</span>
-                                                <span className="w-6 h-6 rounded-full bg-lime/20 flex items-center justify-center font-bold text-sm">1</span>
+                                                <span className="w-6 h-6 rounded-full bg-lime/20 flex items-center justify-center font-bold text-sm">{activeModule + 1}</span>
                                             </div>
 
                                             <div className="relative mb-3">
@@ -371,15 +389,7 @@ const SalesTraining = () => {
                                             </div>
 
                                             <div className="grid sm:grid-cols-2 gap-2.5">
-                                                {[
-                                                    { label: "Sales fundamentals", icon: Target },
-                                                    { label: "Prospecting & pipeline", icon: TrendingUp },
-                                                    { label: "Consultative selling", icon: MessageCircle },
-                                                    { label: "Storytelling & pitching", icon: Zap },
-                                                    { label: "Key account management", icon: Users },
-                                                    { label: "Customer success", icon: Shield },
-                                                    { label: "Social & digital selling", icon: Layout },
-                                                ].map((module, i) => (
+                                                {arrangedModules.map((module, i) => (
                                                     <motion.div
                                                         key={module.label}
                                                         initial={{ opacity: 0, y: 8 }}
@@ -387,7 +397,11 @@ const SalesTraining = () => {
                                                         whileHover={{ scale: 1.03 }}
                                                         viewport={{ once: true }}
                                                         transition={{ delay: i * 0.05 }}
-                                                        className="rounded-full bg-white text-primary px-3 py-2 border border-white/90 flex items-center gap-2 shadow-sm"
+                                                        className={`rounded-2xl px-3 py-2 border flex items-center gap-2 shadow-sm transition-colors ${
+                                                            i === 0
+                                                                ? "bg-lime text-primary border-lime"
+                                                                : "bg-white text-primary border-white/90"
+                                                        }`}
                                                     >
                                                         <module.icon className="w-4 h-4 shrink-0" />
                                                         <span className="text-xs md:text-sm font-semibold leading-tight">{module.label}</span>
@@ -396,28 +410,23 @@ const SalesTraining = () => {
                                             </div>
                                         </div>
 
-                                        <div className="rounded-3xl bg-white/65 border border-white/80 p-3 md:p-4 min-w-[190px]">
+                                        <div className="rounded-3xl bg-white/75 border border-white/90 p-3 md:p-4">
                                             <p className="text-xs font-black uppercase tracking-[0.14em] text-primary/70 mb-3">Available modules</p>
                                             <div className="space-y-2">
-                                                {[
-                                                    "Sales fundamentals",
-                                                    "Prospecting & pipeline",
-                                                    "Consultative selling",
-                                                    "Storytelling & pitching",
-                                                    "Key account management",
-                                                    "Customer success",
-                                                    "Social & digital selling",
-                                                ].map((item, i) => (
-                                                    <div
-                                                        key={item}
-                                                        className={`rounded-full px-3 py-2 text-sm font-semibold border transition-colors ${
-                                                            i === 0
-                                                                ? "bg-primary text-white border-primary"
-                                                                : "bg-white/90 text-primary border-border/80"
+                                                {modules.map((item, i) => (
+                                                    <button
+                                                        key={item.label}
+                                                        type="button"
+                                                        onClick={() => setActiveModule(i)}
+                                                        onMouseEnter={() => setActiveModule(i)}
+                                                        className={`w-full text-left rounded-full px-3 py-2 text-sm font-semibold border transition-all duration-200 ${
+                                                            i === activeModule
+                                                                ? "bg-primary text-white border-primary shadow-sm"
+                                                                : "bg-white/95 text-primary border-border/80 hover:bg-lime/15"
                                                         }`}
                                                     >
-                                                        {item}
-                                                    </div>
+                                                        {item.label}
+                                                    </button>
                                                 ))}
                                             </div>
                                         </div>
