@@ -82,22 +82,18 @@ const Careers = () => {
                                 initial={{ opacity: 0, y: 20 }}
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
-                                className="headline-display text-4xl md:text-5xl mb-8"
+                                className="headline-display text-4xl md:text-5xl mb-8 uppercase"
                             >
                                 Why we exist
                             </motion.h2>
-                            <div className="space-y-8 text-xl text-muted-foreground leading-relaxed">
+                            <div className="space-y-6 text-xl text-muted-foreground leading-relaxed">
                                 <p>
-                                    The world of work is changing faster than ever. New tools, new roles, and new expectations appear constantly, and many people feel left behind.
+                                    The world of work is changing fast.
+                                    <br />
+                                    New tools, new roles, new expectations.
                                 </p>
                                 <p className="text-primary font-bold text-2xl">
-                                    WeGrowPeople exists to cut through the noise.
-                                </p>
-                                <p>
-                                    We help individuals and teams build the human skills that matter most, and equip them with modern tools, including AI, so they can perform, adapt, and stay ahead.
-                                </p>
-                                <p className="italic">
-                                    We believe learning should be practical, relevant, and deeply human.
+                                    We exist to help teams keep up and move forward.
                                 </p>
                             </div>
                         </div>
