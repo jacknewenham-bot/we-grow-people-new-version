@@ -122,7 +122,7 @@ export const ModularTrainingBuilder = ({ defaultTrack = "sales" }: ModularTraini
                 </div>
 
                 <div className="rounded-3xl border border-border/70 bg-gradient-to-br from-[#edf2ff] via-[#f5f8ff] to-[#eef7f2] p-4 md:p-6">
-                    <div className="grid xl:grid-cols-[1fr_260px] gap-4 md:gap-6">
+                    <div className="grid xl:grid-cols-[1.08fr_0.92fr] gap-4 md:gap-6">
                         <div className="rounded-[2rem] bg-primary p-5 md:p-6 text-white border border-primary/80 shadow-[0_18px_30px_rgba(12,24,18,0.22)]">
                             <h3 className="text-center text-2xl md:text-3xl font-black mb-4">Training Programme</h3>
 
@@ -134,21 +134,21 @@ export const ModularTrainingBuilder = ({ defaultTrack = "sales" }: ModularTraini
                                 </span>
                             </div>
 
-                            <div className="rounded-2xl bg-white/10 border border-white/20 p-3 md:p-4 min-h-[240px]">
+                            <div className="rounded-2xl bg-white/10 border border-white/20 p-3 md:p-4">
                                 <div className="mb-3 flex items-center justify-between">
                                     <span className="text-xs font-black uppercase tracking-[0.12em] text-white/80">Selected modules</span>
                                     <span className="text-xs font-bold rounded-full bg-white/20 px-2 py-0.5">{selectedModules.length}</span>
                                 </div>
 
                                 {selectedModules.length > 0 ? (
-                                    <div className="grid sm:grid-cols-2 gap-2.5">
+                                    <div className="space-y-2 max-h-[340px] overflow-y-auto pr-1">
                                         {selectedModules.map((module) => (
                                             <div
                                                 key={module}
-                                                className="rounded-xl px-3 py-2 bg-white text-primary border border-white/90 flex items-center gap-2"
+                                                className="rounded-xl px-3 py-2.5 bg-white text-primary border border-white/90 flex items-start gap-2.5"
                                             >
-                                                <CheckCircle2 className="w-4 h-4 text-lime shrink-0" />
-                                                <span className="text-sm font-semibold leading-tight">{module}</span>
+                                                <CheckCircle2 className="w-4 h-4 text-lime shrink-0 mt-0.5" />
+                                                <span className="text-sm font-semibold leading-snug break-words">{module}</span>
                                             </div>
                                         ))}
                                     </div>
@@ -195,4 +195,3 @@ export const ModularTrainingBuilder = ({ defaultTrack = "sales" }: ModularTraini
         </div>
     );
 };
-
