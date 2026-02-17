@@ -3,7 +3,8 @@ import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { Button } from "@/components/ui/button";
 import { CoachesImageCarousel } from "@/components/sections/CoachesImageCarousel";
-import { XCircle, Zap, Target, Users, Shield, Quote } from "lucide-react";
+import { Teams } from "@/components/sections/Teams";
+import { XCircle, Zap, Target, Users, Shield } from "lucide-react";
 
 const WHATSAPP_LINK = "https://wa.me/60173552382?text=Hi%2C%20I%27m%20interested%20in%20upskilling%20my%20team%20and%20would%20love%20to%20learn%20more%20about%20your%20training%20and%20consultancy%20options.'m%20interested%20in%20finding%20out%20more%20about%20your%20training";
 
@@ -330,71 +331,8 @@ const About = () => {
                 {/* 5. Meet the Coaches (Carousel) */}
                 <CoachesImageCarousel sectionClassName="py-24 bg-muted/10" showSubtitle={false} showCta={false} />
 
-                {/* 6. Proof Without Bragging */}
-                <section className="py-24 bg-white">
-                    <div className="container">
-                        <div className="flex justify-center mb-6">
-                            <span className="pill-badge bg-primary/10 text-primary border border-primary/20 px-4 py-2 text-sm">
-                                <Shield className="w-4 h-4 text-lime" /> HRDC Claimable Training
-                            </span>
-                        </div>
-                        <h2 className="headline-display text-3xl md:text-5xl mb-4 text-center text-foreground">
-                            Trusted by teams who want real impact
-                        </h2>
-                        <p className="text-center text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto mb-12">
-                            Practical training designed for how modern teams work.
-                        </p>
-
-                        <motion.div
-                            initial={{ opacity: 0, y: 24 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            className="relative max-w-6xl mx-auto rounded-[2rem] border border-border bg-[#f9fbf9] p-6 md:p-10 overflow-hidden shadow-[0_14px_32px_rgba(17,28,24,0.08)]"
-                        >
-                            <div className="relative z-10 grid lg:grid-cols-[1.15fr_0.85fr] gap-8 md:gap-10 items-start">
-                                <div>
-                                    <p className="text-xs font-black uppercase tracking-[0.16em] text-primary/70 mb-4">Teams we support</p>
-                                    <div className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4">
-                                    {[
-                                        { label: "Sales", accent: "bg-lime/15" },
-                                        { label: "Marketing", accent: "bg-primary/10" },
-                                        { label: "Teams", accent: "bg-amber-100/70" },
-                                        { label: "Operations", accent: "bg-violet-100/70" },
-                                        { label: "HR", accent: "bg-rose-100/70" },
-                                        { label: "Leadership", accent: "bg-cyan-100/70" },
-                                    ].map((team, i) => (
-                                        <motion.div
-                                            key={team.label}
-                                            initial={{ opacity: 0, y: 12 }}
-                                            whileInView={{ opacity: 1, y: 0 }}
-                                            whileHover={{ scale: 1.06, y: -2 }}
-                                            viewport={{ once: true }}
-                                            transition={{ delay: i * 0.06 }}
-                                            className={`rounded-2xl border border-border px-4 py-4 md:py-5 text-center shadow-sm hover:shadow-md transition-all duration-200 cursor-default will-change-transform ${team.accent}`}
-                                        >
-                                            <span className="text-sm md:text-base font-black uppercase tracking-wide text-primary">
-                                                {team.label}
-                                            </span>
-                                        </motion.div>
-                                    ))}
-                                    </div>
-                                </div>
-
-                                <div className="space-y-4">
-                                    {[
-                                        "The most practical training we've ever had. No fluff, just results.",
-                                        "Finally, a training program that understands how we actually work today."
-                                    ].map((quote, i) => (
-                                        <div key={i} className="p-5 md:p-6 rounded-2xl bg-white border border-border italic text-lg text-muted-foreground shadow-sm">
-                                            <Quote className="w-5 h-5 text-primary/65 mb-2" />
-                                            "{quote}"
-                                        </div>
-                                    ))}
-                                </div>
-                            </div>
-                        </motion.div>
-                    </div>
-                </section>
+                {/* 6. Teams Section (Homepage Style) */}
+                <Teams />
 
                 {/* 7. Who We Work With */}
                 <section className="py-24 bg-primary text-white">
