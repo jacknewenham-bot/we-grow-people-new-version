@@ -355,10 +355,10 @@ const Contact = () => {
                             </div>
                             <div className="flex-1 order-1 md:order-2 grid grid-cols-2 gap-4">
                                 {[
-                                    { name: "Jack", image: "/about-us-coaches-page/Jack.png" },
-                                    { name: "Hamza", image: "/about-us-coaches-page/Hamza.png" },
-                                    { name: "Adele", image: "/about-us-coaches-page/Adele.png" },
-                                    { name: "Marc", image: "/Marc/Marc.jpeg" },
+                                    { name: "Jack", image: "/Updated trainer pics/updated images/Jack.png" },
+                                    { name: "Hamza", image: "/Updated trainer pics/updated images/Hamza.png" },
+                                    { name: "Adele", image: "/Updated trainer pics/updated images/Adele.png" },
+                                    { name: "Marc", image: "/Updated trainer pics/updated images/Marc.png" },
                                 ].map((member) => (
                                     <div key={member.name} className="aspect-square bg-muted rounded-2xl overflow-hidden grayscale hover:grayscale-0 transition-all duration-500">
                                         <img

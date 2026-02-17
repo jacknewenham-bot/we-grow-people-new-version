@@ -17,7 +17,7 @@ const coaches = [
         focusAreas: ["Decision psychology", "Consultative selling", "Negotiation and price conversations"],
         bio: "Hamza helps sales teams understand how buyers decide and lead conversations that reduce uncertainty.\n\nHis training focuses on deep discovery, framing the cost of inaction, value messaging, and ethical closing. Sessions are practical, interactive, and grounded in real deals so teams improve conversion rates, protect margins, and build trust.",
         bestFor: ["B2B sales teams", "Relationship managers and consultants", "Sales leaders upgrading capability"],
-        image: "/Coaches/Hamza.png",
+        image: "/Updated trainer pics/updated images/Hamza.png",
     },
     {
         id: "jack",
@@ -27,7 +27,7 @@ const coaches = [
         focusAreas: ["Growth strategy", "Performance marketing", "Execution and experimentation"],
         bio: "Jack has led growth and performance marketing across startups and scaling companies, working hands-on with acquisition, funnels, experimentation, and execution.\n\nHis training helps teams move from theory to action, focusing on what actually drives growth in today's market.",
         bestFor: ["Marketing teams", "Growth teams", "Founders and managers"],
-        image: "/Coaches/Jack.png",
+        image: "/Updated trainer pics/updated images/Jack.png",
     },
     {
         id: "marc",
@@ -37,7 +37,7 @@ const coaches = [
         focusAreas: ["Project governance", "Delivery timelines", "Stakeholder management"],
         bio: "Marc is a senior leader with over seven years of experience managing complex, high-stakes projects across defense technology, operations, and facilities management.\n\nHe has overseen multi-million-dollar projects, led cross-functional teams, and delivered results in highly regulated environments. Marc's training helps teams plan better, communicate clearly, and deliver projects on time and within budget.",
         bestFor: ["Project teams", "Operations teams", "Managers responsible for delivery"],
-        image: "/Marc/Marc.jpeg",
+        image: "/Updated trainer pics/updated images/Marc.png",
     },
     {
         id: "adele",
@@ -47,7 +47,7 @@ const coaches = [
         focusAreas: ["Go-to-market strategy", "Partnerships and growth", "Performance marketing"],
         bio: "Adele brings over nine years of experience scaling brands across Asia, the USA, and Europe. She has led growth, partnerships, and commercial strategy for Web3, education, telco, and technology companies.\n\nHer sessions focus on practical growth frameworks, stakeholder alignment, and execution that delivers measurable outcomes.",
         bestFor: ["Growth leaders", "Commercial teams", "Partnership managers"],
-        image: "/Coaches/Adele.png",
+        image: "/Updated trainer pics/updated images/Adele.png",
     },
     {
         id: "ashvin",
@@ -57,7 +57,7 @@ const coaches = [
         focusAreas: ["Vibe coding for business", "AI workflows", "Content productivity"],
         bio: "Ashvin is a founder and AI practitioner focused on helping teams adopt AI in practical, business-ready ways.\n\nAs the co-founder and CEO of Cleve.ai, backed by Antler, he trains teams on building workflows, automations, and content systems using AI tools without unnecessary complexity.",
         bestFor: ["Founders", "Product teams", "Teams adopting AI"],
-        image: "/Coaches/Ashvin.png",
+        image: "/Updated trainer pics/updated images/Ashvin.png",
     },
     {
         id: "kain",
@@ -67,7 +67,7 @@ const coaches = [
         focusAreas: ["Communication mastery", "Presentation skills", "Career progression"],
         bio: "Kain coaches professionals to communicate with more clarity, confidence, and influence.\n\nHis sessions focus on practical speaking frameworks, delivery confidence, and message structure so teams present ideas clearly and lead conversations effectively.",
         bestFor: ["Young professionals", "Team leads", "Client-facing teams"],
-        image: "/about-us-coaches-page/kain.png",
+        image: "/Updated trainer pics/updated images/Kain.png",
     },
     {
         id: "alfred",
@@ -77,7 +77,7 @@ const coaches = [
         focusAreas: ["Storytelling", "Video creation", "Affiliate marketing"],
         bio: "Alfred is a videographer, storyteller, and affiliate marketer with experience across multiple industries and countries.\n\nHe helps teams communicate more clearly through video and storytelling, while building sustainable affiliate and content-driven growth channels.",
         bestFor: ["Marketing teams", "Content teams", "Creators and brand builders"],
-        image: "/Coaches/Alfred.png",
+        image: "/Updated trainer pics/updated images/Alfred.png",
     },
     {
         id: "ebrahim",
@@ -87,7 +87,7 @@ const coaches = [
         focusAreas: ["AI agents", "Automation", "Vibe coding for business"],
         bio: "Ebrahim has spent over 25 years working with clients across the US and Malaysia, helping businesses build smarter systems using marketing automation, AI agents, and modern workflows.\n\nHis training focuses on building systems that save time, reduce manual work, and improve decision-making.",
         bestFor: ["Operations teams", "Marketing teams", "Founders scaling systems"],
-        image: "/Coaches/Ebrahim.png",
+        image: "/Updated trainer pics/updated images/Ebrahim.png",
     },
     {
         id: "ivan",
@@ -97,7 +97,7 @@ const coaches = [
         focusAreas: ["Stress management", "Burnout prevention", "Workplace wellbeing"],
         bio: "Ivan works with organisations to support employee wellbeing through practical, HRDC claimable training and pay-as-you-go counselling.\n\nWith experience in both corporate leadership and counselling, his sessions help teams manage stress, reduce burnout, and build healthier working environments.",
         bestFor: ["HR teams", "People managers", "Organisations prioritising wellbeing"],
-        image: "/Coaches/Ivan.png",
+        image: "/Updated trainer pics/updated images/Ivan.png",
     },
 ];
 
