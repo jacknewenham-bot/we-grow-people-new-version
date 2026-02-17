@@ -307,10 +307,37 @@ const About = () => {
                             Trusted by teams who want real impact
                         </h2>
 
-                        <div className="flex flex-wrap justify-center gap-12 md:gap-20 mb-20 opacity-40 grayscale">
-                            {["Sales", "Marketing", "Teams", "Operations", "HR", "Leadership"].map(logo => (
-                                <span key={logo} className="text-2xl font-black uppercase tracking-widest">{logo}</span>
-                            ))}
+                        <div className="relative max-w-6xl mx-auto mb-20">
+                            <div className="pointer-events-none absolute inset-0 hidden md:block">
+                                <svg className="h-full w-full" viewBox="0 0 1200 380" fill="none" aria-hidden="true">
+                                    <path d="M70 180C190 45 360 40 500 120C640 200 780 225 925 120C1015 55 1090 60 1140 95" stroke="hsl(var(--lime) / 0.4)" strokeWidth="16" strokeLinecap="round" />
+                                    <path d="M130 270C290 340 455 335 600 255C760 170 920 175 1060 275" stroke="hsl(var(--primary) / 0.18)" strokeWidth="10" strokeLinecap="round" />
+                                </svg>
+                            </div>
+                            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-5 md:gap-8 place-items-center relative z-10">
+                                {[
+                                    { label: "Sales", bg: "#f4f8e6" },
+                                    { label: "Marketing", bg: "#eef4ff" },
+                                    { label: "Teams", bg: "#fff3df" },
+                                    { label: "Operations", bg: "#f4eefc" },
+                                    { label: "HR", bg: "#fceff3" },
+                                    { label: "Leadership", bg: "#e9f8f4" },
+                                ].map((team, i) => (
+                                    <motion.div
+                                        key={team.label}
+                                        initial={{ opacity: 0, y: 16 }}
+                                        whileInView={{ opacity: 1, y: 0 }}
+                                        viewport={{ once: true }}
+                                        transition={{ delay: i * 0.06 }}
+                                        className="h-28 w-28 md:h-32 md:w-32 rounded-full border border-border/70 shadow-[0_8px_16px_rgba(19,24,42,0.06)] flex items-center justify-center text-center px-4"
+                                        style={{ backgroundColor: team.bg }}
+                                    >
+                                        <span className="text-sm md:text-base font-black uppercase tracking-wide text-primary">
+                                            {team.label}
+                                        </span>
+                                    </motion.div>
+                                ))}
+                            </div>
                         </div>
 
                         <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
