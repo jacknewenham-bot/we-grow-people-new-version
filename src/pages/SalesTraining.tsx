@@ -142,7 +142,7 @@ const SalesTraining = () => {
                             <div>
                                 <p className="text-lime/90 font-semibold text-sm uppercase tracking-[0.14em] mb-4">Sales outcomes</p>
                                 <h2 className="headline-display text-4xl md:text-5xl leading-[0.95] mb-6">
-                                    How well designed sales training helps teams perform
+                                    Sales training that drives performance
                                 </h2>
                                 <p className="text-white/75 text-lg leading-relaxed">
                                     Built for practical execution, consistent pipeline movement, and stronger day-to-day selling behavior.
@@ -215,8 +215,7 @@ const SalesTraining = () => {
                                     { title: "Leadership alignment", desc: "We ensure goals are agreed upon by those managing the team." },
                                     { title: "Practical frameworks", desc: "No fluff. Just tools teams can pick up and use instantly." },
                                     { title: "Live practice", desc: "Training using your real deals and actual scenarios." },
-                                    { title: "Reinforcement", desc: "Support after delivery to ensure behavior change stickiness." },
-                                    { title: "Review & Recommendations", desc: "Clear reporting for managers on performance and next steps." }
+                                    { title: "Reinforce and review", desc: "Post-training support with clear reporting and recommendations for next steps." }
                                 ].map((item, i) => (
                                     <div key={i} className="flex gap-4 p-4 rounded-2xl hover:bg-muted/30 transition-colors border border-transparent hover:border-border">
                                         <div className="w-10 h-10 rounded-xl bg-lime/10 flex items-center justify-center shrink-0">
@@ -279,7 +278,6 @@ const SalesTraining = () => {
                                 <h2 className="headline-display text-4xl mb-12">Who our sales training <br /> is designed for</h2>
                                 <div className="space-y-6">
                                     {[
-                                        { title: "New sales hires", desc: "Building core fundamentals and ramp time acceleration." },
                                         { title: "Experienced sellers", desc: "Refining high-level approach and unsticking complex deals." },
                                         { title: "Account managers", desc: "Handling growth and retention in complex key accounts." },
                                         { title: "Sales leaders", desc: "Coaching teams at scale and building internal systems." }
@@ -330,9 +328,6 @@ const SalesTraining = () => {
                                             <p className="text-white/70">Multi-touch learning with ongoing asynchronous reinforcement.</p>
                                         </div>
                                     </div>
-                                </div>
-                                <div className="mt-12 p-6 rounded-2xl bg-white/5 border border-white/10 italic text-sm text-white/60">
-                                    Sessions can be delivered as half-day, full-day, or multi-session programs depending on your needs.
                                 </div>
                             </div>
                         </div>
