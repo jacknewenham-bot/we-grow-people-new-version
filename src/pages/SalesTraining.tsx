@@ -18,25 +18,25 @@ import {
 } from "lucide-react";
 
 const WHATSAPP_LINK = "https://wa.me/60173552382?text=Hi%2C%20I%27m%20interested%20in%20upskilling%20my%20team%20and%20would%20love%20to%20learn%20more%20about%20your%20training%20and%20consultancy%20options.'m%20interested%20in%20your%20Sales%20Training%20programs";
+const MODULES = [
+    { label: "Sales fundamentals", icon: Target },
+    { label: "Prospecting & pipeline", icon: TrendingUp },
+    { label: "Consultative selling", icon: MessageCircle },
+    { label: "Storytelling & pitching", icon: Zap },
+    { label: "Key account management", icon: Users },
+    { label: "Customer success", icon: Shield },
+    { label: "Social & digital selling", icon: Layout },
+];
 
 const SalesTraining = () => {
     const scrollToPrograms = () => {
         document.getElementById("training-areas")?.scrollIntoView({ behavior: "smooth" });
     };
-    const modules = [
-        { label: "Sales fundamentals", icon: Target },
-        { label: "Prospecting & pipeline", icon: TrendingUp },
-        { label: "Consultative selling", icon: MessageCircle },
-        { label: "Storytelling & pitching", icon: Zap },
-        { label: "Key account management", icon: Users },
-        { label: "Customer success", icon: Shield },
-        { label: "Social & digital selling", icon: Layout },
-    ];
     const [activeModule, setActiveModule] = useState(0);
     const arrangedModules = useMemo(
         () => [
-            modules[activeModule],
-            ...modules.filter((_, index) => index !== activeModule),
+            MODULES[activeModule],
+            ...MODULES.filter((_, index) => index !== activeModule),
         ],
         [activeModule]
     );
@@ -413,7 +413,7 @@ const SalesTraining = () => {
                                         <div className="rounded-3xl bg-white/75 border border-white/90 p-3 md:p-4">
                                             <p className="text-xs font-black uppercase tracking-[0.14em] text-primary/70 mb-3">Available modules</p>
                                             <div className="space-y-2">
-                                                {modules.map((item, i) => (
+                                                {MODULES.map((item, i) => (
                                                     <button
                                                         key={item.label}
                                                         type="button"
