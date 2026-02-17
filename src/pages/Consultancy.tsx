@@ -94,13 +94,12 @@ const Consultancy = () => {
                                     <Target className="w-7 h-7" />
                                 </div>
                                 <h3 className="text-2xl font-bold mb-4">Sales Consulting</h3>
-                                <p className="text-lg font-semibold text-lime mb-6">Build a sales motion that actually converts.</p>
-                                <p className="text-muted-foreground mb-8">We help teams clarify their sales strategy, improve execution, and remove friction from the pipeline.</p>
+                                <p className="text-lg font-semibold text-lime mb-6">Build a sales motion that converts.</p>
                                 <ul className="space-y-3">
                                     {[
                                         "Sales process design and optimisation",
                                         "Deal reviews and pipeline diagnostics",
-                                        "Messaging, qualification, and closing",
+                                        "Qualification, messaging, and closing",
                                         "Sales enablement and playbooks"
                                     ].map((item, i) => (
                                         <li key={i} className="flex items-start gap-3 text-sm font-medium text-foreground/80">
@@ -132,8 +131,7 @@ const Consultancy = () => {
                                     <TrendingUp className="w-7 h-7" />
                                 </div>
                                 <h3 className="text-2xl font-bold mb-4">Marketing Consulting</h3>
-                                <p className="text-lg font-semibold text-lime mb-6">Turn marketing into a predictable growth engine.</p>
-                                <p className="text-muted-foreground mb-8">We help teams focus on what drives demand, not vanity metrics.</p>
+                                <p className="text-lg font-semibold text-lime mb-6">Turn marketing into a growth engine.</p>
                                 <ul className="space-y-3">
                                     {[
                                         "Go-to-market clarity and positioning",
@@ -170,8 +168,7 @@ const Consultancy = () => {
                                     <Workflow className="w-7 h-7" />
                                 </div>
                                 <h3 className="text-2xl font-bold mb-4">AI Adoption Consulting</h3>
-                                <p className="text-lg font-semibold text-lime mb-6">Adopt AI in a way that actually sticks.</p>
-                                <p className="text-muted-foreground mb-8">We help teams identify where AI adds real value and integrate it into daily workflows.</p>
+                                <p className="text-lg font-semibold text-lime mb-6">Adopt AI in ways that actually stick.</p>
                                 <ul className="space-y-3">
                                     {[
                                         "AI use-case identification",

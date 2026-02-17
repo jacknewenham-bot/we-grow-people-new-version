@@ -57,20 +57,8 @@ export function Teams() {
             viewport={{ once: true }}
             className="section-headline text-foreground mb-6"
           >
-            Designed for the
-            <br />
-            entire company
+            Built for teams with different needs
           </motion.h2>
-
-          <motion.p
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.1 }}
-            className="type-body text-muted-foreground font-sans"
-          >
-            Different teams need different skills.
-          </motion.p>
         </div>
 
         <div className="relative">

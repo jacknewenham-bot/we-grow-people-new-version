@@ -120,6 +120,22 @@ const PractitionerApply = () => {
                                 Apply to be a practitioner
                             </Button>
                         </motion.div>
+                        <motion.div
+                            initial={{ opacity: 0, y: 16 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ delay: 0.3 }}
+                            className="mt-12"
+                        >
+                            <div className="mx-auto max-w-4xl overflow-hidden rounded-[2rem] border border-white/15 shadow-[0_24px_80px_rgba(0,0,0,0.32)]">
+                                <img
+                                    src="/Additional website images/group-diverse-business-people-successful-teamwork-working-together-with-laptop-computer-office.jpg"
+                                    alt="Practitioners facilitating a real team session"
+                                    className="h-[240px] w-full object-cover md:h-[320px]"
+                                    loading="eager"
+                                    decoding="async"
+                                />
+                            </div>
+                        </motion.div>
                     </div>
                 </section>
 
@@ -131,6 +147,15 @@ const PractitionerApply = () => {
                             <p className="text-xl text-center text-muted-foreground mb-16">
                                 WeGrowPeople works with people who have done the work, not just studied it.
                             </p>
+                            <div className="mb-14 overflow-hidden rounded-[2rem] border border-border shadow-sm">
+                                <img
+                                    src="/Additional website images/project-work-team-working-project-looking-involved.jpg"
+                                    alt="Experienced practitioners collaborating with teams"
+                                    className="h-56 md:h-72 w-full object-cover"
+                                    loading="lazy"
+                                    decoding="async"
+                                />
+                            </div>
 
                             <div className="grid md:grid-cols-2 gap-12">
                                 <motion.div
@@ -189,6 +214,15 @@ const PractitionerApply = () => {
                 <section className="py-24 bg-muted/10">
                     <div className="container">
                         <h2 className="headline-display text-4xl md:text-5xl mb-16 text-center">What you will do</h2>
+                        <div className="max-w-5xl mx-auto mb-12 overflow-hidden rounded-3xl border border-border bg-white shadow-sm">
+                            <img
+                                src="/Additional website images/happy-young-asian-businessmen-businesswomen-meeting-brainstorming-ideas.jpg"
+                                alt="Coach leading a practical learning session"
+                                className="h-56 md:h-72 w-full object-cover"
+                                loading="lazy"
+                                decoding="async"
+                            />
+                        </div>
                         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
                             {[
                                 { title: "Deliver Practical Training", desc: "Lead hands-on sessions that help teams solve real work challenges.", icon: Zap },

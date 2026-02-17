@@ -278,8 +278,8 @@ const About = () => {
                                 <div className="grid sm:grid-cols-2 gap-4 md:gap-5">
                                     {[
                                         {
-                                            title: "Built for today’s workplace",
-                                            titleLines: ["Built for", "today’s workplace"],
+                                            title: "Built for today’s work",
+                                            titleLines: ["Built for", "today’s work"],
                                             desc: "No outdated models. No legacy thinking. Designed for how work happens now.",
                                             icon: Zap
                                         },

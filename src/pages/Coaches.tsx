@@ -248,8 +248,16 @@ export default function CoachesPage() {
                 </section>
 
                 {/* Coaches Grid */}
-                <section className="py-24 md:py-32 bg-background">
+                <section className="py-16 md:py-24 bg-background">
                     <div className="container">
+                        <div className="max-w-3xl mx-auto text-center mb-12 md:mb-16">
+                            <h2 className="headline-display text-4xl md:text-5xl text-foreground mb-4">
+                                Meet the coaches
+                            </h2>
+                            <p className="text-lg md:text-xl text-muted-foreground">
+                                Experienced practitioners helping teams build modern skills.
+                            </p>
+                        </div>
                         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                             {coaches.map((coach, index) => (
                                 <motion.div

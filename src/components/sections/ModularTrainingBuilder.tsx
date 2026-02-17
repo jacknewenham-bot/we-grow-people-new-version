@@ -1,5 +1,5 @@
 import { useMemo, useState } from "react";
-import { Check, CheckCircle2, ChevronDown, Sparkles } from "lucide-react";
+import { Check, CheckCircle2, ChevronDown } from "lucide-react";
 
 type TrainingTrack = "sales" | "marketing" | "ai" | "operations" | "management";
 
@@ -67,7 +67,7 @@ const createInitialSelection = () =>
     (Object.keys(MODULES_BY_TRACK) as TrainingTrack[]).reduce(
         (acc, track) => ({
             ...acc,
-            [track]: MODULES_BY_TRACK[track].slice(0, 3)
+            [track]: MODULES_BY_TRACK[track].slice(0, 2)
         }),
         {} as Record<TrainingTrack, string[]>
     );
@@ -93,46 +93,29 @@ export const ModularTrainingBuilder = ({ defaultTrack = "sales" }: ModularTraini
 
     return (
         <div className="rounded-[2.25rem] border border-border bg-white p-6 md:p-10 lg:p-12 shadow-[0_18px_38px_rgba(19,24,42,0.08)]">
-            <div className="grid lg:grid-cols-[0.9fr_1.1fr] gap-10 lg:gap-12 items-start">
+            <div className="grid lg:grid-cols-[0.88fr_1.12fr] gap-8 lg:gap-10 items-start">
                 <div className="lg:pr-4">
-                    <h2 className="headline-display text-4xl md:text-5xl leading-[0.95] mb-6">
+                    <h2 className="headline-display text-4xl md:text-[3.4rem] leading-[0.95] mb-5">
                         Modular training, built around your needs
                     </h2>
-                    <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed">
+                    <p className="text-lg md:text-[2rem] text-muted-foreground leading-[1.35] max-w-[18ch]">
                         No generic courses. No wasted time.
                         <br />
                         Your programme is built from focused modules chosen around your team, goals, and reality.
                     </p>
-
-                    <div className="mt-8 grid grid-cols-2 md:grid-cols-3 gap-3">
-                        {TRACKS.map((track) => (
-                            <button
-                                key={track.key}
-                                type="button"
-                                onClick={() => setActiveTrack(track.key)}
-                                className={`rounded-full px-4 py-2.5 text-sm font-bold border transition-all duration-200 ${
-                                    activeTrack === track.key
-                                        ? "bg-primary text-white border-primary shadow-sm"
-                                        : "bg-muted/30 text-primary border-border hover:bg-lime/15"
-                                }`}
-                            >
-                                {track.label}
-                            </button>
-                        ))}
-                    </div>
                 </div>
 
                 <div className="rounded-3xl border border-border/70 bg-gradient-to-br from-[#edf2ff] via-[#f5f8ff] to-[#eef7f2] p-4 md:p-6">
                     <div className="grid xl:grid-cols-[1.08fr_0.92fr] gap-4 md:gap-6">
                         <div className="rounded-[2rem] bg-primary p-5 md:p-6 text-white border border-primary/80 shadow-[0_18px_30px_rgba(12,24,18,0.22)]">
-                            <h3 className="text-center text-2xl md:text-3xl font-black mb-4">Training Programme</h3>
+                            <h3 className="text-center text-2xl md:text-[2.2rem] font-black mb-4">Training Programme</h3>
 
                             <div className="relative mx-auto max-w-[320px] rounded-full bg-white text-primary border border-white/80 px-3 py-2 flex items-center justify-between mb-5">
                                 <span className="font-semibold">Selected Programme</span>
                                 <button
                                     type="button"
                                     onClick={() => setIsTrackMenuOpen((open) => !open)}
-                                    className="inline-flex items-center gap-1.5 text-sm font-bold rounded-full px-2.5 py-1.5 hover:bg-muted/50 transition-colors"
+                                    className="inline-flex items-center gap-1.5 text-sm font-bold rounded-full px-2.5 py-1.5 hover:bg-muted/50 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-lime/50"
                                     aria-haspopup="listbox"
                                     aria-expanded={isTrackMenuOpen}
                                 >
@@ -172,7 +155,7 @@ export const ModularTrainingBuilder = ({ defaultTrack = "sales" }: ModularTraini
                                 </div>
 
                                 {selectedModules.length > 0 ? (
-                                    <div className="space-y-2 max-h-[340px] overflow-y-auto pr-1">
+                                    <div className="space-y-2 max-h-[320px] overflow-y-auto pr-1">
                                         {selectedModules.map((module) => (
                                             <div
                                                 key={module}
@@ -201,18 +184,18 @@ export const ModularTrainingBuilder = ({ defaultTrack = "sales" }: ModularTraini
                                             key={module}
                                             type="button"
                                             onClick={() => toggleModule(module)}
-                                            className={`w-full text-left rounded-full px-3 py-2.5 text-sm font-semibold border transition-all duration-200 flex items-center gap-2.5 ${
-                                                checked
-                                                    ? "bg-primary text-white border-primary shadow-sm"
-                                                    : "bg-white/95 text-primary border-border/80 hover:bg-lime/15"
+                                        className={`w-full text-left rounded-full px-3 py-2.5 text-sm font-semibold border transition-all duration-200 flex items-center gap-2.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-lime/40 ${
+                                            checked
+                                                ? "bg-primary text-white border-primary shadow-sm"
+                                                : "bg-white/95 text-primary border-border/80 hover:bg-lime/15"
                                             }`}
                                         >
                                             <span
                                                 className={`w-5 h-5 rounded-full border flex items-center justify-center shrink-0 ${
-                                                    checked ? "border-white/90 bg-lime text-primary" : "border-primary/30"
+                                                    checked ? "border-white/90 bg-lime text-primary" : "border-primary/30 bg-white"
                                                 }`}
                                             >
-                                                {checked ? <Check className="w-3.5 h-3.5" /> : <Sparkles className="w-3 h-3 text-primary/60" />}
+                                                {checked ? <Check className="w-3.5 h-3.5" /> : <span className="w-2 h-2 rounded-full bg-primary/30" />}
                                             </span>
                                             <span>{module}</span>
                                         </button>

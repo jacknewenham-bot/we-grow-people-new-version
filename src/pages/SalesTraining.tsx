@@ -275,7 +275,7 @@ const SalesTraining = () => {
                     <div className="container">
                         <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
                             <div>
-                                <h2 className="headline-display text-4xl mb-12">Who our sales training <br /> is designed for</h2>
+                                <h2 className="headline-display text-4xl mb-8">Who our sales training <br /> is designed for</h2>
                                 <div className="space-y-6">
                                     {[
                                         { title: "Experienced sellers", desc: "Refining high-level approach and unsticking complex deals." },
@@ -289,19 +289,19 @@ const SalesTraining = () => {
                                     ))}
                                 </div>
                             </div>
-                            <div className="bg-primary p-12 rounded-[3.5rem] text-white self-start">
-                                <div className="mb-8 overflow-hidden rounded-2xl border border-white/15">
+                            <div className="bg-primary p-10 rounded-[3.5rem] text-white self-start">
+                                <div className="mb-6 overflow-hidden rounded-2xl border border-white/15">
                                     <img
                                         src="/Additional website images/project-team-collaborating-business-analytics.jpg"
                                         alt="Sales team collaborating on strategy"
-                                        className="h-44 md:h-52 w-full object-cover"
+                                        className="h-40 md:h-44 w-full object-cover"
                                         loading="lazy"
                                         decoding="async"
                                     />
                                 </div>
-                                <h3 className="headline-display text-3xl mb-10 text-lime">Delivery formats</h3>
-                                <div className="space-y-10">
-                                    <div className="flex gap-6">
+                                <h3 className="headline-display text-3xl mb-7 text-lime">Delivery formats</h3>
+                                <div className="space-y-7">
+                                    <div className="flex gap-5">
                                         <div className="w-14 h-14 rounded-2xl bg-white/10 flex items-center justify-center shrink-0 border border-white/20">
                                             <Users className="w-8 h-8 text-lime" />
                                         </div>
@@ -310,7 +310,7 @@ const SalesTraining = () => {
                                             <p className="text-white/70">High-energy, focused delivery in your office or offsite.</p>
                                         </div>
                                     </div>
-                                    <div className="flex gap-6">
+                                    <div className="flex gap-5">
                                         <div className="w-14 h-14 rounded-2xl bg-white/10 flex items-center justify-center shrink-0 border border-white/20">
                                             <Layout className="w-8 h-8 text-lime" />
                                         </div>
@@ -319,7 +319,7 @@ const SalesTraining = () => {
                                             <p className="text-white/70">Interactive sessions delivered online for distributed teams.</p>
                                         </div>
                                     </div>
-                                    <div className="flex gap-6">
+                                    <div className="flex gap-5">
                                         <div className="w-14 h-14 rounded-2xl bg-white/10 flex items-center justify-center shrink-0 border border-white/20">
                                             <Shield className="w-8 h-8 text-lime" />
                                         </div>
