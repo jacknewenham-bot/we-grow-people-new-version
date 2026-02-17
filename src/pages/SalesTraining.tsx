@@ -214,7 +214,7 @@ const SalesTraining = () => {
                                     { title: "Understand context", desc: "We deep-dive into your specific sales reality and hurdles." },
                                     { title: "Leadership alignment", desc: "We ensure goals are agreed upon by those managing the team." },
                                     { title: "Live practice", desc: "Training using your real deals and actual scenarios." },
-                                    { title: "Reinforce and review", desc: "Post-training support with clear reporting and recommendations for next steps." }
+                                    { title: "Reinforcement and review", desc: "Post-training support with clear reporting and recommendations for next steps." }
                                 ].map((item, i) => (
                                     <div key={i} className="flex gap-4 p-4 rounded-2xl hover:bg-muted/30 transition-colors border border-transparent hover:border-border">
                                         <div className="w-10 h-10 rounded-xl bg-lime/10 flex items-center justify-center shrink-0">
