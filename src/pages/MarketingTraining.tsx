@@ -289,6 +289,15 @@ const MarketingTraining = () => {
                                 </div>
                             </div>
                             <div className="flex-1 bg-primary p-12 rounded-[3.5rem] text-white">
+                                <div className="mb-8 overflow-hidden rounded-2xl border border-white/15">
+                                    <img
+                                        src="/Additional website images/businesswoman-conducting-meeting.jpg"
+                                        alt="Marketing planning session"
+                                        className="h-44 md:h-52 w-full object-cover"
+                                        loading="lazy"
+                                        decoding="async"
+                                    />
+                                </div>
                                 <h3 className="headline-display text-3xl mb-10 text-lime">Delivery formats</h3>
                                 <div className="space-y-10">
                                     <div className="flex gap-6">
@@ -331,6 +340,15 @@ const MarketingTraining = () => {
                 <section id="marketing-capabilities" className="py-24 bg-muted/20">
                     <div className="container">
                         <h2 className="headline-display text-4xl md:text-5xl mb-16 text-center">Marketing capabilities we cover</h2>
+                        <div className="max-w-5xl mx-auto mb-12 overflow-hidden rounded-3xl border border-border bg-white shadow-sm">
+                            <img
+                                src="/Additional website images/side-view-three-people-business-meeting.jpg"
+                                alt="Marketing team collaboration"
+                                className="h-56 md:h-72 w-full object-cover"
+                                loading="lazy"
+                                decoding="async"
+                            />
+                        </div>
                         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
                             {[
                                 { name: "Marketing fundamentals", icon: Layers },
