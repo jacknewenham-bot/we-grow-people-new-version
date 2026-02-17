@@ -273,8 +273,8 @@ const SalesTraining = () => {
                 {/* 6. WHO THIS IS FOR */}
                 <section className="py-24 bg-white">
                     <div className="container">
-                        <div className="max-w-6xl mx-auto flex flex-col lg:flex-row gap-20">
-                            <div className="flex-1">
+                        <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
+                            <div>
                                 <h2 className="headline-display text-4xl mb-12">Who our sales training <br /> is designed for</h2>
                                 <div className="space-y-6">
                                     {[
@@ -289,7 +289,7 @@ const SalesTraining = () => {
                                     ))}
                                 </div>
                             </div>
-                            <div className="flex-1 bg-primary p-12 rounded-[3.5rem] text-white">
+                            <div className="bg-primary p-12 rounded-[3.5rem] text-white self-start">
                                 <div className="mb-8 overflow-hidden rounded-2xl border border-white/15">
                                     <img
                                         src="/Additional website images/project-team-collaborating-business-analytics.jpg"
