@@ -22,11 +22,10 @@ const Consultancy = () => {
                         <motion.h1
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
-                            className="headline-display text-5xl md:text-7xl mb-8"
+                            className="headline-display text-5xl md:text-7xl mb-8 leading-[0.95]"
                         >
-                            <span className="text-white/90 whitespace-nowrap">Consulting that helps you</span>
-                            <br />
-                            <span className="text-lime">move, not just plan</span>
+                            <span className="block text-white/90">Consulting that helps</span>
+                            <span className="block text-lime">you move, not just plan</span>
                         </motion.h1>
                         <motion.p
                             initial={{ opacity: 0, y: 20 }}
@@ -55,9 +54,9 @@ const Consultancy = () => {
                         >
                             <div className="mx-auto max-w-4xl overflow-hidden rounded-[2rem] border border-white/15 shadow-[0_24px_80px_rgba(0,0,0,0.32)]">
                                 <img
-                                    src="/Additional website images/team-working-together-project.jpg"
+                                    src="/Additional website images/project-work-team-working-project-looking-involved.jpg"
                                     alt="Consultancy team workshop"
-                                    className="h-[240px] w-full object-cover md:h-[320px]"
+                                    className="h-[240px] w-full object-cover object-[center_26%] md:h-[320px]"
                                     loading="eager"
                                     decoding="async"
                                 />
@@ -120,7 +119,7 @@ const Consultancy = () => {
                             >
                                 <div className="mb-6 overflow-hidden rounded-2xl border border-border">
                                     <img
-                                        src="/Additional website images/side-view-three-people-business-meeting.jpg"
+                                        src="/Additional website images/group-three-colleagues-waalking-outdoors-with-takeaway-coffee-lunch-break.jpg"
                                         alt="Marketing consultancy discussion"
                                         className="h-40 w-full object-cover object-center"
                                         loading="lazy"

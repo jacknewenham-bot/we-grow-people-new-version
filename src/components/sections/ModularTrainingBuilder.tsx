@@ -98,7 +98,7 @@ export const ModularTrainingBuilder = ({ defaultTrack = "sales" }: ModularTraini
                     <h2 className="headline-display text-4xl md:text-[3.4rem] leading-[0.95] mb-5">
                         Modular training, built around your needs
                     </h2>
-                    <p className="text-lg md:text-[2rem] text-muted-foreground leading-[1.35] max-w-[18ch]">
+                    <p className="type-body text-muted-foreground max-w-[28ch]">
                         No generic courses. No wasted time.
                         <br />
                         Your programme is built from focused modules chosen around your team, goals, and reality.
@@ -111,7 +111,7 @@ export const ModularTrainingBuilder = ({ defaultTrack = "sales" }: ModularTraini
                             <h3 className="text-center text-2xl md:text-[2.2rem] font-black mb-4">Training Programme</h3>
 
                             <div className="relative mx-auto max-w-[320px] rounded-full bg-white text-primary border border-white/80 px-3 py-2 flex items-center justify-between mb-5">
-                                <span className="font-semibold">Selected Programme</span>
+                                <span className="font-semibold">Choose training</span>
                                 <button
                                     type="button"
                                     onClick={() => setIsTrackMenuOpen((open) => !open)}

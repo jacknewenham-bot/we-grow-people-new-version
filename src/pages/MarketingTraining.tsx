@@ -284,9 +284,9 @@ const MarketingTraining = () => {
                             <div className="bg-primary p-10 rounded-[3.5rem] text-white self-start">
                                 <div className="mb-6 overflow-hidden rounded-2xl border border-white/15">
                                     <img
-                                        src="/Additional website images/businesswoman-conducting-meeting.jpg"
+                                        src="/Additional website images/group-diverse-business-people-successful-teamwork-working-together-with-laptop-computer-office.jpg"
                                         alt="Marketing planning session"
-                                        className="h-40 md:h-44 w-full object-cover"
+                                        className="h-40 md:h-44 w-full object-cover object-[center_32%]"
                                         loading="lazy"
                                         decoding="async"
                                     />
