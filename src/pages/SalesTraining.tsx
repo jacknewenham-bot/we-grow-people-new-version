@@ -337,46 +337,94 @@ const SalesTraining = () => {
                 {/* 7. SALES TRAINING AREAS */}
                 <section id="training-areas" className="py-24 bg-muted/20">
                     <div className="container">
-                        <h2 className="headline-display text-4xl md:text-5xl mb-16 text-center">Sales capabilities we cover</h2>
-                        <div className="max-w-5xl mx-auto mb-12 overflow-hidden rounded-3xl border border-border bg-white shadow-sm">
-                            <img
-                                src="/Additional website images/group-diverse-business-people-successful-teamwork-working-together-with-laptop-computer-office.jpg"
-                                alt="Sales capability workshop"
-                                className="h-56 md:h-72 w-full object-cover"
-                                loading="lazy"
-                                decoding="async"
-                            />
-                        </div>
-                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-                            {[
-                                "Sales fundamentals",
-                                "Prospecting & building pipeline",
-                                "Targeting & Qualification",
-                                "Consultative selling",
-                                "Insight & Challenger selling",
-                                "Storytelling & pitching",
-                                "Key account management",
-                                "Social & digital selling",
-                                "Virtual & hybrid selling",
-                                "Customer success & retention",
-                                "Trade shows & exhibitions"
-                            ].map((area, i) => (
-                                <motion.div
-                                    key={i}
-                                    initial={{ opacity: 0, scale: 0.95 }}
-                                    whileInView={{ opacity: 1, scale: 1 }}
-                                    viewport={{ once: true }}
-                                    transition={{ delay: i * 0.05 }}
-                                    className="p-6 rounded-2xl bg-white border border-border flex items-center gap-4 hover:shadow-md transition-shadow cursor-default"
-                                >
-                                    <div className="w-2 h-2 rounded-full bg-lime shrink-0" />
-                                    <span className="font-bold text-primary">{area}</span>
-                                </motion.div>
-                            ))}
-                        </div>
-                        <p className="text-center mt-12 text-muted-foreground italic">
-                            Programs are modular and can be combined to match your sales motion.
-                        </p>
+                        <motion.div
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            className="rounded-[2.4rem] border border-border bg-white p-6 md:p-10 lg:p-12 shadow-[0_18px_38px_rgba(19,24,42,0.08)]"
+                        >
+                            <div className="grid lg:grid-cols-[0.9fr_1.1fr] gap-10 lg:gap-12 items-start">
+                                <div className="lg:pr-4">
+                                    <h2 className="headline-display text-4xl md:text-5xl leading-[0.95] mb-6">
+                                        Modular training, built around your needs
+                                    </h2>
+                                    <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed">
+                                        Your training programme is made up of focused modules.
+                                        <br />
+                                        We combine what matters most to your team, goals, and context.
+                                    </p>
+                                </div>
+
+                                <div className="rounded-3xl border border-border/70 bg-gradient-to-br from-[#ecf2ff] via-[#f5f8ff] to-[#eef9f1] p-5 md:p-7">
+                                    <div className="grid lg:grid-cols-[1fr_auto] gap-5 md:gap-6">
+                                        <div className="rounded-[2rem] bg-primary p-5 md:p-6 text-white border border-primary/80 shadow-[0_18px_30px_rgba(12,24,18,0.22)]">
+                                            <h3 className="text-center text-xl md:text-2xl font-bold mb-4">Training Programme</h3>
+
+                                            <div className="mx-auto max-w-[290px] rounded-full bg-white text-primary border border-white/70 px-3 py-2 flex items-center justify-between mb-4">
+                                                <span className="font-semibold">Selected Programme</span>
+                                                <span className="w-6 h-6 rounded-full bg-lime/20 flex items-center justify-center font-bold text-sm">1</span>
+                                            </div>
+
+                                            <div className="relative mb-3">
+                                                <div className="mx-auto h-5 w-px bg-white/35" />
+                                                <div className="mx-auto h-px w-[88%] bg-white/35" />
+                                            </div>
+
+                                            <div className="grid sm:grid-cols-2 gap-2.5">
+                                                {[
+                                                    { label: "Sales fundamentals", icon: Target },
+                                                    { label: "Prospecting & pipeline", icon: TrendingUp },
+                                                    { label: "Consultative selling", icon: MessageCircle },
+                                                    { label: "Storytelling & pitching", icon: Zap },
+                                                    { label: "Key account management", icon: Users },
+                                                    { label: "Customer success", icon: Shield },
+                                                    { label: "Social & digital selling", icon: Layout },
+                                                ].map((module, i) => (
+                                                    <motion.div
+                                                        key={module.label}
+                                                        initial={{ opacity: 0, y: 8 }}
+                                                        whileInView={{ opacity: 1, y: 0 }}
+                                                        whileHover={{ scale: 1.03 }}
+                                                        viewport={{ once: true }}
+                                                        transition={{ delay: i * 0.05 }}
+                                                        className="rounded-full bg-white text-primary px-3 py-2 border border-white/90 flex items-center gap-2 shadow-sm"
+                                                    >
+                                                        <module.icon className="w-4 h-4 shrink-0" />
+                                                        <span className="text-xs md:text-sm font-semibold leading-tight">{module.label}</span>
+                                                    </motion.div>
+                                                ))}
+                                            </div>
+                                        </div>
+
+                                        <div className="rounded-3xl bg-white/65 border border-white/80 p-3 md:p-4 min-w-[190px]">
+                                            <p className="text-xs font-black uppercase tracking-[0.14em] text-primary/70 mb-3">Available modules</p>
+                                            <div className="space-y-2">
+                                                {[
+                                                    "Sales fundamentals",
+                                                    "Prospecting & pipeline",
+                                                    "Consultative selling",
+                                                    "Storytelling & pitching",
+                                                    "Key account management",
+                                                    "Customer success",
+                                                    "Social & digital selling",
+                                                ].map((item, i) => (
+                                                    <div
+                                                        key={item}
+                                                        className={`rounded-full px-3 py-2 text-sm font-semibold border transition-colors ${
+                                                            i === 0
+                                                                ? "bg-primary text-white border-primary"
+                                                                : "bg-white/90 text-primary border-border/80"
+                                                        }`}
+                                                    >
+                                                        {item}
+                                                    </div>
+                                                ))}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </motion.div>
                     </div>
                 </section>
 
