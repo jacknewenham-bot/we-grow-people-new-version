@@ -66,9 +66,6 @@ const About = () => {
                                         />
                                     </div>
 
-                                    <div className="absolute left-1 top-[48%] md:left-[-20px] md:top-[46%] bg-white text-primary rounded-full px-3 py-2 text-xs md:text-sm font-semibold shadow-md border border-white/70">
-                                        + Practical impact
-                                    </div>
                                 </div>
                             </div>
                         </motion.div>

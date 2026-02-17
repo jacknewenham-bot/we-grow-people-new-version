@@ -41,8 +41,7 @@ const SalesTraining = () => {
                             animate={{ opacity: 1, y: 0 }}
                             className="headline-display text-5xl md:text-7xl mb-8"
                         >
-                            <span className="text-white/90">Sales training built for</span>
-                            <br />
+                            <span className="text-white/90">Sales training built for</span>{" "}
                             <span className="text-lime">modern revenue teams</span>
                         </motion.h1>
                         <motion.p
@@ -141,35 +140,49 @@ const SalesTraining = () => {
                 </section>
 
                 {/* 3. VALUE OF CUSTOM SALES TRAINING */}
-                <section className="py-24 bg-muted/20">
+                <section className="py-24 bg-primary text-white">
                     <div className="container">
-                        <h2 className="headline-display text-4xl md:text-5xl mb-16 text-center">How well designed sales training <br /> helps teams perform</h2>
-                        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
-                            {[
-                                { title: "Clarify Priorities", desc: "Align the entire team on revenue goals and high-impact activities.", icon: Target },
-                                { title: "Improve Funnel Conversion", desc: "Build the skills that turn interest into closed deals more effectively.", icon: TrendingUp },
-                                { title: "Build Consistency", desc: "Ensure your customers get a high-quality experience no matter who they talk to.", icon: Layout },
-                                { title: "Increase Confidence", desc: "Empower sellers to handle tough questions and keep deals moving.", icon: MessageCircle },
-                                { title: "Scale Success", desc: "Reduce dependency on top performers by raising the baseline for everyone.", icon: Users },
-                                { title: "Adapt Faster", desc: "Give teams the tools to identify and unstick deals that have stalled.", icon: Zap }
-                            ].map((value, i) => (
-                                <motion.div
-                                    key={i}
-                                    initial={{ opacity: 0, y: 20 }}
-                                    whileInView={{ opacity: 1, y: 0 }}
-                                    viewport={{ once: true }}
-                                    transition={{ delay: i * 0.1 }}
-                                    className="bg-white p-8 rounded-3xl border border-border shadow-sm hover:shadow-md transition-shadow"
-                                >
-                                    <div className="w-12 h-12 rounded-2xl bg-lime/10 flex items-center justify-center mb-6">
-                                        <value.icon className="w-6 h-6 text-primary" />
-                                    </div>
-                                    <h3 className="text-xl font-bold mb-4">{value.title}</h3>
-                                    <p className="text-muted-foreground">{value.desc}</p>
-                                </motion.div>
-                            ))}
+                        <div className="max-w-6xl mx-auto grid lg:grid-cols-[0.9fr_2.1fr] gap-10 lg:gap-16">
+                            <div>
+                                <p className="text-lime/90 font-semibold text-sm uppercase tracking-[0.14em] mb-4">Sales outcomes</p>
+                                <h2 className="headline-display text-4xl md:text-5xl leading-[0.95] mb-6">
+                                    How well designed sales training helps teams perform
+                                </h2>
+                                <p className="text-white/75 text-lg leading-relaxed">
+                                    Built for practical execution, consistent pipeline movement, and stronger day-to-day selling behavior.
+                                </p>
+                            </div>
+
+                            <div className="grid md:grid-cols-2 gap-8 md:gap-10">
+                                {[
+                                    { title: "Clarify priorities", desc: "Align the team on revenue goals and high-impact activities.", icon: Target, chip: "bg-lime/25" },
+                                    { title: "Improve funnel conversion", desc: "Turn interest into closed deals more effectively.", icon: TrendingUp, chip: "bg-cyan-300/25" },
+                                    { title: "Build consistency", desc: "Deliver a high-quality customer experience across the team.", icon: Layout, chip: "bg-violet-300/25" },
+                                    { title: "Increase confidence", desc: "Handle tough questions and keep deals moving.", icon: MessageCircle, chip: "bg-amber-200/25" },
+                                    { title: "Scale success", desc: "Raise the baseline beyond only top performers.", icon: Users, chip: "bg-rose-300/25" },
+                                    { title: "Adapt faster", desc: "Identify and unstick stalled deals quickly.", icon: Zap, chip: "bg-emerald-300/25" }
+                                ].map((value, i) => (
+                                    <motion.div
+                                        key={value.title}
+                                        initial={{ opacity: 0, y: 16 }}
+                                        whileInView={{ opacity: 1, y: 0 }}
+                                        viewport={{ once: true }}
+                                        transition={{ delay: i * 0.08 }}
+                                        className="flex gap-4"
+                                    >
+                                        <div className={`w-11 h-11 rounded-full ${value.chip} border border-white/25 flex items-center justify-center shrink-0`}>
+                                            <value.icon className="w-5 h-5 text-white" />
+                                        </div>
+                                        <div>
+                                            <h3 className="text-2xl md:text-[2rem] font-semibold leading-tight mb-2 text-white">{value.title}</h3>
+                                            <p className="text-white/75 text-lg leading-relaxed">{value.desc}</p>
+                                        </div>
+                                    </motion.div>
+                                ))}
+                            </div>
                         </div>
-                        <p className="text-center mt-12 text-xl font-medium text-primary">
+
+                        <p className="text-center mt-14 text-xl font-medium text-lime">
                             The focus is on usable skills, not theoretical frameworks.
                         </p>
                     </div>
