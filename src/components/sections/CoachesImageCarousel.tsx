@@ -129,7 +129,7 @@ type CoachesImageCarouselProps = {
 };
 
 export function CoachesImageCarousel({
-  sectionClassName = "py-24 bg-muted/10",
+  sectionClassName = "py-16 md:py-20 bg-background",
   showSubtitle = true,
   showCta = false,
 }: CoachesImageCarouselProps) {
@@ -147,8 +147,10 @@ export function CoachesImageCarousel({
   return (
     <section id="coaches" className={sectionClassName}>
       <div className="container">
-        <div className="text-center mb-16">
-          <h2 className="headline-display text-4xl md:text-5xl mb-6">Meet the coaches</h2>
+        <div className="text-center mb-10 md:mb-12">
+          <h2 className="font-serif text-4xl md:text-6xl tracking-tight text-foreground mb-4">
+            Meet the coaches
+          </h2>
           {showSubtitle && (
             <p className="type-body text-muted-foreground max-w-2xl mx-auto">
               Experienced practitioners helping teams build modern skills.
@@ -169,45 +171,45 @@ export function CoachesImageCarousel({
           >
             <CarouselContent className="-ml-4">
               {coaches.map((coach, index) => (
-                <CarouselItem key={index} className="pl-4 basis-[90%] md:basis-1/2 lg:basis-1/3">
-                  <motion.div
+                <CarouselItem key={index} className="pl-4 basis-[80%] sm:basis-[52%] md:basis-[37%] lg:basis-[29%] xl:basis-[23%]">
+                  <motion.button
+                    type="button"
+                    onClick={() => setSelectedCoach(coach)}
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    className="p-1"
+                    className="group w-full p-1 text-center"
                   >
-                    <div className="group bg-white rounded-3xl border border-border overflow-hidden h-full shadow-sm hover:shadow-md transition-all duration-300">
+                    <div className="overflow-hidden rounded-[1.6rem] border border-border/70 bg-white shadow-[0_8px_24px_rgba(15,23,42,0.08)] transition-all duration-300 group-hover:-translate-y-1 group-hover:shadow-[0_14px_30px_rgba(15,23,42,0.12)]">
                       <div className="aspect-[4/5] bg-muted/50 overflow-hidden">
                         <img
                           src={coach.image}
                           alt={coach.name}
-                          className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-[1.02]"
+                          className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-[1.04]"
                         />
                       </div>
-                      <div className="p-6 md:p-7 flex flex-col h-full">
-                        <h3 className="type-h3 text-foreground mb-2 tracking-tight min-h-[3.5rem]">{coach.name}</h3>
-                        <p className="text-primary font-semibold text-[1.0625rem] mb-3 min-h-[4.25rem]">
-                          {coach.expertise}
-                        </p>
-                        <p className="type-body-secondary text-muted-foreground mb-5 min-h-[6.75rem]">
-                          {coach.intro}
-                        </p>
-                        <button
-                          type="button"
-                          onClick={() => setSelectedCoach(coach)}
-                          className="inline-flex items-center gap-2 text-primary type-nav hover:gap-3 transition-all mt-auto"
-                        >
-                          View full profile <ArrowRight className="h-4 w-4" />
-                        </button>
-                      </div>
                     </div>
-                  </motion.div>
+                    <div className="mt-4 px-1">
+                      <h3 className="text-2xl font-black uppercase tracking-tight leading-tight text-foreground">
+                        {coach.name}
+                      </h3>
+                      <p className="mt-2 min-h-[2.6rem] text-[0.83rem] font-semibold uppercase tracking-wide text-foreground/75">
+                        {coach.title}
+                      </p>
+                      <p className="mt-2 min-h-[3.6rem] text-lg leading-tight text-foreground/85 font-serif italic">
+                        {coach.intro}
+                      </p>
+                      <span className="mt-3 inline-flex items-center gap-1.5 text-[0.9rem] font-medium text-primary/90 transition-colors group-hover:text-primary">
+                        View profile <ArrowRight className="h-4 w-4" />
+                      </span>
+                    </div>
+                  </motion.button>
                 </CarouselItem>
               ))}
             </CarouselContent>
             <div className="hidden md:block">
-              <CarouselPrevious className="-left-6 lg:-left-10 h-12 w-12" />
-              <CarouselNext className="-right-6 lg:-right-10 h-12 w-12" />
+              <CarouselPrevious className="-left-4 lg:-left-8 h-10 w-10 bg-white/95" />
+              <CarouselNext className="-right-4 lg:-right-8 h-10 w-10 bg-white/95" />
             </div>
           </Carousel>
         </div>
