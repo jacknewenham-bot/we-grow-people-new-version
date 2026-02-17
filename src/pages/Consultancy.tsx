@@ -121,9 +121,9 @@ const Consultancy = () => {
                             >
                                 <div className="mb-6 overflow-hidden rounded-2xl border border-border">
                                     <img
-                                        src="/Additional website images/businesswoman-conducting-meeting.jpg"
+                                        src="/Additional website images/side-view-three-people-business-meeting.jpg"
                                         alt="Marketing consultancy discussion"
-                                        className="h-40 w-full object-cover"
+                                        className="h-40 w-full object-cover object-center"
                                         loading="lazy"
                                         decoding="async"
                                     />

@@ -104,9 +104,9 @@ const Careers = () => {
                 <section className="py-24 bg-muted/20">
                     <div className="container">
                         <div className="text-center mb-16">
-                            <h2 className="headline-display text-4xl md:text-5xl mb-6">How we work</h2>
+                            <h2 className="headline-display text-4xl md:text-5xl mb-6 uppercase">How we work</h2>
                             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-                                We care deeply about how we work together, not just what we deliver.
+                                A practical approach to how we build, collaborate, and grow.
                             </p>
                         </div>
 
@@ -115,22 +115,26 @@ const Careers = () => {
                                 {
                                     title: "People first",
                                     desc: "We treat each other with respect, trust, and empathy.",
-                                    icon: Heart
+                                    icon: Heart,
+                                    surface: "bg-[#cfe3f7]"
                                 },
                                 {
                                     title: "Practical over perfect",
                                     desc: "We value progress and real outcomes over theory and polish.",
-                                    icon: Zap
+                                    icon: Zap,
+                                    surface: "bg-[#d3f0e3]"
                                 },
                                 {
                                     title: "Ownership and autonomy",
                                     desc: "We hire people we trust and give them room to do their best work.",
-                                    icon: Shield
+                                    icon: Shield,
+                                    surface: "bg-[#ddd8f6]"
                                 },
                                 {
                                     title: "Continuous learning",
                                     desc: "We expect everyone to keep learning, including ourselves.",
-                                    icon: BrainCircuit
+                                    icon: BrainCircuit,
+                                    surface: "bg-[#f8dfc5]"
                                 }
                             ].map((pillar, i) => (
                                 <motion.div
@@ -139,13 +143,18 @@ const Careers = () => {
                                     whileInView={{ opacity: 1, y: 0 }}
                                     viewport={{ once: true }}
                                     transition={{ delay: i * 0.1 }}
-                                    className="p-8 rounded-3xl bg-white border border-border shadow-sm hover:shadow-md transition-shadow"
+                                    className={`p-7 rounded-3xl border border-border shadow-sm hover:shadow-md transition-shadow ${pillar.surface}`}
                                 >
-                                    <div className="w-12 h-12 rounded-2xl bg-lime/10 flex items-center justify-center mb-6">
-                                        <pillar.icon className="w-6 h-6 text-primary" />
+                                    <div className="mb-5 flex items-center justify-between">
+                                        <div className="w-12 h-12 rounded-2xl bg-white/70 flex items-center justify-center">
+                                            <pillar.icon className="w-6 h-6 text-primary" />
+                                        </div>
+                                        <span className="w-11 h-11 rounded-full bg-white/60 border border-border/70 flex items-center justify-center text-primary font-bold">
+                                            {String(i + 1).padStart(2, "0")}
+                                        </span>
                                     </div>
                                     <h3 className="text-xl font-bold mb-4">{pillar.title}</h3>
-                                    <p className="text-muted-foreground leading-relaxed">{pillar.desc}</p>
+                                    <p className="text-foreground/75 leading-relaxed">{pillar.desc}</p>
                                 </motion.div>
                             ))}
                         </div>

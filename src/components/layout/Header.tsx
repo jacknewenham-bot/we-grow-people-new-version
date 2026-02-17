@@ -78,14 +78,15 @@ export function Header() {
             onMouseEnter={() => setIsTrainingMenuOpen(true)}
             onMouseLeave={() => setIsTrainingMenuOpen(false)}
           >
-              <button
+            <a
+              href="/sales-training"
               className={`flex items-center gap-1 transition-colors type-nav py-4 ${isScrolled
                 ? "text-muted-foreground hover:text-foreground"
                 : "text-white/80 hover:text-white"
                 }`}
             >
               Training <ChevronDown size={14} />
-            </button>
+            </a>
 
             {/* Big Dropdown Menu */}
             <AnimatePresence>
@@ -163,12 +164,22 @@ export function Header() {
             <nav className="container py-4 flex flex-col gap-2">
               {/* Mobile Training Accordion */}
               <div className="py-2">
-                <button
-                  onClick={() => setMobileExpandedCategory(mobileExpandedCategory === 'training' ? null : 'training')}
-                  className="w-full flex items-center justify-between text-muted-foreground type-nav py-3 border-b border-muted"
-                >
-                  Training <ChevronDown size={18} className={`transition-transform ${mobileExpandedCategory === 'training' ? 'rotate-180' : ''}`} />
-                </button>
+                <div className="w-full flex items-center justify-between py-3 border-b border-muted">
+                  <a
+                    href="/sales-training"
+                    className="text-muted-foreground type-nav"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    Training
+                  </a>
+                  <button
+                    onClick={() => setMobileExpandedCategory(mobileExpandedCategory === 'training' ? null : 'training')}
+                    className="text-muted-foreground p-1"
+                    aria-label="Toggle training menu"
+                  >
+                    <ChevronDown size={18} className={`transition-transform ${mobileExpandedCategory === 'training' ? 'rotate-180' : ''}`} />
+                  </button>
+                </div>
 
                 <AnimatePresence>
                   {mobileExpandedCategory === 'training' && (
