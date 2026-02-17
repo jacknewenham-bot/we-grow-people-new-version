@@ -177,6 +177,11 @@ const splitIntoColumns = <T,>(items: T[], columnCount: number) => {
   );
 };
 
+const getLoveCount = (seed: string) => {
+  const hash = seed.split("").reduce((acc, char, index) => acc + char.charCodeAt(0) * (index + 3), 0);
+  return (hash % 45) + 1;
+};
+
 export function Testimonials() {
   const columns = splitIntoColumns(testimonials, 3);
 
@@ -307,7 +312,12 @@ export function Testimonials() {
                       <div className="h-px bg-[#e7ecef]" />
 
                       <div className="px-5 py-3 flex items-center gap-4 text-muted-foreground">
-                        <Heart className="w-4 h-4" />
+                        <span className="inline-flex items-center gap-2">
+                          <Heart className="w-4 h-4 text-[#ec4899] fill-[#ec4899]" />
+                          <span className="text-[0.95rem] font-semibold text-[#4b5563]">
+                            {getLoveCount(`${testimonial.author}-${testimonial.quote}`)}
+                          </span>
+                        </span>
                         <MessageCircle className="w-4 h-4" />
                         <Repeat2 className="w-4 h-4" />
                         <Share2 className="w-4 h-4 ml-auto" />
