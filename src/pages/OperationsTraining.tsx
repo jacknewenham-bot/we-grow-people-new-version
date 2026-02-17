@@ -3,6 +3,7 @@ import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { Button } from "@/components/ui/button";
 import { ModularTrainingBuilder } from "@/components/sections/ModularTrainingBuilder";
+import { Testimonials } from "@/components/sections/Testimonials";
 import {
     CheckCircle2,
     XCircle,
@@ -14,14 +15,7 @@ import {
     Award,
     TrendingUp,
     Layout,
-    Search,
-    Layers,
-    Clock,
-    BookOpen,
-    ClipboardList,
-    ArrowRightLeft,
-    Gauge,
-    RefreshCw
+    Layers
 } from "lucide-react";
 
 const WHATSAPP_LINK = "https://wa.me/60173552382?text=Hi%2C%20I%27m%20interested%20in%20upskilling%20my%20team%20and%20would%20love%20to%20learn%20more%20about%20your%20training%20and%20consultancy%20options.'m%20interested%20in%20your%20Operations%20Training%20programs";
@@ -267,9 +261,9 @@ const OperationsTraining = () => {
                 {/* 6. AUDIENCE SECTION */}
                 <section className="py-24 bg-white">
                     <div className="container">
-                        <div className="max-w-6xl mx-auto flex flex-col lg:flex-row gap-20">
-                            <div className="flex-1">
-                                <h2 className="headline-display text-4xl mb-12">Who our operations training <br /> is designed for</h2>
+                        <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
+                            <div>
+                                <h2 className="headline-display text-4xl mb-8">Who our operations training <br /> is designed for</h2>
                                 <div className="space-y-6">
                                     {[
                                         { title: "Operations teams", desc: "Improving execution, coordination, and flow." },
@@ -284,19 +278,19 @@ const OperationsTraining = () => {
                                     ))}
                                 </div>
                             </div>
-                            <div className="flex-1 bg-primary p-12 rounded-[3.5rem] text-white">
-                                <div className="mb-8 overflow-hidden rounded-2xl border border-white/15">
+                            <div className="bg-primary p-10 rounded-[3.5rem] text-white self-start">
+                                <div className="mb-6 overflow-hidden rounded-2xl border border-white/15">
                                     <img
                                         src="/Additional website images/team-working-together-project.jpg"
                                         alt="Operations team coordinating project delivery"
-                                        className="h-44 md:h-52 w-full object-cover"
+                                        className="h-40 md:h-44 w-full object-cover"
                                         loading="lazy"
                                         decoding="async"
                                     />
                                 </div>
-                                <h3 className="headline-display text-3xl mb-10 text-lime">Delivery formats</h3>
-                                <div className="space-y-10">
-                                    <div className="flex gap-6">
+                                <h3 className="headline-display text-3xl mb-7 text-lime">Delivery formats</h3>
+                                <div className="space-y-7">
+                                    <div className="flex gap-5">
                                         <div className="w-14 h-14 rounded-2xl bg-white/10 flex items-center justify-center shrink-0 border border-white/20">
                                             <Users className="w-8 h-8 text-lime" />
                                         </div>
@@ -305,7 +299,7 @@ const OperationsTraining = () => {
                                             <p className="text-white/70">Hands-on work using your real processes.</p>
                                         </div>
                                     </div>
-                                    <div className="flex gap-6">
+                                    <div className="flex gap-5">
                                         <div className="w-14 h-14 rounded-2xl bg-white/10 flex items-center justify-center shrink-0 border border-white/20">
                                             <Layout className="w-8 h-8 text-lime" />
                                         </div>
@@ -314,7 +308,7 @@ const OperationsTraining = () => {
                                             <p className="text-white/70">Interactive sessions for distributed teams.</p>
                                         </div>
                                     </div>
-                                    <div className="flex gap-6">
+                                    <div className="flex gap-5">
                                         <div className="w-14 h-14 rounded-2xl bg-white/10 flex items-center justify-center shrink-0 border border-white/20">
                                             <Shield className="w-8 h-8 text-lime" />
                                         </div>
@@ -323,9 +317,6 @@ const OperationsTraining = () => {
                                             <p className="text-white/70">Ongoing learning with reinforcement.</p>
                                         </div>
                                     </div>
-                                </div>
-                                <div className="mt-12 p-6 rounded-2xl bg-white/5 border border-white/10 italic text-sm text-white/60">
-                                    Sessions can be delivered as half-day, full-day, or multi-session programs depending on your needs.
                                 </div>
                             </div>
                         </div>
@@ -339,58 +330,8 @@ const OperationsTraining = () => {
                     </div>
                 </section>
 
-                {/* 9. ENGAGEMENT FLOW SECTION */}
-                <section className="py-24 bg-white">
-                    <div className="container">
-                        <h2 className="headline-display text-4xl md:text-5xl mb-16 text-center">How a typical engagement works</h2>
-                        <div className="max-w-5xl mx-auto space-y-12">
-                            {[
-                                { title: "Understand your reality", desc: "We observe how work currently gets done.", icon: Search },
-                                { title: "Design the program", desc: "We tailor structure and tools to your context.", icon: Layout },
-                                { title: "Deliver practical training", desc: "Live sessions focused on real execution challenges.", icon: Zap },
-                                { title: "Reinforce learning", desc: "Support to embed changes into daily work.", icon: RefreshCw },
-                                { title: "Review impact", desc: "Clear feedback and next-step recommendations.", icon: TrendingUp }
-                            ].map((step, i) => (
-                                <motion.div
-                                    key={i}
-                                    initial={{ opacity: 0, x: i % 2 === 0 ? -20 : 20 }}
-                                    whileInView={{ opacity: 1, x: 0 }}
-                                    viewport={{ once: true }}
-                                    className="flex flex-col md:flex-row items-center gap-8 group"
-                                >
-                                    <div className="w-20 h-20 rounded-3xl bg-primary/5 flex items-center justify-center shrink-0 border border-primary/10 group-hover:bg-lime/10 transition-colors">
-                                        <step.icon className="w-10 h-10 text-primary" />
-                                    </div>
-                                    <div className="text-center md:text-left">
-                                        <h4 className="text-2xl font-bold mb-2">{step.title}</h4>
-                                        <p className="text-lg text-muted-foreground">{step.desc}</p>
-                                    </div>
-                                </motion.div>
-                            ))}
-                        </div>
-                    </div>
-                </section>
-
-                {/* 10. SOCIAL PROOF SECTION */}
-                <section className="py-24 bg-muted/10">
-                    <div className="container">
-                        <h2 className="headline-display text-4xl mb-16 text-center">What teams say about <br /> working with us</h2>
-                        <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-8">
-                            {[
-                                "Execution became faster and more predictable within weeks.",
-                                "We got clarity on ownership and removed friction between teams."
-                            ].map((quote, i) => (
-                                <div key={i} className="p-10 rounded-[2.5rem] bg-white border border-border shadow-sm italic text-lg text-muted-foreground relative">
-                                    <span className="text-6xl text-lime/30 absolute top-4 left-6 font-serif underline decoration-primary/20">&quot;</span>
-                                    <p className="relative z-10">{quote}</p>
-                                </div>
-                            ))}
-                        </div>
-                        <p className="text-center mt-12 text-sm font-bold text-muted-foreground/60 uppercase tracking-widest">
-                            Trusted by teams across technology, services, and operations.
-                        </p>
-                    </div>
-                </section>
+                {/* 9. SOCIAL PROOF (Homepage Testimonials) */}
+                <Testimonials />
 
                 {/* 11. FINAL CTA SECTION */}
                 <section className="py-24 bg-white">
