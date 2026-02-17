@@ -14,29 +14,59 @@ const About = () => {
 
             <main className="pt-20">
                 {/* 1. Hero Section – Belief First */}
-                <section className="py-20 md:py-32 bg-hero text-hero">
-                    <div className="container max-w-5xl">
+                <section className="bg-[#d8f2e6] py-16 md:py-24 overflow-hidden">
+                    <div className="container">
                         <motion.div
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.6 }}
-                            className="text-center"
+                            className="rounded-[2.5rem] border border-[#b9ddd0] bg-[#d8f2e6] px-6 py-10 md:px-10 lg:px-14 lg:py-14"
                         >
-                            <h1 className="headline-display text-5xl md:text-7xl mb-8">
-                                <span className="text-white/90">Built to help teams grow</span>
-                                <br />
-                                <span className="text-lime">in a changing world</span>
-                            </h1>
-                            <p className="text-xl md:text-2xl text-hero-muted mb-10 max-w-3xl mx-auto font-medium">
-                                WeGrowPeople exists to help individuals and teams perform, adapt, and stay ahead in a fast-moving world of work without outdated frameworks or generic training.
-                            </p>
-                            <div className="max-w-2xl mx-auto space-y-6 text-lg text-hero-muted/80">
-                                <p>
-                                    The workplace is changing faster than ever. New tools, new expectations, and constant noise make it hard to know what actually matters.
-                                </p>
-                                <p>
-                                    We cut through that noise with practical, future-ready training that builds real capability, not just knowledge.
-                                </p>
+                            <div className="grid lg:grid-cols-[1fr_0.95fr] gap-10 lg:gap-12 items-center">
+                                <div className="max-w-3xl">
+                                    <h1 className="headline-display uppercase text-5xl md:text-6xl xl:text-7xl leading-[0.93] tracking-tight mb-7 text-primary">
+                                        <span className="block text-primary">Built to help teams grow</span>
+                                        <span className="block text-lime mt-2">in a changing world</span>
+                                    </h1>
+
+                                    <div className="space-y-5 text-lg md:text-[1.42rem] leading-relaxed text-primary/85 max-w-[34ch]">
+                                        <p>
+                                            We help teams build practical, future-ready skills that actually show up at work.
+                                        </p>
+                                        <p>
+                                            No outdated frameworks. No generic training. Just capability your teams can use immediately.
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <div className="relative min-h-[360px] md:min-h-[420px]">
+                                    <svg className="pointer-events-none absolute -right-16 -top-8 hidden md:block w-[140%] h-[130%]" viewBox="0 0 760 560" fill="none" aria-hidden="true">
+                                        <path d="M740 30C546 118 438 175 311 286C240 348 172 378 62 392" stroke="hsl(var(--lime))" strokeOpacity="0.65" strokeWidth="14" strokeLinecap="round" />
+                                        <path d="M680 474C560 430 450 413 344 438C254 458 198 500 112 536" stroke="hsl(var(--primary) / 0.24)" strokeWidth="10" strokeLinecap="round" />
+                                    </svg>
+
+                                    <div className="absolute right-2 top-5 md:right-10 md:top-6 h-[290px] w-[230px] md:h-[340px] md:w-[270px] rounded-[1.8rem] bg-primary shadow-[0_24px_46px_rgba(6,22,16,0.35)]" />
+
+                                    <div className="absolute left-8 top-10 md:left-2 md:top-12 h-[300px] w-[240px] md:h-[360px] md:w-[290px] rounded-[1.9rem] overflow-hidden border-[3px] border-white/65 shadow-[0_20px_38px_rgba(7,24,17,0.24)] -rotate-[5deg]">
+                                        <img
+                                            src="/Additional website images/happy-young-asian-businessmen-businesswomen-meeting-brainstorming-ideas.jpg"
+                                            alt="Team collaborating"
+                                            className="w-full h-full object-cover"
+                                        />
+                                    </div>
+
+                                    <div className="absolute right-0 bottom-0 md:right-2 md:bottom-2 rounded-2xl overflow-hidden border-2 border-white/80 bg-white shadow-[0_14px_24px_rgba(7,24,17,0.18)]">
+                                        <img
+                                            src="/Additional website images/businesswoman-conducting-meeting.jpg"
+                                            alt="Practical coaching session"
+                                            className="h-24 w-28 md:h-28 md:w-36 object-cover"
+                                        />
+                                    </div>
+
+                                    <div className="absolute left-1 top-[48%] md:left-[-28px] md:top-[46%] bg-white border border-primary/20 rounded-full px-3 py-2 text-xs md:text-sm font-semibold text-primary shadow-md">
+                                        + Practical impact
+                                    </div>
+                                </div>
                             </div>
                         </motion.div>
                     </div>
