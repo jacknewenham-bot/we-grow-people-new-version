@@ -225,49 +225,70 @@ const About = () => {
                 {/* 4. What Makes WeGrowPeople Different */}
                 <section className="py-24 bg-white">
                     <div className="container">
-                        <h2 className="headline-display text-4xl md:text-5xl mb-16 text-center">
-                            What makes WeGrowPeople different
-                        </h2>
+                        <motion.div
+                            initial={{ opacity: 0, y: 24 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            className="rounded-[2.6rem] border border-[#e8dda1] bg-[#f5e7a3] p-6 md:p-10 lg:p-12 shadow-[0_20px_45px_rgba(18,24,42,0.12)]"
+                        >
+                            <div className="grid lg:grid-cols-[minmax(0,1fr)_minmax(0,1.35fr)] gap-8 lg:gap-10 items-start">
+                                <div className="lg:pr-4">
+                                    <p className="text-xs font-black uppercase tracking-[0.16em] text-foreground/65 mb-5">
+                                        Why WeGrowPeople
+                                    </p>
+                                    <h2 className="font-heading text-4xl md:text-6xl leading-[0.95] tracking-tight text-foreground mb-6">
+                                        What makes WeGrowPeople different
+                                    </h2>
+                                    <p className="text-lg md:text-xl text-foreground/75 leading-relaxed max-w-[34ch]">
+                                        Practical by design, modern by default, and delivered by people who have done the work.
+                                    </p>
+                                </div>
 
-                        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-                            {[
-                                {
-                                    title: "Built for today’s workplace",
-                                    desc: "No outdated models. No legacy thinking. Everything is designed for how work actually happens now.",
-                                    icon: Zap
-                                },
-                                {
-                                    title: "Human-first, tech-enabled",
-                                    desc: "We focus on human skills such as communication, judgment, and leadership, and enhance them with modern tools including AI.",
-                                    icon: Users
-                                },
-                                {
-                                    title: "Practitioners, not presenters",
-                                    desc: "Our coaches are operators, builders, and leaders who have done the work, not just taught it.",
-                                    icon: Target
-                                },
-                                {
-                                    title: "Practical by default",
-                                    desc: "If it cannot be used immediately, it does not make the cut.",
-                                    icon: Shield
-                                }
-                            ].map((pillar, i) => (
-                                <motion.div
-                                    key={pillar.title}
-                                    initial={{ opacity: 0, y: 20 }}
-                                    whileInView={{ opacity: 1, y: 0 }}
-                                    viewport={{ once: true }}
-                                    transition={{ delay: i * 0.1 }}
-                                    className="p-8 rounded-3xl border border-border shadow-sm hover:shadow-md transition-shadow"
-                                >
-                                    <div className="w-12 h-12 rounded-2xl bg-lime/10 flex items-center justify-center mb-6">
-                                        <pillar.icon className="w-6 h-6 text-primary" />
-                                    </div>
-                                    <h3 className="text-xl font-bold mb-4 leading-tight">{pillar.title}</h3>
-                                    <p className="text-muted-foreground leading-relaxed">{pillar.desc}</p>
-                                </motion.div>
-                            ))}
-                        </div>
+                                <div className="grid sm:grid-cols-2 gap-4 md:gap-5">
+                                    {[
+                                        {
+                                            title: "Built for today’s workplace",
+                                            desc: "No outdated models. No legacy thinking. Designed for how work happens now.",
+                                            icon: Zap
+                                        },
+                                        {
+                                            title: "Human-first, tech-enabled",
+                                            desc: "We build communication, judgment, and leadership, then reinforce with AI tools.",
+                                            icon: Users
+                                        },
+                                        {
+                                            title: "Practitioners, not presenters",
+                                            desc: "Our coaches are operators, builders, and leaders who have done the work.",
+                                            icon: Target
+                                        },
+                                        {
+                                            title: "Practical by default",
+                                            desc: "If it cannot be used immediately, it does not make the cut.",
+                                            icon: Shield
+                                        }
+                                    ].map((pillar, i) => (
+                                        <motion.div
+                                            key={pillar.title}
+                                            initial={{ opacity: 0, y: 18 }}
+                                            whileInView={{ opacity: 1, y: 0 }}
+                                            viewport={{ once: true }}
+                                            transition={{ delay: i * 0.08 }}
+                                            className="rounded-3xl border border-[#e0d6a1] bg-[#fcf8e8] p-6 md:p-7 shadow-[0_6px_16px_rgba(0,0,0,0.06)]"
+                                        >
+                                            <div className="w-11 h-11 rounded-full bg-[#e9efd8] flex items-center justify-center mb-5">
+                                                <pillar.icon className="w-5 h-5 text-primary" />
+                                            </div>
+                                            <h3 className="text-2xl md:text-[1.75rem] font-black leading-[1.05] tracking-tight text-foreground mb-4">
+                                                {pillar.title}
+                                            </h3>
+                                            <p className="text-base md:text-lg text-foreground/75 leading-relaxed">
+                                                {pillar.desc}
+                                            </p>
+                                        </motion.div>
+                                    ))}
+                                </div>
+                            </div>
+                        </motion.div>
                     </div>
                 </section>
 
