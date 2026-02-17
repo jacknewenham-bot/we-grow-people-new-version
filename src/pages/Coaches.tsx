@@ -145,7 +145,7 @@ export default function CoachesPage() {
                                 animate={{ opacity: 1, y: 0 }}
                                 className="headline-display font-heading text-5xl md:text-7xl text-white mb-8 leading-tight"
                             >
-                                Meet the coaches behind WeGrowPeople.
+                                Meet the coaches
                             </motion.h1>
 
                             <motion.p
