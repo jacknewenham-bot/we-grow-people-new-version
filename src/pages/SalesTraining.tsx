@@ -2,22 +2,18 @@ import { motion } from "framer-motion";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { Button } from "@/components/ui/button";
+import { Testimonials } from "@/components/sections/Testimonials";
 import {
     CheckCircle2,
     XCircle,
-    ArrowRight,
     Zap,
     Users,
     Shield,
     Target,
     MessageCircle,
-    BrainCircuit,
     Award,
     TrendingUp,
-    Layout,
-    Clock,
-    Search,
-    BookOpen
+    Layout
 } from "lucide-react";
 
 const WHATSAPP_LINK = "https://wa.me/60173552382?text=Hi%2C%20I%27m%20interested%20in%20upskilling%20my%20team%20and%20would%20love%20to%20learn%20more%20about%20your%20training%20and%20consultancy%20options.'m%20interested%20in%20your%20Sales%20Training%20programs";
@@ -389,60 +385,10 @@ const SalesTraining = () => {
                     </div>
                 </section>
 
-                {/* 8. HOW PROGRAMS WORK */}
-                <section className="py-24 bg-white">
-                    <div className="container">
-                        <h2 className="headline-display text-4xl md:text-5xl mb-16 text-center">How a typical engagement works</h2>
-                        <div className="max-w-5xl mx-auto space-y-12">
-                            {[
-                                { title: "Understand your reality", desc: "We align with leadership to understand your sales environment, challenges, and goals.", icon: Search },
-                                { title: "Design the program", desc: "We tailor content, structure, and delivery to your team.", icon: Layout },
-                                { title: "Deliver practical training", desc: "Live sessions focused on real conversations, deals, and decisions.", icon: Zap },
-                                { title: "Reinforce learning", desc: "Post-training support to help new behaviours stick.", icon: BrainCircuit },
-                                { title: "Review impact", desc: "Clear feedback and recommendations for next steps.", icon: TrendingUp }
-                            ].map((step, i) => (
-                                <motion.div
-                                    key={i}
-                                    initial={{ opacity: 0, x: i % 2 === 0 ? -20 : 20 }}
-                                    whileInView={{ opacity: 1, x: 0 }}
-                                    viewport={{ once: true }}
-                                    className="flex flex-col md:flex-row items-center gap-8 group"
-                                >
-                                    <div className="w-20 h-20 rounded-3xl bg-primary/5 flex items-center justify-center shrink-0 border border-primary/10 group-hover:bg-lime/10 transition-colors">
-                                        <step.icon className="w-10 h-10 text-primary" />
-                                    </div>
-                                    <div className="text-center md:text-left">
-                                        <h4 className="text-2xl font-bold mb-2">{step.title}</h4>
-                                        <p className="text-lg text-muted-foreground">{step.desc}</p>
-                                    </div>
-                                </motion.div>
-                            ))}
-                        </div>
-                    </div>
-                </section>
+                {/* 8. SOCIAL PROOF (Homepage Testimonials) */}
+                <Testimonials />
 
-                {/* 9. SOCIAL PROOF (Testimonials) */}
-                <section className="py-24 bg-muted/10">
-                    <div className="container">
-                        <h2 className="headline-display text-4xl mb-16 text-center">What teams say about <br /> working with us</h2>
-                        <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-8">
-                            {[
-                                "Jack was incredibly helpful in advising on our lead generation approach. He provided practical advice on increasing volume and was exceptionally generous with his knowledge.",
-                                "WeGrowPeople delivered a program that actually reflected our APAC sales reality. The mapping of the frameworks to our real-world deals made all the difference."
-                            ].map((quote, i) => (
-                                <div key={i} className="p-10 rounded-[2.5rem] bg-white border border-border shadow-sm italic text-lg text-muted-foreground relative">
-                                    <span className="text-6xl text-lime/30 absolute top-4 left-6 font-serif underline decoration-primary/20">“</span>
-                                    <p className="relative z-10">{quote}</p>
-                                </div>
-                            ))}
-                        </div>
-                        <p className="text-center mt-12 text-sm font-bold text-muted-foreground/60 uppercase tracking-widest">
-                            Trusted by teams across technology, services, and operations.
-                        </p>
-                    </div>
-                </section>
-
-                {/* 10. FINAL CTA */}
+                {/* 9. FINAL CTA */}
                 <section className="py-24 bg-white">
                     <div className="container text-center">
                         <h2 className="headline-display text-4xl md:text-7xl mb-10">Build a sales team that <br /> actually improves</h2>

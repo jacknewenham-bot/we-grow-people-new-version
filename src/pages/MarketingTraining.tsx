@@ -118,16 +118,20 @@ const MarketingTraining = () => {
                     <div className="container">
                         <div className="max-w-4xl mx-auto flex flex-col md:flex-row items-center gap-16">
                             <div className="flex-1">
-                                <h2 className="headline-display text-4xl md:text-5xl mb-8">Why marketing training <br /> often fails</h2>
-                                <div className="space-y-6 text-xl text-muted-foreground leading-relaxed">
+                                <h2 className="headline-display text-4xl md:text-5xl mb-8 uppercase leading-[0.95]">
+                                    Why marketing training often fails
+                                </h2>
+                                <div className="space-y-5 text-xl text-muted-foreground leading-relaxed">
                                     <p>
-                                        Many marketing teams attend training, feel inspired, then return to the same campaigns, channels, and habits within weeks.
+                                        Teams feel inspired, then return to the same campaigns, channels, and habits.
                                     </p>
                                     <p className="text-primary font-bold">
-                                        The issue is rarely creativity or effort. It is relevance, prioritization, and real-world application.
+                                        The gap is not creativity.
+                                        <br />
+                                        It is relevance and application.
                                     </p>
                                     <p>
-                                        Effective marketing training must reflect your market, your funnel, your data, and the constraints your team operates under every day. That is what WeGrowPeople is built for.
+                                        WeGrowPeople delivers training grounded in your real work.
                                     </p>
                                 </div>
                             </div>
