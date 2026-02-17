@@ -26,7 +26,7 @@ const Consultancy = () => {
                         >
                             <span className="text-white/90">Consulting that helps you</span>
                             <br />
-                            <span className="text-lime">move, not just plan.</span>
+                            <span className="text-lime">move, not just plan</span>
                         </motion.h1>
                         <motion.p
                             initial={{ opacity: 0, y: 20 }}
@@ -34,21 +34,12 @@ const Consultancy = () => {
                             transition={{ delay: 0.1 }}
                             className="text-xl md:text-2xl text-hero-muted mb-10 max-w-3xl mx-auto font-medium"
                         >
-                            We work alongside your team to solve real commercial and operational problems across sales, marketing, and AI adoption.
+                            We partner with your team to turn complex sales, marketing, and AI challenges into focused action, practical decisions, and real progress.
                         </motion.p>
                         <motion.div
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ delay: 0.2 }}
-                            className="text-lg text-hero-muted/80 max-w-2xl mx-auto mb-12"
-                        >
-                            <p>No long decks. No vague recommendations.</p>
-                            <p>Just focused problem-solving, clear direction, and hands-on execution.</p>
-                        </motion.div>
-                        <motion.div
-                            initial={{ opacity: 0, y: 20 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ delay: 0.3 }}
                         >
                             <Button variant="lime" size="xl" asChild className="rounded-full px-12 py-8 text-lg">
                                 <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer">
