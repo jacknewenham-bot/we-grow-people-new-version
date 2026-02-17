@@ -349,7 +349,7 @@ const About = () => {
                             initial={{ opacity: 0, y: 24 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
-                            className="relative max-w-6xl mx-auto rounded-[2rem] border border-border bg-white p-6 md:p-10 overflow-hidden shadow-[0_14px_32px_rgba(17,28,24,0.08)]"
+                            className="relative max-w-6xl mx-auto rounded-[2rem] border border-border bg-[#f9fbf9] p-6 md:p-10 overflow-hidden shadow-[0_14px_32px_rgba(17,28,24,0.08)]"
                         >
                             <div className="relative z-10 grid lg:grid-cols-[1.15fr_0.85fr] gap-8 md:gap-10 items-start">
                                 <div>
@@ -367,9 +367,10 @@ const About = () => {
                                             key={team.label}
                                             initial={{ opacity: 0, y: 12 }}
                                             whileInView={{ opacity: 1, y: 0 }}
+                                            whileHover={{ scale: 1.06, y: -2 }}
                                             viewport={{ once: true }}
                                             transition={{ delay: i * 0.06 }}
-                                            className={`rounded-2xl border border-border px-4 py-4 md:py-5 text-center shadow-sm ${team.accent}`}
+                                            className={`rounded-2xl border border-border px-4 py-4 md:py-5 text-center shadow-sm hover:shadow-md transition-all duration-200 cursor-default will-change-transform ${team.accent}`}
                                         >
                                             <span className="text-sm md:text-base font-black uppercase tracking-wide text-primary">
                                                 {team.label}
@@ -384,7 +385,7 @@ const About = () => {
                                         "The most practical training we've ever had. No fluff, just results.",
                                         "Finally, a training program that understands how we actually work today."
                                     ].map((quote, i) => (
-                                        <div key={i} className="p-5 md:p-6 rounded-2xl bg-muted/20 border border-border italic text-lg text-muted-foreground">
+                                        <div key={i} className="p-5 md:p-6 rounded-2xl bg-white border border-border italic text-lg text-muted-foreground shadow-sm">
                                             <Quote className="w-5 h-5 text-primary/65 mb-2" />
                                             "{quote}"
                                         </div>
