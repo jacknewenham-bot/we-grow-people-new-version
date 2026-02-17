@@ -14,22 +14,25 @@ const About = () => {
 
             <main className="pt-20">
                 {/* 1. Hero Section – Belief First */}
-                <section className="bg-[#d8f2e6] py-16 md:py-24 overflow-hidden">
-                    <div className="container">
+                <section className="py-16 md:py-24 bg-hero text-hero relative overflow-hidden">
+                    <div className="absolute top-0 left-0 w-[40%] h-full bg-lime/10 blur-[130px] pointer-events-none" />
+                    <div className="absolute bottom-0 right-0 w-[35%] h-full bg-lime/10 blur-[120px] pointer-events-none" />
+
+                    <div className="container relative z-10">
                         <motion.div
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.6 }}
-                            className="rounded-[2.5rem] border border-[#b9ddd0] bg-[#d8f2e6] px-6 py-10 md:px-10 lg:px-14 lg:py-14"
+                            className="rounded-[2.5rem] border border-white/10 bg-white/[0.03] px-6 py-10 md:px-10 lg:px-14 lg:py-14"
                         >
-                            <div className="grid lg:grid-cols-[1fr_0.95fr] gap-10 lg:gap-12 items-center">
+                            <div className="grid lg:grid-cols-[1fr_0.92fr] gap-10 lg:gap-12 items-center">
                                 <div className="max-w-3xl">
-                                    <h1 className="headline-display uppercase text-5xl md:text-6xl xl:text-7xl leading-[0.93] tracking-tight mb-7 text-primary">
-                                        <span className="block text-primary">Built to help teams grow</span>
+                                    <h1 className="headline-display uppercase text-5xl md:text-6xl xl:text-7xl leading-[0.93] tracking-tight mb-7">
+                                        <span className="block text-white">Built to help teams grow</span>
                                         <span className="block text-lime mt-2">in a changing world</span>
                                     </h1>
 
-                                    <div className="space-y-5 text-lg md:text-[1.42rem] leading-relaxed text-primary/85 max-w-[34ch]">
+                                    <div className="space-y-5 text-lg md:text-[1.35rem] leading-relaxed text-white/80 max-w-[34ch]">
                                         <p>
                                             We help teams build practical, future-ready skills that actually show up at work.
                                         </p>
@@ -39,15 +42,15 @@ const About = () => {
                                     </div>
                                 </div>
 
-                                <div className="relative min-h-[360px] md:min-h-[420px]">
-                                    <svg className="pointer-events-none absolute -right-16 -top-8 hidden md:block w-[140%] h-[130%]" viewBox="0 0 760 560" fill="none" aria-hidden="true">
-                                        <path d="M740 30C546 118 438 175 311 286C240 348 172 378 62 392" stroke="hsl(var(--lime))" strokeOpacity="0.65" strokeWidth="14" strokeLinecap="round" />
-                                        <path d="M680 474C560 430 450 413 344 438C254 458 198 500 112 536" stroke="hsl(var(--primary) / 0.24)" strokeWidth="10" strokeLinecap="round" />
+                                <div className="relative min-h-[340px] md:min-h-[420px]">
+                                    <svg className="pointer-events-none absolute -right-16 -top-10 hidden md:block w-[135%] h-[130%]" viewBox="0 0 760 560" fill="none" aria-hidden="true">
+                                        <path d="M740 30C546 118 438 175 311 286C240 348 172 378 62 392" stroke="hsl(var(--lime))" strokeOpacity="0.9" strokeWidth="13" strokeLinecap="round" />
+                                        <path d="M680 474C560 430 450 413 344 438C254 458 198 500 112 536" stroke="hsl(var(--white) / 0.22)" strokeWidth="9" strokeLinecap="round" />
                                     </svg>
 
-                                    <div className="absolute right-2 top-5 md:right-10 md:top-6 h-[290px] w-[230px] md:h-[340px] md:w-[270px] rounded-[1.8rem] bg-primary shadow-[0_24px_46px_rgba(6,22,16,0.35)]" />
+                                    <div className="absolute right-1 top-5 md:right-8 md:top-6 h-[290px] w-[230px] md:h-[340px] md:w-[270px] rounded-[1.8rem] bg-primary/90 shadow-[0_24px_46px_rgba(6,22,16,0.45)]" />
 
-                                    <div className="absolute left-8 top-10 md:left-2 md:top-12 h-[300px] w-[240px] md:h-[360px] md:w-[290px] rounded-[1.9rem] overflow-hidden border-[3px] border-white/65 shadow-[0_20px_38px_rgba(7,24,17,0.24)] -rotate-[5deg]">
+                                    <div className="absolute left-8 top-10 md:left-2 md:top-12 h-[300px] w-[240px] md:h-[360px] md:w-[290px] rounded-[1.9rem] overflow-hidden border-[2px] border-white/60 shadow-[0_24px_42px_rgba(3,12,9,0.45)] -rotate-[5deg]">
                                         <img
                                             src="/Additional website images/happy-young-asian-businessmen-businesswomen-meeting-brainstorming-ideas.jpg"
                                             alt="Team collaborating"
@@ -55,7 +58,7 @@ const About = () => {
                                         />
                                     </div>
 
-                                    <div className="absolute right-0 bottom-0 md:right-2 md:bottom-2 rounded-2xl overflow-hidden border-2 border-white/80 bg-white shadow-[0_14px_24px_rgba(7,24,17,0.18)]">
+                                    <div className="absolute right-0 bottom-0 md:right-2 md:bottom-2 rounded-2xl overflow-hidden border border-white/40 bg-white/10 shadow-[0_14px_24px_rgba(7,24,17,0.28)] backdrop-blur-sm">
                                         <img
                                             src="/Additional website images/businesswoman-conducting-meeting.jpg"
                                             alt="Practical coaching session"
@@ -63,7 +66,7 @@ const About = () => {
                                         />
                                     </div>
 
-                                    <div className="absolute left-1 top-[48%] md:left-[-28px] md:top-[46%] bg-white border border-primary/20 rounded-full px-3 py-2 text-xs md:text-sm font-semibold text-primary shadow-md">
+                                    <div className="absolute left-1 top-[48%] md:left-[-20px] md:top-[46%] bg-white text-primary rounded-full px-3 py-2 text-xs md:text-sm font-semibold shadow-md border border-white/70">
                                         + Practical impact
                                     </div>
                                 </div>
