@@ -338,50 +338,25 @@ const About = () => {
                                 <Shield className="w-4 h-4 text-lime" /> HRDC Claimable Training
                             </span>
                         </div>
-                        <h2 className="headline-display text-3xl md:text-5xl mb-12 text-center text-muted-foreground">
+                        <h2 className="headline-display text-3xl md:text-5xl mb-4 text-center text-muted-foreground">
                             Trusted by teams who want real impact
                         </h2>
+                        <p className="text-center text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto mb-12">
+                            Practical training designed for how modern teams work.
+                        </p>
 
                         <motion.div
                             initial={{ opacity: 0, y: 24 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
-                            className="relative max-w-6xl mx-auto rounded-[2.5rem] border border-border/70 bg-[#f4f8f6] p-6 md:p-10 lg:p-12 overflow-hidden shadow-[0_18px_40px_rgba(17,28,24,0.08)]"
+                            className="relative max-w-6xl mx-auto rounded-[2.2rem] border border-border/70 bg-[#f4f8f6] p-6 md:p-10 overflow-hidden shadow-[0_18px_40px_rgba(17,28,24,0.08)]"
                         >
-                            <div className="pointer-events-none absolute inset-0">
-                                <svg className="hidden lg:block h-full w-full opacity-85" viewBox="0 0 1200 620" fill="none" aria-hidden="true">
-                                    <path d="M75 425C175 205 345 130 475 175C585 214 660 304 790 312" stroke="hsl(var(--lime) / 0.42)" strokeWidth="10" strokeLinecap="round" />
-                                    <path d="M135 500C275 575 425 560 560 475C650 420 720 390 815 418" stroke="hsl(var(--primary) / 0.18)" strokeWidth="8" strokeLinecap="round" />
-                                </svg>
-                            </div>
-
-                            <div className="relative z-10 grid lg:grid-cols-[1.1fr_1fr] gap-8 lg:gap-12 items-center">
-                                <div className="relative min-h-[360px] hidden lg:block">
-                                    {[
-                                        { label: "Sales", bg: "#edf4df", x: "2%", y: "5%" },
-                                        { label: "Marketing", bg: "#e8eef7", x: "33%", y: "24%" },
-                                        { label: "Teams", bg: "#f6edd5", x: "18%", y: "58%" },
-                                        { label: "Operations", bg: "#ece4f7", x: "58%", y: "12%" },
-                                        { label: "HR", bg: "#f5e9ef", x: "72%", y: "58%" },
-                                        { label: "Leadership", bg: "#e1f0eb", x: "40%", y: "2%" },
-                                    ].map((team, i) => (
-                                        <motion.div
-                                            key={team.label}
-                                            initial={{ opacity: 0, scale: 0.9 }}
-                                            whileInView={{ opacity: 1, scale: 1 }}
-                                            viewport={{ once: true }}
-                                            transition={{ delay: i * 0.07 }}
-                                            className="absolute h-24 w-24 rounded-full border border-border/60 shadow-[0_8px_16px_rgba(19,24,42,0.06)] flex items-center justify-center text-center px-2"
-                                            style={{ backgroundColor: team.bg, left: team.x, top: team.y }}
-                                        >
-                                            <span className="text-sm font-black uppercase tracking-wide text-primary">
-                                                {team.label}
-                                            </span>
-                                        </motion.div>
-                                    ))}
+                            <div className="relative z-10">
+                                <div className="pointer-events-none absolute left-0 right-0 top-[52px] hidden md:block">
+                                    <div className="mx-auto h-[2px] max-w-5xl bg-gradient-to-r from-transparent via-primary/25 to-transparent" />
                                 </div>
 
-                                <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 lg:hidden mb-2">
+                                <div className="relative grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 md:gap-6 place-items-center mb-10">
                                     {[
                                         { label: "Sales", bg: "#edf4df" },
                                         { label: "Marketing", bg: "#e8eef7" },
@@ -389,36 +364,32 @@ const About = () => {
                                         { label: "Operations", bg: "#ece4f7" },
                                         { label: "HR", bg: "#f5e9ef" },
                                         { label: "Leadership", bg: "#e1f0eb" },
-                                    ].map((team) => (
-                                        <div
+                                    ].map((team, i) => (
+                                        <motion.div
                                             key={team.label}
-                                            className="h-24 rounded-full border border-border/60 flex items-center justify-center text-center px-2"
+                                            initial={{ opacity: 0, y: 12 }}
+                                            whileInView={{ opacity: 1, y: 0 }}
+                                            viewport={{ once: true }}
+                                            transition={{ delay: i * 0.06 }}
+                                            className="h-24 w-24 md:h-28 md:w-28 rounded-full border border-border/60 flex items-center justify-center text-center px-2 shadow-[0_8px_16px_rgba(19,24,42,0.06)]"
                                             style={{ backgroundColor: team.bg }}
                                         >
-                                            <span className="text-sm font-black uppercase tracking-wide text-primary">
+                                            <span className="text-sm md:text-[0.95rem] font-black uppercase tracking-wide text-primary">
                                                 {team.label}
                                             </span>
-                                        </div>
+                                        </motion.div>
                                     ))}
                                 </div>
 
-                                <div>
-                                    <p className="text-xl md:text-[1.85rem] leading-tight font-semibold text-foreground mb-4">
-                                        We work hand in hand with teams across functions to deliver practical, fast, and measurable capability building.
-                                    </p>
-                                    <p className="text-base md:text-lg text-muted-foreground mb-6">
-                                        From sales and marketing to operations, HR, and leadership, every engagement is tailored to how your teams actually work.
-                                    </p>
-                                    <div className="space-y-4">
-                                        {[
-                                            "The most practical training we've ever had. No fluff, just results.",
-                                            "Finally, a training program that understands how we actually work today."
-                                        ].map((quote, i) => (
-                                            <div key={i} className="p-6 rounded-2xl bg-white/85 border border-border/60 italic text-lg text-muted-foreground shadow-[0_8px_18px_rgba(19,24,42,0.06)]">
-                                                "{quote}"
-                                            </div>
-                                        ))}
-                                    </div>
+                                <div className="grid md:grid-cols-2 gap-4 md:gap-5">
+                                    {[
+                                        "The most practical training we've ever had. No fluff, just results.",
+                                        "Finally, a training program that understands how we actually work today."
+                                    ].map((quote, i) => (
+                                        <div key={i} className="p-6 rounded-2xl bg-white/90 border border-border/60 italic text-lg text-muted-foreground shadow-[0_8px_18px_rgba(19,24,42,0.06)]">
+                                            "{quote}"
+                                        </div>
+                                    ))}
                                 </div>
                             </div>
                         </motion.div>
