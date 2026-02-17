@@ -232,14 +232,14 @@ const About = () => {
                             className="rounded-[2.6rem] border border-[#e8dda1] bg-[#f5e7a3] p-6 md:p-10 lg:p-12 shadow-[0_20px_45px_rgba(18,24,42,0.12)]"
                         >
                             <div className="grid lg:grid-cols-[minmax(0,1fr)_minmax(0,1.35fr)] gap-8 lg:gap-10 items-start">
-                                <div className="lg:pr-4">
+                                <div className="lg:pr-6">
                                     <p className="text-xs font-black uppercase tracking-[0.16em] text-foreground/65 mb-5">
                                         Why WeGrowPeople
                                     </p>
-                                    <h2 className="font-heading text-4xl md:text-6xl leading-[0.95] tracking-tight text-foreground mb-6">
+                                    <h2 className="max-w-[10ch] font-heading text-4xl md:text-5xl xl:text-6xl leading-[0.9] tracking-tight text-foreground mb-6 text-balance">
                                         What makes WeGrowPeople different
                                     </h2>
-                                    <p className="text-lg md:text-xl text-foreground/75 leading-relaxed max-w-[34ch]">
+                                    <p className="text-lg md:text-[1.35rem] text-foreground/75 leading-relaxed max-w-[28ch]">
                                         Practical by design, modern by default, and delivered by people who have done the work.
                                     </p>
                                 </div>
@@ -278,7 +278,7 @@ const About = () => {
                                             <div className="w-11 h-11 rounded-full bg-[#e9efd8] flex items-center justify-center mb-5">
                                                 <pillar.icon className="w-5 h-5 text-primary" />
                                             </div>
-                                            <h3 className="text-2xl md:text-[1.75rem] font-black leading-[1.05] tracking-tight text-foreground mb-4">
+                                            <h3 className="text-2xl md:text-[1.65rem] font-black leading-[1.08] tracking-tight text-foreground mb-4">
                                                 {pillar.title}
                                             </h3>
                                             <p className="text-base md:text-lg text-foreground/75 leading-relaxed">
