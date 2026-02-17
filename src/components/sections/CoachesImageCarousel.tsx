@@ -148,11 +148,9 @@ export function CoachesImageCarousel({
     <section id="coaches" className={sectionClassName}>
       <div className="container">
         <div className="text-center mb-10 md:mb-12">
-          <h2 className="font-serif text-4xl md:text-6xl tracking-tight text-foreground mb-4">
-            Meet the coaches
-          </h2>
+          <h2 className="section-headline text-foreground mb-4">Meet the coaches</h2>
           {showSubtitle && (
-            <p className="type-body text-muted-foreground max-w-2xl mx-auto">
+            <p className="type-body-secondary text-muted-foreground max-w-2xl mx-auto">
               Experienced practitioners helping teams build modern skills.
             </p>
           )}
@@ -180,7 +178,7 @@ export function CoachesImageCarousel({
                     viewport={{ once: true }}
                     className="group w-full p-1 text-center"
                   >
-                    <div className="overflow-hidden rounded-[1.6rem] border border-border/70 bg-white shadow-[0_8px_24px_rgba(15,23,42,0.08)] transition-all duration-300 group-hover:-translate-y-1 group-hover:shadow-[0_14px_30px_rgba(15,23,42,0.12)]">
+                    <div className="overflow-hidden rounded-2xl border border-border/70 bg-white shadow-[0_8px_24px_rgba(15,23,42,0.08)] transition-all duration-300 group-hover:-translate-y-1 group-hover:shadow-[0_14px_30px_rgba(15,23,42,0.12)]">
                       <div className="aspect-[4/5] bg-muted/50 overflow-hidden">
                         <img
                           src={coach.image}
@@ -190,16 +188,16 @@ export function CoachesImageCarousel({
                       </div>
                     </div>
                     <div className="mt-4 px-1">
-                      <h3 className="text-2xl font-black uppercase tracking-tight leading-tight text-foreground">
+                      <h3 className="type-h4 text-foreground tracking-tight leading-tight">
                         {coach.name}
                       </h3>
-                      <p className="mt-2 min-h-[2.6rem] text-[0.83rem] font-semibold uppercase tracking-wide text-foreground/75">
+                      <p className="mt-2 min-h-[2.8rem] text-[0.82rem] font-semibold uppercase tracking-wide text-muted-foreground">
                         {coach.title}
                       </p>
-                      <p className="mt-2 min-h-[3.6rem] text-lg leading-tight text-foreground/85 font-serif italic">
+                      <p className="mt-2 min-h-[3.4rem] type-body-secondary text-foreground/85 leading-relaxed">
                         {coach.intro}
                       </p>
-                      <span className="mt-3 inline-flex items-center gap-1.5 text-[0.9rem] font-medium text-primary/90 transition-colors group-hover:text-primary">
+                      <span className="mt-3 inline-flex items-center gap-1.5 type-nav text-primary/90 transition-colors group-hover:text-primary">
                         View profile <ArrowRight className="h-4 w-4" />
                       </span>
                     </div>
