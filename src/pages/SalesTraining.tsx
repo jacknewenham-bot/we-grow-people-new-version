@@ -86,6 +86,22 @@ const SalesTraining = () => {
                                 <Award className="w-4 h-4 text-lime" /> HRDC Claimable
                             </span>
                         </motion.div>
+                        <motion.div
+                            initial={{ opacity: 0, y: 16 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ delay: 0.5 }}
+                            className="mt-14"
+                        >
+                            <div className="mx-auto max-w-4xl overflow-hidden rounded-[2rem] border border-white/15 shadow-[0_24px_80px_rgba(0,0,0,0.32)]">
+                                <img
+                                    src="/images/about/trainer_in_action_1769341618326.png"
+                                    alt="Sales training session"
+                                    className="h-[240px] w-full object-cover md:h-[320px]"
+                                    loading="eager"
+                                    decoding="async"
+                                />
+                            </div>
+                        </motion.div>
                     </div>
                 </section>
 
@@ -107,14 +123,17 @@ const SalesTraining = () => {
                                     </p>
                                 </div>
                             </div>
-                            <div className="flex-1 bg-muted/30 p-12 rounded-[3rem] border border-border relative">
-                                <XCircle className="w-12 h-12 text-destructive absolute -top-6 -right-6 bg-white rounded-full shadow-lg" />
-                                <div className="space-y-6">
-                                    <div className="h-2 w-1/3 bg-destructive/10 rounded-full" />
-                                    <div className="h-4 w-full bg-destructive/5 rounded-full" />
-                                    <div className="h-4 w-4/5 bg-destructive/5 rounded-full" />
-                                    <div className="h-4 w-full bg-destructive/5 rounded-full" />
-                                    <p className="text-sm font-bold text-destructive uppercase tracking-tighter opacity-50">Standard theoretical training</p>
+                            <div className="flex-1 rounded-[2rem] border border-border overflow-hidden relative bg-white shadow-sm">
+                                <XCircle className="w-12 h-12 text-destructive absolute top-4 right-4 bg-white rounded-full shadow-lg z-10" />
+                                <img
+                                    src="/training-images/optimized/practical-skills-1600.jpg"
+                                    alt="Standard training often feels disconnected from real sales scenarios"
+                                    className="h-[380px] w-full object-cover"
+                                    loading="lazy"
+                                    decoding="async"
+                                />
+                                <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 to-transparent p-5">
+                                    <p className="text-sm font-bold text-white/90 uppercase tracking-[0.12em]">Standard theoretical training</p>
                                 </div>
                             </div>
                         </div>

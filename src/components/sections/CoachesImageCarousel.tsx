@@ -18,7 +18,7 @@ const coaches = [
     expertise: "Consultative selling & decision psychology",
     intro: "Improves discovery, value framing, and buyer confidence.",
     image: "/Updated trainer pics/updated images/Hamza.png",
-    title: "Sales Trainer | Consultative & Challenger Selling",
+    title: "Sales Trainer - Consultative & Challenger Selling",
     badge: "HRDC Accredited",
     focusAreas: ["Decision psychology", "Consultative selling", "Negotiation and price conversations"],
     bio: "Hamza helps sales teams understand how buyers decide and lead conversations that reduce uncertainty.\n\nHis training focuses on deep discovery, framing the cost of inaction, value messaging, and ethical closing. Sessions are practical, interactive, and grounded in real deals so teams improve conversion rates, protect margins, and build trust.",
@@ -188,7 +188,7 @@ export function CoachesImageCarousel({
                       </div>
                     </div>
                     <div className="mt-4 px-1">
-                      <h3 className="type-h4 text-foreground tracking-tight leading-tight uppercase whitespace-nowrap overflow-hidden text-ellipsis">
+                      <h3 className="type-h4 text-foreground tracking-normal leading-tight uppercase whitespace-nowrap overflow-hidden text-ellipsis">
                         {coach.name}
                       </h3>
                       <p className="mt-2 min-h-[2.7rem] max-h-[2.7rem] overflow-hidden text-[0.82rem] font-semibold uppercase tracking-wide text-muted-foreground leading-[1.35] [display:-webkit-box] [-webkit-line-clamp:2] [-webkit-box-orient:vertical]">

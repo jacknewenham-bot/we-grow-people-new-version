@@ -53,7 +53,7 @@ const coaches = [
         id: "ashvin",
         name: "Ashvin Praveen",
         title: "AI and Vibe Coding Coach",
-        badge: "Co-founder and CEO of Cleve.ai",
+        badge: null,
         focusAreas: ["Vibe coding for business", "AI workflows", "Content productivity"],
         bio: "Ashvin is a founder and AI practitioner focused on helping teams adopt AI in practical, business-ready ways.\n\nAs the co-founder and CEO of Cleve.ai, backed by Antler, he trains teams on building workflows, automations, and content systems using AI tools without unnecessary complexity.",
         bestFor: ["Founders", "Product teams", "Teams adopting AI"],
@@ -187,32 +187,61 @@ export default function CoachesPage() {
                 {/* Intro Context Section */}
                 <section className="py-24 md:py-32 bg-white">
                     <div className="container">
-                        <div className="max-w-3xl mx-auto">
-                            <motion.h2
-                                initial={{ opacity: 0, y: 30 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true }}
-                                className="headline-display font-heading text-4xl md:text-5xl text-foreground mb-12 text-center"
-                            >
-                                Real experience. Real outcomes.
-                            </motion.h2>
+                        <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-14 items-center">
+                            <div>
+                                <motion.h2
+                                    initial={{ opacity: 0, y: 30 }}
+                                    whileInView={{ opacity: 1, y: 0 }}
+                                    viewport={{ once: true }}
+                                    className="headline-display font-heading text-4xl md:text-5xl text-foreground mb-10"
+                                >
+                                    Real experience. Real outcomes.
+                                </motion.h2>
+
+                                <motion.div
+                                    initial={{ opacity: 0, y: 30 }}
+                                    whileInView={{ opacity: 1, y: 0 }}
+                                    viewport={{ once: true }}
+                                    transition={{ delay: 0.1 }}
+                                    className="space-y-6 text-lg md:text-xl text-foreground/80 font-sans leading-relaxed"
+                                >
+                                    <p>
+                                        At WeGrowPeople, training is not delivered by career trainers or generic facilitators.
+                                    </p>
+                                    <p>
+                                        Our coaches are practitioners. Builders. Operators. Leaders.
+                                    </p>
+                                    <p>
+                                        They have led teams, scaled businesses, delivered complex projects, launched products, and navigated real pressure. That experience shapes how they train.
+                                    </p>
+                                </motion.div>
+                            </div>
 
                             <motion.div
                                 initial={{ opacity: 0, y: 30 }}
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
-                                transition={{ delay: 0.1 }}
-                                className="space-y-6 text-lg md:text-xl text-foreground/80 font-sans leading-relaxed"
+                                transition={{ delay: 0.15 }}
+                                className="grid grid-cols-2 gap-4"
                             >
-                                <p>
-                                    At WeGrowPeople, training is not delivered by career trainers or generic facilitators.
-                                </p>
-                                <p>
-                                    Our coaches are practitioners. Builders. Operators. Leaders.
-                                </p>
-                                <p>
-                                    They have led teams, scaled businesses, delivered complex projects, launched products, and navigated real pressure. That experience shapes how they train.
-                                </p>
+                                <div className="overflow-hidden rounded-3xl border border-border shadow-sm">
+                                    <img
+                                        src="/images/about/trainer_in_action_1769341618326.png"
+                                        alt="Trainer in action"
+                                        className="h-64 w-full object-cover"
+                                        loading="lazy"
+                                        decoding="async"
+                                    />
+                                </div>
+                                <div className="overflow-hidden rounded-3xl border border-border shadow-sm">
+                                    <img
+                                        src="/images/about/team_collaboration_tech_1769341635874.png"
+                                        alt="Team collaboration workshop"
+                                        className="h-64 w-full object-cover"
+                                        loading="lazy"
+                                        decoding="async"
+                                    />
+                                </div>
                             </motion.div>
                         </div>
                     </div>
@@ -287,30 +316,47 @@ export default function CoachesPage() {
                 {/* How Coaches Are Matched */}
                 <section className="py-24 md:py-32 bg-[#e8f5e0]">
                     <div className="container">
-                        <div className="max-w-3xl mx-auto text-center">
-                            <motion.h2
-                                initial={{ opacity: 0, y: 30 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true }}
-                                className="headline-display font-heading text-4xl md:text-5xl text-foreground mb-8"
-                            >
-                                Matched to your needs, not randomly assigned.
-                            </motion.h2>
+                        <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-14 items-center">
+                            <div className="text-center lg:text-left">
+                                <motion.h2
+                                    initial={{ opacity: 0, y: 30 }}
+                                    whileInView={{ opacity: 1, y: 0 }}
+                                    viewport={{ once: true }}
+                                    className="headline-display font-heading text-4xl md:text-5xl text-foreground mb-8"
+                                >
+                                    Matched to your needs, not randomly assigned.
+                                </motion.h2>
 
+                                <motion.div
+                                    initial={{ opacity: 0, y: 30 }}
+                                    whileInView={{ opacity: 1, y: 0 }}
+                                    viewport={{ once: true }}
+                                    transition={{ delay: 0.1 }}
+                                    className="space-y-6 text-lg md:text-xl text-foreground/80 font-sans leading-relaxed"
+                                >
+                                    <p>Every team is different.</p>
+                                    <p>
+                                        We take the time to understand your goals, challenges, and context before recommending the right coach or combination of coaches.
+                                    </p>
+                                    <p>
+                                        This ensures training is relevant, practical, and effective from day one.
+                                    </p>
+                                </motion.div>
+                            </div>
                             <motion.div
                                 initial={{ opacity: 0, y: 30 }}
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
-                                transition={{ delay: 0.1 }}
-                                className="space-y-6 text-lg md:text-xl text-foreground/80 font-sans leading-relaxed"
+                                transition={{ delay: 0.15 }}
+                                className="overflow-hidden rounded-3xl border border-border bg-white shadow-sm"
                             >
-                                <p>Every team is different.</p>
-                                <p>
-                                    We take the time to understand your goals, challenges, and context before recommending the right coach or combination of coaches.
-                                </p>
-                                <p>
-                                    This ensures training is relevant, practical, and effective from day one.
-                                </p>
+                                <img
+                                    src="/images/about/modern_corporate_workshop_1769341602532.png"
+                                    alt="Corporate workshop session"
+                                    className="h-[340px] w-full object-cover"
+                                    loading="lazy"
+                                    decoding="async"
+                                />
                             </motion.div>
                         </div>
                     </div>
@@ -319,27 +365,44 @@ export default function CoachesPage() {
                 {/* HRDC Block */}
                 <section className="py-24 md:py-32 bg-white">
                     <div className="container">
-                        <div className="max-w-3xl mx-auto text-center">
-                            <motion.h2
-                                initial={{ opacity: 0, y: 30 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true }}
-                                className="headline-display font-heading text-4xl md:text-5xl text-foreground mb-8"
-                            >
-                                HRDC claimable training, done right.
-                            </motion.h2>
+                        <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-14 items-center">
+                            <div className="text-center lg:text-left">
+                                <motion.h2
+                                    initial={{ opacity: 0, y: 30 }}
+                                    whileInView={{ opacity: 1, y: 0 }}
+                                    viewport={{ once: true }}
+                                    className="headline-display font-heading text-4xl md:text-5xl text-foreground mb-8"
+                                >
+                                    HRDC claimable training, done right.
+                                </motion.h2>
 
-                            <motion.p
+                                <motion.p
+                                    initial={{ opacity: 0, y: 30 }}
+                                    whileInView={{ opacity: 1, y: 0 }}
+                                    viewport={{ once: true }}
+                                    transition={{ delay: 0.1 }}
+                                    className="text-lg md:text-xl text-foreground/80 font-sans leading-relaxed"
+                                >
+                                    Many of our programs are structured to meet HRDC requirements while maintaining practical, outcome-driven delivery.
+                                    <br /><br />
+                                    We handle the structure so your team can focus on learning and applying skills.
+                                </motion.p>
+                            </div>
+                            <motion.div
                                 initial={{ opacity: 0, y: 30 }}
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
-                                transition={{ delay: 0.1 }}
-                                className="text-lg md:text-xl text-foreground/80 font-sans leading-relaxed"
+                                transition={{ delay: 0.15 }}
+                                className="overflow-hidden rounded-3xl border border-border bg-white shadow-sm"
                             >
-                                Many of our programs are structured to meet HRDC requirements while maintaining practical, outcome-driven delivery.
-                                <br /><br />
-                                We handle the structure so your team can focus on learning and applying skills.
-                            </motion.p>
+                                <img
+                                    src="/training-images/optimized/hrdc-claimable-1600.jpg"
+                                    alt="HRDC claimable training"
+                                    className="h-[340px] w-full object-cover"
+                                    loading="lazy"
+                                    decoding="async"
+                                />
+                            </motion.div>
                         </div>
                     </div>
                 </section>
