@@ -54,9 +54,9 @@ const Consultancy = () => {
                         >
                             <div className="mx-auto max-w-4xl overflow-hidden rounded-[2rem] border border-white/15 shadow-[0_24px_80px_rgba(0,0,0,0.32)]">
                                 <img
-                                    src="/Additional website images/project-work-team-working-project-looking-involved.jpg"
+                                    src="/Additional website images/group-diverse-business-people-successful-teamwork-working-together-with-laptop-computer-office.jpg"
                                     alt="Consultancy team workshop"
-                                    className="h-[240px] w-full object-cover object-[center_26%] md:h-[320px]"
+                                    className="h-[240px] w-full object-cover object-[center_22%] md:h-[320px]"
                                     loading="eager"
                                     decoding="async"
                                 />
@@ -121,7 +121,7 @@ const Consultancy = () => {
                                     <img
                                         src="/Additional website images/group-three-colleagues-waalking-outdoors-with-takeaway-coffee-lunch-break.jpg"
                                         alt="Marketing consultancy discussion"
-                                        className="h-40 w-full object-cover object-center"
+                                        className="h-40 w-full object-cover object-[center_35%]"
                                         loading="lazy"
                                         decoding="async"
                                     />
@@ -197,9 +197,9 @@ const Consultancy = () => {
                         </div>
                         <div className="max-w-5xl mx-auto mb-12 overflow-hidden rounded-3xl border border-white/15">
                             <img
-                                src="/Additional website images/group-diverse-business-people-successful-teamwork-working-together-with-laptop-computer-office.jpg"
+                                src="/Additional website images/project-work-team-working-project-looking-involved.jpg"
                                 alt="Consultancy working session"
-                                className="h-56 md:h-72 w-full object-cover"
+                                className="h-56 md:h-72 w-full object-cover object-[center_28%]"
                                 loading="lazy"
                                 decoding="async"
                             />

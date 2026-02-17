@@ -202,10 +202,8 @@ const OperationsTraining = () => {
                                 {[
                                     { title: "Understand context", desc: "We assess how work actually flows today." },
                                     { title: "Leadership alignment", desc: "We align on priorities, ownership, and constraints." },
-                                    { title: "Practical frameworks", desc: "Simple, usable structures teams can adopt immediately." },
                                     { title: "Live application", desc: "Training using real workflows and scenarios." },
-                                    { title: "Reinforcement", desc: "Support to embed new ways of working." },
-                                    { title: "Review and recommendations", desc: "Clear insights on what to fix next." }
+                                    { title: "Reinforcement and review", desc: "Support to embed new ways of working with clear next-step insights." }
                                 ].map((item, i) => (
                                     <div key={i} className="flex gap-4 p-4 rounded-2xl hover:bg-muted/30 transition-colors border border-transparent hover:border-border">
                                         <div className="w-10 h-10 rounded-xl bg-lime/10 flex items-center justify-center shrink-0">

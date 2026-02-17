@@ -296,6 +296,29 @@
     font-family: 'Suisse Impact', 'Suisse Condensed', 'Suisse Intl', 'Graphik', sans-serif;
     text-transform: uppercase;
   }
+
+  h1 {
+    font-size: var(--type-h1);
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+  }
+
+  h2 {
+    font-size: var(--type-h2);
+    line-height: 1.1;
+    letter-spacing: -0.015em;
+  }
+
+  h3 {
+    font-size: var(--type-h3);
+    line-height: 1.2;
+    letter-spacing: -0.01em;
+  }
+
+  h4 {
+    font-size: var(--type-h4);
+    line-height: 1.3;
+  }
 }
 
 @layer components {

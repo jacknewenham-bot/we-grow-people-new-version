@@ -152,24 +152,15 @@ export default function CoachesPage() {
                                 initial={{ opacity: 0, y: 30 }}
                                 animate={{ opacity: 1, y: 0 }}
                                 transition={{ delay: 0.1 }}
-                                className="text-xl md:text-2xl text-white/90 mb-6 font-sans"
+                                className="text-xl md:text-2xl text-white/90 mb-12 font-sans max-w-4xl mx-auto"
                             >
-                                Experienced practitioners helping teams build modern skills that actually stick.
-                            </motion.p>
-
-                            <motion.p
-                                initial={{ opacity: 0, y: 30 }}
-                                animate={{ opacity: 1, y: 0 }}
-                                transition={{ delay: 0.2 }}
-                                className="text-lg text-white/70 mb-12 font-sans"
-                            >
-                                All programs are led by coaches with 10+ years of real-world experience. HRDC claimable programs available.
+                                Experienced practitioners with 10+ years of real-world experience, helping teams build modern skills that actually stick. All programs are HRDC-claimable.
                             </motion.p>
 
                             <motion.div
                                 initial={{ opacity: 0, y: 30 }}
                                 animate={{ opacity: 1, y: 0 }}
-                                transition={{ delay: 0.3 }}
+                                transition={{ delay: 0.2 }}
                             >
                                 <Button variant="lime" size="xl" asChild className="text-lg px-12 h-16 rounded-full font-semibold">
                                     <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer" className="flex items-center gap-3">
@@ -254,9 +245,12 @@ export default function CoachesPage() {
                             <h2 className="headline-display text-4xl md:text-5xl text-foreground mb-4">
                                 Meet the coaches
                             </h2>
-                            <p className="text-lg md:text-xl text-muted-foreground">
+                            <p className="text-lg md:text-xl text-muted-foreground mb-6">
                                 Experienced practitioners helping teams build modern skills.
                             </p>
+                            <Button variant="outline" size="lg" asChild className="rounded-full px-8">
+                                <a href="/apply-practitioner">Become a coach</a>
+                            </Button>
                         </div>
                         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                             {coaches.map((coach, index) => (
@@ -330,9 +324,10 @@ export default function CoachesPage() {
                                     initial={{ opacity: 0, y: 30 }}
                                     whileInView={{ opacity: 1, y: 0 }}
                                     viewport={{ once: true }}
-                                    className="headline-display font-heading text-4xl md:text-5xl text-foreground mb-8"
+                                    className="headline-display font-heading text-4xl md:text-5xl text-foreground mb-8 leading-[0.98] max-w-[12ch] mx-auto lg:mx-0"
                                 >
-                                    Matched to your needs, not randomly assigned.
+                                    <span className="block">Matched to your needs,</span>
+                                    <span className="block">not randomly assigned</span>
                                 </motion.h2>
 
                                 <motion.div

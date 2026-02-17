@@ -202,10 +202,8 @@ const ManagementTraining = () => {
                                 {[
                                     { title: "Understand context", desc: "We assess how managers currently lead and where they struggle." },
                                     { title: "Leadership alignment", desc: "We align on expectations, standards, and outcomes." },
-                                    { title: "Practical frameworks", desc: "Simple tools managers can apply immediately." },
                                     { title: "Live practice", desc: "Training using real conversations, scenarios, and decisions." },
-                                    { title: "Reinforcement", desc: "Support to help new behaviors stick." },
-                                    { title: "Review and recommendations", desc: "Clear insights for ongoing development." }
+                                    { title: "Reinforcement and review", desc: "Support to embed new behaviors with clear guidance for ongoing development." }
                                 ].map((item, i) => (
                                     <div key={i} className="flex gap-4 p-4 rounded-2xl hover:bg-muted/30 transition-colors border border-transparent hover:border-border">
                                         <div className="w-10 h-10 rounded-xl bg-lime/10 flex items-center justify-center shrink-0">

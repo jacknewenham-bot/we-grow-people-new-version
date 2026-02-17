@@ -23,7 +23,7 @@ export function SocialProof() {
           transition={{ duration: 0.5 }}
           className="text-center text-muted-foreground mb-2"
         >
-          Experience working with teams at
+          Trusted by teams at
         </motion.p>
 
         <motion.div

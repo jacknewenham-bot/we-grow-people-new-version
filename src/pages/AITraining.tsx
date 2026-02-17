@@ -203,10 +203,8 @@ const AITraining = () => {
                                 {[
                                     { title: "Understand context", desc: "We assess your team's roles, workflows, and exposure to AI." },
                                     { title: "Leadership alignment", desc: "We align on expectations, guardrails, and outcomes." },
-                                    { title: "Practical frameworks", desc: "Clear mental models for when and how to use AI." },
                                     { title: "Live application", desc: "Hands-on use with real prompts, tasks, and scenarios." },
-                                    { title: "Reinforcement", desc: "Support to help new habits stick over time." },
-                                    { title: "Review and recommendations", desc: "Clear guidance on next steps and maturity progression." }
+                                    { title: "Reinforcement and review", desc: "Support over time with clear guidance on next steps and maturity." }
                                 ].map((item, i) => (
                                     <div key={i} className="flex gap-4 p-4 rounded-2xl hover:bg-muted/30 transition-colors border border-transparent hover:border-border">
                                         <div className="w-10 h-10 rounded-xl bg-lime/10 flex items-center justify-center shrink-0">

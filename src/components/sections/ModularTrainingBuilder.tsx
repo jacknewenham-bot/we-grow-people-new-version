@@ -98,7 +98,7 @@ export const ModularTrainingBuilder = ({ defaultTrack = "sales" }: ModularTraini
                     <h2 className="headline-display text-4xl md:text-[3.4rem] leading-[0.95] mb-5">
                         Modular training, built around your needs
                     </h2>
-                    <p className="type-body text-muted-foreground max-w-[28ch]">
+                    <p className="type-body-secondary text-muted-foreground max-w-[28ch]">
                         No generic courses. No wasted time.
                         <br />
                         Your programme is built from focused modules chosen around your team, goals, and reality.

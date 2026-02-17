@@ -213,7 +213,6 @@ const SalesTraining = () => {
                                 {[
                                     { title: "Understand context", desc: "We deep-dive into your specific sales reality and hurdles." },
                                     { title: "Leadership alignment", desc: "We ensure goals are agreed upon by those managing the team." },
-                                    { title: "Practical frameworks", desc: "No fluff. Just tools teams can pick up and use instantly." },
                                     { title: "Live practice", desc: "Training using your real deals and actual scenarios." },
                                     { title: "Reinforce and review", desc: "Post-training support with clear reporting and recommendations for next steps." }
                                 ].map((item, i) => (

@@ -205,10 +205,8 @@ const MarketingTraining = () => {
                                 {[
                                     { title: "Understand context", desc: "We deep-dive into your market, funnel, channels, and constraints." },
                                     { title: "Leadership alignment", desc: "We align on goals, expectations, and success metrics." },
-                                    { title: "Practical frameworks", desc: "No fluff. Just tools teams can apply immediately." },
                                     { title: "Live application", desc: "Training using your real campaigns, data, and scenarios." },
-                                    { title: "Reinforcement", desc: "Support after delivery to ensure execution sticks." },
-                                    { title: "Review and recommendations", desc: "Clear reporting on impact and next steps." }
+                                    { title: "Reinforcement and review", desc: "Support after delivery with clear reporting so execution sticks." }
                                 ].map((item, i) => (
                                     <div key={i} className="flex gap-4 p-4 rounded-2xl hover:bg-muted/30 transition-colors border border-transparent hover:border-border">
                                         <div className="w-10 h-10 rounded-xl bg-lime/10 flex items-center justify-center shrink-0">
@@ -284,9 +282,9 @@ const MarketingTraining = () => {
                             <div className="bg-primary p-10 rounded-[3.5rem] text-white self-start">
                                 <div className="mb-6 overflow-hidden rounded-2xl border border-white/15">
                                     <img
-                                        src="/Additional website images/group-diverse-business-people-successful-teamwork-working-together-with-laptop-computer-office.jpg"
+                                        src="/Additional website images/project-work-team-working-project-looking-involved.jpg"
                                         alt="Marketing planning session"
-                                        className="h-40 md:h-44 w-full object-cover object-[center_32%]"
+                                        className="h-40 md:h-44 w-full object-cover object-[center_30%]"
                                         loading="lazy"
                                         decoding="async"
                                     />
