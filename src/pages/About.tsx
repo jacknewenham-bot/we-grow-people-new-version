@@ -231,12 +231,12 @@ const About = () => {
                             viewport={{ once: true }}
                             className="rounded-[2.6rem] border border-[#e8dda1] bg-[#f5e7a3] p-6 md:p-10 lg:p-12 shadow-[0_20px_45px_rgba(18,24,42,0.12)]"
                         >
-                            <div className="grid lg:grid-cols-[minmax(0,1fr)_minmax(0,1.35fr)] gap-8 lg:gap-10 items-start">
-                                <div className="lg:pr-6">
+                            <div className="grid lg:grid-cols-[minmax(0,0.82fr)_minmax(0,1.58fr)] gap-8 lg:gap-10 items-start">
+                                <div className="lg:pr-5">
                                     <p className="text-xs font-black uppercase tracking-[0.16em] text-foreground/65 mb-5">
                                         Why WeGrowPeople
                                     </p>
-                                    <h2 className="max-w-[10ch] font-heading text-4xl md:text-5xl xl:text-6xl leading-[0.9] tracking-tight text-foreground mb-6 text-balance">
+                                    <h2 className="max-w-[10ch] break-words font-heading text-4xl md:text-5xl lg:text-[3.8rem] leading-[0.9] tracking-tight text-foreground mb-6">
                                         What makes WeGrowPeople different
                                     </h2>
                                     <p className="text-lg md:text-[1.35rem] text-foreground/75 leading-relaxed max-w-[28ch]">
@@ -248,21 +248,25 @@ const About = () => {
                                     {[
                                         {
                                             title: "Built for today’s workplace",
+                                            titleLines: ["Built for", "today’s workplace"],
                                             desc: "No outdated models. No legacy thinking. Designed for how work happens now.",
                                             icon: Zap
                                         },
                                         {
                                             title: "Human-first, tech-enabled",
+                                            titleLines: ["Human-first,", "tech-enabled"],
                                             desc: "We build communication, judgment, and leadership, then reinforce with AI tools.",
                                             icon: Users
                                         },
                                         {
                                             title: "Practitioners, not presenters",
+                                            titleLines: ["Practitioners,", "not presenters"],
                                             desc: "Our coaches are operators, builders, and leaders who have done the work.",
                                             icon: Target
                                         },
                                         {
                                             title: "Practical by default",
+                                            titleLines: ["Practical by", "default"],
                                             desc: "If it cannot be used immediately, it does not make the cut.",
                                             icon: Shield
                                         }
@@ -278,8 +282,9 @@ const About = () => {
                                             <div className="w-11 h-11 rounded-full bg-[#e9efd8] flex items-center justify-center mb-5">
                                                 <pillar.icon className="w-5 h-5 text-primary" />
                                             </div>
-                                            <h3 className="text-2xl md:text-[1.65rem] font-black leading-[1.08] tracking-tight text-foreground mb-4">
-                                                {pillar.title}
+                                            <h3 className="text-[1.65rem] md:text-[1.75rem] font-black leading-[1.05] tracking-tight text-foreground mb-4 min-h-[3.6rem]">
+                                                <span className="block whitespace-nowrap">{pillar.titleLines[0]}</span>
+                                                <span className="block whitespace-nowrap">{pillar.titleLines[1]}</span>
                                             </h3>
                                             <p className="text-base md:text-lg text-foreground/75 leading-relaxed">
                                                 {pillar.desc}
