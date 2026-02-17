@@ -188,11 +188,14 @@ export function CoachesImageCarousel({
                       </div>
                     </div>
                     <div className="mt-4 px-1">
-                      <h3 className="type-h4 text-foreground tracking-tight leading-tight">
+                      <h3 className="type-h4 text-foreground tracking-tight leading-tight uppercase whitespace-nowrap overflow-hidden text-ellipsis">
                         {coach.name}
                       </h3>
-                      <p className="mt-2 min-h-[2.2rem] text-[0.86rem] font-semibold uppercase tracking-wide text-muted-foreground">
-                        {coach.expertise}
+                      <p className="mt-2 min-h-[2.7rem] max-h-[2.7rem] overflow-hidden text-[0.82rem] font-semibold uppercase tracking-wide text-muted-foreground leading-[1.35] [display:-webkit-box] [-webkit-line-clamp:2] [-webkit-box-orient:vertical]">
+                        {coach.title}
+                      </p>
+                      <p className="mt-2 min-h-[3.3rem] max-h-[3.3rem] overflow-hidden type-body-secondary text-foreground/85 leading-relaxed [display:-webkit-box] [-webkit-line-clamp:2] [-webkit-box-orient:vertical]">
+                        {coach.intro}
                       </p>
                       <span className="mt-3 inline-flex items-center gap-1.5 type-nav text-primary/90 transition-colors group-hover:text-primary">
                         View profile <ArrowRight className="h-4 w-4" />

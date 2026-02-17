@@ -1,6 +1,3 @@
-import { MessageCircle } from "lucide-react";
-import { Button } from "@/components/ui/button";
-
 const WHATSAPP_LINK = "https://wa.me/60123456789";
 
 const footerLinks = {
@@ -35,24 +32,6 @@ const footerLinks = {
 export function Footer() {
   return (
     <footer className="bg-hero text-white">
-      {/* Mission banner */}
-      <div className="border-b border-white/10">
-        <div className="container py-6 flex flex-col md:flex-row items-center justify-between gap-4">
-          <div className="flex items-center gap-3">
-            <img
-              src="/HRDC claimable/HRDC corp claimable.png"
-              alt="HRDC corp claimable logo"
-              className="h-14 md:h-16 w-auto"
-            />
-          </div>
-          <Button variant="lime" size="sm" asChild>
-            <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer">
-              Learn more
-            </a>
-          </Button>
-        </div>
-      </div>
-
       <div className="container pt-12 pb-8 md:pt-14 md:pb-10">
         <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-12 mb-10">
           {/* Brand */}
@@ -60,6 +39,16 @@ export function Footer() {
             <span className="font-heading font-black text-xl tracking-tight text-white mb-4 block">
               WeGrowPeople
             </span>
+            <div className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-3 py-1.5">
+              <img
+                src="/HRDC claimable/HRDC corp claimable.png"
+                alt="HRDC corp claimable logo"
+                className="h-6 w-auto"
+              />
+              <span className="text-[0.7rem] font-semibold uppercase tracking-[0.08em] text-white/80">
+                HRDC Claimable
+              </span>
+            </div>
           </div>
 
           {/* Teams */}
