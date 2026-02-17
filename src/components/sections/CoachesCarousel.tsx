@@ -59,7 +59,7 @@ const coaches = [
         tagline: "Marketing & AI Specialist",
         expertise: "AI agents & automation",
         credibility: "25 years based in the US, now in Malaysia",
-        image: "/Updated trainer pics/updated images/Ebrahim.png",
+        image: "/Updated trainer pics/updated images/Ebrahim new.png",
     },
     {
         name: "Ivan Eng",

@@ -55,7 +55,7 @@ const coaches = [
     tagline: "Marketing, agents, and vibe coding specialist",
     title: "25 years based in the US, now in Malaysia",
     focus: "AI agents, automation, marketing systems, vibe coding",
-    image: "/Updated trainer pics/updated images/Ebrahim.png",
+    image: "/Updated trainer pics/updated images/Ebrahim new.png",
   },
   {
     name: "Ivan Eng",

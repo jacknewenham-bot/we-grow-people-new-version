@@ -87,7 +87,7 @@ const coaches = [
         focusAreas: ["AI agents", "Automation", "Vibe coding for business"],
         bio: "Ebrahim has spent over 25 years working with clients across the US and Malaysia, helping businesses build smarter systems using marketing automation, AI agents, and modern workflows.\n\nHis training focuses on building systems that save time, reduce manual work, and improve decision-making.",
         bestFor: ["Operations teams", "Marketing teams", "Founders scaling systems"],
-        image: "/Updated trainer pics/updated images/Ebrahim.png",
+        image: "/Updated trainer pics/updated images/Ebrahim new.png",
     },
     {
         id: "ivan",

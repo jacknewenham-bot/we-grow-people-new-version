@@ -101,7 +101,7 @@ const coaches = [
     name: "Ebrahim Al Hamdi",
     expertise: "AI agents & automation",
     intro: "Supports teams with practical systems for faster execution.",
-    image: "/Updated trainer pics/updated images/Ebrahim.png",
+    image: "/Updated trainer pics/updated images/Ebrahim new.png",
     title: "AI Agents and Marketing Systems Coach",
     badge: null,
     focusAreas: ["AI agents", "Automation", "Vibe coding for business"],
