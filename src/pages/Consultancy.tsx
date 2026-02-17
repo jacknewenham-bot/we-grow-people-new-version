@@ -24,7 +24,7 @@ const Consultancy = () => {
                             animate={{ opacity: 1, y: 0 }}
                             className="headline-display text-5xl md:text-7xl mb-8"
                         >
-                            <span className="text-white/90">Consulting that helps you</span>
+                            <span className="text-white/90 whitespace-nowrap">Consulting that helps you</span>
                             <br />
                             <span className="text-lime">move, not just plan</span>
                         </motion.h1>
@@ -47,6 +47,22 @@ const Consultancy = () => {
                                 </a>
                             </Button>
                         </motion.div>
+                        <motion.div
+                            initial={{ opacity: 0, y: 16 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ delay: 0.3 }}
+                            className="mt-12"
+                        >
+                            <div className="mx-auto max-w-4xl overflow-hidden rounded-[2rem] border border-white/15 shadow-[0_24px_80px_rgba(0,0,0,0.32)]">
+                                <img
+                                    src="/Additional website images/team-working-together-project.jpg"
+                                    alt="Consultancy team workshop"
+                                    className="h-[240px] w-full object-cover md:h-[320px]"
+                                    loading="eager"
+                                    decoding="async"
+                                />
+                            </div>
+                        </motion.div>
                     </div>
                 </section>
 
@@ -65,6 +81,15 @@ const Consultancy = () => {
                                 viewport={{ once: true }}
                                 className="p-8 rounded-3xl bg-muted/10 border border-border group hover:bg-white hover:shadow-xl transition-all duration-300"
                             >
+                                <div className="mb-6 overflow-hidden rounded-2xl border border-border">
+                                    <img
+                                        src="/Additional website images/project-team-collaborating-business-analytics.jpg"
+                                        alt="Sales consultancy planning"
+                                        className="h-40 w-full object-cover"
+                                        loading="lazy"
+                                        decoding="async"
+                                    />
+                                </div>
                                 <div className="w-14 h-14 rounded-2xl bg-lime/10 flex items-center justify-center mb-8 group-hover:bg-lime text-primary transition-colors">
                                     <Target className="w-7 h-7" />
                                 </div>
@@ -94,6 +119,15 @@ const Consultancy = () => {
                                 transition={{ delay: 0.1 }}
                                 className="p-8 rounded-3xl bg-muted/10 border border-border group hover:bg-white hover:shadow-xl transition-all duration-300"
                             >
+                                <div className="mb-6 overflow-hidden rounded-2xl border border-border">
+                                    <img
+                                        src="/Additional website images/businesswoman-conducting-meeting.jpg"
+                                        alt="Marketing consultancy discussion"
+                                        className="h-40 w-full object-cover"
+                                        loading="lazy"
+                                        decoding="async"
+                                    />
+                                </div>
                                 <div className="w-14 h-14 rounded-2xl bg-lime/10 flex items-center justify-center mb-8 group-hover:bg-lime text-primary transition-colors">
                                     <TrendingUp className="w-7 h-7" />
                                 </div>
@@ -123,6 +157,15 @@ const Consultancy = () => {
                                 transition={{ delay: 0.2 }}
                                 className="p-8 rounded-3xl bg-muted/10 border border-border group hover:bg-white hover:shadow-xl transition-all duration-300"
                             >
+                                <div className="mb-6 overflow-hidden rounded-2xl border border-border">
+                                    <img
+                                        src="/Additional website images/happy-young-asian-businessmen-businesswomen-meeting-brainstorming-ideas.jpg"
+                                        alt="AI consultancy ideation"
+                                        className="h-40 w-full object-cover"
+                                        loading="lazy"
+                                        decoding="async"
+                                    />
+                                </div>
                                 <div className="w-14 h-14 rounded-2xl bg-lime/10 flex items-center justify-center mb-8 group-hover:bg-lime text-primary transition-colors">
                                     <Workflow className="w-7 h-7" />
                                 </div>
@@ -155,6 +198,15 @@ const Consultancy = () => {
                             <p className="text-xl text-white/80 max-w-2xl mx-auto">
                                 Our consulting is designed to be practical, lightweight, and embedded into how your team already operates.
                             </p>
+                        </div>
+                        <div className="max-w-5xl mx-auto mb-12 overflow-hidden rounded-3xl border border-white/15">
+                            <img
+                                src="/Additional website images/group-diverse-business-people-successful-teamwork-working-together-with-laptop-computer-office.jpg"
+                                alt="Consultancy working session"
+                                className="h-56 md:h-72 w-full object-cover"
+                                loading="lazy"
+                                decoding="async"
+                            />
                         </div>
 
                         <div className="grid md:grid-cols-4 gap-8">

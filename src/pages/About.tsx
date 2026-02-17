@@ -267,7 +267,7 @@ const About = () => {
                                         Why WeGrowPeople
                                     </p>
                                     <h2 className="max-w-[10ch] break-words font-heading text-4xl md:text-5xl lg:text-[3.8rem] leading-[0.9] tracking-tight text-foreground mb-6">
-                                        What makes WeGrowPeople different
+                                        What makes us different
                                     </h2>
                                     <p className="text-lg md:text-[1.35rem] text-foreground/75 leading-relaxed max-w-[28ch]">
                                         Practical by design, modern by default, and delivered by people who have done the work.
