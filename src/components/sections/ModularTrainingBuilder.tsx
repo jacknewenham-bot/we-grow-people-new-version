@@ -74,6 +74,7 @@ const createInitialSelection = () =>
 
 export const ModularTrainingBuilder = ({ defaultTrack = "sales" }: ModularTrainingBuilderProps) => {
     const [activeTrack, setActiveTrack] = useState<TrainingTrack>(defaultTrack);
+    const [isTrackMenuOpen, setIsTrackMenuOpen] = useState(false);
     const [selectedByTrack, setSelectedByTrack] = useState<Record<TrainingTrack, string[]>>(createInitialSelection);
 
     const activeModules = MODULES_BY_TRACK[activeTrack];
@@ -126,12 +127,42 @@ export const ModularTrainingBuilder = ({ defaultTrack = "sales" }: ModularTraini
                         <div className="rounded-[2rem] bg-primary p-5 md:p-6 text-white border border-primary/80 shadow-[0_18px_30px_rgba(12,24,18,0.22)]">
                             <h3 className="text-center text-2xl md:text-3xl font-black mb-4">Training Programme</h3>
 
-                            <div className="mx-auto max-w-[320px] rounded-full bg-white text-primary border border-white/80 px-3 py-2 flex items-center justify-between mb-5">
+                            <div className="relative mx-auto max-w-[320px] rounded-full bg-white text-primary border border-white/80 px-3 py-2 flex items-center justify-between mb-5">
                                 <span className="font-semibold">Selected Programme</span>
-                                <span className="inline-flex items-center gap-1 text-sm font-bold">
+                                <button
+                                    type="button"
+                                    onClick={() => setIsTrackMenuOpen((open) => !open)}
+                                    className="inline-flex items-center gap-1.5 text-sm font-bold rounded-full px-2.5 py-1.5 hover:bg-muted/50 transition-colors"
+                                    aria-haspopup="listbox"
+                                    aria-expanded={isTrackMenuOpen}
+                                >
                                     {TRACKS.find((track) => track.key === activeTrack)?.label}
-                                    <ChevronDown className="w-4 h-4" />
-                                </span>
+                                    <ChevronDown className={`w-4 h-4 transition-transform ${isTrackMenuOpen ? "rotate-180" : ""}`} />
+                                </button>
+
+                                {isTrackMenuOpen && (
+                                    <div className="absolute right-0 top-[calc(100%+8px)] z-20 w-48 rounded-2xl border border-border bg-white p-2 shadow-lg">
+                                        {TRACKS.map((track) => (
+                                            <button
+                                                key={track.key}
+                                                type="button"
+                                                onClick={() => {
+                                                    setActiveTrack(track.key);
+                                                    setIsTrackMenuOpen(false);
+                                                }}
+                                                className={`w-full text-left rounded-xl px-3 py-2 text-sm font-semibold transition-colors ${
+                                                    activeTrack === track.key
+                                                        ? "bg-primary text-white"
+                                                        : "text-primary hover:bg-lime/15"
+                                                }`}
+                                                role="option"
+                                                aria-selected={activeTrack === track.key}
+                                            >
+                                                {track.label}
+                                            </button>
+                                        ))}
+                                    </div>
+                                )}
                             </div>
 
                             <div className="rounded-2xl bg-white/10 border border-white/20 p-3 md:p-4">
