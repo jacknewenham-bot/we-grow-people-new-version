@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { Menu, X, MessageCircle, ChevronRight, ChevronDown } from "lucide-react";
+import { Menu, X, MessageCircle, ChevronDown } from "lucide-react";
 
 const navLinks = [
   { href: "/consultancy", label: "Consultancy", isAnchor: false },
@@ -15,72 +15,27 @@ const trainingCategories = [
   {
     id: "sales",
     label: "Sales Training",
-    description: "All Sales Programs",
     href: "/sales-training",
-    courses: [
-      { label: "Sales Fundamentals", href: "/training/sales/sales-fundamentals" },
-      { label: "Prospecting", href: "/training/sales/prospecting" },
-      { label: "Lead Qualification", href: "/training/sales/lead-qualification" },
-      { label: "Consultative Selling", href: "/training/sales/consultative-selling" },
-      { label: "Key Account Management", href: "/training/sales/key-account-management" },
-      { label: "Storytelling in Sales", href: "/training/sales/storytelling-in-sales" },
-      { label: "Social Selling", href: "/training/sales/social-selling" },
-      { label: "Virtual Selling", href: "/training/sales/virtual-selling" },
-      { label: "Customer Success", href: "/training/sales/customer-success" },
-    ]
   },
   {
     id: "marketing",
     label: "Marketing Training",
-    description: "All Marketing Programs",
     href: "/training/marketing",
-    courses: [
-      { label: "Marketing Fundamentals", href: "/training/marketing/marketing-fundamentals" },
-      { label: "Growth Marketing", href: "/training/marketing/growth-marketing" },
-      { label: "Performance Marketing", href: "/training/marketing/performance-marketing" },
-      { label: "Content Strategy", href: "/training/marketing/content-strategy" },
-      { label: "Brand Positioning", href: "/training/marketing/brand-positioning" },
-      { label: "Marketing Analytics", href: "/training/marketing/marketing-analytics" },
-    ]
   },
   {
     id: "ai",
     label: "AI Training",
-    description: "All AI Programs",
     href: "/training/ai",
-    courses: [
-      { label: "AI Fundamentals for Teams", href: "/training/ai/ai-fundamentals-for-teams" },
-      { label: "AI for Productivity", href: "/training/ai/ai-for-productivity" },
-      { label: "AI for Sales and Marketing", href: "/training/ai/ai-for-sales-and-marketing" },
-      { label: "AI for Leaders", href: "/training/ai/ai-for-leaders" },
-      { label: "Building AI Workflows", href: "/training/ai/building-ai-workflows" },
-    ]
   },
   {
     id: "operations",
     label: "Operations Training",
-    description: "All Operations Programs",
     href: "/training/operations",
-    courses: [
-      { label: "Operational Excellence", href: "/training/operations/operational-excellence" },
-      { label: "Process Optimization", href: "/training/operations/process-optimization" },
-      { label: "Productivity Systems", href: "/training/operations/productivity-systems" },
-      { label: "Cross Team Execution", href: "/training/operations/cross-team-execution" },
-      { label: "Scaling Operations", href: "/training/operations/scaling-operations" },
-    ]
   },
   {
     id: "management",
     label: "Management Training",
-    description: "All Management Programs",
     href: "/training/management",
-    courses: [
-      { label: "First Time Managers", href: "/training/management/first-time-managers" },
-      { label: "Leadership Fundamentals", href: "/training/management/leadership-fundamentals" },
-      { label: "Managing High Performance Teams", href: "/training/management/managing-high-performance-teams" },
-      { label: "Communication for Managers", href: "/training/management/communication-for-managers" },
-      { label: "Change Management", href: "/training/management/change-management" },
-    ]
   }
 ];
 
@@ -90,7 +45,6 @@ export function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isTrainingMenuOpen, setIsTrainingMenuOpen] = useState(false);
-  const [activeCategory, setActiveCategory] = useState(trainingCategories[0]);
   const [mobileExpandedCategory, setMobileExpandedCategory] = useState<string | null>(null);
 
   useEffect(() => {
@@ -141,39 +95,19 @@ export function Header() {
                   animate={{ opacity: 1, y: 0, scale: 1 }}
                   exit={{ opacity: 0, y: 10, scale: 0.98 }}
                   transition={{ duration: 0.2 }}
-                  className="absolute top-full left-0 w-[600px] bg-white rounded-2xl shadow-2xl border border-border overflow-hidden flex"
+                  className="absolute top-full left-0 w-[320px] bg-white rounded-2xl shadow-2xl border border-border overflow-hidden"
                 >
-                  {/* Left Column: Categories */}
-                  <div className="w-1/2 border-r border-border p-4 bg-muted/10">
+                  <div className="p-4 bg-white">
                     <div className="space-y-1">
                       {trainingCategories.map((cat) => (
-                        <div
+                        <a
                           key={cat.id}
-                          onMouseEnter={() => setActiveCategory(cat)}
-                          className={`flex items-center justify-between p-4 rounded-xl cursor-pointer transition-all duration-200 ${activeCategory.id === cat.id ? "bg-white shadow-sm text-primary" : "text-muted-foreground hover:text-foreground hover:bg-white/50"}`}
+                          href={cat.href}
+                          className="block p-4 rounded-xl font-bold text-muted-foreground hover:text-foreground hover:bg-muted/30 transition-all duration-200"
                         >
-                          <a href={cat.href} className="font-bold flex-1">{cat.label}</a>
-                          <ChevronRight size={16} className={`transition-transform ${activeCategory.id === cat.id ? "opacity-100" : "opacity-0"}`} />
-                        </div>
+                          {cat.label}
+                        </a>
                       ))}
-                    </div>
-                  </div>
-
-                  {/* Right Column: Courses */}
-                  <div className="w-1/2 p-4 bg-white">
-                    <div className="p-4">
-                      <h4 className="type-caption font-black uppercase tracking-widest text-muted-foreground/60 mb-6">{activeCategory.description}</h4>
-                      <div className="space-y-2">
-                        {activeCategory.courses.map((course) => (
-                          <a
-                            key={course.href}
-                            href={course.href}
-                            className="block py-2 type-caption font-medium text-muted-foreground hover:text-primary transition-colors"
-                          >
-                            {course.label}
-                          </a>
-                        ))}
-                      </div>
                     </div>
                   </div>
                 </motion.div>
@@ -242,31 +176,17 @@ export function Header() {
                       initial={{ opacity: 0, height: 0 }}
                       animate={{ opacity: 1, height: 'auto' }}
                       exit={{ opacity: 0, height: 0 }}
-                      className="pl-4 space-y-4 py-4"
+                      className="pl-4 space-y-2 py-4"
                     >
                       {trainingCategories.map(cat => (
-                        <div key={cat.id}>
-                          <button
-                            onClick={() => setMobileExpandedCategory(mobileExpandedCategory === `cat-${cat.id}` ? 'training' : `cat-${cat.id}`)}
-                            className="w-full flex items-center justify-between text-muted-foreground/80 type-nav py-2"
-                          >
-                            {cat.label} <ChevronDown size={14} className={mobileExpandedCategory === `cat-${cat.id}` ? 'rotate-180' : ''} />
-                          </button>
-                          {mobileExpandedCategory === `cat-${cat.id}` && (
-                            <div className="pl-4 space-y-3 py-2 border-l border-lime/30 mt-1">
-                              {cat.courses.map(course => (
-                                <a
-                                  key={course.href}
-                                  href={course.href}
-                                  className="block type-caption text-muted-foreground/60"
-                                  onClick={() => setIsMobileMenuOpen(false)}
-                                >
-                                  {course.label}
-                                </a>
-                              ))}
-                            </div>
-                          )}
-                        </div>
+                        <a
+                          key={cat.id}
+                          href={cat.href}
+                          className="block type-nav text-muted-foreground/80 py-2"
+                          onClick={() => setIsMobileMenuOpen(false)}
+                        >
+                          {cat.label}
+                        </a>
                       ))}
                     </motion.div>
                   )}

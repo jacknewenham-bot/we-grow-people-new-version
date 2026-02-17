@@ -66,7 +66,7 @@ const coaches = [
     expertise: "AI workflows & business automation",
     intro: "Guides teams in practical AI adoption and daily execution.",
     image: "/Updated trainer pics/updated images/Ashvin.png",
-    title: "AI and Vibe Coding Coach",
+    title: "AI and Vibe|Coding Coach",
     badge: "Co-founder and CEO of Cleve.ai",
     focusAreas: ["Vibe coding for business", "AI workflows", "Content productivity"],
     bio: "Ashvin is a founder and AI practitioner focused on helping teams adopt AI in practical, business-ready ways.\n\nAs the co-founder and CEO of Cleve.ai, backed by Antler, he trains teams on building workflows, automations, and content systems using AI tools without unnecessary complexity.",
@@ -78,7 +78,7 @@ const coaches = [
     expertise: "Leadership development & team dynamics",
     intro: "Builds communication confidence and stronger team collaboration.",
     image: "/Updated trainer pics/updated images/Kain.png",
-    title: "Communications Coach",
+    title: "Communications|Coach",
     badge: null,
     focusAreas: ["Communication mastery", "Presentation skills", "Career progression"],
     bio: "Kain coaches professionals to communicate with more clarity, confidence, and influence.\n\nHis sessions focus on practical speaking frameworks, delivery confidence, and message structure so teams present ideas clearly and lead conversations effectively.",
@@ -192,7 +192,11 @@ export function CoachesImageCarousel({
                         {coach.name}
                       </h3>
                       <p className="mt-2 min-h-[2.7rem] max-h-[2.7rem] overflow-hidden text-[0.82rem] font-semibold uppercase tracking-wide text-muted-foreground leading-[1.35] [display:-webkit-box] [-webkit-line-clamp:2] [-webkit-box-orient:vertical]">
-                        {coach.title}
+                        {coach.title.split("|").map((part) => (
+                          <span key={part} className="block">
+                            {part}
+                          </span>
+                        ))}
                       </p>
                       <p className="mt-2 min-h-[3.3rem] max-h-[3.3rem] overflow-hidden type-body-secondary text-foreground/85 leading-relaxed [display:-webkit-box] [-webkit-line-clamp:2] [-webkit-box-orient:vertical]">
                         {coach.intro}

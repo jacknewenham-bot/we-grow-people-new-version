@@ -15,8 +15,6 @@ import MarketingTraining from "./pages/MarketingTraining";
 import AITraining from "./pages/AITraining";
 import OperationsTraining from "./pages/OperationsTraining";
 import ManagementTraining from "./pages/ManagementTraining";
-import TrainingCategory from "./pages/TrainingCategory";
-import CourseDetail from "./pages/CourseDetail";
 import NotFound from "./pages/NotFound";
 import { WhatsAppFloating } from "@/components/ui/WhatsAppFloating";
 
@@ -41,8 +39,6 @@ const App = () => (
           <Route path="/training/ai" element={<AITraining />} />
           <Route path="/training/operations" element={<OperationsTraining />} />
           <Route path="/training/management" element={<ManagementTraining />} />
-          <Route path="/training/:categoryId" element={<TrainingCategory />} />
-          <Route path="/training/:categoryId/:courseId" element={<CourseDetail />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
