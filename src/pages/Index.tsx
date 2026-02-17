@@ -21,7 +21,7 @@ const Index = () => {
         <Features />
         <Teams />
         <HowItWorks />
-        <CoachesImageCarousel sectionClassName="py-12 md:py-32 bg-background" showSubtitle={true} showCta={true} />
+        <CoachesImageCarousel sectionClassName="py-12 md:py-20 bg-background" showSubtitle={true} showCta={true} />
         <OpenLetter />
         <Testimonials />
         <Stakeholders />
