@@ -93,7 +93,7 @@ const Consultancy = () => {
                                     <Target className="w-7 h-7" />
                                 </div>
                                 <h3 className="text-2xl font-bold mb-4">Sales Consulting</h3>
-                                <p className="text-lg font-semibold text-lime mb-6">Build a sales motion that converts.</p>
+                                <p className="text-lg font-semibold text-primary mb-6">Build a sales motion that converts.</p>
                                 <ul className="space-y-3">
                                     {[
                                         "Sales process design and optimisation",
@@ -102,7 +102,7 @@ const Consultancy = () => {
                                         "Sales enablement and playbooks"
                                     ].map((item, i) => (
                                         <li key={i} className="flex items-start gap-3 text-sm font-medium text-foreground/80">
-                                            <CheckCircle2 className="w-5 h-5 text-lime shrink-0" />
+                                            <CheckCircle2 className="w-5 h-5 text-primary/70 shrink-0" />
                                             {item}
                                         </li>
                                     ))}
@@ -130,7 +130,7 @@ const Consultancy = () => {
                                     <TrendingUp className="w-7 h-7" />
                                 </div>
                                 <h3 className="text-2xl font-bold mb-4">Marketing Consulting</h3>
-                                <p className="text-lg font-semibold text-lime mb-6">Turn marketing into a growth engine.</p>
+                                <p className="text-lg font-semibold text-primary mb-6">Turn marketing into a growth engine.</p>
                                 <ul className="space-y-3">
                                     {[
                                         "Go-to-market clarity and positioning",
@@ -139,7 +139,7 @@ const Consultancy = () => {
                                         "Campaign frameworks and rhythms"
                                     ].map((item, i) => (
                                         <li key={i} className="flex items-start gap-3 text-sm font-medium text-foreground/80">
-                                            <CheckCircle2 className="w-5 h-5 text-lime shrink-0" />
+                                            <CheckCircle2 className="w-5 h-5 text-primary/70 shrink-0" />
                                             {item}
                                         </li>
                                     ))}
@@ -167,7 +167,7 @@ const Consultancy = () => {
                                     <Workflow className="w-7 h-7" />
                                 </div>
                                 <h3 className="text-2xl font-bold mb-4">AI Adoption Consulting</h3>
-                                <p className="text-lg font-semibold text-lime mb-6">Adopt AI in ways that actually stick.</p>
+                                <p className="text-lg font-semibold text-primary mb-6">Adopt AI in ways that actually stick.</p>
                                 <ul className="space-y-3">
                                     {[
                                         "AI use-case identification",
@@ -176,7 +176,7 @@ const Consultancy = () => {
                                         "Change management and adoption"
                                     ].map((item, i) => (
                                         <li key={i} className="flex items-start gap-3 text-sm font-medium text-foreground/80">
-                                            <CheckCircle2 className="w-5 h-5 text-lime shrink-0" />
+                                            <CheckCircle2 className="w-5 h-5 text-primary/70 shrink-0" />
                                             {item}
                                         </li>
                                     ))}
@@ -230,10 +230,12 @@ const Consultancy = () => {
                                     whileInView={{ opacity: 1, y: 0 }}
                                     viewport={{ once: true }}
                                     transition={{ delay: i * 0.1 }}
-                                    className="bg-white/5 border border-white/10 p-8 rounded-3xl hover:bg-white/10 transition-colors"
+                                    className="bg-white/5 border border-white/10 p-8 rounded-3xl hover:bg-white/10 transition-colors h-full flex flex-col"
                                 >
-                                    <h3 className="text-2xl font-bold mb-4 text-lime">{item.step}</h3>
-                                    <p className="text-white/80 leading-relaxed">{item.desc}</p>
+                                    <h3 className="text-2xl font-bold mb-4 text-lime leading-tight min-h-[2.25rem]">{item.step}</h3>
+                                    <p className="text-white/80 leading-relaxed [display:-webkit-box] [-webkit-line-clamp:4] [-webkit-box-orient:vertical] overflow-hidden min-h-[7.3rem]">
+                                        {item.desc}
+                                    </p>
                                 </motion.div>
                             ))}
                         </div>

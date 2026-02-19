@@ -9,7 +9,8 @@ const coaches = [
         tagline: "HRDC Accredited Sales Trainer",
         expertise: "Consultative selling & decision psychology",
         credibility: "Improves discovery, value framing, and buyer confidence",
-        image: "/Updated trainer pics/updated images/Hamza.png",
+        image: "/Updated trainer pics/updated images/hamza image update.png",
+        imageClassName: "object-center object-[50%_14%]",
     },
     {
         name: "Jack Newenham",
@@ -46,6 +47,7 @@ const coaches = [
         expertise: "Mastering Communication",
         credibility: "Coaching young professionals to unlock their full potential",
         image: "/Updated trainer pics/updated images/Kain.png",
+        imageClassName: "object-center object-[50%_12%]",
     },
     {
         name: "Alfred Ng",
@@ -53,6 +55,7 @@ const coaches = [
         expertise: "Storytelling & video creation",
         credibility: "Experienced across industries and countries",
         image: "/Updated trainer pics/updated images/alfred image update.png",
+        imageClassName: "object-center object-[50%_10%]",
     },
     {
         name: "Ebrahim Al Hamdi",
@@ -154,7 +157,7 @@ export function CoachesCarousel() {
                                     initial={{ opacity: 0, y: 30 }}
                                     animate={{ opacity: 1, y: 0 }}
                                     transition={{ delay: index * 0.1 }}
-                                    className="group bg-white rounded-3xl p-8 border border-border/50 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 cursor-pointer"
+                                    className="group bg-white rounded-3xl p-8 border border-border/50 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 cursor-pointer h-full flex flex-col"
                                 >
                                     <div className="w-20 h-20 rounded-full bg-gradient-to-br from-primary/20 to-lime/20 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 overflow-hidden">
                                         {(coach as any).image ? (
@@ -170,15 +173,15 @@ export function CoachesCarousel() {
                                         )}
                                     </div>
 
-                                    <h3 className="font-sans text-xl font-semibold text-foreground mb-2">
+                                    <h3 className="font-sans text-xl font-semibold text-foreground mb-2 min-h-[3.1rem] leading-tight">
                                         {coach.name}
                                     </h3>
 
-                                    <p className="text-sm text-lime font-semibold mb-3">
+                                    <p className="text-sm text-primary font-semibold mb-3 min-h-[2.8rem] leading-snug [display:-webkit-box] [-webkit-line-clamp:2] [-webkit-box-orient:vertical] overflow-hidden">
                                         {coach.expertise}
                                     </p>
 
-                                    <p className="text-sm text-muted-foreground leading-relaxed">
+                                    <p className="text-sm text-muted-foreground leading-relaxed min-h-[3rem] [display:-webkit-box] [-webkit-line-clamp:2] [-webkit-box-orient:vertical] overflow-hidden">
                                         {coach.credibility}
                                     </p>
                                 </motion.div>

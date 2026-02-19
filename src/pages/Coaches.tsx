@@ -19,7 +19,8 @@ const coaches = [
         focusAreas: ["Decision psychology", "Consultative selling", "Negotiation and price conversations"],
         bio: "Hamza helps sales teams understand how buyers decide and lead conversations that reduce uncertainty.\n\nHis training focuses on deep discovery, framing the cost of inaction, value messaging, and ethical closing. Sessions are practical, interactive, and grounded in real deals so teams improve conversion rates, protect margins, and build trust.",
         bestFor: ["B2B sales teams", "Relationship managers and consultants", "Sales leaders upgrading capability"],
-        image: "/Updated trainer pics/updated images/Hamza.png",
+        image: "/Updated trainer pics/updated images/hamza image update.png",
+        avatarPosition: "50% 14%",
     },
     {
         id: "jack",
@@ -80,6 +81,7 @@ const coaches = [
         bio: "Kain coaches professionals to communicate with more clarity, confidence, and influence.\n\nHis sessions focus on practical speaking frameworks, delivery confidence, and message structure so teams present ideas clearly and lead conversations effectively.",
         bestFor: ["Young professionals", "Team leads", "Client-facing teams"],
         image: "/Updated trainer pics/updated images/Kain.png",
+        avatarPosition: "50% 12%",
     },
     {
         id: "alfred",
@@ -92,6 +94,7 @@ const coaches = [
         bio: "Alfred is a videographer, storyteller, and affiliate marketer with experience across multiple industries and countries.\n\nHe helps teams communicate more clearly through video and storytelling, while building sustainable affiliate and content-driven growth channels.",
         bestFor: ["Marketing teams", "Content teams", "Creators and brand builders"],
         image: "/Updated trainer pics/updated images/alfred image update.png",
+        avatarPosition: "50% 10%",
     },
     {
         id: "ebrahim",
@@ -279,7 +282,7 @@ export default function CoachesPage() {
                                     viewport={{ once: true }}
                                     transition={{ delay: index * 0.1 }}
                                     onClick={() => openCoachProfile(coach)}
-                                    className="group bg-white rounded-3xl p-8 border border-border/50 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 cursor-pointer"
+                                    className="group bg-white rounded-3xl p-8 border border-border/50 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 cursor-pointer h-full flex flex-col"
                                 >
                                     {/* Avatar */}
                                     <div className="w-24 h-24 rounded-full bg-gradient-to-br from-primary/20 to-lime/20 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 overflow-hidden">
@@ -288,6 +291,7 @@ export default function CoachesPage() {
                                                 src={(coach as any).image}
                                                 alt={coach.name}
                                                 className="w-full h-full object-cover"
+                                                style={{ objectPosition: (coach as any).avatarPosition ?? "50% 50%" }}
                                             />
                                         ) : (
                                             <span className="text-3xl font-bold text-primary font-heading">
@@ -297,19 +301,21 @@ export default function CoachesPage() {
                                     </div>
 
                                     {/* Name & Title */}
-                                    <h3 className="font-heading text-2xl font-bold text-foreground mb-2">
+                                    <h3 className="font-heading text-2xl font-bold text-foreground mb-2 leading-tight min-h-[3.4rem] [display:-webkit-box] [-webkit-line-clamp:2] [-webkit-box-orient:vertical] overflow-hidden">
                                         {coach.name}
                                     </h3>
-                                    <p className="text-base text-foreground/70 mb-3 font-sans">
+                                    <p className="text-base text-foreground/70 mb-3 font-sans leading-snug min-h-[3rem] [display:-webkit-box] [-webkit-line-clamp:2] [-webkit-box-orient:vertical] overflow-hidden">
                                         {coach.title}
                                     </p>
 
                                     {/* Badge */}
-                                    {coach.badge && (
-                                        <span className="inline-block px-3 py-1 rounded-full bg-lime/10 text-lime text-xs font-semibold mb-4">
-                                            {coach.badge}
-                                        </span>
-                                    )}
+                                    <div className="mb-4 min-h-[2rem]">
+                                        {coach.badge && (
+                                            <span className="inline-block px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-semibold">
+                                                {coach.badge}
+                                            </span>
+                                        )}
+                                    </div>
 
                                     {/* What They Do */}
                                     <div className="space-y-4">
@@ -317,7 +323,7 @@ export default function CoachesPage() {
                                             <p className="text-[11px] font-bold uppercase tracking-[0.1em] text-primary/70 mb-1.5">
                                                 What they do
                                             </p>
-                                            <p className="text-sm text-foreground/80 leading-relaxed">
+                                            <p className="text-sm text-foreground/80 leading-relaxed [display:-webkit-box] [-webkit-line-clamp:3] [-webkit-box-orient:vertical] overflow-hidden min-h-[4.8rem]">
                                                 {coach.whatTheyDo}
                                             </p>
                                         </div>
@@ -325,16 +331,16 @@ export default function CoachesPage() {
                                             <p className="text-[11px] font-bold uppercase tracking-[0.1em] text-primary/70 mb-1.5">
                                                 What makes them special
                                             </p>
-                                            <p className="text-sm text-foreground/80 leading-relaxed">
+                                            <p className="text-sm text-foreground/80 leading-relaxed [display:-webkit-box] [-webkit-line-clamp:3] [-webkit-box-orient:vertical] overflow-hidden min-h-[4.8rem]">
                                                 {coach.whatMakesSpecial}
                                             </p>
                                         </div>
                                     </div>
 
                                     {/* Focus Areas */}
-                                    <div className="mt-6 pt-6 border-t border-border/50">
+                                    <div className="mt-6 pt-6 border-t border-border/50 min-h-[8.8rem]">
                                         <p className="text-sm font-semibold text-foreground mb-3">Focus areas</p>
-                                        <div className="flex flex-wrap gap-2">
+                                        <div className="flex flex-wrap gap-2 min-h-[4.5rem]">
                                             {coach.focusAreas.map((area) => (
                                                 <span key={area} className="text-xs px-3 py-1 rounded-full bg-primary/5 text-primary font-medium">
                                                     {area}
@@ -344,7 +350,7 @@ export default function CoachesPage() {
                                     </div>
 
                                     {/* View More */}
-                                    <div className="mt-6 text-sm text-lime font-semibold group-hover:underline">
+                                    <div className="mt-6 text-sm text-primary font-semibold group-hover:underline">
                                         View full profile →
                                     </div>
                                 </motion.div>
@@ -513,6 +519,7 @@ export default function CoachesPage() {
                                         src={(selectedCoach as any).image}
                                         alt={selectedCoach.name}
                                         className="w-full h-full object-cover"
+                                        style={{ objectPosition: (selectedCoach as any).avatarPosition ?? "50% 50%" }}
                                     />
                                 ) : (
                                     <span className="text-5xl font-bold text-primary font-heading">
@@ -531,7 +538,7 @@ export default function CoachesPage() {
 
                             {/* Badge */}
                             {selectedCoach.badge && (
-                                <span className="inline-block px-4 py-2 rounded-full bg-lime/10 text-lime text-sm font-semibold mb-8">
+                                <span className="inline-block px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-semibold mb-8">
                                     {selectedCoach.badge}
                                 </span>
                             )}

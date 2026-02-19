@@ -159,14 +159,14 @@ const SalesTraining = () => {
                                         whileInView={{ opacity: 1, y: 0 }}
                                         viewport={{ once: true }}
                                         transition={{ delay: i * 0.08 }}
-                                        className="flex gap-4"
+                                        className="flex gap-4 h-full"
                                     >
                                         <div className={`w-11 h-11 rounded-full ${value.chip} border border-white/25 flex items-center justify-center shrink-0`}>
                                             <value.icon className="w-5 h-5 text-white" />
                                         </div>
-                                        <div>
-                                            <h3 className="text-2xl md:text-[2rem] font-semibold leading-tight mb-2 text-white">{value.title}</h3>
-                                            <p className="text-white/75 text-lg leading-relaxed">{value.desc}</p>
+                                        <div className="flex-1">
+                                            <h3 className="text-2xl md:text-[2rem] font-semibold leading-tight mb-2 text-white min-h-[4.2rem]">{value.title}</h3>
+                                            <p className="text-white/75 text-lg leading-relaxed [display:-webkit-box] [-webkit-line-clamp:2] [-webkit-box-orient:vertical] overflow-hidden min-h-[3.8rem]">{value.desc}</p>
                                         </div>
                                     </motion.div>
                                 ))}

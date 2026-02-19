@@ -156,13 +156,13 @@ const AITraining = () => {
                                     whileInView={{ opacity: 1, y: 0 }}
                                     viewport={{ once: true }}
                                     transition={{ delay: i * 0.1 }}
-                                    className="bg-white p-8 rounded-3xl border border-border shadow-sm hover:shadow-md transition-shadow"
+                                    className="bg-white p-8 rounded-3xl border border-border shadow-sm hover:shadow-md transition-shadow h-full flex flex-col"
                                 >
                                     <div className="w-12 h-12 rounded-2xl bg-lime/10 flex items-center justify-center mb-6">
                                         <value.icon className="w-6 h-6 text-primary" />
                                     </div>
-                                    <h3 className="text-xl font-bold mb-4">{value.title}</h3>
-                                    <p className="text-muted-foreground">{value.desc}</p>
+                                    <h3 className="text-xl font-bold mb-4 leading-tight min-h-[3.25rem]">{value.title}</h3>
+                                    <p className="text-muted-foreground leading-relaxed [display:-webkit-box] [-webkit-line-clamp:3] [-webkit-box-orient:vertical] overflow-hidden min-h-[4.9rem]">{value.desc}</p>
                                 </motion.div>
                             ))}
                         </div>

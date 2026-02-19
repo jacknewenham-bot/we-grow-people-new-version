@@ -113,8 +113,9 @@ const About = () => {
                                         className="w-full h-full object-cover"
                                     />
                                 </div>
-                                <div className="absolute -bottom-6 -right-6 bg-lime text-primary p-6 rounded-2xl shadow-xl font-bold max-w-[200px] -rotate-3">
-                                    "Learning shouldn't be a checkbox."
+                                <div className="absolute -bottom-6 -right-6 bg-lime text-primary p-6 rounded-2xl shadow-xl font-bold text-base md:text-lg leading-snug max-w-[260px] -rotate-3">
+                                    <span className="block">"If it doesn't change your work,</span>
+                                    <span className="block">it isn't learning."</span>
                                 </div>
                             </motion.div>
                         </div>

@@ -331,12 +331,12 @@ const Careers = () => {
                                 }
                             ].map((step, i) => (
                                 <div key={step.title} className="relative">
-                                    <div className="p-8 rounded-[2rem] bg-muted/30 border border-border h-full hover:bg-muted/50 transition-colors">
+                                    <div className="p-8 rounded-[2rem] bg-muted/30 border border-border h-full hover:bg-muted/50 transition-colors flex flex-col">
                                         <div className="w-12 h-12 rounded-xl bg-white flex items-center justify-center mb-6 shadow-sm">
                                             <step.icon className="w-6 h-6 text-primary" />
                                         </div>
-                                        <h3 className="text-xl font-bold mb-3">{step.title}</h3>
-                                        <p className="text-muted-foreground">{step.desc}</p>
+                                        <h3 className="text-xl font-bold mb-3 leading-tight min-h-[3.25rem]">{step.title}</h3>
+                                        <p className="text-muted-foreground leading-relaxed [display:-webkit-box] [-webkit-line-clamp:3] [-webkit-box-orient:vertical] overflow-hidden min-h-[4.6rem]">{step.desc}</p>
                                     </div>
                                     {i < 3 && (
                                         <div className="hidden lg:block absolute top-1/2 -right-4 translate-y-1/2 z-10">

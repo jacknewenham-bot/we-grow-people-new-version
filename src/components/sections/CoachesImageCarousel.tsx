@@ -16,21 +16,24 @@ const coaches = [
     id: "hamza",
     name: "Hamza Akaouch",
     expertise: "Consultative selling & decision psychology",
-    intro: "Improves discovery, value framing, and buyer confidence.",
-    image: "/Updated trainer pics/updated images/Hamza.png",
+    intro: "Builds discovery, value framing, and buyer confidence in live sales conversations.",
+    image: "/Updated trainer pics/updated images/hamza image update.png",
     title: "Sales Trainer - Consultative & Challenger Selling",
+    cardTitle: "Sales Trainer - Consultative & Challenger",
     badge: "HRDC Accredited",
     focusAreas: ["Decision psychology", "Consultative selling", "Negotiation and price conversations"],
     bio: "Hamza helps sales teams understand how buyers decide and lead conversations that reduce uncertainty.\n\nHis training focuses on deep discovery, framing the cost of inaction, value messaging, and ethical closing. Sessions are practical, interactive, and grounded in real deals so teams improve conversion rates, protect margins, and build trust.",
     bestFor: ["B2B sales teams", "Relationship managers and consultants", "Sales leaders upgrading capability"],
+    avatarPosition: "50% 14%",
   },
   {
     id: "jack",
     name: "Jack Newenham",
     expertise: "Growth strategy & performance marketing",
-    intro: "Helps teams turn strategy into practical, measurable execution.",
+    intro: "Turns growth strategy into measurable acquisition and funnel execution.",
     image: "/Updated trainer pics/updated images/Jack.png",
     title: "Growth and Performance Marketing Coach",
+    cardTitle: "Growth and Performance Marketing Coach",
     badge: null,
     focusAreas: ["Growth strategy", "Performance marketing", "Execution and experimentation"],
     bio: "Jack has led growth and performance marketing across startups and scaling companies, working hands-on with acquisition, funnels, experimentation, and execution.\n\nHis training helps teams move from theory to action, focusing on what actually drives growth in today's market.",
@@ -40,9 +43,10 @@ const coaches = [
     id: "marc",
     name: "Marc Sagayam",
     expertise: "Project governance & stakeholder management",
-    intro: "7+ years leading complex operations and delivery programs.",
+    intro: "Strengthens project delivery with clear ownership, timelines, and governance.",
     image: "/Updated trainer pics/updated images/marc updated image.png",
     title: "Project Management and Operations Coach",
+    cardTitle: "Project Management and Operations Coach",
     badge: null,
     focusAreas: ["Project governance", "Delivery timelines", "Stakeholder management"],
     bio: "Marc is a senior leader with over seven years of experience managing complex, high-stakes projects across defense technology, operations, and facilities management.\n\nHe has overseen multi-million-dollar projects, led cross-functional teams, and delivered results in highly regulated environments. Marc's training helps teams plan better, communicate clearly, and deliver projects on time and within budget.",
@@ -52,9 +56,10 @@ const coaches = [
     id: "adele",
     name: "Adele O'Brien",
     expertise: "Growth strategy & go-to-market",
-    intro: "9+ years scaling brands across Asia, USA, and Europe.",
+    intro: "Aligns go-to-market strategy, partnerships, and execution for growth.",
     image: "/Updated trainer pics/updated images/Adele.png",
     title: "Growth and Partnerships Strategy Coach",
+    cardTitle: "Growth and Partnerships Strategy Coach",
     badge: null,
     focusAreas: ["Go-to-market strategy", "Partnerships and growth", "Performance marketing"],
     bio: "Adele brings over nine years of experience scaling brands across Asia, the USA, and Europe. She has led growth, partnerships, and commercial strategy for Web3, education, telco, and technology companies.\n\nHer sessions focus on practical growth frameworks, stakeholder alignment, and execution that delivers measurable outcomes.",
@@ -64,9 +69,10 @@ const coaches = [
     id: "ashvin",
     name: "Ashvin Praveen",
     expertise: "AI workflows & business automation",
-    intro: "Guides teams in practical AI adoption and daily execution.",
+    intro: "Helps teams apply AI workflows and automation in everyday operations.",
     image: "/Updated trainer pics/updated images/Ashvin.png",
-    title: "AI and Vibe|Coding Coach",
+    title: "AI and Vibe Coding Coach",
+    cardTitle: "AI and Vibe Coding Coach",
     badge: "Co-founder and CEO of Cleve.ai",
     focusAreas: ["Vibe coding for business", "AI workflows", "Content productivity"],
     bio: "Ashvin is a founder and AI practitioner focused on helping teams adopt AI in practical, business-ready ways.\n\nAs the co-founder and CEO of Cleve.ai, backed by Antler, he trains teams on building workflows, automations, and content systems using AI tools without unnecessary complexity.",
@@ -76,33 +82,38 @@ const coaches = [
     id: "kain",
     name: "Kain Masters",
     expertise: "Leadership development & team dynamics",
-    intro: "Builds communication confidence and stronger team collaboration.",
+    intro: "Builds communication confidence for presentations and high-stakes conversations.",
     image: "/Updated trainer pics/updated images/Kain.png",
-    title: "Communications|Coach",
+    title: "Communications Coach",
+    cardTitle: "Communications Coach",
     badge: null,
     focusAreas: ["Communication mastery", "Presentation skills", "Career progression"],
     bio: "Kain coaches professionals to communicate with more clarity, confidence, and influence.\n\nHis sessions focus on practical speaking frameworks, delivery confidence, and message structure so teams present ideas clearly and lead conversations effectively.",
     bestFor: ["Young professionals", "Team leads", "Client-facing teams"],
+    avatarPosition: "50% 12%",
   },
   {
     id: "alfred",
     name: "Alfred Ng",
     expertise: "Storytelling & video creation",
-    intro: "Teaches teams to communicate clearly through modern content.",
+    intro: "Teaches storytelling and video systems that drive practical content results.",
     image: "/Updated trainer pics/updated images/alfred image update.png",
     title: "Storytelling, Video, and Affiliate Marketing Coach",
+    cardTitle: "Storytelling, Video and Affiliate Coach",
     badge: null,
     focusAreas: ["Storytelling", "Video creation", "Affiliate marketing"],
     bio: "Alfred is a videographer, storyteller, and affiliate marketer with experience across multiple industries and countries.\n\nHe helps teams communicate more clearly through video and storytelling, while building sustainable affiliate and content-driven growth channels.",
     bestFor: ["Marketing teams", "Content teams", "Creators and brand builders"],
+    avatarPosition: "50% 10%",
   },
   {
     id: "ebrahim",
     name: "Ebrahim Al Hamdi",
     expertise: "AI agents & automation",
-    intro: "Supports teams with practical systems for faster execution.",
+    intro: "Builds AI-agent systems that reduce manual work and speed decisions.",
     image: "/Updated trainer pics/updated images/Ebrahim new.png",
     title: "AI Agents and Marketing Systems Coach",
+    cardTitle: "AI Agents and Marketing Systems Coach",
     badge: null,
     focusAreas: ["AI agents", "Automation", "Vibe coding for business"],
     bio: "Ebrahim has spent over 25 years working with clients across the US and Malaysia, helping businesses build smarter systems using marketing automation, AI agents, and modern workflows.\n\nHis training focuses on building systems that save time, reduce manual work, and improve decision-making.",
@@ -112,9 +123,10 @@ const coaches = [
     id: "ivan",
     name: "Ivan Eng",
     expertise: "Workplace wellbeing & mental health",
-    intro: "Helps teams build healthier habits and sustainable performance.",
+    intro: "Supports healthier teams through practical wellbeing and burnout prevention.",
     image: "/Updated trainer pics/updated images/Ivan.png",
     title: "Workplace Wellbeing and Mental Health Coach",
+    cardTitle: "Wellbeing and Mental Health Coach",
     badge: null,
     focusAreas: ["Stress management", "Burnout prevention", "Workplace wellbeing"],
     bio: "Ivan works with organisations to support employee wellbeing through practical, HRDC claimable training and pay-as-you-go counselling.\n\nWith experience in both corporate leadership and counselling, his sessions help teams manage stress, reduce burnout, and build healthier working environments.",
@@ -176,7 +188,7 @@ export function CoachesImageCarousel({
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    className="group w-full p-1 text-center"
+                    className="group w-full p-1 text-left"
                   >
                     <div className="overflow-hidden rounded-2xl border border-border/70 bg-white shadow-[0_8px_24px_rgba(15,23,42,0.08)] transition-all duration-300 group-hover:-translate-y-1 group-hover:shadow-[0_14px_30px_rgba(15,23,42,0.12)]">
                       <div className="aspect-[4/5] bg-muted/50 overflow-hidden">
@@ -188,17 +200,13 @@ export function CoachesImageCarousel({
                       </div>
                     </div>
                     <div className="mt-4 px-1">
-                      <h3 className="type-h4 text-foreground tracking-normal leading-tight uppercase whitespace-nowrap overflow-hidden text-ellipsis">
+                      <h3 className="type-h4 text-foreground tracking-normal leading-tight uppercase [display:-webkit-box] [-webkit-line-clamp:1] [-webkit-box-orient:vertical] overflow-hidden min-h-[2.1rem]">
                         {coach.name}
                       </h3>
-                      <p className="mt-2 min-h-[2.7rem] max-h-[2.7rem] overflow-hidden text-[0.82rem] font-semibold uppercase tracking-wide text-muted-foreground leading-[1.35] [display:-webkit-box] [-webkit-line-clamp:2] [-webkit-box-orient:vertical]">
-                        {coach.title.split("|").map((part) => (
-                          <span key={part} className="block">
-                            {part}
-                          </span>
-                        ))}
+                      <p className="mt-2 min-h-[2.8rem] overflow-hidden text-[0.88rem] font-semibold tracking-[0.04em] text-primary/80 leading-[1.35] [display:-webkit-box] [-webkit-line-clamp:2] [-webkit-box-orient:vertical]">
+                        {coach.cardTitle ?? coach.title}
                       </p>
-                      <p className="mt-2 min-h-[3.3rem] max-h-[3.3rem] overflow-hidden type-body-secondary text-foreground/85 leading-relaxed [display:-webkit-box] [-webkit-line-clamp:2] [-webkit-box-orient:vertical]">
+                      <p className="mt-2 min-h-[3.1rem] overflow-hidden type-body-secondary text-foreground/85 leading-[1.45] [display:-webkit-box] [-webkit-line-clamp:2] [-webkit-box-orient:vertical]">
                         {coach.intro}
                       </p>
                       <span className="mt-3 inline-flex items-center gap-1.5 type-nav text-primary/90 transition-colors group-hover:text-primary">
@@ -248,6 +256,7 @@ export function CoachesImageCarousel({
                   src={selectedCoach.image}
                   alt={selectedCoach.name}
                   className="w-full h-full object-cover"
+                  style={{ objectPosition: (selectedCoach as any).avatarPosition ?? "50% 50%" }}
                 />
               </div>
 
@@ -259,7 +268,7 @@ export function CoachesImageCarousel({
               </p>
 
               {selectedCoach.badge && (
-                <span className="inline-block px-4 py-2 rounded-full bg-lime/10 text-lime text-sm font-semibold mb-8">
+                <span className="inline-block px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-semibold mb-8">
                   {selectedCoach.badge}
                 </span>
               )}

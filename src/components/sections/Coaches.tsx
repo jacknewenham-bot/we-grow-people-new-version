@@ -6,7 +6,8 @@ const coaches = [
     tagline: "Consultative selling grounded in buyer psychology",
     title: "HRDC Accredited Sales Trainer",
     focus: "Decision psychology, deep discovery, objection handling",
-    image: "/Updated trainer pics/updated images/Hamza.png",
+    image: "/Updated trainer pics/updated images/hamza image update.png",
+    imageClassName: "object-center object-[50%_14%]",
   },
   {
     name: "Jack Newenham",
@@ -42,6 +43,7 @@ const coaches = [
     title: "Coaching young professionals to unlock potential",
     focus: "Communication mastery, presentation skills, career progression",
     image: "/Updated trainer pics/updated images/Kain.png",
+    imageClassName: "object-center object-[50%_12%]",
   },
   {
     name: "Alfred Ng",
@@ -49,6 +51,7 @@ const coaches = [
     title: "Experienced across industries and countries",
     focus: "Storytelling, video creation, affiliate marketing",
     image: "/Updated trainer pics/updated images/alfred image update.png",
+    imageClassName: "object-center object-[50%_10%]",
   },
   {
     name: "Ebrahim Al Hamdi",
@@ -107,14 +110,14 @@ export function Coaches() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.05 }}
-              className="group bg-card rounded-3xl p-6 border border-border shadow-card hover:shadow-card-hover transition-all duration-300"
+              className="group bg-card rounded-3xl p-6 border border-border shadow-card hover:shadow-card-hover transition-all duration-300 h-full flex flex-col"
             >
               <div className="w-16 h-16 rounded-full bg-gradient-to-br from-gray-300 to-gray-400 flex items-center justify-center mb-5 group-hover:scale-105 transition-transform duration-300 overflow-hidden">
                 {(coach as any).image ? (
                   <img
                     src={(coach as any).image}
                     alt={coach.name}
-                    className="w-full h-full object-cover"
+                    className={`w-full h-full object-cover ${(coach as any).imageClassName || ""}`}
                   />
                 ) : (
                   <span className="text-xl font-bold text-gray-600">
@@ -123,20 +126,20 @@ export function Coaches() {
                 )}
               </div>
 
-              <h3 className="text-lg font-semibold text-foreground mb-1">
+              <h3 className="text-lg font-semibold text-foreground mb-1 min-h-[3.2rem] leading-tight">
                 {coach.name}
               </h3>
 
-              <p className="text-sm text-lime font-medium mb-2">
+              <p className="text-sm text-primary font-medium mb-2 min-h-[2.8rem] leading-snug [display:-webkit-box] [-webkit-line-clamp:2] [-webkit-box-orient:vertical] overflow-hidden">
                 {coach.tagline}
               </p>
 
-              <p className="text-sm text-muted-foreground mb-4">
+              <p className="text-sm text-muted-foreground mb-4 min-h-[3rem] leading-snug [display:-webkit-box] [-webkit-line-clamp:2] [-webkit-box-orient:vertical] overflow-hidden">
                 {coach.title}
               </p>
 
-              <div className="pt-4 border-t border-border">
-                <p className="text-xs text-muted-foreground">
+              <div className="pt-4 border-t border-border mt-auto">
+                <p className="text-xs text-muted-foreground min-h-[2.4rem] leading-snug [display:-webkit-box] [-webkit-line-clamp:2] [-webkit-box-orient:vertical] overflow-hidden">
                   <span className="font-semibold text-foreground">Focus:</span>{" "}
                   {coach.focus}
                 </p>

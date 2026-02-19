@@ -146,17 +146,17 @@ const Contact = () => {
                                         whileInView={{ opacity: 1, y: 0 }}
                                         viewport={{ once: true }}
                                         transition={{ delay: i * 0.1 }}
-                                        className="rounded-[2rem] border border-border bg-white p-6 md:p-7 shadow-[0_10px_28px_rgba(11,25,19,0.08)] text-center"
+                                        className="rounded-[2rem] border border-border bg-white p-6 md:p-7 shadow-[0_10px_28px_rgba(11,25,19,0.08)] text-center h-full flex flex-col"
                                     >
                                         <div className={`rounded-2xl bg-gradient-to-br ${step.panel} border border-border/60 p-5 mb-6`}>
                                             <div className="w-16 h-16 rounded-2xl bg-white/80 flex items-center justify-center mx-auto shadow-sm">
                                                 <step.icon className="w-8 h-8 text-primary" />
                                             </div>
                                         </div>
-                                        <h3 className="text-2xl md:text-[1.95rem] font-black leading-tight uppercase tracking-tight text-foreground mb-4">
+                                        <h3 className="text-2xl md:text-[1.95rem] font-black leading-tight uppercase tracking-tight text-foreground mb-4 min-h-[4.8rem]">
                                             {step.title}
                                         </h3>
-                                        <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
+                                        <p className="text-lg md:text-xl text-muted-foreground leading-relaxed [display:-webkit-box] [-webkit-line-clamp:3] [-webkit-box-orient:vertical] overflow-hidden min-h-[5.8rem]">
                                             {step.desc}
                                         </p>
                                     </motion.div>
@@ -365,7 +365,7 @@ const Contact = () => {
                             <div className="flex-1 order-1 md:order-2 grid grid-cols-2 gap-4">
                                 {[
                                     { name: "Jack", image: "/Updated trainer pics/updated images/Jack.png" },
-                                    { name: "Hamza", image: "/Updated trainer pics/updated images/Hamza.png" },
+                                    { name: "Hamza", image: "/Updated trainer pics/updated images/hamza image update.png" },
                                     { name: "Adele", image: "/Updated trainer pics/updated images/Adele.png" },
                                     { name: "Marc", image: "/Updated trainer pics/updated images/marc updated image.png" },
                                 ].map((member) => (

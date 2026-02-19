@@ -204,6 +204,13 @@ export function Testimonials() {
           .wall-pause:hover .wall-track {
             animation-play-state: paused;
           }
+          .testimonials-column {
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+          }
+          .testimonials-column::-webkit-scrollbar {
+            display: none;
+          }
         `}
       </style>
 
@@ -254,7 +261,7 @@ export function Testimonials() {
             return (
               <div
                 key={`column-${columnIndex}`}
-                className={`${visibility} h-[620px] md:h-[680px] overflow-hidden rounded-3xl`}
+                className={`${visibility} testimonials-column h-[620px] md:h-[680px] overflow-y-auto overflow-x-hidden rounded-3xl`}
               >
                 <div
                   className={`wall-track ${reverseClass} flex flex-col gap-4`}

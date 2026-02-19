@@ -121,7 +121,7 @@ export function HowItWorks() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.08 }}
-                  className={`group relative aspect-square rounded-[1.65rem] p-5 md:p-6 border border-primary/10 shadow-[0_12px_32px_rgba(17,42,30,0.14)] hover:shadow-[0_20px_44px_rgba(17,42,30,0.2)] hover:-translate-y-1.5 transition-all duration-300 cursor-pointer flex flex-col ${
+                  className={`group relative aspect-square min-w-0 rounded-[1.65rem] p-5 md:p-6 border border-primary/10 shadow-[0_12px_32px_rgba(17,42,30,0.14)] hover:shadow-[0_20px_44px_rgba(17,42,30,0.2)] hover:-translate-y-1.5 transition-all duration-300 cursor-pointer flex flex-col ${
                     index === 0
                       ? "bg-gradient-to-br from-[#e8f1ec] to-[#dce9df]"
                       : index === 1
@@ -137,8 +137,8 @@ export function HowItWorks() {
                   <div className="pointer-events-none absolute inset-0 rounded-[1.65rem] opacity-0 transition-opacity duration-300 group-hover:opacity-100 bg-[radial-gradient(circle_at_top_right,hsla(150,25%,22%,0.16),transparent_58%)]" />
                   <div className="mb-5 md:mb-6">{step.visual}</div>
 
-                  <div className="mt-auto">
-                    <h3 className="mb-2 text-[clamp(1.5rem,1.8vw,2rem)] font-black tracking-[-0.01em] text-primary whitespace-nowrap">
+                  <div className="mt-auto min-w-0">
+                    <h3 className="mb-2 text-[clamp(1.25rem,1.1vw,1.7rem)] leading-[1.06] font-black tracking-[-0.01em] text-primary [display:-webkit-box] [-webkit-line-clamp:1] [-webkit-box-orient:vertical] overflow-hidden">
                       {step.title}
                     </h3>
                     <p className="text-[clamp(1.02rem,1.12vw,1.18rem)] leading-snug text-primary/80 [display:-webkit-box] [-webkit-line-clamp:2] [-webkit-box-orient:vertical] overflow-hidden min-h-[2.8em]">
