@@ -3,45 +3,45 @@ import { ArrowRight } from "lucide-react";
 
 const teams = [
   {
-    title: "Marketing teams",
-    text: "Marketing teams build scalable growth systems that convert consistently.",
-    gradient: "from-lime/20 to-primary/20",
+    label: "Marketing",
+    outcome: "Build scalable growth systems that convert more consistently.",
     image: "/Teams/Marketing.png",
+    focalY: "18%",
     href: "/training/marketing",
   },
   {
-    title: "Sales teams",
-    text: "Sales teams sell with confidence through modern workflows and conversations.",
-    gradient: "from-yellow-200/50 to-lime/20",
+    label: "Sales",
+    outcome: "Close deals confidently with modern workflows and better conversations.",
     image: "/Teams/Sales.png",
+    focalY: "18%",
     href: "/sales-training",
   },
   {
-    title: "Leadership teams",
-    text: "Leadership teams lead with clarity, make strong decisions, and align teams.",
-    gradient: "from-blue-200/50 to-primary/20",
+    label: "Leadership",
+    outcome: "Align teams and make clearer, faster strategic decisions.",
     image: "/Teams/Leadership.png",
+    focalY: "20%",
     href: "/training/management",
   },
   {
-    title: "Operations teams",
-    text: "Operations teams improve execution, productivity, and day-to-day work.",
-    gradient: "from-primary/20 to-lime/20",
+    label: "Operations",
+    outcome: "Improve execution quality, productivity, and day-to-day coordination.",
     image: "/Teams/Operations.png",
+    focalY: "18%",
     href: "/training/operations",
   },
   {
-    title: "HR and people teams",
-    text: "HR and people teams support performance, culture, and wellbeing at work.",
-    gradient: "from-pink-200/50 to-lime/20",
+    label: "People",
+    outcome: "Strengthen culture, performance, and wellbeing across the organization.",
     image: "/Teams/HR.png",
+    focalY: "20%",
     href: "/training/management",
   },
   {
-    title: "Finance teams",
-    text: "Finance teams streamline processes and make better decisions, faster.",
-    gradient: "from-purple-200/50 to-lime/20",
+    label: "Finance",
+    outcome: "Streamline processes and improve decision speed across finance operations.",
     image: "/Teams/Finance.png",
+    focalY: "18%",
     href: "/training/operations",
   },
 ];
@@ -55,38 +55,44 @@ export function Teams() {
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="section-headline text-foreground mb-6"
+            className="headline-display text-4xl md:text-6xl text-foreground mb-6 uppercase"
           >
             Built for teams with different needs
           </motion.h2>
         </div>
 
         <div className="relative">
-          <div className="flex gap-8 overflow-x-auto pb-4 -mx-6 px-6 snap-x snap-mandatory scrollbar-none">
+          <div className="flex gap-6 md:gap-8 overflow-x-auto pb-4 -mx-6 px-6 snap-x snap-mandatory scrollbar-none">
             {teams.map((team, index) => (
               <motion.a
-                key={team.title}
+                key={team.label}
                 href={team.href}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                className="group relative min-w-[280px] sm:min-w-[320px] lg:min-w-[360px] xl:min-w-[380px] snap-start rounded-[2rem] overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2"
+                className="group relative w-[280px] sm:w-[320px] lg:w-[340px] xl:w-[360px] shrink-0 aspect-[4/5] snap-start rounded-[2rem] overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2"
               >
-                <div className={`h-72 bg-gradient-to-br ${team.gradient} relative`}>
-                  <img
-                    src={team.image}
-                    alt={team.title}
-                    className="absolute inset-0 h-full w-full object-cover object-top"
-                  />
-                  <div className="absolute inset-0 bg-black/20"></div>
-                  <div className="absolute inset-0 p-4 flex items-end">
-                    <div className="w-full rounded-2xl bg-white/15 backdrop-blur-xl border border-white/20 p-5 pr-20 relative">
-                      <p className="text-white text-[1.0625rem] md:text-[1.125rem] leading-[1.5] font-medium overflow-hidden [display:-webkit-box] [-webkit-box-orient:vertical] [-webkit-line-clamp:3]">
-                        {team.text}
-                      </p>
-                      <span className="absolute right-5 top-1/2 -translate-y-1/2 inline-flex h-10 w-10 items-center justify-center rounded-full bg-white/15 border border-white/20 text-white">
-                        <ArrowRight className="h-5 w-5" />
+                <img
+                  src={team.image}
+                  alt={`${team.label} team`}
+                  className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+                  style={{ objectPosition: `50% ${team.focalY}` }}
+                />
+                <div className="absolute inset-0 bg-black/12" />
+                <div className="absolute inset-x-0 bottom-0 h-[34%] p-4 sm:p-5">
+                  <div className="h-full w-full rounded-2xl border border-white/25 bg-white/16 backdrop-blur-xl shadow-[inset_0_1px_0_rgba(255,255,255,0.24)]">
+                    <div className="flex h-full items-center justify-between gap-4 px-4 sm:px-5">
+                      <div className="min-w-0 pr-1">
+                        <p className="text-[0.72rem] sm:text-[0.76rem] font-semibold uppercase tracking-[0.14em] text-white/80">
+                          {team.label}
+                        </p>
+                        <p className="mt-1 text-white text-[0.95rem] sm:text-[1.02rem] leading-[1.35] font-medium">
+                          {team.outcome}
+                        </p>
+                      </div>
+                      <span className="shrink-0 inline-flex h-11 w-11 items-center justify-center rounded-full bg-white/14 border border-white/25 text-white">
+                        <ArrowRight className="h-5 w-5" aria-hidden="true" />
                       </span>
                     </div>
                   </div>
