@@ -20,7 +20,7 @@ const coaches = [
     tagline: "Project Manager",
     title: "7+ years leading complex operations and high-stakes projects",
     focus: "Project governance, delivery timelines, stakeholder management",
-    image: "/Updated trainer pics/updated images/marc updated photo.png",
+    image: "/Updated trainer pics/updated images/marc updated image.png",
   },
   {
     name: "Adele O'Brien",
@@ -48,7 +48,7 @@ const coaches = [
     tagline: "Videographer, storyteller, affiliate marketer",
     title: "Experienced across industries and countries",
     focus: "Storytelling, video creation, affiliate marketing",
-    image: "/Updated trainer pics/updated images/Alfred.png",
+    image: "/Updated trainer pics/updated images/alfred image update.png",
   },
   {
     name: "Ebrahim Al Hamdi",

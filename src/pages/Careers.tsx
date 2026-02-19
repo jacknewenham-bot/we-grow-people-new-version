@@ -255,12 +255,14 @@ const Careers = () => {
                             className="bg-muted/30 p-12 md:p-20 rounded-[3rem] text-center border-2 border-dashed border-border"
                         >
                             <Target className="w-16 h-16 text-muted-foreground/30 mx-auto mb-8" />
-                            <h3 className="text-2xl md:text-3xl font-bold mb-6">We are not hiring right now</h3>
+                            <h3 className="text-2xl md:text-3xl font-bold mb-6">No open roles right now.</h3>
                             <p className="text-xl text-muted-foreground mb-10">
-                                But we are always open to meeting great people. If you think you'd be a great fit, tell us more about yourself.
+                                But we're always building relationships with great people.
+                                <br />
+                                If you believe in what we're building and think you'd add value, let's talk.
                             </p>
                             <Button variant="primary" size="xl" asChild className="rounded-full px-10">
-                                <a href="/contact">Send us your profile</a>
+                                <a href="/contact">Start the conversation</a>
                             </Button>
                         </motion.div>
                     </div>

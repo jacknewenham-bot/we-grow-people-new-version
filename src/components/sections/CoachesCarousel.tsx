@@ -23,7 +23,7 @@ const coaches = [
         tagline: "Project Manager",
         expertise: "Project governance & stakeholder management",
         credibility: "7+ years leading complex operations",
-        image: "/Updated trainer pics/updated images/marc updated photo.png",
+        image: "/Updated trainer pics/updated images/marc updated image.png",
         imageClassName: "object-top",
     },
     {
@@ -52,7 +52,7 @@ const coaches = [
         tagline: "Videographer & Storyteller",
         expertise: "Storytelling & video creation",
         credibility: "Experienced across industries and countries",
-        image: "/Updated trainer pics/updated images/Alfred.png",
+        image: "/Updated trainer pics/updated images/alfred image update.png",
     },
     {
         name: "Ebrahim Al Hamdi",
