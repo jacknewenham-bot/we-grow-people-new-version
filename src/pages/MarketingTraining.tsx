@@ -6,7 +6,6 @@ import { ModularTrainingBuilder } from "@/components/sections/ModularTrainingBui
 import { Testimonials } from "@/components/sections/Testimonials";
 import {
     CheckCircle2,
-    XCircle,
     Zap,
     Users,
     Shield,
@@ -125,7 +124,6 @@ const MarketingTraining = () => {
                                 </div>
                             </div>
                             <div className="flex-1 rounded-[2rem] border border-border overflow-hidden relative bg-white shadow-sm">
-                                <XCircle className="w-12 h-12 text-destructive absolute top-4 right-4 bg-white rounded-full shadow-lg z-10" />
                                 <img
                                     src="/training-images/optimized/expert-led-1600.jpg"
                                     alt="Generic marketing training often lacks real application"

@@ -13,6 +13,8 @@ const coaches = [
         id: "hamza",
         name: "Hamza Akaouch",
         title: "Sales Trainer | Consultative & Challenger Selling",
+        whatTheyDo: "Builds practical sales capability across discovery, objection handling, and ethical closing.",
+        whatMakesSpecial: "Grounded in buyer psychology and real deal conversations to improve conversion and margins.",
         badge: "HRDC Accredited",
         focusAreas: ["Decision psychology", "Consultative selling", "Negotiation and price conversations"],
         bio: "Hamza helps sales teams understand how buyers decide and lead conversations that reduce uncertainty.\n\nHis training focuses on deep discovery, framing the cost of inaction, value messaging, and ethical closing. Sessions are practical, interactive, and grounded in real deals so teams improve conversion rates, protect margins, and build trust.",
@@ -23,6 +25,8 @@ const coaches = [
         id: "jack",
         name: "Jack Newenham",
         title: "Growth and Performance Marketing Coach",
+        whatTheyDo: "Helps marketing teams turn strategy into measurable acquisition and funnel outcomes.",
+        whatMakesSpecial: "Execution-first coaching shaped by hands-on growth work in startup and scale-up environments.",
         badge: null,
         focusAreas: ["Growth strategy", "Performance marketing", "Execution and experimentation"],
         bio: "Jack has led growth and performance marketing across startups and scaling companies, working hands-on with acquisition, funnels, experimentation, and execution.\n\nHis training helps teams move from theory to action, focusing on what actually drives growth in today's market.",
@@ -33,6 +37,8 @@ const coaches = [
         id: "marc",
         name: "Marc Sagayam",
         title: "Project Management and Operations Coach",
+        whatTheyDo: "Trains teams to run projects with clear ownership, timelines, and stakeholder alignment.",
+        whatMakesSpecial: "Led complex, high-stakes delivery in regulated environments with multi-million-dollar scope.",
         badge: null,
         focusAreas: ["Project governance", "Delivery timelines", "Stakeholder management"],
         bio: "Marc is a senior leader with over seven years of experience managing complex, high-stakes projects across defense technology, operations, and facilities management.\n\nHe has overseen multi-million-dollar projects, led cross-functional teams, and delivered results in highly regulated environments. Marc's training helps teams plan better, communicate clearly, and deliver projects on time and within budget.",
@@ -43,6 +49,8 @@ const coaches = [
         id: "adele",
         name: "Adele O'Brien",
         title: "Growth and Partnerships Strategy Coach",
+        whatTheyDo: "Coaches growth and partnerships teams on GTM strategy, alignment, and execution.",
+        whatMakesSpecial: "Scaled brands across Asia, the USA, and Europe across Web3, education, telco, and tech.",
         badge: null,
         focusAreas: ["Go-to-market strategy", "Partnerships and growth", "Performance marketing"],
         bio: "Adele brings over nine years of experience scaling brands across Asia, the USA, and Europe. She has led growth, partnerships, and commercial strategy for Web3, education, telco, and technology companies.\n\nHer sessions focus on practical growth frameworks, stakeholder alignment, and execution that delivers measurable outcomes.",
@@ -53,6 +61,8 @@ const coaches = [
         id: "ashvin",
         name: "Ashvin Praveen",
         title: "AI and Vibe Coding Coach",
+        whatTheyDo: "Guides teams to adopt AI workflows, automations, and content systems that work in real operations.",
+        whatMakesSpecial: "Founder-operator lens from building Cleve.ai with practical, low-complexity implementation.",
         badge: null,
         focusAreas: ["Vibe coding for business", "AI workflows", "Content productivity"],
         bio: "Ashvin is a founder and AI practitioner focused on helping teams adopt AI in practical, business-ready ways.\n\nAs the co-founder and CEO of Cleve.ai, backed by Antler, he trains teams on building workflows, automations, and content systems using AI tools without unnecessary complexity.",
@@ -63,6 +73,8 @@ const coaches = [
         id: "kain",
         name: "Kain Masters",
         title: "Communications Coach",
+        whatTheyDo: "Builds communication confidence for presentations, influence, and high-stakes conversations.",
+        whatMakesSpecial: "Practical speaking frameworks that improve clarity and leadership presence quickly.",
         badge: null,
         focusAreas: ["Communication mastery", "Presentation skills", "Career progression"],
         bio: "Kain coaches professionals to communicate with more clarity, confidence, and influence.\n\nHis sessions focus on practical speaking frameworks, delivery confidence, and message structure so teams present ideas clearly and lead conversations effectively.",
@@ -73,6 +85,8 @@ const coaches = [
         id: "alfred",
         name: "Alfred Ng",
         title: "Storytelling, Video, and Affiliate Marketing Coach",
+        whatTheyDo: "Teaches teams to use storytelling, video, and affiliate channels for sustainable growth.",
+        whatMakesSpecial: "Combines creator craft with growth execution across markets and industries.",
         badge: null,
         focusAreas: ["Storytelling", "Video creation", "Affiliate marketing"],
         bio: "Alfred is a videographer, storyteller, and affiliate marketer with experience across multiple industries and countries.\n\nHe helps teams communicate more clearly through video and storytelling, while building sustainable affiliate and content-driven growth channels.",
@@ -83,6 +97,8 @@ const coaches = [
         id: "ebrahim",
         name: "Ebrahim Al Hamdi",
         title: "AI Agents and Marketing Systems Coach",
+        whatTheyDo: "Designs AI-agent and automation systems that reduce manual work and speed decision-making.",
+        whatMakesSpecial: "25+ years advising organizations across the US and Malaysia on scalable operating systems.",
         badge: null,
         focusAreas: ["AI agents", "Automation", "Vibe coding for business"],
         bio: "Ebrahim has spent over 25 years working with clients across the US and Malaysia, helping businesses build smarter systems using marketing automation, AI agents, and modern workflows.\n\nHis training focuses on building systems that save time, reduce manual work, and improve decision-making.",
@@ -93,6 +109,8 @@ const coaches = [
         id: "ivan",
         name: "Ivan Eng",
         title: "Workplace Wellbeing and Mental Health Coach",
+        whatTheyDo: "Supports teams with practical wellbeing training for stress, burnout, and long-term resilience.",
+        whatMakesSpecial: "Combines counselling depth with corporate leadership context for applied workplace outcomes.",
         badge: null,
         focusAreas: ["Stress management", "Burnout prevention", "Workplace wellbeing"],
         bio: "Ivan works with organisations to support employee wellbeing through practical, HRDC claimable training and pay-as-you-go counselling.\n\nWith experience in both corporate leadership and counselling, his sessions help teams manage stress, reduce burnout, and build healthier working environments.",
@@ -292,6 +310,26 @@ export default function CoachesPage() {
                                             {coach.badge}
                                         </span>
                                     )}
+
+                                    {/* What They Do */}
+                                    <div className="space-y-4">
+                                        <div>
+                                            <p className="text-[11px] font-bold uppercase tracking-[0.1em] text-primary/70 mb-1.5">
+                                                What they do
+                                            </p>
+                                            <p className="text-sm text-foreground/80 leading-relaxed">
+                                                {coach.whatTheyDo}
+                                            </p>
+                                        </div>
+                                        <div>
+                                            <p className="text-[11px] font-bold uppercase tracking-[0.1em] text-primary/70 mb-1.5">
+                                                What makes them special
+                                            </p>
+                                            <p className="text-sm text-foreground/80 leading-relaxed">
+                                                {coach.whatMakesSpecial}
+                                            </p>
+                                        </div>
+                                    </div>
 
                                     {/* Focus Areas */}
                                     <div className="mt-6 pt-6 border-t border-border/50">

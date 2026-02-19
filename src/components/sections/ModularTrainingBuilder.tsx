@@ -96,12 +96,14 @@ export const ModularTrainingBuilder = ({ defaultTrack = "sales" }: ModularTraini
             <div className="grid lg:grid-cols-[0.88fr_1.12fr] gap-8 lg:gap-10 items-start">
                 <div className="lg:pr-4">
                     <h2 className="headline-display text-4xl md:text-[3.4rem] leading-[0.95] mb-5">
-                        Modular training, built around your needs
+                        Modular training, built around you
                     </h2>
                     <p className="type-body-secondary text-muted-foreground max-w-[28ch]">
                         No generic courses. No wasted time.
                         <br />
-                        Your programme is built from focused modules chosen around your team, goals, and reality.
+                        Your training is designed around your team, your industry, and your goals.
+                        <br />
+                        You only focus on the skills that matter right now.
                     </p>
                 </div>
 
@@ -110,21 +112,21 @@ export const ModularTrainingBuilder = ({ defaultTrack = "sales" }: ModularTraini
                         <div className="rounded-[2rem] bg-primary p-5 md:p-6 text-white border border-primary/80 shadow-[0_18px_30px_rgba(12,24,18,0.22)]">
                             <h3 className="text-center text-2xl md:text-[2.2rem] font-black mb-4">Training Programme</h3>
 
-                            <div className="relative mx-auto max-w-[320px] rounded-full bg-white text-primary border border-white/80 px-3 py-2 flex items-center justify-between mb-5">
-                                <span className="font-semibold">Choose training</span>
+                            <div className="relative mx-auto w-full max-w-[420px] rounded-full bg-white text-primary border border-white/80 px-3 py-2 sm:px-4 sm:py-3 flex items-center gap-2 mb-5">
+                                <span className="font-semibold whitespace-nowrap">Choose training</span>
                                 <button
                                     type="button"
                                     onClick={() => setIsTrackMenuOpen((open) => !open)}
-                                    className="inline-flex items-center gap-1.5 text-sm font-bold rounded-full px-2.5 py-1.5 hover:bg-muted/50 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-lime/50"
+                                    className="ml-auto inline-flex min-w-[9.25rem] justify-center items-center gap-1.5 text-sm font-bold rounded-full px-2.5 py-1.5 hover:bg-muted/50 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-lime/50 whitespace-nowrap"
                                     aria-haspopup="listbox"
                                     aria-expanded={isTrackMenuOpen}
                                 >
-                                    {TRACKS.find((track) => track.key === activeTrack)?.label}
+                                    <span className="truncate">{TRACKS.find((track) => track.key === activeTrack)?.label}</span>
                                     <ChevronDown className={`w-4 h-4 transition-transform ${isTrackMenuOpen ? "rotate-180" : ""}`} />
                                 </button>
 
                                 {isTrackMenuOpen && (
-                                    <div className="absolute right-0 top-[calc(100%+8px)] z-20 w-48 rounded-2xl border border-border bg-white p-2 shadow-lg">
+                                    <div className="absolute right-0 top-[calc(100%+8px)] z-20 w-52 rounded-2xl border border-border bg-white p-2 shadow-lg">
                                         {TRACKS.map((track) => (
                                             <button
                                                 key={track.key}
@@ -168,9 +170,10 @@ export const ModularTrainingBuilder = ({ defaultTrack = "sales" }: ModularTraini
                                     </div>
                                 ) : (
                                     <div className="h-full min-h-[150px] rounded-xl border border-dashed border-white/35 flex items-center justify-center text-center px-4">
-                                        <p className="text-sm text-white/80">Tick modules on the right to build your programme.</p>
+                                        <p className="text-sm text-white/80">No modules selected yet.</p>
                                     </div>
                                 )}
+                                <p className="mt-3 text-sm text-white/80">Tick modules on the right to build your programme.</p>
                             </div>
                         </div>
 

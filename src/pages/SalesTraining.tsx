@@ -6,8 +6,6 @@ import { Testimonials } from "@/components/sections/Testimonials";
 import { ModularTrainingBuilder } from "@/components/sections/ModularTrainingBuilder";
 import {
     CheckCircle2,
-    XCircle,
-    Zap,
     Users,
     Shield,
     Target,
@@ -119,7 +117,6 @@ const SalesTraining = () => {
                                 </div>
                             </div>
                             <div className="flex-1 rounded-[2rem] border border-border overflow-hidden relative bg-white shadow-sm">
-                                <XCircle className="w-12 h-12 text-destructive absolute top-4 right-4 bg-white rounded-full shadow-lg z-10" />
                                 <img
                                     src="/training-images/optimized/practical-skills-1600.jpg"
                                     alt="Standard training often feels disconnected from real sales scenarios"
@@ -154,9 +151,7 @@ const SalesTraining = () => {
                                     { title: "Clarify priorities", desc: "Align the team on revenue goals and high-impact activities.", icon: Target, chip: "bg-lime/25" },
                                     { title: "Improve funnel conversion", desc: "Turn interest into closed deals more effectively.", icon: TrendingUp, chip: "bg-cyan-300/25" },
                                     { title: "Build consistency", desc: "Deliver a high-quality customer experience across the team.", icon: Layout, chip: "bg-violet-300/25" },
-                                    { title: "Increase confidence", desc: "Handle tough questions and keep deals moving.", icon: MessageCircle, chip: "bg-amber-200/25" },
-                                    { title: "Scale success", desc: "Raise the baseline beyond only top performers.", icon: Users, chip: "bg-rose-300/25" },
-                                    { title: "Adapt faster", desc: "Identify and unstick stalled deals quickly.", icon: Zap, chip: "bg-emerald-300/25" }
+                                    { title: "Increase confidence", desc: "Handle tough questions and keep deals moving.", icon: MessageCircle, chip: "bg-amber-200/25" }
                                 ].map((value, i) => (
                                     <motion.div
                                         key={value.title}
