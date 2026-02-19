@@ -41,7 +41,7 @@ const coaches = [
     name: "Marc Sagayam",
     expertise: "Project governance & stakeholder management",
     intro: "7+ years leading complex operations and delivery programs.",
-    image: "/Updated trainer pics/updated images/Marc.png",
+    image: "/Updated trainer pics/updated images/marc updated photo.png",
     title: "Project Management and Operations Coach",
     badge: null,
     focusAreas: ["Project governance", "Delivery timelines", "Stakeholder management"],

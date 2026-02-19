@@ -23,7 +23,7 @@ const coaches = [
         tagline: "Project Manager",
         expertise: "Project governance & stakeholder management",
         credibility: "7+ years leading complex operations",
-        image: "/Updated trainer pics/updated images/Marc.png",
+        image: "/Updated trainer pics/updated images/marc updated photo.png",
         imageClassName: "object-top",
     },
     {

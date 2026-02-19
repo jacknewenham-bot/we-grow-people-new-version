@@ -55,7 +55,7 @@ export function Teams() {
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="headline-display text-4xl md:text-6xl text-foreground mb-6 uppercase"
+            className="section-headline text-foreground mb-4"
           >
             Built for teams with different needs
           </motion.h2>

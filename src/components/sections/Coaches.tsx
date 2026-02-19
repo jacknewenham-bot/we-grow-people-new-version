@@ -20,7 +20,7 @@ const coaches = [
     tagline: "Project Manager",
     title: "7+ years leading complex operations and high-stakes projects",
     focus: "Project governance, delivery timelines, stakeholder management",
-    image: "/Updated trainer pics/updated images/Marc.png",
+    image: "/Updated trainer pics/updated images/marc updated photo.png",
   },
   {
     name: "Adele O'Brien",
